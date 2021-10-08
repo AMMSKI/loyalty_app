@@ -6,7 +6,7 @@ return (
   <p>{reward.description}</p>
   <p>{reward.cost}</p>
   <button onClick={()=>deleteReward(reward.id)}>Delete</button>
-
+  <button>Update!</button>
 </div>
 )
 }
