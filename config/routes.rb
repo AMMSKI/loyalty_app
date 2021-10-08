@@ -19,8 +19,5 @@ Rails.application.routes.draw do
     get '/earn/:userpunchcard_id', to: 'user_punchcard#show'
   end
   
-    
-
-
 end
          
