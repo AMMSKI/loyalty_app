@@ -96,6 +96,7 @@ const NavBar = () => {
         <Menu.Item as='a'>
             Search
         </Menu.Item>
+        </Link>
         <Menu.Menu>
           {customNavItems()}
         </Menu.Menu>

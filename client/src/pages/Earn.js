@@ -42,15 +42,12 @@ const Earn = (props) => {
     }
   }
 
-  // Add this below when it's a reasonable length: {punchcardData.description}
 
   return (
     <div className="content">
       <div className="jumbotron text-center">
         <h1>{punchcardData.restaurant_name}</h1>
-        <h5>Earn points by purchasing our delicious food and then cash
-          them in for rewards.
-        </h5>
+        <h5>{punchcardData.description}</h5>
         <br /> 
         <div>
         {ownedCards.includes(punchcardData.punchcard_id) ?

@@ -12,11 +12,10 @@ import Rewards from './pages/Rewards';
 import RewardForm from './Components/RewardForm';
 import Landing from './pages/Landing';
 import Earn from './pages/Earn';
-
-// import Search from './pages/Search'
-// import ScanResult from './pages/ScanResult'
-// import ShowQR from './pages/ShowQR'
-// import Dashboard from './pages/Dashboard'
+import Search from './pages/Search'
+import ScanResult from './pages/ScanResult'
+import ShowQR from './pages/ShowQR'
+import Dashboard from './pages/Dashboard'
 import ProtectedRoute from './Components/ProtectedRoute';
 
 function App() {
@@ -45,7 +44,6 @@ function App() {
           </Switch>
         </Container>
       </FetchUser>
-
     </>
   );
 }
