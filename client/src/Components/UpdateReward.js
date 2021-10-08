@@ -12,7 +12,7 @@ const UpdateReward = (props) => {
     e.preventDefault();
 
     try {
-      axios.put('/api/rewards/', { name: name, desc: desc, cost: cost })
+      axios.put(`/api/punchcards/${punchcardId}/rewards`, { name: name, desc: desc, cost: cost })
     } catch (error) {
       console.log(error)
     }

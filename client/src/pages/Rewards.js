@@ -3,8 +3,12 @@ import React, { useEffect, useState } from 'react';
 import RewardForm from '../Components/RewardForm';
 import Reward from './Reward';
 
-const Rewards = () => {
+const Rewards = (props) => {
   const [rewards, setRewards] = useState([]);
+  const [showForm, setShowForm] = useState(false);
+  
+  let {punchcardId} = props
+  punchcardId = 1 //remove later
 
   useEffect(() => {
     getRewards();
@@ -12,7 +16,7 @@ const Rewards = () => {
 
   const getRewards = async () => {
     try {
-      let res = await axios.get("/api/rewards");
+      let res = await axios.get(`/api/punchcards/${punchcardId}/rewards`);
       setRewards(res.data);
     } catch (err) {
       console.log(err);
@@ -21,7 +25,7 @@ const Rewards = () => {
 
   const deleteReward = async (id) => {
      try {
-      await axios.delete(`/api/rewards/${id}`);
+      await axios.delete(`/api/punchcards/${punchcardId}/rewards/${id}`);
       setRewards(rewards.filter((f) => f.id !== id));
     } catch (err) {
       console.log(err);
@@ -29,22 +33,28 @@ const Rewards = () => {
   };
 
   const renderRewards = () => {
-
     return rewards.map(reward => {
       return (
         <div key={reward.id}>
           <Reward reward={reward} deleteReward={deleteReward} />
         </div>
-      )
-    })
-  }
+      );
+    });
+  };
 
-  
-
+  const handleShowForm = () => {
+    setShowForm(showForm => {
+      return !showForm;
+    });
+  };
 
   return (
     <div>
-      <RewardForm/>
+      <button onClick={handleShowForm}>
+        {showForm ? 'Hide Form' : 'Show Form'}
+      </button>
+      {showForm && <RewardForm punchcardId={punchcardId}/>}
+
       <h2>Rewards</h2>
       {renderRewards()}
     </div>

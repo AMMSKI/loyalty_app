@@ -32,8 +32,8 @@ const NavBar = () => {
     }
     return (
       <>
-        <Menu.Item as='a'>
-          <Link style={{ textDecoration: "none" }} to="/login">
+        <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
+          <Link className='LinkNavbar' to="/login">
             Login
           </Link>
         </Menu.Item>
@@ -45,13 +45,13 @@ const NavBar = () => {
     if (user && user.account_type === 'Business' && authenticated) {
       return (
         <>
-          <Menu.Item as='a'>
-            <Link style={{ textDecoration: "none" }} to='/rewards'>
+          <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
+            <Link className='LinkNavbar' to='/rewards'>
               Reward
             </Link>
           </Menu.Item>
-          <Menu.Item as='a'>
-            <Link style={{ textDecoration: "none" }} to='/rewardform'>
+          <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
+            <Link className='LinkNavbar' to='/rewardform'>
               Reward Form
             </Link>
           </Menu.Item>
@@ -60,13 +60,13 @@ const NavBar = () => {
     } else if (user && user.account_type === 'Customer' && authenticated) {
       return (
         <>
-          <Menu.Item as='a'>
-            <Link style={{ textDecoration: "none" }} to='/landing'>
+          <Menu.Item fitted="horizontally" as='a'>
+            <Link className='LinkNavbar' to='/landing'>
               Landing
             </Link>
           </Menu.Item>
-          <Menu.Item as='a'>
-            <Link style={{ textDecoration: "none" }} to='/eran'>
+          <Menu.Item fitted="horizontally" as='a'>
+            <Link className='LinkNavbar' to='/eran'>
               Earn
             </Link>
           </Menu.Item>
@@ -78,25 +78,25 @@ const NavBar = () => {
   return (
     <Sticky>
       <Menu stackable inverted color='blue'>
-        <Menu.Item as='a' header>
+        <Menu.Item style={{ height: "50px" }} as='a' header>
           <Image size='mini' src='/logo192.png' style={{ marginRight: '1.5em' }} />
           LoyaltyApp
         </Menu.Item>
-          <Link style={{ textDecoration: "none" }} to='/'>
-        <Menu.Item as='a'>
+        <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
+          <Link className='LinkNavbar' to='/'>
             Home
-        </Menu.Item>
           </Link>
-          <Link style={{ textDecoration: "none" }} to='/dashboard'>
-        <Menu.Item as='a'>
+        </Menu.Item>
+        <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
+          <Link className='LinkNavbar' to='/dashboard'>
             Dashboard
-        </Menu.Item>
           </Link>
-          <Link style={{ textDecoration: "none" }} to='/search'>
-        <Menu.Item as='a'>
-            Search
         </Menu.Item>
-        </Link>
+        <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
+          <Link className='LinkNavbar' to='/search'>
+            Search
+          </Link>
+        </Menu.Item>
         <Menu.Menu>
           {customNavItems()}
         </Menu.Menu>

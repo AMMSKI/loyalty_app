@@ -2,6 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 
 const RewardForm = (props) => {
+  const {punchcardId} = props;
+
   const [name, setName] = useState('');
   const [desc, setDesc] = useState('');
   const [cost, setCost] = useState('');
@@ -10,7 +12,8 @@ const RewardForm = (props) => {
     e.preventDefault();
 
     try {
-      let res = axios.post('/api/rewards/', { name: name, desc: desc, cost: cost })
+      axios.post(`/api/punchcards/${punchcardId}/rewards`, { name: name, desc: desc, cost: cost })
+      
       setName('');
       setDesc('');
       setCost('');
