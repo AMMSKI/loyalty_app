@@ -82,10 +82,19 @@ const NavBar = () => {
           <Image size='mini' src='/logo192.png' style={{ marginRight: '1.5em' }} />
           LoyaltyApp
         </Menu.Item>
-        <Menu.Item as='a'>
           <Link style={{ textDecoration: "none" }} to='/'>
+        <Menu.Item as='a'>
             Home
+        </Menu.Item>
           </Link>
+          <Link style={{ textDecoration: "none" }} to='/dashboard'>
+        <Menu.Item as='a'>
+            Dashboard
+        </Menu.Item>
+          </Link>
+          <Link style={{ textDecoration: "none" }} to='/search'>
+        <Menu.Item as='a'>
+            Search
         </Menu.Item>
         <Menu.Menu>
           {customNavItems()}

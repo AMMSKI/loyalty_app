@@ -4,8 +4,14 @@ class Api::PunchcardsController < ApplicationController
 
   def index
     punchcard = Punchcard.all
+    render json: punchcard
+  end
+
+  def all
+    punchcards = Punchcard.punchcard_rest
     render json: punchcards
   end
+
 
   def create
     @punchcard = Punchcard.new(punchcard_params)
@@ -38,7 +44,7 @@ class Api::PunchcardsController < ApplicationController
 
   private
 
-  def set_punchard
+  def set_punchcard
     @punchcard = Punchcard.find(params[:id])
   end
 
