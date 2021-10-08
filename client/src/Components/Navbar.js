@@ -32,7 +32,7 @@ const NavBar = () => {
     }
     return (
       <>
-        <Menu.Item as='a'>
+        <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
           <Link className='LinkNavbar' to="/login">
             Login
           </Link>
@@ -45,12 +45,12 @@ const NavBar = () => {
     if (user && user.account_type === 'Business' && authenticated) {
       return (
         <>
-          <Menu.Item fitted="horizontally" as='a'>
+          <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
             <Link className='LinkNavbar' to='/rewards'>
               Reward
             </Link>
           </Menu.Item>
-          <Menu.Item fitted="horizontally" as='a'>
+          <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
             <Link className='LinkNavbar' to='/rewardform'>
               Reward Form
             </Link>
@@ -77,22 +77,22 @@ const NavBar = () => {
 
   return (
     <Sticky>
-      <Menu style={{ height: "50px" }} stackable inverted color='blue'>
-        <Menu.Item as='a' header>
+      <Menu stackable inverted color='blue'>
+        <Menu.Item style={{ height: "50px" }} as='a' header>
           <Image size='mini' src='/logo192.png' style={{ marginRight: '1.5em' }} />
           LoyaltyApp
         </Menu.Item>
-        <Menu.Item fitted="horizontally" as='a'>
+        <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
           <Link className='LinkNavbar' to='/'>
             Home
           </Link>
         </Menu.Item>
-        <Menu.Item fitted="horizontally" as='a'>
+        <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
           <Link className='LinkNavbar' to='/dashboard'>
             Dashboard
           </Link>
         </Menu.Item>
-        <Menu.Item fitted="horizontally" as='a'>
+        <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
           <Link className='LinkNavbar' to='/search'>
             Search
           </Link>
