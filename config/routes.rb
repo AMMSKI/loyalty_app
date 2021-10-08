@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     resources :users do
       resources :restaurants do
         resources :punchcards do
-          resources :rewards 
+          resources :rewards do
+            
+          end
         end
       end
     end

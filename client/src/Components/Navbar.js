@@ -7,7 +7,7 @@ import '../StyleSheets/App.css'
 
 const NavBar = () => {
   const history = useHistory()
-  const { user, handleLogout, handleDelete } = useContext(AuthContext)
+  const { authenticated, user, handleLogout, handleDelete } = useContext(AuthContext)
   const location = useLocation()
 
   const rightNavItems = () => {
@@ -41,6 +41,40 @@ const NavBar = () => {
     );
   };
 
+  const customNavItems = () => {
+    if (user && user.account_type === 'Business' && authenticated) {
+      return (
+        <>
+          <Menu.Item as='a'>
+            <Link style={{ textDecoration: "none" }} to='/rewards'>
+              Reward
+            </Link>
+          </Menu.Item>
+          <Menu.Item as='a'>
+            <Link style={{ textDecoration: "none" }} to='/rewardform'>
+              Reward Form
+            </Link>
+          </Menu.Item>
+        </>
+      );
+    } else if (user && user.account_type === 'Customer' && authenticated) {
+      return (
+        <>
+          <Menu.Item as='a'>
+            <Link style={{ textDecoration: "none" }} to='/landing'>
+              Landing
+            </Link>
+          </Menu.Item>
+          <Menu.Item as='a'>
+            <Link style={{ textDecoration: "none" }} to='/eran'>
+              Earn
+            </Link>
+          </Menu.Item>
+        </>
+      );
+    }
+  }
+
   return (
     <Sticky>
       <Menu stackable inverted color='blue'>
@@ -53,6 +87,9 @@ const NavBar = () => {
             Home
           </Link>
         </Menu.Item>
+        <Menu.Menu>
+          {customNavItems()}
+        </Menu.Menu>
         <Menu.Menu position="right">
           {rightNavItems()}
         </Menu.Menu>
