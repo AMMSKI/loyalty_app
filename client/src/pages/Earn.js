@@ -9,7 +9,7 @@ const Earn = (props) => {
   const [punchcardData, setPunchcardData] = useState([])
   const [ownedCards, setOwnedCards] = useState([])
 
-  console.log(props.match.params.punch_id)
+
 
   useEffect(()=>{
     getData()
