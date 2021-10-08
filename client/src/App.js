@@ -24,7 +24,7 @@ function App() {
     <>
       <NavBar />
       <FetchUser>
-        <Container>
+        <Container style={{paddingTop:'20px'}}>
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/edit_user' component={EditUser} />

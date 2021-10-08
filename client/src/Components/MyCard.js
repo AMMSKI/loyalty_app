@@ -3,6 +3,8 @@ import React, { useContext, useEffect, useState } from 'react'
 // import { Card, Label } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import { Card, Button } from 'react-bootstrap'
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const MyCard = (props) => { 
   const { user } = useContext(AuthContext)
@@ -39,6 +41,7 @@ const MyCard = (props) => {
   return (
     <div style={{padding:'10px'}}>
     <Card>
+    <MyLink to={`/dashboard`}>
       <Card.Body>
         <Card.Title>
       <h1>{props.restaurant_name}</h1>
@@ -47,13 +50,17 @@ const MyCard = (props) => {
         <p>{props.description}</p>
         <p>id: {props.punch_id}</p>
         </Card.Text>
-        {ownedId.includes(props.punch_id) ? <Card.Footer>You own this card</Card.Footer> : <Card.Footer style={{backgroundColor:'#2185D0'}} onClick={()=>addToWallet(props.punch_id)}>Add To Wallet</Card.Footer>}
       </Card.Body>
+        </MyLink>
+        {ownedId.includes(props.punch_id) ? <Card.Footer>You own this card</Card.Footer> : <Card.Footer style={{backgroundColor:'#2185D0'}} onClick={()=>addToWallet(props.punch_id)}>Add To Wallet</Card.Footer>}
     </Card>
     </div>
   )
 }
 
 
-
+const MyLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+`
 export default MyCard
