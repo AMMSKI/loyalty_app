@@ -47,6 +47,11 @@
   }
 }
 
+.LinkNavbar {
+  text-decoration: none;
+  padding: 16px;
+}
+
 .circle {
   position: relative;
   display: block;

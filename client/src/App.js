@@ -38,12 +38,9 @@ function App() {
             <Route exact path='/scan_result' component={ScanResult} />
             <Route exact path='/showQR' component={ShowQR} />
             <Route exact path='/dashboard' component={Dashboard} />
-
-
-            <Route component={NoMatch} />
             <ProtectedRoute exact path='/rewards' component={Rewards} />
             <ProtectedRoute exact path='/rewardform' component={RewardForm} />
-
+            <Route component={NoMatch} />
           </Switch>
         </Container>
       </FetchUser>
