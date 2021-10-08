@@ -6,19 +6,18 @@ import Home from './pages/Home';
 import NoMatch from './Components/NoMatch';
 import Login from './Components/Login';
 import Register from './Components/Register';
+import EditUser from './Components/EditUser'
 import FetchUser from './Components/FetchUser';
-import ProtectedRoute from './Components/ProtectedRoute';
 import Rewards from './pages/Rewards';
 import RewardForm from './Components/RewardForm';
-import EditUser from './Components/EditUser'
-// import ProtectedRoute from './Components/ProtectedRoute';
 import Landing from './pages/Landing';
 import Earn from './pages/Earn';
-import Search from './pages/Search'
-import ScanResult from './pages/ScanResult'
-import ShowQR from './pages/ShowQR'
-import Dashboard from './pages/Dashboard'
-import UserPunchCards from './ResourceCode/UserPunchCards'
+
+// import Search from './pages/Search'
+// import ScanResult from './pages/ScanResult'
+// import ShowQR from './pages/ShowQR'
+// import Dashboard from './pages/Dashboard'
+import ProtectedRoute from './Components/ProtectedRoute';
 
 function App() {
   return (
@@ -39,13 +38,14 @@ function App() {
             <Route exact path='/dashboard' component={Dashboard} />
 
 
-
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/register' component={Register} />
             <Route component={NoMatch} />
+            <ProtectedRoute exact path='/rewards' component={Rewards} />
+            <ProtectedRoute exact path='/rewardform' component={RewardForm} />
+
           </Switch>
         </Container>
-        </FetchUser>
+      </FetchUser>
+
     </>
   );
 }
