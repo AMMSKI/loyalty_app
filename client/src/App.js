@@ -14,11 +14,10 @@ import Rewards from './pages/Rewards';
 
 import Landing from './pages/Landing';
 import Earn from './pages/Earn';
-
-// import Search from './pages/Search'
-// import ScanResult from './pages/ScanResult'
-// import ShowQR from './pages/ShowQR'
-// import Dashboard from './pages/Dashboard'
+import Search from './pages/Search'
+import ScanResult from './pages/ScanResult'
+import ShowQR from './pages/ShowQR'
+import Dashboard from './pages/Dashboard'
 import ProtectedRoute from './Components/ProtectedRoute';
 
 function App() {
@@ -26,7 +25,7 @@ function App() {
     <>
       <NavBar />
       <FetchUser>
-        <Container>
+        <Container style={{paddingTop:'20px'}}>
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/edit_user' component={EditUser} />
