@@ -19,6 +19,7 @@ import ScanResult from './pages/ScanResult'
 import ShowQR from './pages/ShowQR'
 import Dashboard from './pages/Dashboard'
 import ProtectedRoute from './Components/ProtectedRoute';
+import RewardForm from './Components/RewardForm';
 
 function App() {
   return (

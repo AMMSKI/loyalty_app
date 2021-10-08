@@ -97,7 +97,6 @@ const NavBar = () => {
             Search
           </Link>
         </Menu.Item>
-        </Link>
         <Menu.Menu>
           {customNavItems()}
         </Menu.Menu>
