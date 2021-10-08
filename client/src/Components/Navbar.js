@@ -48,21 +48,21 @@ const NavBar = () => {
           <Image size='mini' src='/logo192.png' style={{ marginRight: '1.5em' }} />
           LoyaltyApp
         </Menu.Item>
-        <Menu.Item as='a'>
           <Link style={{ textDecoration: "none" }} to='/'>
+        <Menu.Item as='a'>
             Home
-          </Link>
         </Menu.Item>
-        <Menu.Item as='a'>
+          </Link>
           <Link style={{ textDecoration: "none" }} to='/dashboard'>
-            Dashboard
-          </Link>
-        </Menu.Item>
         <Menu.Item as='a'>
-          <Link style={{ textDecoration: "none" }} to='/search'>
-            Search
-          </Link>
+            Dashboard
         </Menu.Item>
+          </Link>
+          <Link style={{ textDecoration: "none" }} to='/search'>
+        <Menu.Item as='a'>
+            Search
+        </Menu.Item>
+          </Link>
         <Menu.Menu position="right">
           {rightNavItems()}
         </Menu.Menu>

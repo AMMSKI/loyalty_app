@@ -2,52 +2,50 @@ import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import {Card} from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider';
+import MyCard from '../Components/MyCard';
+import SearchBar from '../Components/SearchBar';
+import ShowQR from './ShowQR'
 
 
 const Search = () => {
-  const { user } = useContext(AuthContext)
+  const [input, setInput] = useState('');
   const [cards, setCards] = useState([])
+  const [searchCards, setSearchCards] = useState([])
 
   useEffect(()=>{
     getCards()
   },[])
-
+  
   const getCards = async()=>{
     try{
       let res = await axios.get('/api/punchcards/all')
       setCards(res.data)
-      // console.log(res)
+      setSearchCards(res.data)
+      console.log('all cards',res.data)
     }catch(err){
       console.log(err)
     }
   }
 
-  const addToWallet = async (punchcard_id) => {
-    let user_id = user.id
-    try{
-      let res = await axios.post(`/api/users/${user.id}/user_punchcard`, {punchcard_id, user_id} )
-      console.log(res)
-    }catch(err){
-      console.log(err)
-    }
-  }
-
-  const renderCards = () => {
-    return cards.map((c) => {
-      return (
-        <Card>
-          <h1>{c.restaurant_name}</h1>
-          <p>{c.description}</p>
-          <p>Points needed for reward: {c.total_points}</p>
-          <p>punch card id: {c.punch_id}</p>
-          <button onClick={()=> addToWallet(c.punch_id)}>Add To Wallet</button>
-        </Card>
-      )
+  const updateInput = async (input) => {
+    const filtered = cards.filter(c => {
+     return c.restaurant_name.toLowerCase().includes(input.toLowerCase())
     })
+    setInput(input);
+    setSearchCards(filtered);
+ }
+  
+  const renderCards = () => {
+    return searchCards.map((c) => <MyCard {...c}/>)
   }
+
   return (
     <div>
       <h1>Search</h1>
+      <SearchBar
+        input={input} 
+        onChange={updateInput}
+       />
       {renderCards()}
     </div>
   )

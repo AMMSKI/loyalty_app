@@ -33,16 +33,26 @@ custusers = [user3,user4, user6]
       rest4 = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:bizusers[rand(3)].id)
 rests = [rest, rest2,rest3,rest4]
 
-      punch = Punchcard.create(total_points:rand(10), restaurant_id:rests[0].id, description:Faker::Restaurant.description )
-      punch2 = Punchcard.create(total_points:rand(10), restaurant_id:rests[1].id, description:Faker::Restaurant.description )
-      punch3 = Punchcard.create(total_points:rand(10), restaurant_id:rests[2].id, description:Faker::Restaurant.description )
-      punch4 = Punchcard.create(total_points:rand(10), restaurant_id:rests[3].id, description:Faker::Restaurant.description )
-      punch5 = Punchcard.create(total_points:rand(10), restaurant_id:rests[0].id, description:Faker::Restaurant.description )
-      punch6 = Punchcard.create(total_points:rand(10), restaurant_id:rests[1].id, description:Faker::Restaurant.description )
-      punch7 = Punchcard.create(total_points:rand(10), restaurant_id:rests[2].id, description:Faker::Restaurant.description )
-      punch8 = Punchcard.create(total_points:rand(10), restaurant_id:rests[3].id, description:Faker::Restaurant.description )
-      punch9 = Punchcard.create(total_points:rand(10), restaurant_id:rests[0].id, description:Faker::Restaurant.description )
-      punch1 = Punchcard.create(total_points:rand(10), restaurant_id:rests[3].id, description:Faker::Restaurant.description )
+      punch = Punchcard.create(total_points:rand(10), restaurant_id:rests[0].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+      erat a ante.' )
+      punch2 = Punchcard.create(total_points:rand(10), restaurant_id:rests[1].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+      erat a ante.' )
+      punch3 = Punchcard.create(total_points:rand(10), restaurant_id:rests[2].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+      erat a ante.' )
+      punch4 = Punchcard.create(total_points:rand(10), restaurant_id:rests[3].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+      erat a ante.' )
+      punch5 = Punchcard.create(total_points:rand(10), restaurant_id:rests[0].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+      erat a ante.' )
+      punch6 = Punchcard.create(total_points:rand(10), restaurant_id:rests[1].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+      erat a ante.' )
+      punch7 = Punchcard.create(total_points:rand(10), restaurant_id:rests[2].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+      erat a ante.' )
+      punch8 = Punchcard.create(total_points:rand(10), restaurant_id:rests[3].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+      erat a ante.' )
+      punch9 = Punchcard.create(total_points:rand(10), restaurant_id:rests[0].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+      erat a ante.' )
+      punch1 = Punchcard.create(total_points:rand(10), restaurant_id:rests[3].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+      erat a ante.' )
 
 punches = [punch, punch2, punch3, punch4, punch5, punch6, punch7, punch8, punch9, punch1]
 
@@ -51,7 +61,7 @@ punches = [punch, punch2, punch3, punch4, punch5, punch6, punch7, punch8, punch9
       end
   
   15.times do
-      UserPunchcard.create(current_points:rand(10), user_id:custusers[rand(3)].id, punchcard_id:punches[rand(10)].id, expiration_date:Faker::Date.between(from: '2021-09-23', to: '2021-12-25'))
+      UserPunchcard.create(current_points:rand(100), user_id:custusers[rand(3)].id, punchcard_id:punches[rand(10)].id, expiration_date:Faker::Date.between(from: '2021-09-23', to: '2021-12-25'))
     end
 
 
