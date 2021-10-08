@@ -1,4 +1,5 @@
 const Reward = (props) => {
+
   const {reward, deleteReward}=props
 return (
 <div style= {styles.card}>
@@ -9,12 +10,13 @@ return (
   <button>Update!</button>
 </div>
 )
+
 }
 const styles = {
-  card:{
-    border:"1px solid black",
-    padding:"8px"
+  card: {
+    border: "1px solid black",
+    padding: "8px"
   }
-  
+
 }
 export default Reward

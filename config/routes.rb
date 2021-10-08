@@ -4,12 +4,15 @@ Rails.application.routes.draw do
   namespace :api do
     resources :users do
       resources :restaurants do
-        resources :punchcards do
-          
+        resources :punchcards do  
+          resources :user_punchcard do
+          end
         end
       end
     end
+  
     get 'restaurants/all', to: 'restaurants#all'
+    get 'punchcards/all', to: 'punchcards#all'
     get 'user/:id/punchcard_by_user', to: 'punchcards#punchcard_by_user'
     get 'punchcards/:punchcard_id/rewards', to: 'rewards#index'
     get 'punchcards/:punchcard_id/rewards/:id', to: 'rewards#show'
@@ -17,10 +20,9 @@ Rails.application.routes.draw do
     post 'punchcards/:punchcard_id/rewards/', to: 'rewards#create'
     patch 'punchcards/:punchcard_id/rewards/:id', to: 'rewards#update'
     delete 'users/:id', to: 'users#delete'
+    get 'rewards', to: 'user_punchcard#show_rewards'
+    get '/earn/:userpunchcard_id', to: 'user_punchcard#show'
   end
   
-    
-
-
 end
          

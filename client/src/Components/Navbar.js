@@ -7,7 +7,7 @@ import '../StyleSheets/App.css'
 
 const NavBar = () => {
   const history = useHistory()
-  const { user, handleLogout, handleDelete } = useContext(AuthContext)
+  const { authenticated, user, handleLogout, handleDelete } = useContext(AuthContext)
   const location = useLocation()
 
   const rightNavItems = () => {
@@ -41,6 +41,40 @@ const NavBar = () => {
     );
   };
 
+  const customNavItems = () => {
+    if (user && user.account_type === 'Business' && authenticated) {
+      return (
+        <>
+          <Menu.Item as='a'>
+            <Link style={{ textDecoration: "none" }} to='/rewards'>
+              Reward
+            </Link>
+          </Menu.Item>
+          <Menu.Item as='a'>
+            <Link style={{ textDecoration: "none" }} to='/rewardform'>
+              Reward Form
+            </Link>
+          </Menu.Item>
+        </>
+      );
+    } else if (user && user.account_type === 'Customer' && authenticated) {
+      return (
+        <>
+          <Menu.Item as='a'>
+            <Link style={{ textDecoration: "none" }} to='/landing'>
+              Landing
+            </Link>
+          </Menu.Item>
+          <Menu.Item as='a'>
+            <Link style={{ textDecoration: "none" }} to='/eran'>
+              Earn
+            </Link>
+          </Menu.Item>
+        </>
+      );
+    }
+  }
+
   return (
     <Sticky>
       <Menu stackable inverted color='blue'>
@@ -48,11 +82,23 @@ const NavBar = () => {
           <Image size='mini' src='/logo192.png' style={{ marginRight: '1.5em' }} />
           LoyaltyApp
         </Menu.Item>
-        <Menu.Item as='a'>
           <Link style={{ textDecoration: "none" }} to='/'>
+        <Menu.Item as='a'>
             Home
-          </Link>
         </Menu.Item>
+          </Link>
+          <Link style={{ textDecoration: "none" }} to='/dashboard'>
+        <Menu.Item as='a'>
+            Dashboard
+        </Menu.Item>
+          </Link>
+          <Link style={{ textDecoration: "none" }} to='/search'>
+        <Menu.Item as='a'>
+            Search
+        </Menu.Item>
+        <Menu.Menu>
+          {customNavItems()}
+        </Menu.Menu>
         <Menu.Menu position="right">
           {rightNavItems()}
         </Menu.Menu>

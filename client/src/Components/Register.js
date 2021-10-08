@@ -7,7 +7,7 @@ import ErrorMessage from './ErrorMessage';
 const Register = () => {
   const { handleRegister, error, loading } = useContext(AuthContext)
   const [name, setName] = useState('test')
-  const [account_type, setAccount_Type] = useState('business')
+  const [account_type, setAccount_Type] = useState('Business')
   const [email, setEmail] = useState('test@test.com')
   const [password, setPassword] = useState('123456')
   const [passwordConfirmation, setPasswordConfirmation] = useState('123456')
