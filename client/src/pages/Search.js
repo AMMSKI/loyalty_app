@@ -21,7 +21,6 @@ const Search = () => {
       let res = await axios.get('/api/punchcards/all')
       setCards(res.data)
       setSearchCards(res.data)
-      console.log('all cards',res.data)
     }catch(err){
       console.log(err)
     }
@@ -41,7 +40,7 @@ const Search = () => {
 
   return (
     <div>
-      <h1>Search</h1>
+      <h1>Search all available Cards:</h1>
       <SearchBar
         input={input} 
         onChange={updateInput}
