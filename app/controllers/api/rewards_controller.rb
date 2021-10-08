@@ -1,9 +1,9 @@
 class Api::RewardsController < ApplicationController
+  before_action :get_restrant, only: [:index]
   before_action :set_model, only: [:show, :destroy]
   
     def index
-      reward = Reward.all
-      render json: reward
+      render json: @punchcard.rewards.all
     end
   
     def show
@@ -29,7 +29,11 @@ class Api::RewardsController < ApplicationController
       def set_model
         @reward = Reward.find(params[:id])
       end
-  
+      
+      def get_restrant
+        @punchcard = Punchcard.find(params[:punchcard_id])
+      end
+
       def reward_params
         params.require(:reward).permit(:name, :description, :cost)
       end
