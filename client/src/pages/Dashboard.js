@@ -6,11 +6,14 @@ import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 import { Icon } from 'semantic-ui-react';
+import SearchBar from '../Components/SearchBar';
 
 
 const Dashboard = () => {
   const { user } = useContext(AuthContext)
+  const [input, setInput] = useState('');
   const [punchcards, setPunchcards] = useState([])
+  const [searchPunchcards, setSearchPunchcards] = useState([])
   
   useEffect(()=>{
     getPunchcards()
@@ -21,11 +24,19 @@ const Dashboard = () => {
       let res = await axios.get(`/api/user/${user.id}/punchcard_by_user`)
       console.log(res.data)
       setPunchcards(res.data)
+      setSearchPunchcards(res.data)
     }catch(err){
       console.log(err)
     }
   }
 
+  const updateInput = async (input) => {
+    const filtered = punchcards.filter(c => {
+     return c.restaurant_name.toLowerCase().includes(input.toLowerCase())
+    })
+    setInput(input);
+    setSearchPunchcards(filtered);
+ }
 
   const deletePunchcard = async (punch_id) => {
     try{
@@ -37,7 +48,7 @@ const Dashboard = () => {
   }
 
   const renderPunchcards = () => {
-    return punchcards.map((p)=>{
+    return searchPunchcards.map((p)=>{
       return (
         <div style={{padding:'10px'}}>
           <Card>
@@ -61,7 +72,10 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h2>Cards In Your Wallet:</h2>
+      <h2>Wallet:</h2>
+      <SearchBar
+        input={input} 
+        onChange={updateInput} />
       {punchcards && renderPunchcards()}
     </div>
   )
