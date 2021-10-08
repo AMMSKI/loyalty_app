@@ -12,7 +12,8 @@ function EmployeeView(props) {
 
   const getPoints = async () => {
     try {
-      let res = await axios.get(`/api/users/${user.id}/`)
+      let res = await axios.get(`/api/users/${user.id}/employee`)
+      console.log(res.data)
     } catch (error) {
       
     }

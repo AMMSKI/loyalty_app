@@ -16,8 +16,8 @@ Rails.application.routes.draw do
     get 'user/:id/punchcard_by_user', to: 'punchcards#punchcard_by_user'
     delete 'users/:id', to: 'users#delete'
     get 'rewards', to: 'user_punchcard#show_rewards'
-    get '/earn/:userpunchcard_id', to: 'user_punchcard#show'
-    get '/employee', to: 'user_punchcard#view_customers'
+    get 'earn/:userpunchcard_id', to: 'user_punchcard#show'
+    get 'employee', to: 'user_punchcard#view_customers'
   end
   
 end
