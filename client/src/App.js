@@ -17,6 +17,7 @@ import ScanResult from './pages/ScanResult'
 import ShowQR from './pages/ShowQR'
 import Dashboard from './pages/Dashboard'
 import ProtectedRoute from './Components/ProtectedRoute';
+import EmployeeView from './Components/EmployeeView';
 
 function App() {
   return (
@@ -35,6 +36,8 @@ function App() {
             <Route exact path='/scan_result' component={ScanResult} />
             <Route exact path='/showQR' component={ShowQR} />
             <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path='/employee' component={EmployeeView} />
+
 
 
             <Route component={NoMatch} />
