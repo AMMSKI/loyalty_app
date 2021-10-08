@@ -12,11 +12,10 @@ import Rewards from './pages/Rewards';
 import RewardForm from './Components/RewardForm';
 import Landing from './pages/Landing';
 import Earn from './pages/Earn';
-
-// import Search from './pages/Search'
-// import ScanResult from './pages/ScanResult'
-// import ShowQR from './pages/ShowQR'
-// import Dashboard from './pages/Dashboard'
+import Search from './pages/Search'
+import ScanResult from './pages/ScanResult'
+import ShowQR from './pages/ShowQR'
+import Dashboard from './pages/Dashboard'
 import ProtectedRoute from './Components/ProtectedRoute';
 
 function App() {
@@ -36,12 +35,9 @@ function App() {
             <Route exact path='/scan_result' component={ScanResult} />
             <Route exact path='/showQR' component={ShowQR} />
             <Route exact path='/dashboard' component={Dashboard} />
-
-
-            <Route component={NoMatch} />
             <ProtectedRoute exact path='/rewards' component={Rewards} />
             <ProtectedRoute exact path='/rewardform' component={RewardForm} />
-
+            <Route component={NoMatch} />
           </Switch>
         </Container>
       </FetchUser>
