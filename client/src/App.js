@@ -6,8 +6,6 @@ import Home from './pages/Home';
 import NoMatch from './Components/NoMatch';
 import Login from './Components/Login';
 import Register from './Components/Register';
-
-
 import EditUser from './Components/EditUser'
 import FetchUser from './Components/FetchUser';
 import Rewards from './pages/Rewards';
@@ -20,33 +18,40 @@ import ProtectedRoute from './Components/ProtectedRoute';
 import RewardForm from './Components/RewardForm';
 import PunchCardAdmin from './pages/PunchCardAdmin';
 import AddQR from './pages/AddQR';
+import Footer from './Components/Footer';
 
 function App() {
   return (
     <>
-      <NavBar />
-      <FetchUser>
-        <Container style={{ paddingTop: '20px' }}>
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/edit_user' component={EditUser} />
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/rewards' component={Rewards} />
-            <Route exact path='/register' component={Register} />
-            <Route exact path='/landing' component={Landing} />
-            <Route exact path='/earn/:userpunchcard_id' component={Earn} />
-            <Route exact path='/search' component={Search} />
-            <Route exact path='/scan_result' component={ScanResult} />
-            <Route exact path='/addQR/:user_id/:punchcard_id' component={AddQR} />
-            <Route exact path='/punchcardAdmin/:user_id/:userpunchcard_id' component={PunchCardAdmin} />
-            <Route exact path='/dashboard' component={Dashboard} />
-            <ProtectedRoute exact path='/rewards' component={Rewards} />
-            <ProtectedRoute exact path='/rewardform' component={RewardForm} />
-            <Route component={NoMatch} />
-          </Switch>
-        </Container>
-      </FetchUser>
-
+      <div className="page-container">
+        <div className="content-wrap">
+          <NavBar />
+          <div>
+          <FetchUser>
+          <Container style={{ paddingTop: '20px' }}>
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route exact path='/edit_user' component={EditUser} />
+              <Route exact path='/login' component={Login} />
+              <Route exact path='/rewards' component={Rewards} />
+              <Route exact path='/register' component={Register} />
+              <Route exact path='/landing' component={Landing} />
+              <Route exact path='/earn/:userpunchcard_id' component={Earn} />
+              <Route exact path='/search' component={Search} />
+              <Route exact path='/scan_result' component={ScanResult} />
+              <Route exact path='/addQR/:user_id/:punchcard_id' component={AddQR} />
+              <Route exact path='/punchcardAdmin/:user_id/:userpunchcard_id' component={PunchCardAdmin} />
+              <Route exact path='/dashboard' component={Dashboard} />
+              <ProtectedRoute exact path='/rewards' component={Rewards} />
+              <ProtectedRoute exact path='/rewardform' component={RewardForm} />
+              <Route component={NoMatch} />
+            </Switch>
+          </Container>
+          </FetchUser>
+          </div>
+        </div>
+        <Footer />
+      </div>
     </>
   );
 }
