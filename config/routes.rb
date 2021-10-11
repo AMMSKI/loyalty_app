@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace :api do
     resources :users do
-      resources :restaurants do
-        resources :punchcards do  
-          resources :user_punchcard do
+      resources :user_punchcard do
+        resources :restaurants do
+          resources :punchcards do   
           end
         end
       end

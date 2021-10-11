@@ -15,6 +15,14 @@ class Api::UserPunchcardController < ApplicationController
     render json: UserPunchcard.rewards_show(params[:punchcard_id])
   end
 
+  def update
+    if(@userPunchcard.update(userPunchcard_params))
+      render json: @userPunchcard
+    else
+      render json: @userPunchcard.errors, status: 422
+    end
+  end
+
   def create
     @user_punchcard = UserPunchcard.new(userPunchcard_params)
 

@@ -42,7 +42,7 @@ const NavBar = () => {
   };
 
   const customNavItems = () => {
-    if (user && user.account_type === 'Business' && authenticated) {
+    if (user && user.account_type === 'business' && authenticated) {
       return (
         <>
           <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
@@ -57,7 +57,7 @@ const NavBar = () => {
           </Menu.Item>
         </>
       );
-    } else if (user && user.account_type === 'Customer' && authenticated) {
+    } else if (user && user.account_type === 'customer' && authenticated) {
       return (
         <>
           <Menu.Item fitted="horizontally" as='a'>
