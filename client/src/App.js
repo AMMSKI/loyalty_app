@@ -6,12 +6,9 @@ import Home from './pages/Home';
 import NoMatch from './Components/NoMatch';
 import Login from './Components/Login';
 import Register from './Components/Register';
-
-
 import EditUser from './Components/EditUser'
 import FetchUser from './Components/FetchUser';
 import Rewards from './pages/Rewards';
-
 import Landing from './pages/Landing';
 import Earn from './pages/Earn';
 import Search from './pages/Search'
@@ -40,7 +37,7 @@ function App() {
             <Route exact path='/scan_result' component={ScanResult} />
             <Route exact path='/showQR' component={ShowQR} />
             <Route exact path='/dashboard' component={Dashboard} />
-            <Route exact path='/employee' component={EmployeeView} />
+            <Route exact path='/employeeview/:punch_id' component={EmployeeView} />
 
 
 

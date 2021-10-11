@@ -2,17 +2,17 @@ class UserPunchcard < ApplicationRecord
   belongs_to :user
   belongs_to :punchcard
 
-  up.id AS userpunch_id, up.current_points, u.name 
-  FROM user_punchcards as up 
-  INNER JOIN users AS u ON u.id = up.user_id
-
-  def self.view_customers(up_id)
-    select('up.id AS userpunch_id, up.current_points, u.name')
+  def self.view_punchcard_customers(punch_id)
+    # SELECT up.id, up.user_id, up.punchcard_id, u.name, up.current_points
+    # FROM user_punchcards AS up
+    # INNER JOIN users AS u ON up.user_id = u.id
+    # WHERE punchcard_id = 31
+    select('up.id, up.user_id, up.punchcard_id, u.name, up.current_points')
     .from('user_punchcards AS up')
-    .joins('INNERJOIN users AS u ON u.id = up.user_id')
-    .where('up.id = (?)', up_id)
+    .joins('INNER JOIN users AS u ON up.user_id = u.id')
+    .where('punchcard_id = (?) AND current_points IS NOT NULL', punch_id )
   end
-  
+
 
   def self.punchcard_show(userpunchcard_id)
     # SELECT p.id AS punchcard_id, up.id AS userpunchcard_id, p.description AS punch_description, p.restaurant_id AS restaurant_id, r.name AS restaurant_name, up.current_points
