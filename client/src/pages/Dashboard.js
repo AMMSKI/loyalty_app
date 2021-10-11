@@ -22,7 +22,6 @@ const Dashboard = () => {
   const getPunchcards = async()=> {
     try{
       let res = await axios.get(`/api/user/${user.id}/punchcard_by_user`)
-      console.log(res.data)
       setPunchcards(res.data)
       setSearchPunchcards(res.data)
     }catch(err){
