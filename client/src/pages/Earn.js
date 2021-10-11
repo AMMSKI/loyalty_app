@@ -69,7 +69,7 @@ const Earn = (props) => {
           </div>
         <div>
         {/* <MyLink to={`/earn/${p.up_id}`} userpunchcard_id={p.up_id}> */}
-          <Link to={`/showqr/${user.id}/${userpunchcard_id}`} user_id={user.id} userpunchcard_id={userpunchcard_id}>
+          <Link to={`/addQR/${user.id}/${userpunchcard_id}`} user_id={user.id} userpunchcard_id={userpunchcard_id}>
             <button >Earn Points QR</button>
           </Link>
         </div> 

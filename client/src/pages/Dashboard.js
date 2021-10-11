@@ -57,8 +57,8 @@ const Dashboard = () => {
           <Card.Title>
           <h1>{p.restaurant_name}</h1>
           </Card.Title>
-          <p>You have {p.current_points ? p.current_points : '0'} points</p>
-          <p>id: {p.punchcard_id}</p><br/>
+          <p>{p.current_points ? p.current_points : '0'} points</p>
+          <br/>
           </MyLink>
           <Card.Footer style={{backgroundColor:'#2185D0'}} onClick={()=>deletePunchcard(p.up_id)}><Icon name='trash'/>Remove</Card.Footer>
           </Card.Body>

@@ -4,7 +4,7 @@ import {Card} from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider';
 import MyCard from '../Components/MyCard';
 import SearchBar from '../Components/SearchBar';
-import ShowQR from './ShowQR'
+import AddQR from './AddQR'
 
 
 const Search = () => {

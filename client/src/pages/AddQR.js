@@ -4,7 +4,7 @@ import QRCode from "react-qr-code"
 
 
 
-const ShowQR = (props) => {
+const AddQR = (props) => {
   const user_id = props.match.params.user_id
   const punchcard_id = props.match.params.punchcard_id
   const url = `localhost:3000/punchcardAdmin/${user_id}/${punchcard_id}`
@@ -26,4 +26,4 @@ const ShowQR = (props) => {
 
 }
 
-export default ShowQR
+export default AddQR

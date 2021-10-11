@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../providers/AuthProvider'
 
-const TestPunchCardAddPoints = (props) => {
+const PunchCardAdmin = (props) => {
   const { user } = useContext(AuthContext)
   const customer_id = props.match.params.user_id
   const userpunchcard_id = props.match.params.userpunchcard_id
@@ -38,8 +38,10 @@ const TestPunchCardAddPoints = (props) => {
       <h1>customer id: {customer_id}</h1>
       <h1>punchcard id: {userpunchcard_id}</h1>
       <button onClick={()=>updatePoints(5)}>Add 5 points</button>
+      <button onClick={()=>updatePoints(10)}>Add 10 points</button>
+      <button onClick={()=>updatePoints(15)}>Add 15 points</button>
     </div>
   )
 }
 
-export default TestPunchCardAddPoints
+export default PunchCardAdmin
