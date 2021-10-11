@@ -37,9 +37,11 @@ function App() {
             <Route exact path='/earn/:userpunchcard_id' component={Earn} />
             <Route exact path='/search' component={Search} />
             <Route exact path='/scan_result' component={ScanResult} />
+            <Route exact path='/addQR/:user_id/:punchcard_id' component={AddQR} />
+            <Route exact path='/punchcardAdmin/:user_id/:userpunchcard_id' component={PunchCardAdmin} />
+            <Route exact path='/showQR' component={AddQR} />
             <Route exact path='/dashboard' component={Dashboard} />
             <Route exact path='/employeeview/:punch_id' component={EmployeeView} />
-
 
             <ProtectedRoute exact path='/rewards' component={Rewards} />
             <ProtectedRoute exact path='/rewardform' component={RewardForm} />
@@ -47,6 +49,8 @@ function App() {
           </Switch>
         </Container>
       </FetchUser>
+    <Footer />  
+
     </>
   );
 }
