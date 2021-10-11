@@ -13,11 +13,13 @@ import Landing from './pages/Landing';
 import Earn from './pages/Earn';
 import Search from './pages/Search'
 import ScanResult from './pages/ScanResult'
-import ShowQR from './pages/ShowQR'
 import Dashboard from './pages/Dashboard'
 import ProtectedRoute from './Components/ProtectedRoute';
 import EmployeeView from './Components/EmployeeView';
 import RewardForm from './Components/RewardForm';
+import PunchCardAdmin from './pages/PunchCardAdmin';
+import AddQR from './pages/AddQR';
+import Footer from './Components/Footer';
 
 function App() {
   return (
@@ -35,19 +37,24 @@ function App() {
             <Route exact path='/earn/:userpunchcard_id' component={Earn} />
             <Route exact path='/search' component={Search} />
             <Route exact path='/scan_result' component={ScanResult} />
+            <Route exact path='/addQR/:user_id/:punchcard_id' component={AddQR} />
+            <Route exact path='/punchcardAdmin/:user_id/:userpunchcard_id' component={PunchCardAdmin} />
             <Route exact path='/showQR' component={ShowQR} />
             <Route exact path='/dashboard' component={Dashboard} />
             <Route exact path='/employeeview/:punch_id' component={EmployeeView} />
 
 
 
-            <Route component={NoMatch} />
             <ProtectedRoute exact path='/rewards' component={Rewards} />
             <ProtectedRoute exact path='/rewardform' component={RewardForm} />
             <Route component={NoMatch} />
           </Switch>
         </Container>
       </FetchUser>
+      </div>
+        <Footer />
+      </div>  
+
     </>
   );
 }
