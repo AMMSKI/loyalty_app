@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :users do
       resources :user_punchcard do
         resources :restaurants do
-          resources :punchcards do  
+          resources :punchcards do   
           end
         end
       end
