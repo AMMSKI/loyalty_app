@@ -50,14 +50,13 @@ const Dashboard = () => {
   const renderPunchcards = () => {
     return searchPunchcards.map((p)=>{
       return (
-        <div style={{padding:'10px'}}>
+        <div style={{padding:'10px', textAlign:'center'}}>
           <Card>
             <Card.Body>
           <MyLink to={`/earn/${p.up_id}`} userpunchcard_id={p.up_id}>
           <Card.Title>
           <h1>{p.restaurant_name}</h1>
           </Card.Title>
-          <p>{p.punch_descrip}</p>
           <p>You have {p.current_points ? p.current_points : '0'} points</p>
           <p>id: {p.punchcard_id}</p><br/>
           </MyLink>

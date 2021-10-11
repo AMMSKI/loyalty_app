@@ -43,11 +43,11 @@ const MyCard = (props) => {
     <Card>
     <MyLink to={`/dashboard`}>
       <Card.Body>
+        <Card.Img src={props.logo}/>
         <Card.Title>
       <h1>{props.restaurant_name}</h1>
       </Card.Title>
       <Card.Text>
-        <p>{props.description}</p>
         <p>id: {props.punch_id}</p>
         </Card.Text>
       </Card.Body>
