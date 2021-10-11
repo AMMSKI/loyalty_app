@@ -20,6 +20,7 @@ import ShowQR from './pages/ShowQR'
 import Dashboard from './pages/Dashboard'
 import ProtectedRoute from './Components/ProtectedRoute';
 import RewardForm from './Components/RewardForm';
+import TestPunchCardAddPoints from './pages/TestPunchCardAddPoints';
 
 function App() {
   return (
@@ -37,7 +38,8 @@ function App() {
             <Route exact path='/earn/:userpunchcard_id' component={Earn} />
             <Route exact path='/search' component={Search} />
             <Route exact path='/scan_result' component={ScanResult} />
-            <Route exact path='/showQR' component={ShowQR} />
+            <Route exact path='/showQR/:user_id/:punchcard_id' component={ShowQR} />
+            <Route exact path='/punchcardAdmin/:user_id/:userpunchcard_id' component={TestPunchCardAddPoints} />
             <Route exact path='/dashboard' component={Dashboard} />
             <ProtectedRoute exact path='/rewards' component={Rewards} />
             <ProtectedRoute exact path='/rewardform' component={RewardForm} />

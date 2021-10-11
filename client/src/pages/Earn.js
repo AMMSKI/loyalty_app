@@ -8,6 +8,7 @@ const Earn = (props) => {
   const { user } = useContext(AuthContext)
   const [punchcardData, setPunchcardData] = useState([])
   const [ownedCards, setOwnedCards] = useState([])
+  const userpunchcard_id = props.match.params.userpunchcard_id
 
   useEffect(()=>{
     getData()
@@ -15,7 +16,6 @@ const Earn = (props) => {
   },[])
 
   const getData = async() => {
-    const userpunchcard_id = props.match.params.userpunchcard_id
     try {
       let res = await axios.get(`/api/users/${user.id}/user_punchcard/${userpunchcard_id}`)
       setPunchcardData(res.data)
@@ -68,7 +68,8 @@ const Earn = (props) => {
             </div>
           </div>
         <div>
-          <Link to="/showqr">
+        {/* <MyLink to={`/earn/${p.up_id}`} userpunchcard_id={p.up_id}> */}
+          <Link to={`/showqr/${user.id}/${userpunchcard_id}`} user_id={user.id} userpunchcard_id={userpunchcard_id}>
             <button >Earn Points QR</button>
           </Link>
         </div> 
