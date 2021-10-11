@@ -9,11 +9,6 @@ const Earn = (props) => {
   const [punchcardData, setPunchcardData] = useState([])
   const [ownedCards, setOwnedCards] = useState([])
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 6166a67cf40a0599ceb85077bd15a5985c710ac2
   useEffect(()=>{
     getData()
     getOwnedCards()
