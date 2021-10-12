@@ -73,7 +73,7 @@ const Earn = (props) => {
         </div> 
         <br /> 
         <hr />
-        <CustomerRewards {...punchcardData} />
+        <CustomerRewards punchcardData={punchcardData} userpunchcard_id={userpunchcard_id}/>
       </div>
     </div>
   )

@@ -6,8 +6,8 @@ import QRCode from "react-qr-code"
 
 const RewardQR = (props) => {
   const reward_id = props.match.params.reward_id
-  const punchcard_id = props.match.params.punchcard_id
-  const url = `localhost:3000/punchcardAdmin/${reward_id}/${punchcard_id}`
+  const userpunchcard_id = props.match.params.punchcard_id
+  const url = `localhost:3000/rewardAdmin/${reward_id}/${userpunchcard_id}`
 
   const copy = async (url) => {
     await navigator.clipboard.writeText(url)

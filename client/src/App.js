@@ -21,6 +21,7 @@ import PunchCardAdmin from './pages/PunchCardAdmin';
 import AddQR from './pages/AddQR';
 import Footer from './Components/Footer';
 import RewardQR from './pages/RewardQR';
+import RewardAdmin from './pages/RewardAdmin';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             <Route exact path='/addQR/:user_id/:punchcard_id' component={AddQR} />
             <Route exact path='/rewardQR/:reward_id/:punchcard_id' component={RewardQR} />
             <Route exact path='/punchcardAdmin/:user_id/:userpunchcard_id' component={PunchCardAdmin} />
+            <Route exact path='/rewardAdmin/:reward_id/:userpunchcard_id' component={RewardAdmin} />
             <Route exact path='/AddQR' component={AddQR} />
             <Route exact path='/dashboard' component={Dashboard} />
             <Route exact path='/employeeview/:punch_id' component={EmployeeView} />
