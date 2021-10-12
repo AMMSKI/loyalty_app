@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 
 
 const CustomerRewards = (props) => {
-  console.log('prps',props)
   const [rewards, setRewards] = useState([])
   
   const getRewards = async () => {
@@ -33,6 +32,7 @@ const CustomerRewards = (props) => {
 
             {r.cost < props.punchcardData.current_points ?
               <Link to={`/rewardQR/${r.id}/${props.userpunchcard_id}`} reward_id={r.id} userpunchcard_id={props.userpunchcard_id} > 
+
                 <Card.Footer>
                   Cash In Reward
                 </Card.Footer> 

@@ -2532,6 +2532,11 @@ anymatch@^3.0.3, anymatch@~3.1.1:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
+app-reset@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/app-reset/-/app-reset-1.0.2.tgz#36620a2624bc9b6ddfcb1a90337b8c167071f7a3"
+  integrity sha1-NmIKJiS8m23fyxqQM3uMFnBx96M=
+
 aproba@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/aproba/-/aproba-1.2.0.tgz#6802e6264efd18c790a1b0d517f0f2627bf2c94a"
