@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
       p.total_points AS needed_points,
       p.description AS punch_descrip,
       p.restaurant_id,
+      p.logo,
       r.name AS restaurant_name')
     .from('users AS u')
     .joins('INNER JOIN user_punchcards AS up ON up.user_id = u.id

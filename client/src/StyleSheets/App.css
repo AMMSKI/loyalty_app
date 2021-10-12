@@ -155,4 +155,22 @@
 
 .content {
   margin: 20px;
-} */
+
+}
+
+.searchCard{
+  text-align: center;
+  display: flex;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.nameCol{
+  text-align: center;
+  padding: 10%;  
+}
+.nameCol1{
+  text-align: center; 
+  padding-top: 20px; 
+}
+
