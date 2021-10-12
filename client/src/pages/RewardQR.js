@@ -5,8 +5,9 @@ import QRCode from "react-qr-code"
 
 
 const RewardQR = (props) => {
+  console.log('qr props',props)
   const reward_id = props.match.params.reward_id
-  const userpunchcard_id = props.match.params.punchcard_id
+  const userpunchcard_id = props.match.params.userpunchcard_id
   const url = `localhost:3000/rewardAdmin/${reward_id}/${userpunchcard_id}`
 
   const copy = async (url) => {

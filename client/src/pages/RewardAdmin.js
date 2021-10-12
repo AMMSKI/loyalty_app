@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-// rewardAdmin/:reward_id/:punchcard_id\
+import { Card, Button } from "react-bootstrap";
 
 
 const RewardAdmin = (props) => {
@@ -38,17 +38,24 @@ const RewardAdmin = (props) => {
       let res = await axios.put(`/api/users/null/user_punchcard/${userpunchcard_id}`, {current_points:points})
       console.log(res)
       setCurrentPoints(points)
+      alert('Reward Charged')
     }catch(err){
       console.log(err)
     }
   }
 
   return (
-    <div>
-      <h1>{reward.name}</h1>
-      <h3>cost: {reward.cost}</h3>
-      <p>{reward.description}</p>
-      <button onClick={()=>chargeReward(reward.cost)}>Charge Reward</button>
+    <div className="jumbotron text-center">
+      <Card>
+            <Card.Body>
+              <h1>{reward.name}</h1>
+              <h3>cost: {reward.cost}</h3>
+              <Card.Text>
+                <p>{reward.description}</p>
+              </Card.Text>
+              <Button onClick={()=>chargeReward(reward.cost)}>Charge Reward</Button>
+            </Card.Body>
+      </Card>
     </div>
   )
 }

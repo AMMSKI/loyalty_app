@@ -32,7 +32,7 @@ const CustomerRewards = (props) => {
             </Card.Body>
 
             {r.cost < props.punchcardData.current_points ?
-              <Link to={`/rewardQR/${r.id}/${props.userpunchcard_id}`} reward_id={r.id} punchcard_id={props.userpunchcard_id} > 
+              <Link to={`/rewardQR/${r.id}/${props.userpunchcard_id}`} reward_id={r.id} userpunchcard_id={props.userpunchcard_id} > 
                 <Card.Footer>
                   Cash In Reward
                 </Card.Footer> 

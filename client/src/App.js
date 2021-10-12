@@ -42,7 +42,7 @@ function App() {
             <Route exact path='/search' component={Search} />
             <Route exact path='/scan_result' component={ScanResult} />
             <Route exact path='/addQR/:user_id/:punchcard_id' component={AddQR} />
-            <Route exact path='/rewardQR/:reward_id/:punchcard_id' component={RewardQR} />
+            <Route exact path='/rewardQR/:reward_id/:userpunchcard_id' component={RewardQR} />
             <Route exact path='/punchcardAdmin/:user_id/:userpunchcard_id' component={PunchCardAdmin} />
             <Route exact path='/rewardAdmin/:reward_id/:userpunchcard_id' component={RewardAdmin} />
             <Route exact path='/AddQR' component={AddQR} />
