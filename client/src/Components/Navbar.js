@@ -76,7 +76,7 @@ const NavBar = () => {
   }
 
   return (
-    <Sticky>
+    // <Sticky>
       <Menu stackable inverted color='blue'>
         <Menu.Item style={{ height: "50px" }} as='a' header>
           <Image size='mini' src='/logo192.png' style={{ marginRight: '1.5em' }} />
@@ -104,7 +104,7 @@ const NavBar = () => {
           {rightNavItems()}
         </Menu.Menu>
       </Menu>
-    </Sticky>
+    // </Sticky>
   )
 }
 

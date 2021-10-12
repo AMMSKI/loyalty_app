@@ -3,6 +3,7 @@ import axios from 'axios';
 import { AuthContext } from '../providers/AuthProvider'
 import { Link } from 'react-router-dom'
 import '../StyleSheets/App.css'
+import CustomerRewards from './CustomerRewards';
 
 const Earn = (props) => {
   const { user } = useContext(AuthContext)
@@ -72,7 +73,7 @@ const Earn = (props) => {
         </div> 
         <br /> 
         <hr />
-        <h5>Rewards</h5>
+        <CustomerRewards {...punchcardData} />
       </div>
     </div>
   )

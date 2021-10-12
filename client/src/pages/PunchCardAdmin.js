@@ -4,6 +4,7 @@ import { AuthContext } from '../providers/AuthProvider'
 
 const PunchCardAdmin = (props) => {
   const { user } = useContext(AuthContext)
+  console.log(props)
   const customer_id = props.match.params.user_id
   const userpunchcard_id = props.match.params.userpunchcard_id
   const [currentPoints, setCurrentPoints] = useState(null)

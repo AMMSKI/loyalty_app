@@ -57,7 +57,7 @@ rests = [rest, rest2,rest3,rest4]
 punches = [punch, punch2, punch3, punch4, punch5, punch6, punch7, punch8, punch9, punch1]
 
     15.times do
-      reward = Reward.create(name:'reward', description:Faker::Restaurant.description, punchcard_id:punches[rand(10)].id, cost:rand(10))
+      reward = Reward.create(name:'reward', description:Faker::Restaurant.description, punchcard_id:punches[rand(10)].id, cost:rand(100))
       end
   
   15.times do
