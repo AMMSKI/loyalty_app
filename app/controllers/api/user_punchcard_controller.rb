@@ -7,12 +7,24 @@ class Api::UserPunchcardController < ApplicationController
     render json: user_punchcards
   end
 
+  def view_punchcard_customers
+    render json: UserPunchcard.view_punchcard_customers(params[:punch_id])
+  end
+
   def show
     render json: UserPunchcard.punchcard_show(params[:id])[0]
   end
 
   def show_rewards
     render json: UserPunchcard.rewards_show(params[:punchcard_id])
+  end
+
+  def update
+    if(@userPunchcard.update(userPunchcard_params))
+      render json: @userPunchcard
+    else
+      render json: @userPunchcard.errors, status: 422
+    end
   end
 
   def create

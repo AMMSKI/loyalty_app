@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Dropdown, Button, Icon, Image, Menu, Sticky, Grid } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import { useHistory, useLocation } from 'react-router'
-// import '../StyleSheets/App.css'
+import '../StyleSheets/App.css'
 import '../StyleSheets/Navbar.css'
 
 const NavBar = () => {
@@ -52,7 +52,7 @@ const NavBar = () => {
   };
 
   const customNavItems = () => {
-    if (user && user.account_type === 'Business' && authenticated) {
+    if (user && user.account_type === 'business' && authenticated) {
       return (
         <>
           <Menu.Item as='a' onClick={(e) => handleClick(e, '/rewards')}>
@@ -63,7 +63,7 @@ const NavBar = () => {
           </Menu.Item>
         </>
       );
-    } else if (user && user.account_type === 'Customer' && authenticated) {
+    } else if (user && user.account_type === 'customer' && authenticated) {
       return (
         <>
           <Menu.Item as='a' onClick={(e) => handleClick(e, '/dashboard')}>
@@ -81,13 +81,28 @@ const NavBar = () => {
   }
 
   return (
-    <Sticky stackable>
+    <Sticky>
       <Grid class="row no-gutter">
         <Grid.Row className='GridRow'>
           <Menu size='small' tabular inverted color='blue'>
             <Menu.Item as='a' header>
               <Image avatar src='/logo192.png' style={{ marginRight: '0.8em' }} />
               LoyaltyApp
+            </Menu.Item>
+            <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
+              <Link className='LinkNavbar' to='/profile'>
+                Profile
+              </Link>
+            </Menu.Item>
+            <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
+              <Link className='LinkNavbar' to='/dashboard'>
+                Dashboard
+              </Link>
+            </Menu.Item>
+            <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
+              <Link className='LinkNavbar' to='/search'>
+                Search
+              </Link>
             </Menu.Item>
             <Menu.Menu position="right">
               {rightNavItems()}
@@ -103,6 +118,5 @@ const NavBar = () => {
     </Sticky>
   )
 }
-
 
 export default NavBar
