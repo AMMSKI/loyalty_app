@@ -5,7 +5,7 @@ import { AuthContext } from '../providers/AuthProvider'
 
 const Login = () => {
   const { handleLogin } = useContext(AuthContext)
-  const [email, setEmail] = useState('test@test.com')
+  const [email, setEmail] = useState('rafabriones88@outlook.com')
   const [password, setPassword] = useState('123456')
   const history = useHistory()
 
@@ -14,14 +14,16 @@ const Login = () => {
     handleLogin({ email, password }, history)
   }
   return (
-    <Grid textAlign='center' style={{ height: '90vh' }} verticalAlign='middle'>
+    <Grid style={{ height: '54vh' }} centered verticalAlign='middle'>
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as='h2' color='blue' textAlign='center'>
-          <Image src='/logo512.png' /> Log-in to your account
+        <Header as='h2' color='blue' textAlign='left'>
+          Welcome
+          <br />to Loyalty App
         </Header>
         <Form onSubmit={handleSubmit} size='large'>
           <Segment stacked>
             <Form.Input
+              label="Email"
               fluid icon='user'
               iconPosition='left'
               placeholder='E-mail address'
@@ -29,6 +31,7 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
             <Form.Input
+              label="Password"
               fluid
               icon='lock'
               iconPosition='left'

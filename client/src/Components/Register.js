@@ -6,12 +6,22 @@ import ErrorMessage from './ErrorMessage';
 
 const Register = () => {
   const { handleRegister, error, loading } = useContext(AuthContext)
-  const [name, setName] = useState('test')
+  const [name, setName] = useState('Business')
   const [account_type, setAccount_Type] = useState('Business')
-  const [email, setEmail] = useState('test@test.com')
+  const [email, setEmail] = useState('business@test.com')
   const [password, setPassword] = useState('123456')
   const [passwordConfirmation, setPasswordConfirmation] = useState('123456')
   const history = useHistory()
+
+  const dropOptions = [
+    { key: 'business', text: 'Business', value: 'Business' },
+    { key: 'customer', text: 'Customer', value: 'Customer' },
+  ]
+
+  const handleChange = (e, { value }) => {
+    console.log(value)
+    setAccount_Type(value);
+  };
 
   const handleSubmit = (e) => {
     if (password === passwordConfirmation) {
@@ -25,28 +35,27 @@ const Register = () => {
   return (
     <div>
       {error && <ErrorMessage header="Could not Register" error={error} />}
-      <Grid textAlign='center' style={{ height: '90vh' }} verticalAlign='middle'>
+      <Grid textAlign='center' style={{ height: '54vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as='h2' mini color='blue' textAlign='center'>
-            <Image src='/logo512.png' /> Register new account
+            <Image src='/logo512.png' /> Register new profile
           </Header>
           <Form size='large' onSubmit={handleSubmit}>
             <Segment stacked>
               <Form.Input
                 // label="Name"
+                required
                 fluid icon='user'
                 iconPosition='left'
                 placeholder='Name'
                 // value={name}
                 onChange={(e) => setName(e.target.value)}
               />
-              <Form.Input
-                // label="Account Type"
-                fluid icon='building'
-                iconPosition='left'
+              <Form.Dropdown
+                search selection options={dropOptions} //objects
                 placeholder='Account Type'
                 // value={account_type}
-                onChange={(e) => setAccount_Type(e.target.value)}
+                onChange={handleChange}
               />
               <Form.Input
                 // label="Email"
