@@ -9,7 +9,6 @@ import Register from './Components/Register';
 import EditUser from './Components/EditUser'
 import FetchUser from './Components/FetchUser';
 import Rewards from './pages/Rewards';
-import Landing from './pages/Landing';
 import Earn from './pages/Earn';
 import Search from './pages/Search'
 import ScanResult from './pages/ScanResult'
@@ -18,6 +17,7 @@ import Dashboard from './pages/Dashboard'
 import ProtectedRoute from './Components/ProtectedRoute';
 import RewardForm from './Components/RewardForm';
 import Footer from './Components/Footer';
+import Landing from './pages/Landing';
 
 function App() {
   return (
@@ -27,14 +27,13 @@ function App() {
           <NavBar />
           <div>
             <FetchUser>
-              <Container style={{ paddingTop: '20px' }}>
+              <Container style={{ paddingTop: '30px' }}>
                 <Switch>
-                  <Route exact path='/' component={Home} />
-                  <Route exact path='/edit_user' component={EditUser} />
+                  <Route exact path='/' component={Landing} />
+                  <ProtectedRoute exact path='/home' component={Home} />
                   <Route exact path='/login' component={Login} />
-                  <Route exact path='/rewards' component={Rewards} />
                   <Route exact path='/register' component={Register} />
-                  <Route exact path='/landing' component={Landing} />
+                  <Route exact path='/edit_user' component={EditUser} />
                   <Route exact path='/earn/:userpunchcard_id' component={Earn} />
                   <Route exact path='/search' component={Search} />
                   <Route exact path='/scan_result' component={ScanResult} />

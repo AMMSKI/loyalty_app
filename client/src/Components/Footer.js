@@ -1,10 +1,6 @@
 import React from 'react'
-// import { Link } from 'react-router-dom';
 import {
   Container,
-  Divider,
-  Grid,
-  Header,
   Image,
   List,
   Segment,
@@ -13,35 +9,15 @@ import {
 
 const Footer = () => {
   return (
-    <Sticky>
+    <Sticky stackable>
       <div style={styles.Footer}>
-        <Segment inverted color='blue' vertical style={{ margin: '8em 0em 0em', padding: '1em 0em' }}>
+        <Segment fluid inverted color='blue' vertical style={{ margin: '8em 0em 0em', padding: '0.3em 0em' }}>
           <Container textAlign='center'>
-            <Grid divided inverted stackable>
-              <Grid.Column width={8}>
-                <Header inverted as='h4' content='Group - Hackathones' />
-                <List link inverted>
-                  <List.Item as='a'>Alan</List.Item>
-                  <List.Item as='a'>Elise</List.Item>
-                  <List.Item as='a'>Lee</List.Item>
-                  <List.Item as='a'>Rafael</List.Item>
-                  <List.Item as='a'>Kelsey</List.Item>
-                </List>
-              </Grid.Column>
-              <Grid.Column width={8}>
-                <Header inverted as='h4' />
-                <p>
-                  <br />
-                  Our hapiness..
-                </p>
-              </Grid.Column>
-            </Grid>
-
-            <Divider inverted section />
-            <Image centered size='mini' src='/logo192.png' />
-            <List horizontal inverted divided link size='small'>
-
-              <List.Item as='a' href='#'>
+            <Image centered size='mini' src='/logo192.png' href='/' />
+            <br />
+            <List style={styles.List} horizontal inverted divided link size='small'>
+              &copy; Copyright 2021, Loyalty Corporation |&nbsp;
+              <List.Item as='a' href='mailto:rbrionesdev@outlook.com'>
                 Contact Us
               </List.Item>
             </List>
@@ -60,6 +36,9 @@ const styles = {
     bottom: "0",
     width: "100%",
   },
+  List: {
+    marginTop: "3px",
+  }
 };
 
 export default Footer;
