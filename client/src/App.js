@@ -20,6 +20,7 @@ import RewardForm from './Components/RewardForm';
 import PunchCardAdmin from './pages/PunchCardAdmin';
 import AddQR from './pages/AddQR';
 import Footer from './Components/Footer';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Container style={{ paddingTop: '20px' }}>
           <Switch>
             <Route exact path='/' component={Home} />
+            <Route exact path='/profile' component={Profile} />
             <Route exact path='/edit_user' component={EditUser} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/rewards' component={Rewards} />

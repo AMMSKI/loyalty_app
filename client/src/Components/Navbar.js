@@ -76,7 +76,7 @@ const NavBar = () => {
   }
 
   return (
-    <Sticky>
+    // <Sticky>
       <Menu stackable inverted color='blue'>
         <Menu.Item style={{ height: "50px" }} as='a' header>
           <Image size='mini' src='/logo192.png' style={{ marginRight: '1.5em' }} />
@@ -85,6 +85,11 @@ const NavBar = () => {
         <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
           <Link className='LinkNavbar' to='/'>
             Home
+          </Link>
+        </Menu.Item>
+        <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
+          <Link className='LinkNavbar' to='/profile'>
+            Profile
           </Link>
         </Menu.Item>
         <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
@@ -104,7 +109,7 @@ const NavBar = () => {
           {rightNavItems()}
         </Menu.Menu>
       </Menu>
-    </Sticky>
+    // </Sticky>
   )
 }
 
