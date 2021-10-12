@@ -21,6 +21,7 @@ import PunchCardAdmin from './pages/PunchCardAdmin';
 import AddQR from './pages/AddQR';
 import Footer from './Components/Footer';
 import Profile from './pages/Profile';
+import ProfileUpload from './pages/ProfileUpload';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
             <Route exact path='/showQR' component={AddQR} />
             <Route exact path='/dashboard' component={Dashboard} />
             <Route exact path='/employeeview/:punch_id' component={EmployeeView} />
+            <Route exact path='/profileupload/:user_id' component={ProfileUpload} />
 
             <ProtectedRoute exact path='/rewards' component={Rewards} />
             <ProtectedRoute exact path='/rewardform' component={RewardForm} />

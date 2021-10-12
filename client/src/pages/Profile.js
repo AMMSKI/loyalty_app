@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { Card, CardContent, Grid, Icon, Image, Menu, Segment, Table } from 'semantic-ui-react';
 import styled from 'styled-components';
 import { AuthContext } from '../providers/AuthProvider';
@@ -13,8 +14,13 @@ const Profile = () => {
   return (
     <>
       <BorderlessCard centered>
-        <CardContent textAlign="center" >
-          <Image src="https://clubsports.gcu.edu/wp-content/uploads/Coach-Avator.png" style={{ width: "120px" }} />
+        <CardContent textAlign="center">
+          <Link to={`/profileupload/${user.id}`}>
+          <Icon.Group size="huge">
+            <Icon name="user" color="black"/>
+           <Icon link corner name="edit outline"color="black"/>
+          </Icon.Group>
+          </Link>
           {user ?
             <div>
               <h2 style={{color:"#328FD4", fontWeight:"bold"}}>{user.name}</h2>
