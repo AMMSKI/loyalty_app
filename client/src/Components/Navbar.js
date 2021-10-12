@@ -81,25 +81,26 @@ const NavBar = () => {
   }
 
   return (
-    <Grid class="row no-gutter">
-      <Grid.Row className='GridRow'>
-        <Menu size='small' tabular inverted color='blue'>
-          <Menu.Item as='a' header>
-            <Image avatar src='/logo192.png' style={{ marginRight: '0.8em' }} />
-            LoyaltyApp
-          </Menu.Item>
-          <Menu.Menu position="right">
-            {rightNavItems()}
-          </Menu.Menu>
-        </Menu>
-      </Grid.Row>
-      <Grid.Row className='GridRow'>
-        <Menu size='small' tabular inverted color='blue'>
-          {customNavItems()}
-        </Menu>
-      </Grid.Row>
-
-    </Grid>
+    <Sticky stackable>
+      <Grid class="row no-gutter">
+        <Grid.Row className='GridRow'>
+          <Menu size='small' tabular inverted color='blue'>
+            <Menu.Item as='a' header>
+              <Image avatar src='/logo192.png' style={{ marginRight: '0.8em' }} />
+              LoyaltyApp
+            </Menu.Item>
+            <Menu.Menu position="right">
+              {rightNavItems()}
+            </Menu.Menu>
+          </Menu>
+        </Grid.Row>
+        <Grid.Row className='GridRow'>
+          <Menu size='small' tabular inverted color='blue'>
+            {customNavItems()}
+          </Menu>
+        </Grid.Row>
+      </Grid>
+    </Sticky>
   )
 }
 
