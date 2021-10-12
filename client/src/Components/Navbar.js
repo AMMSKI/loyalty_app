@@ -88,6 +88,11 @@ const NavBar = () => {
           </Link>
         </Menu.Item>
         <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
+          <Link className='LinkNavbar' to='/profile'>
+            Profile
+          </Link>
+        </Menu.Item>
+        <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
           <Link className='LinkNavbar' to='/dashboard'>
             Dashboard
           </Link>

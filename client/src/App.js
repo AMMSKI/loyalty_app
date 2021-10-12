@@ -22,6 +22,7 @@ import AddQR from './pages/AddQR';
 import Footer from './Components/Footer';
 import RewardQR from './pages/RewardQR';
 import RewardAdmin from './pages/RewardAdmin';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Container style={{ paddingTop: '20px' }}>
           <Switch>
             <Route exact path='/' component={Home} />
+            <Route exact path='/profile' component={Profile} />
             <Route exact path='/edit_user' component={EditUser} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/rewards' component={Rewards} />
@@ -44,12 +46,11 @@ function App() {
             <Route exact path='/addQR/:user_id/:punchcard_id' component={AddQR} />
             <Route exact path='/rewardQR/:reward_id/:userpunchcard_id' component={RewardQR} />
             <Route exact path='/punchcardAdmin/:user_id/:userpunchcard_id' component={PunchCardAdmin} />
+
             <Route exact path='/rewardAdmin/:reward_id/:userpunchcard_id' component={RewardAdmin} />
-            <Route exact path='/AddQR' component={AddQR} />
+           
             <Route exact path='/dashboard' component={Dashboard} />
             <Route exact path='/employeeview/:punch_id' component={EmployeeView} />
-
-
 
             <ProtectedRoute exact path='/rewards' component={Rewards} />
             <ProtectedRoute exact path='/rewardform' component={RewardForm} />
@@ -57,9 +58,7 @@ function App() {
           </Switch>
         </Container>
       </FetchUser>
-      </div>
-        <Footer />
-      </div>  
+    <Footer />  
 
     </>
   );
