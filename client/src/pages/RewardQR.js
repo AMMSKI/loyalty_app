@@ -4,11 +4,11 @@ import QRCode from "react-qr-code"
 
 
 
-const AddQR = (props) => {
-  console.log(props)
-  const user_id = props.match.params.user_id
-  const punchcard_id = props.match.params.punchcard_id
-  const url = `localhost:3000/punchcardAdmin/${user_id}/${punchcard_id}`
+const RewardQR = (props) => {
+  console.log('qr props',props)
+  const reward_id = props.match.params.reward_id
+  const userpunchcard_id = props.match.params.userpunchcard_id
+  const url = `localhost:3000/rewardAdmin/${reward_id}/${userpunchcard_id}`
 
   const copy = async (url) => {
     await navigator.clipboard.writeText(url)
@@ -27,4 +27,4 @@ const AddQR = (props) => {
 
 }
 
-export default AddQR
+export default RewardQR

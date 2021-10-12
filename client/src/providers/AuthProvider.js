@@ -14,7 +14,7 @@ const AuthProvider = (props) => {
       setLoading(true)
       let res = await axios.post('/api/auth', user)
       setUser(res.data.data)
-      history.push('/')
+      history.push('/home')
       console.log(res.data.data)
       console.log("User registered successfully")
     } catch (err) {
@@ -31,7 +31,7 @@ const AuthProvider = (props) => {
       setLoading(true)
       let res = await axios.post('/api/auth/sign_in', user)
       setUser(res.data.data)
-      history.push('/')
+      history.push('/home')
       console.log(res.data.data)
       console.log("User login successfully!")
     } catch (err) {
@@ -47,7 +47,7 @@ const AuthProvider = (props) => {
       setLoading(true)
       let res = await axios.put('/api/auth', user)
       setUser(res.data.data)
-      history.push('/')
+      history.push('/home')
       console.log("User updated successfully")
     } catch (err) {
       setError(err.response.data.errors ? err.response.data.errors : err.response.data)
@@ -61,7 +61,7 @@ const AuthProvider = (props) => {
     try {
       setUser(null)
       localStorage.removeItem('access-token')
-      history.push('/login')
+      history.push('/')
       await axios.delete(`/api/users/${user.id}`)
     } catch (err) {
       console.log(err)
@@ -71,7 +71,7 @@ const AuthProvider = (props) => {
   const handleLogout = (history) => {
     setUser(null)
     localStorage.removeItem('access-token')
-    history.push('/login')
+    history.push('/')
     console.log("User logout successfully!")
   };
 
