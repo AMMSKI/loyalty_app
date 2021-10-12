@@ -5,12 +5,11 @@ import { Link } from 'react-router-dom'
 
 
 const CustomerRewards = (props) => {
-  console.log(props)
   const [rewards, setRewards] = useState([])
   
   const getRewards = async () => {
     try{
-      let res = await axios.get(`/api/punchcards/${props.punchcard_id}/rewards`)
+      let res = await axios.get(`/api/punchcards/${props.punchcardData.punchcard_id}/rewards`)
       console.log(res.data)
       setRewards(res.data)
     }catch(err){
@@ -31,8 +30,9 @@ const CustomerRewards = (props) => {
               </Card.Text>
             </Card.Body>
 
-            {r.cost < props.current_points ?
-              <Link to={`/rewardQR/${r.id}/${props.punchcard_id}`} reward_id={r.id} punchcard_id={props.punchcard_id} > 
+            {r.cost < props.punchcardData.current_points ?
+              <Link to={`/rewardQR/${r.id}/${props.userpunchcard_id}`} reward_id={r.id} userpunchcard_id={props.userpunchcard_id} > 
+
                 <Card.Footer>
                   Cash In Reward
                 </Card.Footer> 
