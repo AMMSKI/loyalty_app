@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Dropdown, Button, Icon, Image, Menu, Sticky, Grid } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import { useHistory, useLocation } from 'react-router'
-import '../StyleSheets/App.css'
+// import '../StyleSheets/App.css'
 import '../StyleSheets/Navbar.css'
 
 const NavBar = () => {
@@ -21,10 +21,10 @@ const NavBar = () => {
         <>
           <Dropdown item simple text={user.name}>
             <Dropdown.Menu>
-              <Menu.Item onClick={() => location.pathname === '/edit_user'} >
-                <Link style={{ textDecoration: "none", color: "black" }} to='/edit_user'>
-                  <Icon name='edit' />
-                  Edit Profile
+              <Menu.Item onClick={() => location.pathname === '/profile'} >
+                <Link style={{ textDecoration: "none", color: "black" }} to='/profile'>
+                  <Icon name='user' />
+                  Profile
                 </Link>
               </Menu.Item>
               <Menu.Item onClick={() => handleDelete(history)}> <Icon name='trash' />Delete Profile</Menu.Item>
@@ -52,26 +52,26 @@ const NavBar = () => {
   };
 
   const customNavItems = () => {
-    if (user && user.account_type === 'business' && authenticated) {
+    if (user && user.account_type === 'Business' && authenticated) {
       return (
         <>
           <Menu.Item as='a' onClick={(e) => handleClick(e, '/rewards')}>
             Reward
           </Menu.Item>
-          <Menu.Item as='a' onClick={(e) => handleClick(e, '/rewardform')}>
-            Reward Form
+          <Menu.Item as='a' onClick={(e) => handleClick(e, '/employeeview')}>
+            Employee View
           </Menu.Item>
         </>
       );
-    } else if (user && user.account_type === 'customer' && authenticated) {
+    } else if (user && user.account_type === 'Customer' && authenticated) {
       return (
         <>
           <Menu.Item as='a' onClick={(e) => handleClick(e, '/dashboard')}>
             Dashboard
           </Menu.Item>
-          <Menu.Item as='a' onClick={(e) => handleClick(e, '/earn')}>
+          {/* <Menu.Item as='a' onClick={(e) => handleClick(e, '/earn')}>
             Earn
-          </Menu.Item>
+          </Menu.Item> */}
           <Menu.Item as='a' onClick={(e) => handleClick(e, '/search')}>
             Search
           </Menu.Item>
@@ -89,21 +89,6 @@ const NavBar = () => {
               <Image avatar src='/logo192.png' style={{ marginRight: '0.8em' }} />
               LoyaltyApp
             </Menu.Item>
-            <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
-              <Link className='LinkNavbar' to='/profile'>
-                Profile
-              </Link>
-            </Menu.Item>
-            <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
-              <Link className='LinkNavbar' to='/dashboard'>
-                Dashboard
-              </Link>
-            </Menu.Item>
-            <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
-              <Link className='LinkNavbar' to='/search'>
-                Search
-              </Link>
-            </Menu.Item>
             <Menu.Menu position="right">
               {rightNavItems()}
             </Menu.Menu>
@@ -118,5 +103,6 @@ const NavBar = () => {
     </Sticky>
   )
 }
+
 
 export default NavBar

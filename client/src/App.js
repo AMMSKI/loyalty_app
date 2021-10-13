@@ -35,29 +35,28 @@ function App() {
                 <Switch>
                   <Route exact path='/' component={Landing} />
                   <ProtectedRoute exact path='/home' component={Home} />
-                  <Route exact path='/profile' component={Profile} />
-                  <Route exact path='/edit_user' component={EditUser} />
+                  <ProtectedRoute exact path='/search' component={Search} />
+                  <ProtectedRoute exact path='/dashboard' component={Dashboard} />
+                  <ProtectedRoute exact path='/rewards' component={Rewards} />
+                  <ProtectedRoute exact path='/rewardform' component={RewardForm} />
+                  <ProtectedRoute exact path='/profile' component={Profile} />
+                  <ProtectedRoute exact path='/edit_user' component={EditUser} />
+                  <ProtectedRoute exact path='/employeeview' component={EmployeeView} />
                   <Route exact path='/login' component={Login} />
-                  <Route exact path='/rewards' component={Rewards} />
                   <Route exact path='/register' component={Register} />
                   <Route exact path='/landing' component={Landing} />
                   <Route exact path='/earn/:userpunchcard_id' component={Earn} />
-                  <Route exact path='/search' component={Search} />
                   <Route exact path='/scan_result' component={ScanResult} />
                   <Route exact path='/addQR/:user_id/:punchcard_id' component={AddQR} />
                   <Route exact path='/punchcardAdmin/:user_id/:userpunchcard_id' component={PunchCardAdmin} />
                   <Route exact path='/showQR' component={AddQR} />
-                  <Route exact path='/dashboard' component={Dashboard} />
-                  <Route exact path='/employeeview/:punch_id' component={EmployeeView} />
-                  <ProtectedRoute exact path='/rewards' component={Rewards} />
-                  <ProtectedRoute exact path='/rewardform' component={RewardForm} />
                   <Route component={NoMatch} />
                 </Switch>
               </Container>
             </FetchUser>
           </div>
         </div>
-          <Footer />  
+        <Footer />
       </div>
     </>
   );
