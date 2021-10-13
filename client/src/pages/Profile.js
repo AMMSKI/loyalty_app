@@ -7,6 +7,7 @@ import { AuthContext } from '../providers/AuthProvider';
 
 const Profile = () => {
   const { user } = useContext(AuthContext)
+  console.log(user.image)
 
 
   // When you get a user image replace the link with this: {user.image} 
@@ -21,6 +22,7 @@ const Profile = () => {
            <Icon link corner name="edit outline"color="black"/>
           </Icon.Group>
           </Link>
+          <Image src={user.image} />
           {user ?
             <div>
               <h2 style={{color:"#328FD4", fontWeight:"bold"}}>{user.name}</h2>
