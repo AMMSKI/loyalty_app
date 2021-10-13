@@ -21,6 +21,11 @@ const NavBar = () => {
         <>
           <Dropdown item simple text={user.name}>
             <Dropdown.Menu>
+            <Menu.Item>
+              <Link style={{ textDecoration: "none", color: "black" }} to='/profile'>
+                <Icon name='user'/>Profile
+              </Link>
+            </Menu.Item>
               <Menu.Item onClick={() => location.pathname === '/edit_user'} >
                 <Link style={{ textDecoration: "none", color: "black" }} to='/edit_user'>
                   <Icon name='edit' />
@@ -69,9 +74,6 @@ const NavBar = () => {
           <Menu.Item as='a' onClick={(e) => handleClick(e, '/dashboard')}>
             Dashboard
           </Menu.Item>
-          <Menu.Item as='a' onClick={(e) => handleClick(e, '/earn')}>
-            Earn
-          </Menu.Item>
           <Menu.Item as='a' onClick={(e) => handleClick(e, '/search')}>
             Search
           </Menu.Item>
@@ -88,21 +90,6 @@ const NavBar = () => {
             <Menu.Item as='a' header>
               <Image avatar src='/logo192.png' style={{ marginRight: '0.8em' }} />
               LoyaltyApp
-            </Menu.Item>
-            <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
-              <Link className='LinkNavbar' to='/profile'>
-                Profile
-              </Link>
-            </Menu.Item>
-            <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
-              <Link className='LinkNavbar' to='/dashboard'>
-                Dashboard
-              </Link>
-            </Menu.Item>
-            <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
-              <Link className='LinkNavbar' to='/search'>
-                Search
-              </Link>
             </Menu.Item>
             <Menu.Menu position="right">
               {rightNavItems()}
