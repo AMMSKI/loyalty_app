@@ -1,68 +1,76 @@
 import React, { useState } from 'react';
 import { Button, Form, Input } from 'semantic-ui-react';
 
-function ProfileUpload(props) {
-  const [fileInput, setFileInput] = useState('')
-  const [selectedFile, setSelectedFile] = useState('')
-  const [previewSource, setPreviewSource] = useState('')
-
-  const handleFileInputChange = (e) => {
-    const file = e.target.files[0]
-    previewFile(file)
-  }
-
-  const previewFile = (file) => {
-   const reader = new FileReader()
-   reader.readAsDataURL(file)
-   reader.onloadend = () => {
-      setPreviewSource(reader.result)
-   }
- }
-
- const handleSubmitFile = (e) => {
-   e.preventDefault()
-   if(!previewSource) return
-   uploadImage(previewSource)
-
-   const reader = new FileReader()
-   reader.readAsDataURL(selectedFile)
- }
-
- const uploadImage = (base64EncodedImage) => {
-   console.log(base64EncodedImage)
-   try {
-     await fetch('/api/upload', {
-     method: 'POST',
-     body: JSON.stringify({data: base64EncodedImage}),
-     })
-   } catch (error) {
-     console.log(error)
-   }
- }
-
-  return (
-    <div className="jumbotron text-center">
-      <h1>Upload a profile picture</h1>
-      <Form onSubmit={handleSubmitFile} className="form">
-        <Input 
-          type="file" 
-          name="image" 
-          onChange={handleFileInputChange} 
-          value={fileInput} 
-          className="form-input" />
-          <Button type="submit">
-            Submit
-          </Button>
-      </Form>
-      {previewSource && (
-        <img src={previewSource} alt="chosen"
-        style={{height:"150px"}} />
-        )}
-    </div>
+export default function ProfileUpload(props) {
+  return(
+    <>
+    <input type="file" />
+    </>
   )
-}
+};
 
-export default ProfileUpload;
+// export default ProfileUpload
+//   const [fileInput, setFileInput] = useState('')
+//   const [selectedFile, setSelectedFile] = useState('')
+//   const [previewSource, setPreviewSource] = useState('')
+
+//   const handleFileInputChange = (e) => {
+//     const file = e.target.files[0]
+//     previewFile(file)
+//   }
+
+//   const previewFile = (file) => {
+//    const reader = new FileReader()
+//    reader.readAsDataURL(file)
+//    reader.onloadend = () => {
+//       setPreviewSource(reader.result)
+//    }
+//  }
+
+//  const handleSubmitFile = (e) => {
+//    e.preventDefault()
+//    if(!previewSource) return
+//    uploadImage(previewSource)
+
+//    const reader = new FileReader()
+//    reader.readAsDataURL(selectedFile)
+//  }
+
+//  const uploadImage = (base64EncodedImage) => {
+//    console.log(base64EncodedImage)
+//    try {
+//      await fetch('/api/upload', {
+//      method: 'POST',
+//      body: JSON.stringify({data: base64EncodedImage}),
+//      headers: { 'Content-type': 'application/json'},
+//      })
+//    } catch (error) {
+//      console.log(error)
+//    }
+//  }
+
+//   return (
+//     <div className="jumbotron text-center">
+//       <h1>Upload a profile picture</h1>
+//       <Form onSubmit={handleSubmitFile} className="form">
+//         <Input 
+//           type="file" 
+//           name="image" 
+//           onChange={handleFileInputChange} 
+//           value={fileInput} 
+//           className="form-input" />
+//           <Button type="submit">
+//             Submit
+//           </Button>
+//       </Form>
+//       {previewSource && (
+//         <img src={previewSource} alt="chosen"
+//         style={{height:"150px"}} />
+//         )}
+//     </div>
+//   )
+// }
+
 
 // import React, { Component } from "react";
 // import ReactDOM from "react-dom";
@@ -159,4 +167,4 @@ export default ProfileUpload;
 // }
 
 // const rootElement = document.getElementById("root");
-// ReactDOM.render(<App />, rootElement);
+// ReactDOM.render(<App />, rootElement)
