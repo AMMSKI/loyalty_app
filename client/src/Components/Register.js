@@ -14,8 +14,8 @@ const Register = () => {
   const history = useHistory()
 
   const dropOptions = [
-    { key: 'business', text: 'Business', value: 'Business' },
-    { key: 'customer', text: 'Customer', value: 'Customer' },
+    { key: 'business', text: 'Business', value: 'business' },
+    { key: 'customer', text: 'Customer', value: 'customer' },
   ]
 
   const handleChange = (e, { value }) => {

@@ -50,11 +50,12 @@ const Dashboard = () => {
     return searchPunchcards.map((p)=>{
       return (
         <div className='searchCard'>
-          <Card>
+          <MyCard url={p.logo}>
+          {/* <Card> */}
           <MyLink to={`/earn/${p.up_id}`} userpunchcard_id={p.up_id}>
             <Card.Body>
             <Row>
-            <Col><Card.Img src={p.logo}/></Col>
+            {/* <Col><Card.Img src={p.logo}/></Col> */}
           <Col className='nameCol1'>
           <Card.Title>
           <h1>{p.restaurant_name}</h1>
@@ -66,7 +67,8 @@ const Dashboard = () => {
           </Card.Body>
           </MyLink>
           <Card.Footer style={{backgroundColor:'#2185D0'}} onClick={()=>deletePunchcard(p.up_id)}><Icon name='trash'/>Remove</Card.Footer>
-          </Card>
+          {/* </Card> */}
+          </MyCard>
         </div>
       )
     })
@@ -88,6 +90,13 @@ const Dashboard = () => {
 const MyLink = styled(Link)`
   text-decoration: none;
   color: black;
+`
+
+const MyCard = styled(Card)`
+  width: 80vw;
+  background-image: url(${props=>props.url});
+  background-position: center;
+  background-size: cover;
 `
 
 export default Dashboard
