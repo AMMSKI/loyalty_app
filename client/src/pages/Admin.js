@@ -2,13 +2,12 @@ import React, { useContext } from 'react';
 import { Card, CardGroup, Grid, GridColumn, GridRow, Header, Segment } from 'semantic-ui-react';
 import Avatar from 'react-avatar';
 import { AuthContext } from '../providers/AuthProvider';
-import { Col } from 'react-bootstrap';
 
 function Admin(props) {
   const { user } = useContext(AuthContext)
 
   return (
-    <div style={{padding:"30px"}}>
+    <div style={{padding:"10px"}}>
       <div className="jumbotron text-center">
       <Avatar size="100" style={{border:"solid 1px lightgray"}} round src={user.image}/> 
       <h1>{user.name}</h1>
