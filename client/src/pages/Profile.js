@@ -21,8 +21,10 @@ const Profile = () => {
           {user.image ? 
           <div>
             <Icon.Group size="huge">
-            <Avatar size="100" round src={user.image}/> 
-            <Icon link corner name="edit outline"color="black"/>
+              <div style={{padding:"8px"}}>
+              <Avatar size="100" round src={user.image}/> 
+              </div>
+              <Icon link corner name="edit outline"color="black"/>
             </Icon.Group>
           </div> :
           <Icon.Group size="huge">
