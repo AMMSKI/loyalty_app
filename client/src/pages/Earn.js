@@ -3,13 +3,13 @@ import axios from 'axios';
 import { AuthContext } from '../providers/AuthProvider'
 import { Link } from 'react-router-dom'
 import '../StyleSheets/App.css'
+import CustomerRewards from './CustomerRewards';
 
 const Earn = (props) => {
   const { user } = useContext(AuthContext)
   const [punchcardData, setPunchcardData] = useState([])
   const [ownedCards, setOwnedCards] = useState([])
-
-  console.log(props.match.params.punch_id)
+  const userpunchcard_id = props.match.params.userpunchcard_id
 
   useEffect(()=>{
     getData()
@@ -17,7 +17,6 @@ const Earn = (props) => {
   },[])
 
   const getData = async() => {
-    const userpunchcard_id = props.match.params.userpunchcard_id
     try {
       let res = await axios.get(`/api/users/${user.id}/user_punchcard/${userpunchcard_id}`)
       setPunchcardData(res.data)
@@ -44,15 +43,12 @@ const Earn = (props) => {
     }
   }
 
-  // Add this below when it's a reasonable length: {punchcardData.description}
 
   return (
     <div className="content">
       <div className="jumbotron text-center">
         <h1>{punchcardData.restaurant_name}</h1>
-        <h5>Earn points by purchasing our delicious food and then cash
-          them in for rewards.
-        </h5>
+        <h5>{punchcardData.description}</h5>
         <br /> 
         <div>
         {ownedCards.includes(punchcardData.punchcard_id) ?
@@ -70,13 +66,14 @@ const Earn = (props) => {
             </div>
           </div>
         <div>
-          <Link to="/showqr">
+        {/* <MyLink to={`/earn/${p.up_id}`} userpunchcard_id={p.up_id}> */}
+          <Link to={`/addQR/${user.id}/${userpunchcard_id}`} user_id={user.id} userpunchcard_id={userpunchcard_id}>
             <button >Earn Points QR</button>
           </Link>
         </div> 
         <br /> 
         <hr />
-        <h5>Rewards</h5>
+        <CustomerRewards punchcardData={punchcardData} userpunchcard_id={userpunchcard_id}/>
       </div>
     </div>
   )

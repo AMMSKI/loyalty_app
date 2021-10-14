@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 // import { Card } from 'semantic-ui-react';
 import { AuthContext } from '../providers/AuthProvider';
-import { Card } from 'react-bootstrap'
+import { Card, Col, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 import { Icon } from 'semantic-ui-react';
@@ -22,7 +22,6 @@ const Dashboard = () => {
   const getPunchcards = async()=> {
     try{
       let res = await axios.get(`/api/user/${user.id}/punchcard_by_user`)
-      console.log(res.data)
       setPunchcards(res.data)
       setSearchPunchcards(res.data)
     }catch(err){
@@ -50,19 +49,23 @@ const Dashboard = () => {
   const renderPunchcards = () => {
     return searchPunchcards.map((p)=>{
       return (
-        <div style={{padding:'10px'}}>
+        <div className='searchCard'>
           <Card>
-            <Card.Body>
           <MyLink to={`/earn/${p.up_id}`} userpunchcard_id={p.up_id}>
+            <Card.Body>
+            <Row>
+            <Col><Card.Img src={p.logo}/></Col>
+          <Col className='nameCol1'>
           <Card.Title>
           <h1>{p.restaurant_name}</h1>
           </Card.Title>
-          <p>{p.punch_descrip}</p>
-          <p>You have {p.current_points ? p.current_points : '0'} points</p>
-          <p>id: {p.punchcard_id}</p><br/>
+          <p>{p.current_points ? p.current_points : '0'} points</p>
+          <br/>
+          </Col>
+          </Row>
+          </Card.Body>
           </MyLink>
           <Card.Footer style={{backgroundColor:'#2185D0'}} onClick={()=>deletePunchcard(p.up_id)}><Icon name='trash'/>Remove</Card.Footer>
-          </Card.Body>
           </Card>
         </div>
       )
@@ -73,6 +76,7 @@ const Dashboard = () => {
   return (
     <div>
       <h2>Wallet:</h2>
+      <Icon name='search'size='large'/>
       <SearchBar
         input={input} 
         onChange={updateInput} />

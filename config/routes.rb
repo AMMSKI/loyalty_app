@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace :api do
     resources :users do
-      resources :restaurants do
-        resources :punchcards do  
-          resources :user_punchcard do
+      resources :user_punchcard do
+        resources :restaurants do
+          resources :punchcards do  
           end
         end
       end
@@ -21,7 +21,8 @@ Rails.application.routes.draw do
     patch 'punchcards/:punchcard_id/rewards/:id', to: 'rewards#update'
     delete 'users/:id', to: 'users#delete'
     get 'rewards', to: 'user_punchcard#show_rewards'
-    get '/earn/:userpunchcard_id', to: 'user_punchcard#show'
+    get 'earn/:userpunchcard_id', to: 'user_punchcard#show'
+    get 'users/:id/employeeview/:punch_id', to: 'user_punchcard#view_punchcard_customers'
   end
   
 end
