@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent, Grid, Icon, Image, Menu, Segment, Table } from 'semantic-ui-react';
 import styled from 'styled-components';
 import { AuthContext } from '../providers/AuthProvider';
+import Avatar from 'react-avatar';
 
 const Profile = () => {
   const { user } = useContext(AuthContext)
@@ -17,12 +18,19 @@ const Profile = () => {
       <BorderlessCard centered>
         <CardContent textAlign="center">
           <Link to={`/profileupload/${user.id}`}>
+          {user.image ? 
+          <div>
+            <Icon.Group size="huge">
+            <Avatar size="100" round src={user.image}/> 
+            <Icon link corner name="edit outline"color="black"/>
+            </Icon.Group>
+          </div> :
           <Icon.Group size="huge">
             <Icon name="user" color="black"/>
            <Icon link corner name="edit outline"color="black"/>
           </Icon.Group>
+          }
           </Link>
-          <Image src={user.image} />
           {user ?
             <div>
               <h2 style={{color:"#328FD4", fontWeight:"bold"}}>{user.name}</h2>
