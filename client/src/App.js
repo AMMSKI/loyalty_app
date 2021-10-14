@@ -19,11 +19,13 @@ import ScanResult from './pages/ScanResult'
 import ShowQR from './pages/ShowQR'
 import Dashboard from './pages/Dashboard'
 import ProtectedRoute from './Components/ProtectedRoute';
+import About from './pages/About';
 
 function App() {
   return (
     <>
       <NavBar />
+      <About/>
       <FetchUser>
         <Container style={{paddingTop:'20px'}}>
           <Switch>
@@ -39,7 +41,6 @@ function App() {
             <Route exact path='/showQR' component={ShowQR} />
             <Route exact path='/dashboard' component={Dashboard} />
             <ProtectedRoute exact path='/rewards' component={Rewards} />
-            <ProtectedRoute exact path='/rewardform' component={RewardForm} />
             <Route component={NoMatch} />
           </Switch>
         </Container>
