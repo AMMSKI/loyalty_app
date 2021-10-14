@@ -84,6 +84,7 @@ const NavBar = () => {
 
   return (
     <Sticky>
+
       <Grid class="row no-gutter">
         <Grid.Row className='GridRow'>
           <Menu size='small' tabular inverted color='blue'>
