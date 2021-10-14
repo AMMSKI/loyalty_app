@@ -89,7 +89,7 @@ const NavBar = () => {
               <Image avatar src='/logo192.png' style={{ marginRight: '0.8em' }} />
               LoyaltyApp
             </Menu.Item>
-            <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
+            {/* <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
               <Link className='LinkNavbar' to='/profile'>
                 Profile
               </Link>
@@ -102,8 +102,8 @@ const NavBar = () => {
             <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
               <Link className='LinkNavbar' to='/search'>
                 Search
-              </Link>
             </Menu.Item>
+              </Link> */}
             <Menu.Menu position="right">
               {rightNavItems()}
             </Menu.Menu>
