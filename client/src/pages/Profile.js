@@ -1,61 +1,106 @@
 import React, { useContext } from 'react';
-import { Card, CardContent, Icon, Image, Segment } from 'semantic-ui-react';
+import { Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Card, CardContent, Grid, Icon, Image, Menu, Segment, Table } from 'semantic-ui-react';
 import styled from 'styled-components';
 import { AuthContext } from '../providers/AuthProvider';
+import Avatar from 'react-avatar';
 
-const Profile = ( ) => {
+const Profile = () => {
   const { user } = useContext(AuthContext)
+  console.log(user.image)
 
 
-// When you get a user image replace the link with this: {user.image} 
+  // When you get a user image replace the link with this: {user.image} 
 
   return (
     <>
       <BorderlessCard centered>
         <CardContent textAlign="center">
-          <Image src="https://clubsports.gcu.edu/wp-content/uploads/Coach-Avator.png" style={{ width: "120px"}} />
-          {user ? 
+          <Link to={`/profileupload/${user.id}`}>
+          {user.image ? 
+          <div>
+            <Icon.Group size="huge">
+            <Avatar size="100" round src={user.image}/> 
+            <Icon link corner name="edit outline"color="black"/>
+            </Icon.Group>
+          </div> :
+          <Icon.Group size="huge">
+            <Icon name="user" color="black"/>
+           <Icon link corner name="edit outline"color="black"/>
+          </Icon.Group>
+          }
+          </Link>
+          {user ?
             <div>
-              <p>{user.name}</p>
-              {user.account_type}
-            </div> : 
+              <h2 style={{color:"#328FD4", fontWeight:"bold"}}>{user.name}</h2>
+              <h6>{user.account_type}</h6>
+            </div> :
             <div>
               <p>User Name</p>
               <p>User Account Type</p>
-             </div>
+            </div>
           }
         </CardContent>
-        <Segment basic>
+        <Segment basic padded>
           <div>
-            <div>
-              <Icon color="blue" name="user" />
+            <Grid>
+              <Grid.Column width={13}>
+                <Icon color="blue" name="user" />
                 Name
-                <Icon color="blue" name="angle right"/> 
-            </div>
-            <hr />
-            <div>
-              <Icon color="blue" name="edit" />
-                Edit
-              <Icon color="blue" name="angle right" />
-            </div>
-            <hr />
-            <div>
-              <Icon color="blue" name="chart bar" />
+              </Grid.Column>
+              <Grid.Column>
+                <Icon color="blue" name="angle right" />
+              </Grid.Column>
+            </Grid>
+          </div>
+          <hr />
+          <div>
+            <Grid>
+              <Grid.Column width={13}>
+                <Icon color="blue" name="edit" />
+                Edit Bio
+                </Grid.Column>
+              <Grid.Column >
+                <Icon color="blue" name="angle right" />
+              </Grid.Column>
+            </Grid>
+          </div>
+          <hr />
+          <div>
+            <Grid>
+              <Grid.Column width={13}>
+                <Icon color="blue" name="chart bar" />
                 My Points
-              <Icon color="blue" name="angle right" />
-            </div>
-             <hr />
-            <div>
-              <Icon color="blue" name="map marker alternate" />
-                Location
-              <Icon color="blue" name="angle right" />
-            </div>
-            <hr />
-            <div>
-              <Icon color="blue" name="mail" /> 
-              {user ? <>{user.email}</> : "User Email"}
-              <Icon color="blue" name="angle right" />
-            </div>
+                </Grid.Column>
+              <Grid.Column >
+                <Icon color="blue" name="angle right" />
+              </Grid.Column>
+            </Grid>
+          </div>
+          <hr />
+          <div>
+            <Grid>
+              <Grid.Column width={13}>
+                <Icon color="blue" name="map marker alternate" />
+                My Location
+                </Grid.Column>
+              <Grid.Column >
+                <Icon color="blue" name="angle right" />
+              </Grid.Column>
+            </Grid>
+          </div>
+          <hr />
+          <div>
+            <Grid>
+              <Grid.Column width={13}>
+                <Icon color="blue" name="mail" />
+                {user ? <>{user.email}</> : "User Email"}
+              </Grid.Column>
+              <Grid.Column >
+                <Icon color="blue" name="angle right" />
+              </Grid.Column>
+            </Grid>
           </div>
         </Segment>
       </BorderlessCard>

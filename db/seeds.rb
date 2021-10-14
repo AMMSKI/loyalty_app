@@ -17,12 +17,12 @@ User.destroy_all
 
 account_types = ['business', 'customer']
 
-     user = User.create( name:'business1', email:'business1@email.com', password:'123456', account_type:'Business')
-     user5 = User.create( name:'business2', email:'business2@email.com', password:'123456', account_type:'Business')
-     user2 = User.create( name:'business3', email:'business3@email.com', password:'123456', account_type:'Business')
-     user3 = User.create( name:'customer1', email:'customer1@email.com', password:'123456', account_type:'Customer')
-     user4 = User.create( name:'customer2', email:'customer2@email.com', password:'123456', account_type:'Customer')
-     user6 = User.create( name:'customer3', email:'customer3@email.com', password:'123456', account_type:'Customer')
+     user = User.create( name:'business1', email:'business1@email.com', password:'123456', account_type:'business')
+     user5 = User.create( name:'business2', email:'business2@email.com', password:'123456', account_type:'business')
+     user2 = User.create( name:'business3', email:'business3@email.com', password:'123456', account_type:'business')
+     user3 = User.create( name:'customer1', email:'customer1@email.com', password:'123456', account_type:'customer')
+     user4 = User.create( name:'customer2', email:'customer2@email.com', password:'123456', account_type:'customer')
+     user6 = User.create( name:'customer3', email:'customer3@email.com', password:'123456', account_type:'customer')
 
 bizusers = [user,user2,user5]
 custusers = [user3,user4, user6]
@@ -57,7 +57,7 @@ rests = [rest, rest2,rest3,rest4]
 punches = [punch, punch2, punch3, punch4, punch5, punch6, punch7, punch8, punch9, punch1]
 
     15.times do
-      reward = Reward.create(name:'reward', description:Faker::Restaurant.description, punchcard_id:punches[rand(10)].id, cost:rand(10))
+      reward = Reward.create(name:'reward', description:Faker::Restaurant.description, punchcard_id:punches[rand(10)].id, cost:rand(100))
       end
   
   15.times do

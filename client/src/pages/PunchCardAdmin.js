@@ -1,9 +1,11 @@
 import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
+import { Card, Button, Row, Col } from 'react-bootstrap'
 import { AuthContext } from '../providers/AuthProvider'
 
 const PunchCardAdmin = (props) => {
   const { user } = useContext(AuthContext)
+  console.log(props)
   const customer_id = props.match.params.user_id
   const userpunchcard_id = props.match.params.userpunchcard_id
   const [currentPoints, setCurrentPoints] = useState(null)
@@ -28,18 +30,29 @@ const PunchCardAdmin = (props) => {
       let res = await axios.put(`/api/users/${customer_id}/user_punchcard/${userpunchcard_id}`, {current_points:points})
       console.log(res)
       setCurrentPoints(points)
+      alert(`${newPoints} points added to user card`)
     }catch(err){
       console.log(err)
     }
   }
 
   return (
-    <div>
-      <h1>customer id: {customer_id}</h1>
-      <h1>punchcard id: {userpunchcard_id}</h1>
-      <button onClick={()=>updatePoints(5)}>Add 5 points</button>
-      <button onClick={()=>updatePoints(10)}>Add 10 points</button>
-      <button onClick={()=>updatePoints(15)}>Add 15 points</button>
+    <div className="jumbotron text-center">
+      <Card>
+      <Card.Body>
+        <Row>
+          <Col>
+            <Button onClick={()=>updatePoints(5)}>Add 5 points</Button>
+          </Col>
+          <Col>
+            <Button onClick={()=>updatePoints(10)}>Add 10 points</Button>
+          </Col>
+          <Col>
+            <Button onClick={()=>updatePoints(15)}>Add 15 points</Button>
+          </Col>
+        </Row>
+      </Card.Body>
+      </Card>
     </div>
   )
 }

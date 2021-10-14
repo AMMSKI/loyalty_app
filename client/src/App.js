@@ -14,18 +14,25 @@ import Search from './pages/Search'
 import ScanResult from './pages/ScanResult'
 import Dashboard from './pages/Dashboard'
 import ProtectedRoute from './Components/ProtectedRoute';
+import About from './pages/About';
 import EmployeeView from './Components/EmployeeView';
 import RewardForm from './Components/RewardForm';
 import PunchCardAdmin from './pages/PunchCardAdmin';
 import AddQR from './pages/AddQR';
 import Footer from './Components/Footer';
+import RewardQR from './pages/RewardQR';
+import RewardAdmin from './pages/RewardAdmin';
 import Landing from './pages/Landing';
 import Profile from './pages/Profile';
+import ProfileUpload from './pages/ProfileUpload';
+import Charting from './pages/Charting';
+import Admin from './pages/Admin';
 
 
 function App() {
   return (
     <>
+
       <div className="page-container">
         <div className="content-wrap">
           <NavBar />
@@ -50,6 +57,14 @@ function App() {
                   <Route exact path='/addQR/:user_id/:punchcard_id' component={AddQR} />
                   <Route exact path='/punchcardAdmin/:user_id/:userpunchcard_id' component={PunchCardAdmin} />
                   <Route exact path='/showQR' component={AddQR} />
+                  <Route exact path='/addQR/:user_id/:punchcard_id' component={AddQR} />
+                  <Route exact path='/rewardQR/:reward_id/:userpunchcard_id' component={RewardQR} />
+                  <Route exact path='/charting' component={Charting} />
+                  <Route exact path='/admin' component={Admin} />
+                  <Route exact path='/rewardAdmin/:reward_id/:userpunchcard_id' component={RewardAdmin} />
+                  <Route exact path='/profileupload/:user_id' component={ProfileUpload} />
+                  <Route exact path='/dashboard' component={Dashboard} />
+                  <Route exact path='/employeeview/:punch_id' component={EmployeeView} />
                   <Route component={NoMatch} />
                 </Switch>
               </Container>

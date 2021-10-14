@@ -27,6 +27,12 @@ const NavBar = () => {
                   Profile
                 </Link>
               </Menu.Item>
+              <Menu.Item onClick={() => location.pathname === '/edit_user'} >
+                <Link style={{ textDecoration: "none", color: "black" }} to='/edit_user'>
+                  <Icon name='edit' />
+                  Edit Profile
+                </Link>
+              </Menu.Item>
               <Menu.Item onClick={() => handleDelete(history)}> <Icon name='trash' />Delete Profile</Menu.Item>
               <Dropdown.Divider />
               <Menu.Item onClick={() => handleLogout(history)}> <Icon name='log out' />Logout</Menu.Item>
@@ -55,11 +61,14 @@ const NavBar = () => {
     if (user && user.account_type === 'Business' && authenticated) {
       return (
         <>
-          <Menu.Item as='a' onClick={(e) => handleClick(e, '/rewards')}>
-            Reward
+          <Menu.Item as='a' onClick={(e) => handleClick(e, '/admin')}>
+            Admin
           </Menu.Item>
           <Menu.Item as='a' onClick={(e) => handleClick(e, '/employeeview')}>
             Employee View
+          </Menu.Item>
+          <Menu.Item as='a' onClick={(e) => handleClick(e, '/charting')}>
+            Charts
           </Menu.Item>
         </>
       );
@@ -82,6 +91,7 @@ const NavBar = () => {
 
   return (
     <Sticky>
+
       <Grid class="row no-gutter">
         <Grid.Row className='GridRow'>
           <Menu size='small' tabular inverted color='blue'>
@@ -106,3 +116,4 @@ const NavBar = () => {
 
 
 export default NavBar
+
