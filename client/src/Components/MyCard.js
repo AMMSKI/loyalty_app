@@ -40,7 +40,7 @@ const SearchCard = (props) => {
   
   return (
     <div className="searchCard">
-    <Card>
+    <MyCard>
     <MyLink to={`/dashboard`}>
       <Card.Body>
         <Row>
@@ -59,7 +59,7 @@ const SearchCard = (props) => {
       </Card.Body>
         </MyLink>
         {ownedId.includes(props.punch_id) ? <Card.Footer>You own this card</Card.Footer> : <Card.Footer style={{backgroundColor:'#2185D0'}} onClick={()=>addToWallet(props.punch_id)}>Add To Wallet</Card.Footer>}
-    </Card>
+    </MyCard>
   </div>
   )
 }
