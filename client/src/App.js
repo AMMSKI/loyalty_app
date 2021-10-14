@@ -15,6 +15,8 @@ import ScanResult from './pages/ScanResult'
 import Dashboard from './pages/Dashboard'
 import ProtectedRoute from './Components/ProtectedRoute';
 import About from './pages/About';
+import RewardForm from './Components/RewardForm';
+import PunchCardForm from './Components/PunchCardForm';
 import EmployeeView from './Components/EmployeeView';
 import RewardForm from './Components/RewardForm';
 import PunchCardAdmin from './pages/PunchCardAdmin';
@@ -28,11 +30,9 @@ import ProfileUpload from './pages/ProfileUpload';
 import Charting from './pages/Charting';
 import Admin from './pages/Admin';
 
-
 function App() {
   return (
     <>
-
       <div className="page-container">
         <div className="content-wrap">
           <NavBar />
