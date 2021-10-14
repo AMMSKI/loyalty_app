@@ -6,7 +6,7 @@ import { Card, Button, Row, Col } from 'react-bootstrap'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-const MyCard = (props) => { 
+const SearchCard = (props) => { 
   const { user } = useContext(AuthContext)
   const [ownedId, setOwnedIds] = useState([])
   console.log(props)
@@ -44,19 +44,23 @@ const MyCard = (props) => {
     <MyLink to={`/dashboard`}>
       <Card.Body>
         <Row>
-        <Col><Card.Img src={props.logo}/></Col>
+        <Col><Card.Img className='cardImg' src={props.logo}/></Col>
         <Col className='nameCol'>
+        <Row>
         <Card.Title>
-      <h1>{props.restaurant_name}</h1>
-      </Card.Title>
+        <h1>{props.restaurant_name}</h1>
+        </Card.Title>
+        </Row>
+      <Row>
       <span>{props.city}</span>
+      </Row>
         </Col>
         </Row>
       </Card.Body>
         </MyLink>
         {ownedId.includes(props.punch_id) ? <Card.Footer>You own this card</Card.Footer> : <Card.Footer style={{backgroundColor:'#2185D0'}} onClick={()=>addToWallet(props.punch_id)}>Add To Wallet</Card.Footer>}
     </Card>
-    </div>
+  </div>
   )
 }
 
@@ -65,4 +69,9 @@ const MyLink = styled(Link)`
   text-decoration: none;
   color: black;
 `
-export default MyCard
+
+const MyCard = styled(Card)`
+  width: 80vw;
+  // height: 200px;
+`
+export default SearchCard

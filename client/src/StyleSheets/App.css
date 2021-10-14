@@ -166,8 +166,9 @@
 }
 
 .nameCol{
-  text-align: center;
+  align-items: center;
   padding: 10%;  
+  /* height: 40px; */ 
 }
 .nameCol1{
   text-align: center; 
