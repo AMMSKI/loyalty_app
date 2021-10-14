@@ -1,15 +1,16 @@
 import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
-// import { Card, Label } from 'semantic-ui-react'
+import { Dropdown } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
-import { Card, Button } from 'react-bootstrap'
+import { Card, Button, Row, Col } from 'react-bootstrap'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { Link, Redirect, useHistory } from 'react-router-dom'
 
-const MyCard = (props) => { 
+const SearchCard = (props) => { 
   const { user } = useContext(AuthContext)
   const [ownedId, setOwnedIds] = useState([])
-  console.log(props)
+  const history = useHistory()
+  console.log('searchcards',props)
 
   useEffect(()=>{
     getOwnedcards()
@@ -39,22 +40,35 @@ const MyCard = (props) => {
   }
   
   return (
-    <div style={{padding:'10px'}}>
-    <Card>
-    <MyLink to={`/dashboard`}>
-      <Card.Body>
-        <Card.Title>
-      <h1>{props.restaurant_name}</h1>
-      </Card.Title>
-      <Card.Text>
-        <p>{props.description}</p>
-        <p>id: {props.punch_id}</p>
-        </Card.Text>
-      </Card.Body>
-        </MyLink>
-        {ownedId.includes(props.punch_id) ? <Card.Footer>You own this card</Card.Footer> : <Card.Footer style={{backgroundColor:'#2185D0'}} onClick={()=>addToWallet(props.punch_id)}>Add To Wallet</Card.Footer>}
-    </Card>
-    </div>
+  <div className="searchCard">
+  <MyCard>
+    <Row style={{paddingLeft:'95%', paddingTop:'5px'}}>
+        <Dropdown pointing='top right' multiple icon='ellipsis vertical'>
+          <Dropdown.Menu>
+          {ownedId.includes(props.punch_id) ?
+          <Dropdown.Item onClick={()=>history.push('/dashboard')}>View in Wallet</Dropdown.Item>:
+          <Dropdown.Item onClick={()=>addToWallet(props.punch_id)}>Add To Wallet</Dropdown.Item>}
+          </Dropdown.Menu>
+        </Dropdown>
+    </Row> 
+    <Row style={{alignItems:'center'}}>
+            <Col><Card.Img className='cardImg' src={props.logo}/></Col>
+      <Col className='nameCol'>
+        <Row>
+            <Card.Title>
+            <h1>{props.restaurant_name}</h1>
+            </Card.Title>
+        </Row>
+        <Row>
+          <span>{props.city}</span>
+        </Row>
+        <Row>
+            {ownedId.includes(props.punch_id) ? <span style={{color:'green'}}>You own this card</span> : <p></p>}
+        </Row>
+      </Col>
+    </Row>
+  </MyCard>
+  </div>
   )
 }
 
@@ -63,4 +77,9 @@ const MyLink = styled(Link)`
   text-decoration: none;
   color: black;
 `
-export default MyCard
+
+const MyCard = styled(Card)`
+  width: 80vw;
+  // height: 200px;
+`
+export default SearchCard

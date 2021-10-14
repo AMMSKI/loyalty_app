@@ -2,11 +2,12 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 // import { Card } from 'semantic-ui-react';
 import { AuthContext } from '../providers/AuthProvider';
-import { Card } from 'react-bootstrap'
+import { Card, Col, Dropdown, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
-import { Icon } from 'semantic-ui-react';
+import { Icon, Segment } from 'semantic-ui-react';
 import SearchBar from '../Components/SearchBar';
+import WalletCard from '../Components/WalletCard';
 
 
 const Dashboard = () => {
@@ -22,7 +23,6 @@ const Dashboard = () => {
   const getPunchcards = async()=> {
     try{
       let res = await axios.get(`/api/user/${user.id}/punchcard_by_user`)
-      console.log(res.data)
       setPunchcards(res.data)
       setSearchPunchcards(res.data)
     }catch(err){
@@ -47,32 +47,16 @@ const Dashboard = () => {
     }
   }
 
+
   const renderPunchcards = () => {
-    return searchPunchcards.map((p)=>{
-      return (
-        <div style={{padding:'10px'}}>
-          <Card>
-            <Card.Body>
-          <MyLink to={`/earn/${p.up_id}`} userpunchcard_id={p.up_id}>
-          <Card.Title>
-          <h1>{p.restaurant_name}</h1>
-          </Card.Title>
-          <p>{p.punch_descrip}</p>
-          <p>You have {p.current_points ? p.current_points : '0'} points</p>
-          <p>id: {p.punchcard_id}</p><br/>
-          </MyLink>
-          <Card.Footer style={{backgroundColor:'#2185D0'}} onClick={()=>deletePunchcard(p.up_id)}><Icon name='trash'/>Remove</Card.Footer>
-          </Card.Body>
-          </Card>
-        </div>
-      )
-    })
+    return searchPunchcards.map((p)=><WalletCard p={p} deletePunchcard={deletePunchcard} />)
   }
 
 
   return (
     <div>
       <h2>Wallet:</h2>
+      <Icon name='search'size='large'/>
       <SearchBar
         input={input} 
         onChange={updateInput} />
@@ -84,6 +68,18 @@ const Dashboard = () => {
 const MyLink = styled(Link)`
   text-decoration: none;
   color: black;
+`
+
+const MyCard = styled(Card)`
+  width: 80vw;
+  height: 20vh;
+  background-image: url(${props=>props.url});
+  background-position: center;
+  background-size: cover;
+`
+
+const MyDropdown = styled(Dropdown)`
+  color: white;
 `
 
 export default Dashboard
