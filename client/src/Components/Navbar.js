@@ -1,14 +1,19 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { Dropdown, Icon, Image, Menu, Sticky } from 'semantic-ui-react'
+import { Dropdown, Button, Icon, Image, Menu, Sticky, Grid } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import { useHistory, useLocation } from 'react-router'
 import '../StyleSheets/App.css'
+import '../StyleSheets/Navbar.css'
 
 const NavBar = () => {
   const history = useHistory()
-  const { authenticated, user, handleLogout, handleDelete } = useContext(AuthContext)
   const location = useLocation()
+  const { authenticated, user, handleLogout, handleDelete } = useContext(AuthContext)
+
+  const handleClick = (e, target) => {
+    history.push(`${target}`)
+  }
 
   const rightNavItems = () => {
     if (user) {
@@ -16,6 +21,11 @@ const NavBar = () => {
         <>
           <Dropdown item simple text={user.name}>
             <Dropdown.Menu>
+            <Menu.Item>
+              <Link style={{ textDecoration: "none", color: "black" }} to='/profile'>
+                <Icon name='user'/>Profile
+              </Link>
+            </Menu.Item>
               <Menu.Item onClick={() => location.pathname === '/edit_user'} >
                 <Link style={{ textDecoration: "none", color: "black" }} to='/edit_user'>
                   <Icon name='edit' />
@@ -32,11 +42,16 @@ const NavBar = () => {
     }
     return (
       <>
-        <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
-          <Link className='LinkNavbar' to="/login">
-            Login
-          </Link>
+        <Menu.Item>
+          <Button
+            inverted
+            basic
+            onClick={(e) => history.push('/login')}
+          >
+            GET STARTED
+          </Button>
         </Menu.Item>
+
       </>
     );
   };
@@ -45,30 +60,22 @@ const NavBar = () => {
     if (user && user.account_type === 'business' && authenticated) {
       return (
         <>
-          <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
-            <Link className='LinkNavbar' to='/rewards'>
-              Reward
-            </Link>
+          <Menu.Item as='a' onClick={(e) => handleClick(e, '/admin')}>
+            Admin
           </Menu.Item>
-          <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
-            <Link className='LinkNavbar' to='/rewardform'>
-              Reward Form
-            </Link>
+          <Menu.Item as='a' onClick={(e) => handleClick(e, '/charting')}>
+            Charts
           </Menu.Item>
         </>
       );
     } else if (user && user.account_type === 'customer' && authenticated) {
       return (
         <>
-          <Menu.Item fitted="horizontally" as='a'>
-            <Link className='LinkNavbar' to='/landing'>
-              Landing
-            </Link>
+          <Menu.Item as='a' onClick={(e) => handleClick(e, '/dashboard')}>
+            Dashboard
           </Menu.Item>
-          <Menu.Item fitted="horizontally" as='a'>
-            <Link className='LinkNavbar' to='/eran'>
-              Earn
-            </Link>
+          <Menu.Item as='a' onClick={(e) => handleClick(e, '/search')}>
+            Search
           </Menu.Item>
         </>
       );
@@ -76,40 +83,27 @@ const NavBar = () => {
   }
 
   return (
-    // <Sticky>
-      <Menu stackable inverted color='blue'>
-        <Menu.Item style={{ height: "50px" }} as='a' header>
-          <Image size='mini' src='/logo192.png' style={{ marginRight: '1.5em' }} />
-          LoyaltyApp
-        </Menu.Item>
-        <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
-          <Link className='LinkNavbar' to='/'>
-            Home
-          </Link>
-        </Menu.Item>
-        <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
-          <Link className='LinkNavbar' to='/profile'>
-            Profile
-          </Link>
-        </Menu.Item>
-        <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
-          <Link className='LinkNavbar' to='/dashboard'>
-            Dashboard
-          </Link>
-        </Menu.Item>
-        <Menu.Item style={{ height: "50px" }} fitted="horizontally" as='a'>
-          <Link className='LinkNavbar' to='/search'>
-            Search
-          </Link>
-        </Menu.Item>
-        <Menu.Menu>
-          {customNavItems()}
-        </Menu.Menu>
-        <Menu.Menu position="right">
-          {rightNavItems()}
-        </Menu.Menu>
-      </Menu>
-    // </Sticky>
+    <Sticky>
+
+      <Grid class="row no-gutter">
+        <Grid.Row className='GridRow'>
+          <Menu size='small' tabular inverted color='blue'>
+            <Menu.Item as='a' header>
+              <Image avatar src='/logo192.png' style={{ marginRight: '0.8em' }} />
+              LoyaltyApp
+            </Menu.Item>
+            <Menu.Menu position="right">
+              {rightNavItems()}
+            </Menu.Menu>
+          </Menu>
+        </Grid.Row>
+        <Grid.Row className='GridRow'>
+          <Menu size='small' tabular inverted color='blue'>
+            {customNavItems()}
+          </Menu>
+        </Grid.Row>
+      </Grid>
+    </Sticky>
   )
 }
 

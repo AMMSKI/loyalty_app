@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     get 'rewards', to: 'user_punchcard#show_rewards'
     get 'earn/:userpunchcard_id', to: 'user_punchcard#show'
     get 'users/:id/employeeview/:punch_id', to: 'user_punchcard#view_punchcard_customers'
+    patch 'users/:id/editimage', to: 'users#update_image'
   end
   
 end

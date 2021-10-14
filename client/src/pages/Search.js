@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
-import {Card} from 'semantic-ui-react'
+import {Card, Icon} from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider';
 import MyCard from '../Components/MyCard';
 import SearchBar from '../Components/SearchBar';
-import AddQR from './AddQR'
 
 
 const Search = () => {
@@ -37,14 +36,15 @@ const Search = () => {
   const renderCards = () => {
     return searchCards.map((c) => <MyCard {...c}/>)
   }
-
+  
   return (
     <div>
       <h1>Search all available Cards:</h1>
+      <Icon name='search'size='large'/>
       <SearchBar
         input={input} 
         onChange={updateInput}
-       />
+        />
       {renderCards()}
     </div>
   )
