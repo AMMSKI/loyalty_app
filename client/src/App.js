@@ -20,12 +20,14 @@ import ShowQR from './pages/ShowQR'
 import Dashboard from './pages/Dashboard'
 import ProtectedRoute from './Components/ProtectedRoute';
 import About from './pages/About';
+import RewardForm from './Components/RewardForm';
+import PunchCardForm from './Components/PunchCardForm';
 
 function App() {
   return (
     <>
       <NavBar />
-      <About/>
+      <PunchCardForm/>
       <FetchUser>
         <Container style={{paddingTop:'20px'}}>
           <Switch>
