@@ -27,6 +27,7 @@ import Profile from './pages/Profile';
 import ProfileUpload from './pages/ProfileUpload';
 import Charting from './pages/Charting';
 import Admin from './pages/Admin';
+import PunchcardImageUpload from './Components/PunchcardUpload';
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
                   <Route exact path='/rewardQR/:reward_id/:userpunchcard_id' component={RewardQR} />
                   <Route exact path='/charting' component={Charting} />
                   <Route exact path='/admin' component={Admin} />
+                  <Route exact path='/punchcardimageupload' component={PunchcardImageUpload} />
 
                   <Route exact path='/rewardAdmin/:reward_id/:userpunchcard_id' component={RewardAdmin} />
                   <Route exact path='/profileupload/:user_id' component={ProfileUpload} />   

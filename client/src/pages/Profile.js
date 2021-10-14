@@ -107,7 +107,6 @@ const Profile = () => {
           </div>
         </Segment>
       </BorderlessCard>
-      <ProfileUpload />
     </>
   )
 }

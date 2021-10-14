@@ -13,7 +13,7 @@ import { useHistory } from 'react-router';
 
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
 
-export default function ProfileUpload(props) {
+export default function PunchcardImageUpload(props) {
   const [files, setFiles]= useState([])
   const { user , setUser } = useContext(AuthContext)
 
