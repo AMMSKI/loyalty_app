@@ -41,7 +41,7 @@ export default function ProfileUpload(props) {
 
   return (
     <div>
-      <div style={{padding:"8px 0 20px 0", display:"block", marginLeft:"auto", marginRight:"auto", width:"50%", textAlign:"center"}}>
+      <div style={{padding:"8px", display:"block", marginLeft:"auto", marginRight:"auto", width:"50%", textAlign:"center"}}>
          {user && <Avatar size="100"  style={{border:"solid 1px lightgray"}} round src={user.image}/> 
         }
       </div>
