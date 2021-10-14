@@ -14,6 +14,7 @@ import Search from './pages/Search'
 import ScanResult from './pages/ScanResult'
 import Dashboard from './pages/Dashboard'
 import ProtectedRoute from './Components/ProtectedRoute';
+import About from './pages/About';
 import EmployeeView from './Components/EmployeeView';
 import RewardForm from './Components/RewardForm';
 import PunchCardAdmin from './pages/PunchCardAdmin';
@@ -28,6 +29,7 @@ import Profile from './pages/Profile';
 function App() {
   return (
     <>
+
       <div className="page-container">
         <div className="content-wrap">
           <NavBar />
