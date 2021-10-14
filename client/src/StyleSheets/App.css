@@ -159,7 +159,7 @@
 }
 
 .searchCard{
-  text-align: center;
+  /* text-align: center; */
   display: flex;
   padding: 20px;
   margin-top: 10px;
@@ -167,7 +167,7 @@
 
 .nameCol{
   align-items: center;
-  padding: 10%;  
+  padding: 5%;  
   /* height: 40px; */ 
 }
 .nameCol1{
