@@ -5,6 +5,7 @@ import { Card, CardContent, Grid, Icon, Image, Menu, Segment, Table } from 'sema
 import styled from 'styled-components';
 import { AuthContext } from '../providers/AuthProvider';
 import Avatar from 'react-avatar';
+import ProfileUpload from './ProfileUpload';
 
 const Profile = () => {
   const { user } = useContext(AuthContext)
@@ -106,6 +107,7 @@ const Profile = () => {
           </div>
         </Segment>
       </BorderlessCard>
+      <ProfileUpload />
     </>
   )
 }
