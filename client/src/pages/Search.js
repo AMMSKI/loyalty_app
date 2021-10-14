@@ -4,6 +4,7 @@ import {Card, Icon} from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider';
 import MyCard from '../Components/MyCard';
 import SearchBar from '../Components/SearchBar';
+import SearchCard from '../Components/MyCard';
 
 
 const Search = () => {
@@ -34,7 +35,7 @@ const Search = () => {
  }
   
   const renderCards = () => {
-    return searchCards.map((c) => <MyCard {...c}/>)
+    return searchCards.map((c) => <SearchCard {...c}/>)
   }
   
   return (
