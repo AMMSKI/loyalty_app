@@ -10,6 +10,14 @@ Rails.application.routes.draw do
         end
       end
     end
+
+    resources :users do
+      resources :restaurants do
+        resources :punchcards do
+        end
+      end
+    end
+    
   
     get 'restaurants/all', to: 'restaurants#all'
     get 'punchcards/all', to: 'punchcards#all'
