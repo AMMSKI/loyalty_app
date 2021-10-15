@@ -17,21 +17,23 @@ User.destroy_all
 
 account_types = ['business', 'customer']
 
-     user = User.create( name:'business1', email:'business1@email.com', password:'123456', account_type:'business')
-     user5 = User.create( name:'business2', email:'business2@email.com', password:'123456', account_type:'business')
-     user2 = User.create( name:'business3', email:'business3@email.com', password:'123456', account_type:'business')
-     user3 = User.create( name:'customer1', email:'customer1@email.com', password:'123456', account_type:'customer')
-     user4 = User.create( name:'customer2', email:'customer2@email.com', password:'123456', account_type:'customer')
-     user6 = User.create( name:'customer3', email:'customer3@email.com', password:'123456', account_type:'customer')
+user = User.create( name:'business1', email:'business1@email.com', password:'123456', account_type:'business')
+user5 = User.create( name:'business2', email:'business2@email.com', password:'123456', account_type:'business')
+user2 = User.create( name:'business3', email:'business3@email.com', password:'123456', account_type:'business')
+user7 = User.create( name:'business4', email:'business4@email.com', password:'123456', account_type:'business')
+user3 = User.create( name:'customer1', email:'customer1@email.com', password:'123456', account_type:'customer')
+user4 = User.create( name:'customer2', email:'customer2@email.com', password:'123456', account_type:'customer')
+user6 = User.create( name:'customer3', email:'customer3@email.com', password:'123456', account_type:'customer')
 
-bizusers = [user,user2,user5]
+bizusers = [user,user2,user5, user7]
 custusers = [user3,user4, user6]
 
-      rest = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:bizusers[rand(3)].id)
-      rest2 = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:bizusers[rand(3)].id)
-      rest3 = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:bizusers[rand(3)].id)
-      rest4 = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:bizusers[rand(3)].id)
-rests = [rest, rest2,rest3,rest4]
+ rest = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:bizusers[0].id)
+ rest2 = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:bizusers[1].id)
+ rest3 = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:bizusers[2].id)
+ rest4 = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:bizusers[3].id)
+      
+ rests = [rest, rest2, rest3, rest4]
 
       punch = Punchcard.create(total_points:rand(10), logo:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SHhtuIyVI39uCzddyZFEigHaHa%26pid%3DApi&f=1', restaurant_id:rests[0].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
       erat a ante.' )
@@ -41,28 +43,21 @@ rests = [rest, rest2,rest3,rest4]
       erat a ante.' )
       punch4 = Punchcard.create(total_points:rand(10), logo:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SHhtuIyVI39uCzddyZFEigHaHa%26pid%3DApi&f=1', restaurant_id:rests[3].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
       erat a ante.' )
-      punch5 = Punchcard.create(total_points:rand(10), logo:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SHhtuIyVI39uCzddyZFEigHaHa%26pid%3DApi&f=1', restaurant_id:rests[0].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-      erat a ante.' )
-      punch6 = Punchcard.create(total_points:rand(10), logo:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SHhtuIyVI39uCzddyZFEigHaHa%26pid%3DApi&f=1', restaurant_id:rests[1].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-      erat a ante.' )
-      punch7 = Punchcard.create(total_points:rand(10), logo:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SHhtuIyVI39uCzddyZFEigHaHa%26pid%3DApi&f=1', restaurant_id:rests[2].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-      erat a ante.' )
-      punch8 = Punchcard.create(total_points:rand(10), logo:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SHhtuIyVI39uCzddyZFEigHaHa%26pid%3DApi&f=1', restaurant_id:rests[3].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-      erat a ante.' )
-      punch9 = Punchcard.create(total_points:rand(10), logo:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SHhtuIyVI39uCzddyZFEigHaHa%26pid%3DApi&f=1',  restaurant_id:rests[0].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-      erat a ante.' )
-      punch1 = Punchcard.create(total_points:rand(10), logo:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SHhtuIyVI39uCzddyZFEigHaHa%26pid%3DApi&f=1', restaurant_id:rests[3].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-      erat a ante.' )
 
-punches = [punch, punch2, punch3, punch4, punch5, punch6, punch7, punch8, punch9, punch1]
+punches = [punch, punch2, punch3, punch4]
 
     15.times do
-      reward = Reward.create(name:'reward', description:Faker::Restaurant.description, punchcard_id:punches[rand(10)].id, cost:rand(100))
+      reward = Reward.create(name:'reward', description:Faker::Restaurant.description, punchcard_id:punches[rand(3)].id, cost:rand(100))
       end
   
-  15.times do
-      UserPunchcard.create(current_points:rand(100), user_id:custusers[rand(3)].id, punchcard_id:punches[rand(10)].id, expiration_date:Faker::Date.between(from: '2021-09-23', to: '2021-12-25'))
-    end
+  # 15.times do
+      UserPunchcard.create(current_points:rand(100), user_id:custusers[0].id, punchcard_id:punches[0].id, expiration_date:Faker::Date.between(from: '2021-09-23', to: '2021-12-25'))
+      UserPunchcard.create(current_points:rand(100), user_id:custusers[1].id, punchcard_id:punches[1].id, expiration_date:Faker::Date.between(from: '2021-09-23', to: '2021-12-25'))
+      UserPunchcard.create(current_points:rand(100), user_id:custusers[2].id, punchcard_id:punches[2].id, expiration_date:Faker::Date.between(from: '2021-09-23', to: '2021-12-25'))
+      UserPunchcard.create(current_points:rand(100), user_id:custusers[0].id, punchcard_id:punches[2].id, expiration_date:Faker::Date.between(from: '2021-09-23', to: '2021-12-25'))
+      UserPunchcard.create(current_points:rand(100), user_id:custusers[1].id, punchcard_id:punches[1].id, expiration_date:Faker::Date.between(from: '2021-09-23', to: '2021-12-25'))
+      UserPunchcard.create(current_points:rand(100), user_id:custusers[2].id, punchcard_id:punches[0].id, expiration_date:Faker::Date.between(from: '2021-09-23', to: '2021-12-25'))
+    # end
 
 
 puts User.all.length
