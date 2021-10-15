@@ -1,15 +1,15 @@
 import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
-// import { Card, Label } from 'semantic-ui-react'
+import { Dropdown } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import { Card, Button, Row, Col } from 'react-bootstrap'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { Link, Redirect, useHistory } from 'react-router-dom'
 
-const MyCard = (props) => { 
+const SearchCard = (props) => { 
   const { user } = useContext(AuthContext)
   const [ownedId, setOwnedIds] = useState([])
-  console.log(props)
+  const history = useHistory()
 
   useEffect(()=>{
     getOwnedcards()
@@ -18,10 +18,8 @@ const MyCard = (props) => {
   const getOwnedcards = async()=> {
     try{
       let res = await axios.get(`/api/user/${user.id}/punchcard_by_user`)
-      console.log('owned cards',res.data)
       let ownedIds = res.data.map(c => c.punchcard_id)
       setOwnedIds(ownedIds)
-      console.log(ownedIds)
     }catch(err){
       console.log(err)
     }
@@ -31,7 +29,6 @@ const MyCard = (props) => {
     let user_id = user.id
     try{
       let res = await axios.post(`/api/users/${user.id}/user_punchcard`, {punchcard_id, user_id} )
-      console.log(res)
       getOwnedcards()
     }catch(err){
       console.log(err)
@@ -39,24 +36,35 @@ const MyCard = (props) => {
   }
   
   return (
-    <div className="searchCard">
-    <Card>
-    <MyLink to={`/dashboard`}>
-      <Card.Body>
+  <div className="searchCard">
+  <MyCard>
+    <Row style={{paddingLeft:'95%', paddingTop:'5px'}}>
+        <Dropdown pointing='top right' multiple icon='ellipsis vertical'>
+          <Dropdown.Menu>
+          {ownedId.includes(props.punch_id) ?
+          <Dropdown.Item onClick={()=>history.push('/dashboard')}>View in Wallet</Dropdown.Item>:
+          <Dropdown.Item onClick={()=>addToWallet(props.punch_id)}>Add To Wallet</Dropdown.Item>}
+          </Dropdown.Menu>
+        </Dropdown>
+    </Row> 
+    <Row style={{alignItems:'center'}}>
+            <Col><Card.Img className='cardImg' src={props.logo}/></Col>
+      <Col className='nameCol'>
         <Row>
-        <Col><Card.Img src={props.logo}/></Col>
-        <Col className='nameCol'>
-        <Card.Title>
-      <h1>{props.restaurant_name}</h1>
-      </Card.Title>
-      <span>{props.city}</span>
-        </Col>
+            <Card.Title>
+            <h1>{props.restaurant_name}</h1>
+            </Card.Title>
         </Row>
-      </Card.Body>
-        </MyLink>
-        {ownedId.includes(props.punch_id) ? <Card.Footer>You own this card</Card.Footer> : <Card.Footer style={{backgroundColor:'#2185D0'}} onClick={()=>addToWallet(props.punch_id)}>Add To Wallet</Card.Footer>}
-    </Card>
-    </div>
+        <Row>
+          <span>{props.city}</span>
+        </Row>
+        <Row>
+            {ownedId.includes(props.punch_id) ? <span style={{color:'green'}}>You own this card</span> : <p></p>}
+        </Row>
+      </Col>
+    </Row>
+  </MyCard>
+  </div>
   )
 }
 
@@ -65,4 +73,9 @@ const MyLink = styled(Link)`
   text-decoration: none;
   color: black;
 `
-export default MyCard
+
+const MyCard = styled(Card)`
+  width: 80vw;
+  // height: 200px;
+`
+export default SearchCard
