@@ -56,7 +56,7 @@ const getPunchcard = async(restId) => {
       <Col className='nameCol'>
         <Row>
             <Card.Title>
-            <h1>{restaurant.name}</h1>
+            <h1>{restaurant.name} </h1>
             </Card.Title>
         </Row>
         <Row>
