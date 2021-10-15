@@ -1,16 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, Grid, Icon, Image, Menu, Segment, Table } from 'semantic-ui-react';
 import styled from 'styled-components';
 import { AuthContext } from '../providers/AuthProvider';
 import Avatar from 'react-avatar';
+import axios from 'axios';
 
 const Profile = () => {
   const { user } = useContext(AuthContext)
+  const [image, setImage] = useState('')
   console.log(user.image)
 
-
+    
   // When you get a user image replace the link with this: {user.image} 
 
   return (
@@ -106,8 +108,10 @@ const Profile = () => {
           </div>
         </Segment>
       </BorderlessCard>
-    </>
-  )
+      </>
+      )
+
+    
 }
 
 export default Profile
