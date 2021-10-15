@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { Button, Form, } from 'semantic-ui-react';
 import { FilePond, registerPlugin} from "react-filepond"
 import "filepond/dist/filepond.min.css"
@@ -19,6 +19,8 @@ export default function ProfileUpload(props) {
 
   const history = useHistory()
 
+
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
@@ -27,6 +29,7 @@ export default function ProfileUpload(props) {
       let res = await axios.patch(`/api/users/${user.id}/editimage`, data)
       setUser({...user, image: res.data.image})
       history.push('/profile')
+
     } catch (error) {
       console.log(error)
     }
@@ -52,6 +55,7 @@ export default function ProfileUpload(props) {
         labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
         />
         <Button primary type="submit"> Add </Button>
+
       </Form>
     </div>
     )

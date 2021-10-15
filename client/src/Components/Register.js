@@ -19,7 +19,6 @@ const Register = () => {
   ]
 
   const handleChange = (e, { value }) => {
-    console.log(value)
     setAccount_Type(value);
   };
 

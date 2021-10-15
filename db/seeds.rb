@@ -35,6 +35,7 @@ custusers = [user3,user4, user6]
       
  rests = [rest, rest2, rest3, rest4]
 
+
       punch = Punchcard.create(total_points:rand(10), logo:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SHhtuIyVI39uCzddyZFEigHaHa%26pid%3DApi&f=1', restaurant_id:rests[0].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
       erat a ante.' )
       punch2 = Punchcard.create(total_points:rand(10), logo:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SHhtuIyVI39uCzddyZFEigHaHa%26pid%3DApi&f=1', restaurant_id:rests[1].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere

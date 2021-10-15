@@ -30,6 +30,7 @@ class Api::UsersController < ApplicationController
         else 
           render json: current_user.errors, status: 422
         end
+
       rescue => err
         render json: { errors: err }
       end
