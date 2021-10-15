@@ -38,6 +38,7 @@ function App() {
           <div>
             <FetchUser>
               <Container style={{ paddingTop: '20px' }}>
+                {/* <Container> */}
                 <Switch>
                   <Route exact path='/' component={Landing} />
                   <ProtectedRoute exact path='/home' component={Home} />

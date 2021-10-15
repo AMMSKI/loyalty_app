@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <Sticky stackable>
       <div style={styles.Footer}>
-        <Segment fluid inverted color='blue' vertical style={{ margin: '8em 0em 0em', padding: '0.3em 0em' }}>
+        <Segment fluid inverted color='blue' vertical style={{ margin: '0em 0em 0em', padding: '0.3em 0em' }}>
           <Container textAlign='center'>
             <Image centered size='mini' src='/logo192.png' href='/' />
             <br />
@@ -32,8 +32,7 @@ const Footer = () => {
 
 const styles = {
   Footer: {
-    position: "relative",
-    bottom: "0",
+    flexShrink: "0",
     width: "100%",
   },
   List: {
