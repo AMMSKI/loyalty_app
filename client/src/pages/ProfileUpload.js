@@ -24,11 +24,9 @@ export default function ProfileUpload(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(user)
     try {
       let data = new FormData()
       data.append('file', files[0].file)
-      console.log(data)
       let res = await axios.patch(`/api/users/${user.id}/editimage`, data)
 
       // setUser(res.data)

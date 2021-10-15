@@ -10,7 +10,6 @@ const CustomerRewards = (props) => {
   const getRewards = async () => {
     try{
       let res = await axios.get(`/api/punchcards/${props.punchcardData.punchcard_id}/rewards`)
-      console.log(res.data)
       setRewards(res.data)
     }catch(err){
       console.log(err)

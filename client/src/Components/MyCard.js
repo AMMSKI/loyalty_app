@@ -10,7 +10,6 @@ const SearchCard = (props) => {
   const { user } = useContext(AuthContext)
   const [ownedId, setOwnedIds] = useState([])
   const history = useHistory()
-  console.log('searchcards',props)
 
   useEffect(()=>{
     getOwnedcards()
@@ -19,10 +18,8 @@ const SearchCard = (props) => {
   const getOwnedcards = async()=> {
     try{
       let res = await axios.get(`/api/user/${user.id}/punchcard_by_user`)
-      console.log('owned cards',res.data)
       let ownedIds = res.data.map(c => c.punchcard_id)
       setOwnedIds(ownedIds)
-      console.log(ownedIds)
     }catch(err){
       console.log(err)
     }
@@ -32,7 +29,6 @@ const SearchCard = (props) => {
     let user_id = user.id
     try{
       let res = await axios.post(`/api/users/${user.id}/user_punchcard`, {punchcard_id, user_id} )
-      console.log(res)
       getOwnedcards()
     }catch(err){
       console.log(err)

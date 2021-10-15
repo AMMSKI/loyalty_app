@@ -5,7 +5,6 @@ import { AuthContext } from '../providers/AuthProvider'
 
 const PunchCardAdmin = (props) => {
   const { user } = useContext(AuthContext)
-  console.log(props)
   const customer_id = props.match.params.user_id
   const userpunchcard_id = props.match.params.userpunchcard_id
   const [restUserId, setRestUserId] = useState(null)
@@ -19,7 +18,6 @@ const PunchCardAdmin = (props) => {
     try{
       let res = await axios.get(`/api/users/${customer_id}/user_punchcard/${userpunchcard_id}`)
       // setRestId(res.data.restaurant_id)
-      console.log(res.data.current_points)
       setCurrentPoints(res.data.current_points)
       getRestUserId(res.data.restaurant_id)
     }catch(err){
@@ -45,7 +43,8 @@ const PunchCardAdmin = (props) => {
       console.log(err)
     }
   }
-      if(user){
+
+
       if(user.account_type === 'customer'){
         return (
           <div>
@@ -79,11 +78,7 @@ const PunchCardAdmin = (props) => {
           <div>Invalid QR</div>
         )
       }
-    }else{
-      return (
-        <div>Log In and Scan Again</div>
-      )
-    }
 }
+
 
 export default PunchCardAdmin
