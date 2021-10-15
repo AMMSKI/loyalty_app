@@ -17,7 +17,6 @@ import ProtectedRoute from './Components/ProtectedRoute';
 import About from './pages/About';
 import PunchCardForm from './Components/PunchCardForm';
 import EmployeeView from './Components/EmployeeView';
-import RewardForm from './Components/RewardForm';
 import PunchCardAdmin from './pages/PunchCardAdmin';
 import AddQR from './pages/AddQR';
 import Footer from './Components/Footer';
