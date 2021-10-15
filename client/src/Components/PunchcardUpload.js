@@ -16,10 +16,11 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
 export default function PunchcardImageUpload(props) {
   const [files, setFiles]= useState([])
   const [punchcardId, setPunchcardId]= useState([])
+  const [punchcard, setPunchcard]= useState([])
+  const [logo, setLogo]= useState([])
   const { user , setUser } = useContext(AuthContext)
 
   const history = useHistory()
-  console.log(props)
 
   useEffect(() => {
     getRestaurantId()
@@ -28,18 +29,29 @@ export default function PunchcardImageUpload(props) {
   const getRestaurantId = async() => {
     try {
     let res = await axios.get(`/api/users/${user.id}/restaurants`)
-    getPunchcardId(res.data[0].id)  
-    console.log(res.data)
+    getPunchcard(res.data[0].id)  
     } catch (error) {
   
     }
   }
 
-  const getPunchcardId = async(restId) => {
+  // const getPunchcardId = async(restId) => {
+  //   try {
+  //   let res = await axios.get(`/api/users/${user.id}/restaurants/${restId}/punchcards`)
+  //   setPunchcardId(res.data[0].id)
+  //   console.log("punchcard info:", res.data)
+  //   } catch (error) {
+  
+  //   }
+  // }
+
+  const getPunchcard = async(restId) => {
     try {
     let res = await axios.get(`/api/users/${user.id}/restaurants/${restId}/punchcards`)
+    console.log("punchcard:", res.data)
+    setPunchcard(res.data[0])
+    setLogo(res.data[0].logo)
     setPunchcardId(res.data[0].id)
-    console.log("punchcard info:", res.data)
     } catch (error) {
   
     }
@@ -53,7 +65,8 @@ export default function PunchcardImageUpload(props) {
       logo.append('file', files[0].file)
       console.log(logo)
       let res = await axios.patch(`/api/users/${user.id}/punchcards/${punchcardId}`, logo)
-      setUser({...user, image: res.data.logo})
+      setPunchcard({...punchcard, logo: res.data.logo})
+      setLogo(res.data.logo)
     } catch (error) {
       console.log(error)
     }
@@ -68,7 +81,11 @@ export default function PunchcardImageUpload(props) {
   return (
     <div>
       <div style={styles.imageContainer}>
-         {user && <Image style={{border:"solid 1px lightgray", borderRadius:"15px"}} src={user.image}/> 
+         {logo && 
+         <Image style={{
+            border:"solid 1px lightgray", 
+            borderRadius:"15px"}} 
+            src={logo}/> 
         }
       </div>
       <Form onSubmit={handleSubmit}>
