@@ -34,7 +34,11 @@ class Api::PunchcardsController < ApplicationController
     if file
       begin
         cloud_image = Cloudinary::Uploader.upload(file, public_id: file.original_filename, secure: true, resource_type: :auto)
-        @punchcard.update(logo: cloud_image['secure_url'])
+        if @punchcard.update(logo: cloud_image['secure_url'])
+          render json: @punchcard
+        else
+          render json: @punchcard.error, status: 422
+        end
       rescue => err
         render json: { errors: err }
       end

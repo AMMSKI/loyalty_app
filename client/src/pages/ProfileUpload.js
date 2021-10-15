@@ -1,12 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Button, Form, } from 'semantic-ui-react';
-import Axios from 'axios'
 import { FilePond, registerPlugin} from "react-filepond"
 import "filepond/dist/filepond.min.css"
 import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orientation";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
-import AuthProvider, { AuthContext } from '../providers/AuthProvider';
+import { AuthContext } from '../providers/AuthProvider';
 import "filepond/dist/filepond.min.css"
 import axios from 'axios';
 import Avatar from 'react-avatar';
@@ -22,12 +21,12 @@ export default function ProfileUpload(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(user)
     try {
       let data = new FormData()
       data.append('file', files[0].file)
-      console.log(data)
       let res = await axios.patch(`/api/users/${user.id}/editimage`, data)
+      setUser({...user, image: res.data.image})
+      history.push('/profile')
     } catch (error) {
       console.log(error)
     }
@@ -35,8 +34,6 @@ export default function ProfileUpload(props) {
 
   const fileChanged = (fileItems) => {
     setFiles(fileItems)
-    // setUser(user=> ({...user, image: fileItems[0].file}))
-
   }
 
   return (
@@ -54,7 +51,7 @@ export default function ProfileUpload(props) {
         onupdatefiles={fileChanged}
         labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
         />
-        <Button primary type="submit" onClick={() => history.goBack()}>Add</Button>
+        <Button primary type="submit"> Add </Button>
       </Form>
     </div>
     )

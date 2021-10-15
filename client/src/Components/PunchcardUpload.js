@@ -53,8 +53,7 @@ export default function PunchcardImageUpload(props) {
       logo.append('file', files[0].file)
       console.log(logo)
       let res = await axios.patch(`/api/users/${user.id}/punchcards/${punchcardId}`, logo)
-      console.log(res)
-      // history.push("/profile")
+      setUser({...user, image: res.data.logo})
     } catch (error) {
       console.log(error)
     }

@@ -25,7 +25,11 @@ class Api::UsersController < ApplicationController
     if file
       begin
         cloud_image = Cloudinary::Uploader.upload(file, public_id: file.original_filename, secure: true, resource_type: :auto)
-        current_user.update(image: cloud_image['secure_url'])
+        if current_user.update(image: cloud_image['secure_url'])
+          render json: current_user
+        else 
+          render json: current_user.errors, status: 422
+        end
       rescue => err
         render json: { errors: err }
       end
