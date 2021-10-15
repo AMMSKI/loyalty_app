@@ -29,6 +29,7 @@ import Charting from './pages/Charting';
 import Admin from './pages/Admin';
 import PunchcardImageUpload from './Components/PunchcardUpload';
 import RewardForm from './Components/RewardForm';
+import PunchCardEdit from './Components/PunchCardEdit';
 
 function App() {
   return (
@@ -64,6 +65,7 @@ function App() {
                   <Route exact path='/employeeview/:punch_id' component={EmployeeView} />
                   <ProtectedRoute exact path='/rewards' component={Rewards} />
                   <ProtectedRoute exact path='/rewardform' component={RewardForm} />
+                  <ProtectedRoute exact path='/punchcardedit' component={PunchCardEdit} />
                   <Route component={NoMatch} />
                 </Switch>
               </Container>
