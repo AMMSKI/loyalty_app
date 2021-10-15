@@ -15,7 +15,6 @@ const AuthProvider = (props) => {
       let res = await axios.post('/api/auth', user)
       setUser(res.data.data)
       history.push('/home')
-      console.log(res.data.data)
       console.log("User registered successfully")
     } catch (err) {
       setError(err.response.data.errors ? err.response.data.errors : err.response.data)
@@ -32,7 +31,6 @@ const AuthProvider = (props) => {
       let res = await axios.post('/api/auth/sign_in', user)
       setUser(res.data.data)
       history.push('/home')
-      console.log(res.data.data)
       console.log("User login successfully!")
     } catch (err) {
       setError(err)
