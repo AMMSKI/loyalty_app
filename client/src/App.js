@@ -14,13 +14,8 @@ import Search from './pages/Search'
 import ScanResult from './pages/ScanResult'
 import Dashboard from './pages/Dashboard'
 import ProtectedRoute from './Components/ProtectedRoute';
-import About from './pages/About';
-<<<<<<< HEAD
 import RewardForm from './Components/RewardForm';
-import PunchCardForm from './Components/PunchCardForm';
-=======
 import EmployeeView from './Components/EmployeeView';
-import RewardForm from './Components/RewardForm';
 import PunchCardAdmin from './pages/PunchCardAdmin';
 import AddQR from './pages/AddQR';
 import Footer from './Components/Footer';
@@ -32,36 +27,10 @@ import ProfileUpload from './pages/ProfileUpload';
 import Charting from './pages/Charting';
 import Admin from './pages/Admin';
 
->>>>>>> 2d27e959a6beeedc23eb3339e00eb86308d7d178
 
 function App() {
   return (
     <>
-<<<<<<< HEAD
-      <NavBar />
-      <PunchCardForm/>
-      <FetchUser>
-        <Container style={{paddingTop:'20px'}}>
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/edit_user' component={EditUser} />
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/rewards' component={Rewards} />
-            <Route exact path='/register' component={Register} />
-            <Route exact path='/landing' component={Landing} />
-            <Route exact path='/earn/:userpunchcard_id' component={Earn} />
-            <Route exact path='/search' component={Search} />
-            <Route exact path='/scan_result' component={ScanResult} />
-            <Route exact path='/showQR' component={ShowQR} />
-            <Route exact path='/dashboard' component={Dashboard} />
-            <ProtectedRoute exact path='/rewards' component={Rewards} />
-            <Route component={NoMatch} />
-          </Switch>
-        </Container>
-      </FetchUser>
-=======
->>>>>>> 2d27e959a6beeedc23eb3339e00eb86308d7d178
-
       <div className="page-container">
         <div className="content-wrap">
           <NavBar />
