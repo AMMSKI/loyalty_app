@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Card, CardGroup, Grid, GridColumn, GridRow, Header, Segment } from 'semantic-ui-react';
+import { Grid, GridColumn, GridRow } from 'semantic-ui-react';
 import Avatar from 'react-avatar';
 import { AuthContext } from '../providers/AuthProvider';
 import styled from 'styled-components';
@@ -17,14 +17,17 @@ function Admin(props) {
         <h6>{user.account_type}</h6>
       </div>
         <Grid textAlign='center' celled columns='equal' style={{marginTop:"40px"}}>
-          <GridRow>
+          <GridRow style={styles.stretched}>
             <Grid.Column>
+              <p style={styles.p}>12</p>
               Cards
             </Grid.Column>
             <Grid.Column>
+              <p style={styles.p}>230</p>
               Data
             </Grid.Column>
             <Grid.Column>
+              <p style={styles.p}>169</p>
               Data
             </Grid.Column>
           </GridRow>
@@ -37,3 +40,10 @@ function Admin(props) {
 }
 
 export default Admin;
+
+const styles = {
+  p: {
+    color: "#328FD4",
+    fontWeight: "bold",
+  }
+}
