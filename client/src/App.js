@@ -18,7 +18,6 @@ import About from './pages/About';
 import RewardForm from './Components/RewardForm';
 import PunchCardForm from './Components/PunchCardForm';
 import EmployeeView from './Components/EmployeeView';
-import RewardForm from './Components/RewardForm';
 import PunchCardAdmin from './pages/PunchCardAdmin';
 import AddQR from './pages/AddQR';
 import Footer from './Components/Footer';
@@ -51,20 +50,19 @@ function App() {
                   <ProtectedRoute exact path='/employeeview' component={EmployeeView} />
                   <Route exact path='/login' component={Login} />
                   <Route exact path='/register' component={Register} />
-                  <Route exact path='/landing' component={Landing} />
                   <Route exact path='/earn/:userpunchcard_id' component={Earn} />
                   <Route exact path='/scan_result' component={ScanResult} />
-                  <Route exact path='/addQR/:user_id/:punchcard_id' component={AddQR} />
-                  <Route exact path='/punchcardAdmin/:user_id/:userpunchcard_id' component={PunchCardAdmin} />
                   <Route exact path='/showQR' component={AddQR} />
-                  <Route exact path='/addQR/:user_id/:punchcard_id' component={AddQR} />
                   <Route exact path='/rewardQR/:reward_id/:userpunchcard_id' component={RewardQR} />
                   <Route exact path='/charting' component={Charting} />
                   <Route exact path='/admin' component={Admin} />
                   <Route exact path='/rewardAdmin/:reward_id/:userpunchcard_id' component={RewardAdmin} />
                   <Route exact path='/profileupload/:user_id' component={ProfileUpload} />
-                  <Route exact path='/dashboard' component={Dashboard} />
-                  <Route exact path='/employeeview/:punch_id' component={EmployeeView} />
+                  <ProtectedRoute exact path='/earn/:userpunchcard_id' component={Earn} />
+                  <Route exact path='/search' component={Search} />
+                  <Route exact path='/scan_result' component={ScanResult} />
+                  <ProtectedRoute exact path='/addQR/:user_id/:punchcard_id' component={AddQR} />
+                  <ProtectedRoute exact path='/punchcardAdmin/:user_id/:userpunchcard_id' component={PunchCardAdmin} />
                   <Route component={NoMatch} />
                 </Switch>
               </Container>
