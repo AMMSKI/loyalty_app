@@ -15,7 +15,6 @@ import ScanResult from './pages/ScanResult'
 import Dashboard from './pages/Dashboard'
 import ProtectedRoute from './Components/ProtectedRoute';
 import About from './pages/About';
-import RewardForm from './Components/RewardForm';
 import PunchCardForm from './Components/PunchCardForm';
 import EmployeeView from './Components/EmployeeView';
 import PunchCardAdmin from './pages/PunchCardAdmin';
@@ -28,6 +27,8 @@ import Profile from './pages/Profile';
 import ProfileUpload from './pages/ProfileUpload';
 import Charting from './pages/Charting';
 import Admin from './pages/Admin';
+import PunchcardImageUpload from './Components/PunchcardUpload';
+import RewardForm from './Components/RewardForm';
 
 function App() {
   return (
@@ -64,6 +65,10 @@ function App() {
                   <Route exact path='/scan_result' component={ScanResult} />
                   <ProtectedRoute exact path='/addQR/:user_id/:punchcard_id' component={AddQR} />
                   <ProtectedRoute exact path='/punchcardAdmin/:user_id/:userpunchcard_id' component={PunchCardAdmin} />
+                  <ProtectedRoute exact path='/rewardQR/:reward_id/:userpunchcard_id' component={RewardQR} />
+                  <Route exact path='/charting' component={Charting} />
+                  <Route exact path='/admin' component={Admin} />
+                  <Route exact path='/pcimageupload' component={PunchcardImageUpload} />
                   <Route component={NoMatch} />
                 </Switch>
               </Container>

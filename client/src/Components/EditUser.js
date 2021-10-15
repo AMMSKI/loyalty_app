@@ -3,6 +3,7 @@ import { useHistory } from 'react-router'
 import { Button, Form, Grid, Header, Image, Segment } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider';
 import ErrorMessage from './ErrorMessage';
+import PunchcardImageUpload from './PunchcardUpload';
 
 export default function EditUser() {
   const { handleUserUpdate, error, loading, user } = useContext(AuthContext);
@@ -78,6 +79,7 @@ export default function EditUser() {
           </Form>
         </Grid.Column>
       </Grid>
+      { user.account_type = "business" && <PunchcardImageUpload />}
     </div>
   )
 }
