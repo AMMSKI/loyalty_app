@@ -28,6 +28,7 @@ import ProfileUpload from './pages/ProfileUpload';
 import Charting from './pages/Charting';
 import Admin from './pages/Admin';
 import PunchcardImageUpload from './Components/PunchcardUpload';
+import RewardForm from './Components/RewardForm';
 
 function App() {
   return (
