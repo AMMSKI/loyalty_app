@@ -3,14 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { Card, Form, Button } from 'react-bootstrap'
 import { Input, Segment } from 'semantic-ui-react'
 
-// t.text "description"
-//     t.string "logo"
-//     t.bigint "restaurant_id", null: false
-//     t.datetime "created_at", precision: 6, null: false
-//     t.datetime "updated_at", precision: 6, null: false
-//     t.integer "total_points"
 const PunchCardEdit = () => {
-  const id = 184
+  const id = 184 //for testing.. this will get passed in
   const [description, setDescription] = useState('')
   const [punchcard, setPunchcard] = useState(null)
   
