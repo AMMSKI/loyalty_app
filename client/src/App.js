@@ -30,6 +30,7 @@ import Admin from './pages/Admin';
 import PunchcardImageUpload from './Components/PunchcardUpload';
 import RewardForm from './Components/RewardForm';
 import PunchCardEdit from './Components/PunchCardEdit';
+import PunchCardSettings from './pages/PunchCardSettings';
 
 function App() {
   return (
@@ -65,7 +66,7 @@ function App() {
                   <Route exact path='/employeeview/:punch_id' component={EmployeeView} />
                   <ProtectedRoute exact path='/rewards' component={Rewards} />
                   <ProtectedRoute exact path='/rewardform' component={RewardForm} />
-                  <ProtectedRoute exact path='/punchcardedit' component={PunchCardEdit} />
+                  <ProtectedRoute exact path='/settings' component={PunchCardSettings} />
                   <Route component={NoMatch} />
                 </Switch>
               </Container>
