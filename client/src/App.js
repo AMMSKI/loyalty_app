@@ -32,13 +32,10 @@ import PunchcardImageUpload from './Components/PunchcardUpload';
 
 function App() {
   return (
-    <>
       <div className="page-container">
         <div className="content-wrap">
-          <NavBar />
-          <div>
+            <NavBar />
             <FetchUser>
-              <Container style={{ paddingTop: '20px' }}>
                 <Switch>
                   <Route exact path='/' component={Landing} />
                   <ProtectedRoute exact path='/home' component={Home} />
@@ -66,13 +63,10 @@ function App() {
                   <ProtectedRoute exact path='/rewardform' component={RewardForm} />
                   <Route component={NoMatch} />
                 </Switch>
-              </Container>
             </FetchUser>
-          </div>
-        </div>
           <Footer />  
+        </div>
       </div>
-    </>
   );
 }
 
