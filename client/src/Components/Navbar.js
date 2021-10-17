@@ -49,7 +49,7 @@ const NavBar = () => {
             basic
             onClick={(e) => history.push('/login')}
           >
-            GET STARTED
+            LOGIN
           </Button>
         </Menu.Item>
 
@@ -88,7 +88,7 @@ const NavBar = () => {
       <Grid class="row no-gutter">
         <Grid.Row className='GridRow'>
           <Menu size='small' tabular style={{backgroundColor:"black"}}>
-            <Menu.Item as='a' header>
+            <Menu.Item as='a' header onClick={(e) => handleClick(e, '/')}>
               <Image avatar src={logo} style={{ marginRight: '0.8em' }} />
             </Menu.Item>
             <Menu.Menu position="right">

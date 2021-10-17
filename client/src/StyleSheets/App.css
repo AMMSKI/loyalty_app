@@ -1,5 +1,51 @@
-/* NAVBAR */
+/* LOGIN PAGE*/
 
+.login-page {
+  min-height: 82vh;
+  margin: 15px 25px 0 25px;
+}
+
+.login-header {
+  font-size: large;
+  margin: 30px 0 40px 0;
+  font-weight: bolder;
+}
+
+.loyal-burger-header {
+  font-size: xx-large;
+  color: #D7272F; 
+}
+
+.button-group {
+  margin: 50px 0 35px 0;
+}
+
+.yellow-button {
+  background-color:#F3CA03;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  width: 50%;
+  height: 30px;
+}
+
+.white-button {
+  background-color:white;
+  border: solid 1px lightgrey;
+  border-radius: 3px;
+  width: 50%;
+  height: 30px;
+}
+
+.remember-forget {
+  appearance: none;
+  display: flex;
+  justify-content: space-between;
+  font-size: small;
+  color: gray;
+  padding:8px;
+  margin-bottom:40px
+}
 
 /* LANDING PAGE */
 .landing {
@@ -7,7 +53,7 @@
   flex-direction: column;
   background-color: black;
   color: white;
-  height: 100%;
+  min-height: 84vh;
 
 }
 
@@ -27,19 +73,16 @@ hr.rounded {
   justify-content: center;
   align-items: center;
   height: 400px;
-
+  
 }
-/* 
-.logo {
-  text-align: center;
 
-} */
 
 .tagline {
   font-weight: 900;
   text-align: center;
   font-size: smaller;
-
+  margin-bottom: 25px;
+  
 }
 
 .buttoncontainer {
@@ -59,6 +102,7 @@ hr.rounded {
   height: 40px;
   font-weight: 900;
   font-size: large;
+  margin-top: 25px;
 }
 
 
@@ -105,7 +149,7 @@ hr.rounded {
 .page-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 .App {

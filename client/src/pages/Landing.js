@@ -17,7 +17,7 @@ const Landing = () => {
           <hr className="rounded"/>
         <div className="tagline">
           EARN REWARDS, EAT BURGERS... 
-          <br />
+          <br /><br />
           OR SOMETHING ELSE 
         </div>
       </div>

@@ -32,6 +32,7 @@ import PunchcardImageUpload from './Components/PunchcardUpload';
 
 function App() {
   return (
+    <div>
       <div className="page-container">
         <div className="content-wrap">
             <NavBar />
@@ -64,9 +65,10 @@ function App() {
                   <Route component={NoMatch} />
                 </Switch>
             </FetchUser>
-          <Footer />  
         </div>
       </div>
+        <Footer />
+        </div> 
   );
 }
 
