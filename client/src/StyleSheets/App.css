@@ -1,3 +1,20 @@
+/* DASHBOARD */
+
+.wallet-page {
+  
+  padding: 30px 25px 0 25px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  background-color: #700000;
+  color: white;
+  min-height: 80vh;
+}
+
+.wallet-header {
+  padding: 0 16px 8px 8px;
+}
+
 /* LOGIN PAGE*/
 
 .login-page {
@@ -109,6 +126,7 @@ hr.rounded {
 
 .App {
   text-align: center;
+  /* background-color: black; */
 }
 
 .App-logo {
@@ -149,7 +167,8 @@ hr.rounded {
 .page-container {
   display: flex;
   flex-direction: column;
-  /* min-height: 100vh; */
+  min-height: 90vh;
+  /* background-color: black; */
 }
 
 .App {
@@ -260,8 +279,8 @@ hr.rounded {
 .searchCard{
   /* text-align: center; */
   display: flex;
-  padding: 20px;
-  margin-top: 10px;
+  padding: 8px;
+  margin-top: 8px;
 }
 
 .nameCol{
