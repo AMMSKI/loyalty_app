@@ -5,6 +5,7 @@ import { AuthContext } from '../providers/AuthProvider'
 import { useHistory, useLocation } from 'react-router'
 // import '../StyleSheets/App.css'
 import '../StyleSheets/Navbar.css'
+import logo from "../burgerlogo.png"
 
 const NavBar = () => {
   const history = useHistory()
@@ -49,7 +50,7 @@ const NavBar = () => {
             basic
             onClick={(e) => history.push('/login')}
           >
-            GET STARTED
+            LOGIN
           </Button>
         </Menu.Item>
 
@@ -91,13 +92,11 @@ const NavBar = () => {
 
   return (
     <Sticky>
-
       <Grid class="row no-gutter">
         <Grid.Row className='GridRow'>
-          <Menu size='small' tabular inverted color='blue'>
-            <Menu.Item as='a' header>
-              <Image avatar src='/logo192.png' style={{ marginRight: '0.8em' }} />
-              LoyaltyApp
+          <Menu size='small' tabular style={{backgroundColor:"black"}}>
+            <Menu.Item as='a' header onClick={(e) => handleClick(e, '/')}>
+              <Image avatar src={logo} style={{ marginRight: '0.8em' }} />
             </Menu.Item>
             <Menu.Menu position="right">
               {rightNavItems()}
@@ -105,7 +104,7 @@ const NavBar = () => {
           </Menu>
         </Grid.Row>
         <Grid.Row className='GridRow'>
-          <Menu size='small' tabular inverted color='blue'>
+          <Menu size='small' tabular style={{backgroundColor:"black"}}>
             {customNavItems()}
           </Menu>
         </Grid.Row>
