@@ -7,6 +7,7 @@ import styled from "styled-components";
 import PunchcardImageUpload from "../Components/PunchcardUpload";
 import PunchCardEdit from "../Components/PunchCardEdit";
 import RewardForm from "../Components/RewardForm";
+import RestaurantEdit from "../Components/RestaurantEdit";
 
 const PunchCardSettings = () => {
 
@@ -17,6 +18,7 @@ const [rewards, setRewards] = useState([])
 const [showEdit, setShowEdit] = useState(false)
 const [page, setPage] = useState(null)
 const [showRewardForm, setShowRewardForm] = useState(false)
+const [showRestEdit, setShowRestEdit] = useState(false)
 
 useEffect(() => {
   getRestaurant()
@@ -144,15 +146,15 @@ if(page === 'punchcard'){
   )}else if(page === 'rewards'){
     return(
       <div>
+        {renderRewards()}
         <div style={{textAlign:'center'}}>
+          {showRewardForm && <RewardForm getRewards={getRewards} id={punchcard.id}/>}
               <button
                 onClick={()=>setShowRewardForm(!showRewardForm)}
                 className="loginbutton" >
                 {showRewardForm ? 'Close' : 'Add Reward'}
               </button>
-        {showRewardForm && <RewardForm getRewards={getRewards} id={punchcard.id}/>}
         </div>
-        {renderRewards()}
       </div>
     ) 
   }else if(page === 'restaurant'){
@@ -165,7 +167,12 @@ if(page === 'punchcard'){
         <p>ZIP: {restaurant.zip}</p>
         <p>#: {restaurant.phone_number}</p>
       </Segment>
-      {showRestEdit && <RestaurantEdit />}
+      <div style={{textAlign:'center'}}>
+      <button 
+        onClick={()=>setShowRestEdit(!showRestEdit)}
+        className='loginbutton'>{showRestEdit ? 'Close' : 'Edit'}</button>
+      {showRestEdit && <RestaurantEdit getRestaurant={getRestaurant} restaurant={restaurant} />}
+      </div>
       </>
     )
   }
