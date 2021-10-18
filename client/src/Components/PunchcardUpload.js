@@ -97,7 +97,7 @@ export default function PunchcardImageUpload(props) {
         onupdatefiles={fileChanged}
         labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
         />
-        <Button primary type="submit">Add</Button>
+        <Button primary type="submit" style={{backgroundColor:"#D7272F"}}>Add</Button>
       </Form>
     </div>
     )

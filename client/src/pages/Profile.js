@@ -13,8 +13,8 @@ const Profile = () => {
 
 
   return (
-    <>
-      <BorderlessCard centered>
+    <div className="profile-page">
+      <BorderlessCard centered>        
         <CardContent textAlign="center">
           <Link to={`/profileupload/${user.id}`}>
           {user.image ? 
@@ -34,7 +34,7 @@ const Profile = () => {
           </Link>
           {user ?
             <div>
-              <h2 style={{color:"#328FD4", fontWeight:"bold"}}>{user.name}</h2>
+              <h2 style={{color:"#D7272F", fontWeight:"bold"}}>{user.name}</h2>
               <h6>{user.account_type}</h6>
             </div> :
             <div>
@@ -47,11 +47,11 @@ const Profile = () => {
           <div>
             <Grid>
               <Grid.Column width={13}>
-                <Icon color="blue" name="user" />
+                <Icon color="red" name="user" />
                 Name
               </Grid.Column>
               <Grid.Column>
-                <Icon color="blue" name="angle right" />
+                <Icon color="red" name="angle right" />
               </Grid.Column>
             </Grid>
           </div>
@@ -59,11 +59,11 @@ const Profile = () => {
           <div>
             <Grid>
               <Grid.Column width={13}>
-                <Icon color="blue" name="edit" />
+                <Icon color="red" name="edit" />
                 Edit Bio
                 </Grid.Column>
               <Grid.Column >
-                <Icon color="blue" name="angle right" />
+                <Icon color="red" name="angle right" />
               </Grid.Column>
             </Grid>
           </div>
@@ -71,11 +71,11 @@ const Profile = () => {
           <div>
             <Grid>
               <Grid.Column width={13}>
-                <Icon color="blue" name="chart bar" />
+                <Icon color="red" name="chart bar" />
                 My Points
                 </Grid.Column>
               <Grid.Column >
-                <Icon color="blue" name="angle right" />
+                <Icon color="red" name="angle right" />
               </Grid.Column>
             </Grid>
           </div>
@@ -83,11 +83,11 @@ const Profile = () => {
           <div>
             <Grid>
               <Grid.Column width={13}>
-                <Icon color="blue" name="map marker alternate" />
+                <Icon color="red" name="map marker alternate" />
                 My Location
                 </Grid.Column>
               <Grid.Column >
-                <Icon color="blue" name="angle right" />
+                <Icon color="red" name="angle right" />
               </Grid.Column>
             </Grid>
           </div>
@@ -95,17 +95,17 @@ const Profile = () => {
           <div>
             <Grid>
               <Grid.Column width={13}>
-                <Icon color="blue" name="mail" />
+                <Icon color="red" name="mail" />
                 {user ? <>{user.email}</> : "User Email"}
               </Grid.Column>
               <Grid.Column >
-                <Icon color="blue" name="angle right" />
+                <Icon color="red" name="angle right" />
               </Grid.Column>
             </Grid>
           </div>
         </Segment>
       </BorderlessCard>
-      </>
+      </div>
       )
 
     
@@ -114,5 +114,6 @@ const Profile = () => {
 export default Profile
 
 const BorderlessCard = styled(Card)`
+  height: 300px;
   box-shadow: none !important
 `
