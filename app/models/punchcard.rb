@@ -9,7 +9,7 @@ class Punchcard < ApplicationRecord
 # FROM punchcards AS p
 # INNER JOIN restaurants AS R ON p.restaurant_id = r.id
 
-    select('p.id AS punch_id, p.description, p.total_points, p.logo, r.name AS restaurant_name, r.id AS restaurant_id, r.city')
+    select('p.id AS punch_id, p.description, p.total_points, p.logo, r.name AS restaurant_name, r.id AS restaurant_id, r.city, r.image AS restaurant_image')
     .from('punchcards AS p')
     .joins('INNER JOIN restaurants AS R ON p.restaurant_id = r.id')
 

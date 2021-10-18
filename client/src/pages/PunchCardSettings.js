@@ -87,7 +87,7 @@ if(page === 'punchcard'){
   </Dropdown>
 </Row>
 <Row style={{alignItems:'center'}}>
-      <Col><Card.Img className='cardImg' src={punchcard.logo}/></Col>
+      <Col><Card.Img className='cardImg' src={restaurant.image}/></Col>
 <Col className='nameCol'>
   <Row>
       <Card.Title>
@@ -120,9 +120,9 @@ if(page === 'punchcard'){
           <Col className='nameCol1'>
             <Row>
             <Card.Title>
-            <h1>{restaurant.name}</h1>
+            <h1 style={{color:"white"}}>{restaurant.name}</h1>
             </Card.Title>
-            <p>0 points</p>
+            <p style={{color:"white"}}>0 points</p>
             </Row>
           </Col>
         </Row>
@@ -157,12 +157,16 @@ if(page === 'punchcard'){
     ) 
   }else if(page === 'restaurant'){
     return(
-      <div>
+      <>
+      <Segment style={{textAlign:'center'}}>
+        <Card.Img className='cardImg' src={restaurant.image}/>
         <h1>{restaurant.name}</h1>
         <p>City: {restaurant.city}</p>
         <p>ZIP: {restaurant.zip}</p>
         <p>#: {restaurant.phone_number}</p>
-      </div>
+      </Segment>
+      {showRestEdit && <RestaurantEdit />}
+      </>
     )
   }
 }

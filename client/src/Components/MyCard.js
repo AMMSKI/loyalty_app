@@ -48,7 +48,7 @@ const SearchCard = (props) => {
           </Dropdown>
         </Row>
         <Row style={{ alignItems: 'center' }}>
-          <Col><Card.Img className='cardImg' src={props.logo} /></Col>
+          <Col><Card.Img className='cardImg' src={props.restaurant_image} /></Col>
           <Col className='nameCol'>
             <Row>
               <Card.Title>
