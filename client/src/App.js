@@ -29,6 +29,11 @@ import Charting from './pages/Charting';
 import Admin from './pages/Admin';
 import PunchcardImageUpload from './Components/PunchcardUpload';
 import RewardForm from './Components/RewardForm';
+<<<<<<< HEAD
+=======
+import PunchCardEdit from './Components/PunchCardEdit';
+import PunchCardSettings from './pages/PunchCardSettings';
+>>>>>>> c0f8b6a60dbb6f0f75e1d165283b80819ed0b910
 
 function App() {
   return (
@@ -69,6 +74,17 @@ function App() {
                   <Route exact path='/charting' component={Charting} />
                   <Route exact path='/admin' component={Admin} />
                   <Route exact path='/pcimageupload' component={PunchcardImageUpload} />
+<<<<<<< HEAD
+=======
+
+                  <ProtectedRoute exact path='/rewardAdmin/:reward_id/:userpunchcard_id' component={RewardAdmin} />
+                  <Route exact path='/profileupload/:user_id' component={ProfileUpload} />   
+                  <Route exact path='/dashboard' component={Dashboard} />
+                  <Route exact path='/employeeview/:punch_id' component={EmployeeView} />
+                  <ProtectedRoute exact path='/rewards' component={Rewards} />
+                  <ProtectedRoute exact path='/rewardform' component={RewardForm} />
+                  <ProtectedRoute exact path='/settings' component={PunchCardSettings} />
+>>>>>>> c0f8b6a60dbb6f0f75e1d165283b80819ed0b910
                   <Route component={NoMatch} />
                 </Switch>
               </Container>
