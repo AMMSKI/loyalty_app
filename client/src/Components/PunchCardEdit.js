@@ -3,8 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Card, Form, Button } from 'react-bootstrap'
 import { Input, Segment } from 'semantic-ui-react'
 
-const PunchCardEdit = () => {
-  const id = 184 //for testing.. this will get passed in
+const PunchCardEdit = ({id, setShowEdit, showEdit, getRestaurant}) => {
   const [description, setDescription] = useState('')
   const [punchcard, setPunchcard] = useState(null)
   
@@ -26,7 +25,8 @@ const PunchCardEdit = () => {
     e.preventDefault()
     try{
       let res = await axios.patch(`/api/users/null/restaurants/null/punchcards/${id}`, {...punchcard, description})
-      alert('update worked')
+      getRestaurant()
+      setShowEdit(!showEdit)
     }catch(err){
       console.log(err)
     }

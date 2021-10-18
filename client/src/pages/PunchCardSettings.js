@@ -5,7 +5,8 @@ import { Dropdown, Segment } from 'semantic-ui-react'
 import { Card, Button, Row, Col } from 'react-bootstrap'
 import styled from "styled-components";
 import PunchcardImageUpload from "../Components/PunchcardUpload";
-import PunchCardEdit from "./PunchCardEdit";
+import PunchCardEdit from "../Components/PunchCardEdit";
+import RewardForm from "../Components/RewardForm";
 
 
 
@@ -14,6 +15,7 @@ const PunchCardSettings = () => {
 const {user} =useContext(AuthContext)
 const [restaurant, setRestaurant ] = useState([])
 const [punchcard, setPunchcard ] = useState([])
+const [rewards, setRewards] = useState([])
 const [showEdit, setShowEdit] = useState(false)
 
 useEffect(() => {
@@ -32,17 +34,56 @@ const getPunchcard = async(restId) => {
   try {
   let res = await axios.get(`/api/users/${user.id}/restaurants/${restId}/punchcards`)
   setPunchcard(res.data[0])
+  getRewards(res.data[0].id)
   } catch (error) {
   }
 }
+
+const getRewards = async (id) => {
+  try {
+    let res = await axios.get(`/api/punchcards/${id}/rewards`)
+    console.log(res.data)
+    setRewards(res.data)
+  }catch(err){
+    console.log(err)
+  }
+}
+
+const deleteReward = async (id) => {
+  try{
+    let res = await axios.delete(`/api/punchcards/null/rewards/${id}`)
+    console.log('delete', res)
+    getRestaurant()
+  }catch(err){
+    console.log(err)
+  }
+}
+
+const renderRewards = () => {
+  return rewards.map((r)=>{
+    return (
+    <div key={r.id}>
+      <Segment>
+        <h3>Reward:</h3>
+        <p>Cost: {r.cost}</p>
+        <h3>{r.description}</h3>
+        <Button onClick={()=>deleteReward(r.id)}>Delete</Button>
+      </Segment>
+    </div>
+    )
+  })
+}
+
   return(
     <>
         <div>
           <Segment>
-            <h1>Card Description</h1>
+            <h1>Card Description in Customer Earn Page:</h1>
             <p>{punchcard.description}</p>
-            <button onClick={()=>setShowEdit(!showEdit)}>Edit Description</button>
-            {showEdit && <PunchCardEdit />}
+            {!showEdit ? 
+              <Button onClick={()=>setShowEdit(!showEdit)}>Edit Description</Button> :
+              <PunchCardEdit showEdit={showEdit} getRestaurant={getRestaurant} setShowEdit={setShowEdit} id={punchcard.id}
+            />}
           </Segment>
         </div>
         <Segment>
@@ -81,8 +122,6 @@ const getPunchcard = async(restId) => {
             
           </Dropdown.Menu>
           </Dropdown>
-
-
         </Row>
              <Card.Body>
               <Row>
@@ -99,6 +138,10 @@ const getPunchcard = async(restId) => {
         </MyCard>
         </div>
         </Segment>
+      <div>
+        <RewardForm id={punchcard.id}/>
+        {renderRewards()}
+      </div>
     </>
   )
 }
