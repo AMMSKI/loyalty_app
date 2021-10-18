@@ -5,6 +5,7 @@ import { AuthContext } from '../providers/AuthProvider'
 import { Card, Button, Row, Col } from 'react-bootstrap'
 import styled from 'styled-components'
 import { Link, Redirect, useHistory } from 'react-router-dom'
+import Avatar from 'react-avatar'
 
 const SearchCard = (props) => {
   const { user } = useContext(AuthContext)
@@ -48,7 +49,7 @@ const SearchCard = (props) => {
           </Dropdown>
         </Row>
         <Row style={{ alignItems: 'center' }}>
-          <Col><Card.Img className='cardImg' src={props.restaurant_image} /></Col>
+          <Col style={{ alignItems: 'center', padding: '20px' }}><Avatar size="100" round src={props.restaurant_image}/> </Col>
           <Col className='nameCol'>
             <Row>
               <Card.Title>

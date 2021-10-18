@@ -8,6 +8,7 @@ import PunchcardImageUpload from "../Components/PunchcardUpload";
 import PunchCardEdit from "../Components/PunchCardEdit";
 import RewardForm from "../Components/RewardForm";
 import RestaurantEdit from "../Components/RestaurantEdit";
+import Avatar from "react-avatar";
 
 const PunchCardSettings = () => {
 
@@ -89,7 +90,7 @@ if(page === 'punchcard'){
   </Dropdown>
 </Row>
 <Row style={{alignItems:'center'}}>
-      <Col><Card.Img className='cardImg' src={restaurant.image}/></Col>
+      <Col style={{ alignItems: 'center', padding: '20px' }}><Avatar size="100" round src={restaurant.image}/> </Col>
 <Col className='nameCol'>
   <Row>
       <Card.Title>
@@ -161,7 +162,7 @@ if(page === 'punchcard'){
     return(
       <>
       <Segment style={{textAlign:'center'}}>
-        <Card.Img className='cardImg' src={restaurant.image}/>
+      <Avatar size="300" round src={restaurant.image}/> 
         <h1>{restaurant.name}</h1>
         <p>City: {restaurant.city}</p>
         <p>ZIP: {restaurant.zip}</p>
