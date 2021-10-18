@@ -4,20 +4,20 @@ import { useState } from "react";
 const RewardForm = ({id}) => {
 
   const [name, setName] = useState('');
-  const [desc, setDesc] = useState('');
+  const [description, setDescription] = useState('');
   const [cost, setCost] = useState('');
 
   const submitHandler = async (e) => {
     e.preventDefault();
 
     try {
-      axios.post(`/api/punchcards/${id}/rewards`, { name: name, desc: desc, cost: cost })
-      
+      let res = await axios.post(`/api/punchcards/${id}/rewards`, { name, description, cost, punchcard_id: id })
+        console.log(res)
       setName('');
-      setDesc('');
+      setDescription('');
       setCost('');
     } catch (error) {
-      console.log(error)
+      console.log('failed',error)
     }
   };
 
@@ -33,7 +33,7 @@ const RewardForm = ({id}) => {
 
         <p>
           <div>Description:</div>
-          <input value={desc} onChange={e => setDesc(e.target.value)} />
+          <input value={description} onChange={e => setDescription(e.target.value)} />
         </p>
 
         <p>

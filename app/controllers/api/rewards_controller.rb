@@ -35,6 +35,7 @@ class Api::RewardsController < ApplicationController
       end
 
       def reward_params
-        params.require(:reward).permit(:name, :description, :cost)
+        params.require(:reward).permit(:name, :description, :cost, :punchcard_id)
       end
 end
+

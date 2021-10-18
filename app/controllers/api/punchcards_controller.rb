@@ -47,13 +47,6 @@ class Api::PunchcardsController < ApplicationController
       rescue => err
         render json: { errors: err }
       end
-      # if current_user.save(user_params)
-      #   # did save to cloudianry and db
-      #   render json: current_user
-      # else
-      #   # did save to cloudianry but not to db
-      #   render json: { errors: current_user.errors }, status: 422
-      # end
     end
   end
   
