@@ -4,16 +4,17 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Dropdown, Segment } from 'semantic-ui-react'
 import { Card, Button, Row, Col } from 'react-bootstrap'
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import PunchcardImageUpload from "../Components/PunchcardUpload";
+import PunchCardEdit from "./PunchCardEdit";
 
 
 
 const PunchCardSettings = () => {
+
 const {user} =useContext(AuthContext)
 const [restaurant, setRestaurant ] = useState([])
 const [punchcard, setPunchcard ] = useState([])
-const [showPunchPic,  setShowPunchPic] = useState(false)
+const [showEdit, setShowEdit] = useState(false)
 
 useEffect(() => {
   getRestaurant()
@@ -30,7 +31,6 @@ const getRestaurant = async() => {
 const getPunchcard = async(restId) => {
   try {
   let res = await axios.get(`/api/users/${user.id}/restaurants/${restId}/punchcards`)
-  console.log("punchcard:", res.data)
   setPunchcard(res.data[0])
   } catch (error) {
   }
@@ -41,6 +41,8 @@ const getPunchcard = async(restId) => {
           <Segment>
             <h1>Card Description</h1>
             <p>{punchcard.description}</p>
+            <button onClick={()=>setShowEdit(!showEdit)}>Edit Description</button>
+            {showEdit && <PunchCardEdit />}
           </Segment>
         </div>
         <Segment>
@@ -61,7 +63,6 @@ const getPunchcard = async(restId) => {
         </Row>
         <Row>
           <span>{restaurant.city}</span>
-          {/* <span>{punchcard.description}</span> */}
         </Row>
       </Col>
     </Row>
@@ -74,11 +75,10 @@ const getPunchcard = async(restId) => {
         <MyCard url={punchcard.logo}>
         <Row style={{paddingLeft:'95%', paddingTop:'5px'}}>
             
-        <Dropdown defaultOpen pointing='top right' multiple icon='ellipsis vertical'>
+        <Dropdown pointing='top right' multiple icon='ellipsis vertical'>
           <Dropdown.Menu >
-            {!showPunchPic ? 
-            <Dropdown.Item onClick={()=>setShowPunchPic(!showPunchPic)}>Edit Picture</Dropdown.Item>:
-            <Dropdown.Item><PunchcardImageUpload/></Dropdown.Item>}   
+            <Dropdown.Item>Upload picture<PunchcardImageUpload/></Dropdown.Item>
+            
           </Dropdown.Menu>
           </Dropdown>
 
