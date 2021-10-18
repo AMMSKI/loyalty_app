@@ -97,7 +97,7 @@ export default function PunchcardImageUpload(props) {
         onupdatefiles={fileChanged}
         labelIdle='Browse'
         />
-        <Button primary type="submit">Add</Button>
+        <Button primary type="submit" style={{backgroundColor:"#D7272F"}}>Add</Button>
       </Form>
     </div>
     )

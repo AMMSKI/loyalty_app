@@ -39,13 +39,13 @@ const Search = () => {
   }
   
   return (
-    <div>
-      <h1>Search all available Cards:</h1>
-      <Icon name='search'size='large'/>
-      <SearchBar
-        input={input} 
-        onChange={updateInput}
-        />
+    <div className="default-page">
+      <div className="search-header">
+        <SearchBar
+          input={input} 
+          onChange={updateInput}
+          />
+      </div>
       {renderCards()}
     </div>
   )
