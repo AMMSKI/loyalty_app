@@ -8,6 +8,11 @@ class Api::PunchcardsController < ApplicationController
     render json: punchcard
   end
 
+  def show 
+    render json: @punchcard
+  end
+
+
   def all
     punchcards = Punchcard.punchcard_rest
     render json: punchcards
@@ -42,18 +47,16 @@ class Api::PunchcardsController < ApplicationController
       rescue => err
         render json: { errors: err }
       end
-      # if current_user.save(user_params)
-      #   # did save to cloudianry and db
-      #   render json: current_user
-      # else
-      #   # did save to cloudianry but not to db
-      #   render json: { errors: current_user.errors }, status: 422
-      # end
     end
   end
   
   def update 
-    @punchcard.update(punchcard_params)
+
+    if @punchcard.update(punchcard_params)
+      render json: @punchcard
+    else
+      render json: @punchcard.error, state: 422
+    end
   end
 
 
@@ -72,7 +75,7 @@ class Api::PunchcardsController < ApplicationController
   end
 
   def punchcard_params
-    params.require(:punchcard).permit(:total_points, :user_id, :restaurant_id)
+    params.require(:punchcard).permit(:description, :user_id, :restaurant_id)
   end
 
   def set_restaurant

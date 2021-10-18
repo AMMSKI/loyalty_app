@@ -80,14 +80,14 @@ export default function PunchcardImageUpload(props) {
 
   return (
     <div>
-      <div style={styles.imageContainer}>
+      {/* <div style={styles.imageContainer}>
          {logo && 
          <Image style={{
             border:"solid 1px lightgray", 
             borderRadius:"15px"}} 
             src={logo}/> 
         }
-      </div>
+      </div> */}
       <Form onSubmit={handleSubmit}>
       <FilePond
         name='file'
@@ -95,7 +95,7 @@ export default function PunchcardImageUpload(props) {
         allowReorder={true}
         allowMultiple={false}
         onupdatefiles={fileChanged}
-        labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
+        labelIdle='Browse'
         />
         <Button primary type="submit">Add</Button>
       </Form>

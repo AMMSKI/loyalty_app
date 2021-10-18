@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     get 'user/:id/punchcard_by_user', to: 'punchcards#punchcard_by_user'
     get 'punchcards/:punchcard_id/rewards', to: 'rewards#index'
     get 'punchcards/:punchcard_id/rewards/:id', to: 'rewards#show'
-    delete 'punchcards/:punchcard_id/rewards/:id', to: 'rewards#delete'
+    delete 'punchcards/:punchcard_id/rewards/:id', to: 'rewards#destroy'
     post 'punchcards/:punchcard_id/rewards/', to: 'rewards#create'
     patch 'punchcards/:punchcard_id/rewards/:id', to: 'rewards#update'
     delete 'users/:id', to: 'users#delete'
