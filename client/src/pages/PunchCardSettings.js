@@ -150,7 +150,10 @@ if(page === 'punchcard'){
   }else if(page === 'restaurant'){
     return(
       <div>
-        Restuarant
+        <h1>{restaurant.name}</h1>
+        <p>City: {restaurant.city}</p>
+        <p>ZIP: {restaurant.zip}</p>
+        <p>#: {restaurant.phone_number}</p>
       </div>
     )
   }
