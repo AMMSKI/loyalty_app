@@ -1,3 +1,5 @@
+import logo from "../burgerlogo.png"
+
 import React from 'react'
 import {
   Container,
@@ -11,9 +13,8 @@ const Footer = () => {
   return (
     <Sticky stackable>
       <div style={styles.Footer}>
-        <Segment fluid inverted color='blue' vertical style={{ margin: '8em 0em 0em', padding: '0.3em 0em' }}>
+        <Segment fluid vertical style={{ margin: '0em 0em 0em', padding: '0.3em 0em' }}>
           <Container textAlign='center'>
-            <Image centered size='mini' src='/logo192.png' href='/' />
             <br />
             <List style={styles.List} horizontal inverted divided link size='small'>
               &copy; Copyright 2021, Loyalty Corporation |&nbsp;
@@ -32,12 +33,14 @@ const Footer = () => {
 
 const styles = {
   Footer: {
+    backgroundColor:"black",
     position: "relative",
     bottom: "0",
     width: "100%",
   },
   List: {
     marginTop: "3px",
+    color: "white"
   }
 };
 
