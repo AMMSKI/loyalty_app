@@ -1,7 +1,7 @@
 import axios from "axios";
 import { AuthContext } from "../providers/AuthProvider";
 import React, { useContext, useEffect, useState } from 'react'
-import { Dropdown, Menu, Segment } from 'semantic-ui-react'
+import { Dropdown, Icon, Menu, Segment } from 'semantic-ui-react'
 import { Card, Button, Row, Col } from 'react-bootstrap'
 import styled from "styled-components";
 import PunchcardImageUpload from "../Components/PunchcardUpload";
@@ -16,6 +16,7 @@ const [punchcard, setPunchcard ] = useState([])
 const [rewards, setRewards] = useState([])
 const [showEdit, setShowEdit] = useState(false)
 const [page, setPage] = useState(null)
+const [showRewardForm, setShowRewardForm] = useState(false)
 
 useEffect(() => {
   getRestaurant()
@@ -66,7 +67,7 @@ const renderRewards = () => {
         <h3>{r.name}</h3>
         <p>Cost: {r.cost}</p>
         <h3>{r.description}</h3>
-        <Button onClick={()=>deleteReward(r.id)}>Delete</Button>
+        <Button onClick={()=>deleteReward(r.id)}><Icon name='trash'/></Button>
       </Segment>
     </div>
     )
@@ -143,7 +144,14 @@ if(page === 'punchcard'){
   )}else if(page === 'rewards'){
     return(
       <div>
-        <RewardForm id={punchcard.id}/>
+        <div style={{textAlign:'center'}}>
+              <button
+                onClick={()=>setShowRewardForm(!showRewardForm)}
+                className="loginbutton" >
+                {showRewardForm ? 'Close' : 'Add Reward'}
+              </button>
+        {showRewardForm && <RewardForm getRewards={getRewards} id={punchcard.id}/>}
+        </div>
         {renderRewards()}
       </div>
     ) 
@@ -161,11 +169,13 @@ if(page === 'punchcard'){
 
   return(
     <>
-      <Menu>
+      <div style={{paddingTop:'25px'}}>
+      <Menu secondary fixed style={{justifyContent:'space-evenly'}}>
         <Menu.Item onClick={()=>setPage('punchcard')}>PunchCard</Menu.Item>
         <Menu.Item onClick={()=>setPage('rewards')}>Rewards</Menu.Item>
         <Menu.Item onClick={()=>setPage('restaurant')}>Restuarant</Menu.Item>
       </Menu>
+      </div>
       {renderPage()}
     </>
   )
