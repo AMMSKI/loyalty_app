@@ -18,8 +18,8 @@
 /* LOGIN PAGE*/
 
 .login-page {
-  min-height: 82vh;
-  margin: 15px 25px 0 25px;
+  min-height: 62vh;
+  margin: 0px 25px 0 25px;
 }
 
 .login-header {
@@ -34,7 +34,7 @@
 }
 
 .button-group {
-  margin: 50px 0 35px 0;
+  margin: 30px 0 35px 0;
 }
 
 .yellow-button {
@@ -64,6 +64,10 @@
   margin-bottom:40px
 }
 
+.buttoncontainer {
+  height: 25px;
+}
+
 /* LANDING PAGE */
 .landing {
   display: flex;
@@ -71,6 +75,7 @@
   background-color: black;
   color: white;
   min-height: 84vh;
+  width: 100%;
 
 }
 
@@ -89,7 +94,7 @@ hr.rounded {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  height: 370px;
   
 }
 
@@ -164,13 +169,6 @@ hr.rounded {
   }
 }
 
-.page-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 90vh;
-  /* background-color: black; */
-}
-
 .App {
   text-align: center;
 }
@@ -186,8 +184,25 @@ hr.rounded {
   }
 }
 
-.content-wrap { 
+/* CONTAINER MAIN */
+.container-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.content-navbar { 
   flex: 1;
+  height: 84px;
+  color: white;
+}
+
+.content-main {
+  flex: 10;
+  width: 100%;
 }
 
 .App-header {

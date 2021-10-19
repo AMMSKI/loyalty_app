@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { useHistory } from 'react-router'
-import { Button, Checkbox, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Form, Grid } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 
 const Login = () => {
@@ -56,9 +56,9 @@ const Login = () => {
                   type="checkbox"
                   id="styled-checkbox"
                   name='remember' />
-               Remember me?
-            </label>
-               Forgot password
+                Remember me?
+              </label>
+              Forgot password
             </div>
             <div className="buttoncontainer">
               <button

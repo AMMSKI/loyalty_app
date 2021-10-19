@@ -1,31 +1,29 @@
 import logo from "../burgerlogo.png"
-
 import React from 'react'
 import {
   Container,
-  Image,
   List,
+  Menu,
   Segment,
   Sticky,
 } from 'semantic-ui-react'
 
 const Footer = () => {
   return (
-    <Sticky stackable>
-      <div style={styles.Footer}>
-        <Segment fluid vertical style={{ margin: '0em 0em 0em', padding: '0.3em 0em' }}>
-          <Container textAlign='center'>
-            <br />
-            <List style={styles.List} horizontal inverted divided link size='small'>
-              &copy; Copyright 2021, Loyalty Corporation |&nbsp;
-              <List.Item as='a' href='mailto:rbrionesdev@outlook.com'>
-                Contact Us
-              </List.Item>
-            </List>
-          </Container>
-        </Segment>
-      </div>
-    </Sticky>
+
+    <div style={styles.Footer}>
+      <Segment vertical style={{ margin: '0em 0em 0em', paddingTop: '2em' }}>
+        <Container textAlign='center'>
+          <List style={styles.List} horizontal inverted divided link size='small'>
+            &copy; Copyright 2021, Loyalty Corporation
+            |&nbsp;
+            <List.Item as='a' href='mailto:rbrionesdev@outlook.com'>
+              Contact Us
+            </List.Item>
+          </List>
+        </Container>
+      </Segment>
+    </div>
 
 
   );
@@ -34,9 +32,12 @@ const Footer = () => {
 const styles = {
   Footer: {
     backgroundColor: "black",
-    position: "relative",
-    bottom: "0",
+    position: "fixed",
+    bottom: 0,
+    clear: "both",
     width: "100%",
+    height: "70px",
+    textAlign: "center",
   },
   List: {
     marginTop: "3px",

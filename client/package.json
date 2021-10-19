@@ -15,6 +15,7 @@
     "filepond-plugin-image-preview": "^4.6.10",
     "install": "^0.13.0",
     "next-qrcode": "^1.1.0",
+    "node-sass": "^6.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-avatar": "^3.10.0",
@@ -35,6 +36,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "scss": "node-sass --watch scss -o css",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

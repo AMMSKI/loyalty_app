@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { Dropdown, Button, Icon, Image, Menu, Sticky, Grid } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import { useHistory, useLocation } from 'react-router'
-// import '../StyleSheets/App.css'
 import '../StyleSheets/Navbar.css'
 import logo from "../burgerlogo.png"
 
@@ -91,10 +90,11 @@ const NavBar = () => {
   }
 
   return (
+
     <Sticky>
       <Grid class="row no-gutter">
         <Grid.Row className='GridRow'>
-          <Menu size='small' tabular style={{backgroundColor:"black"}}>
+          <Menu fluid size='small' inverted tabular style={{ backgroundColor: "black" }}>
             <Menu.Item as='a' header onClick={(e) => handleClick(e, '/')}>
               <Image avatar src={logo} style={{ marginRight: '0.8em' }} />
             </Menu.Item>
@@ -104,15 +104,15 @@ const NavBar = () => {
           </Menu>
         </Grid.Row>
         <Grid.Row className='GridRow'>
-          <Menu size='small' tabular style={{backgroundColor:"black"}}>
+          <Menu size='small' inverted tabular style={{ backgroundColor: "black" }}>
             {customNavItems()}
           </Menu>
         </Grid.Row>
       </Grid>
     </Sticky>
+
   )
 }
-
 
 export default NavBar
 
