@@ -12,6 +12,9 @@ class Api::PunchcardsController < ApplicationController
     render json: @punchcard
   end
 
+  def rests_punchcards
+    render json: Punchcard.rests_punchcards(params[:user_id])
+  end
 
   def all
     punchcards = Punchcard.punchcard_rest
