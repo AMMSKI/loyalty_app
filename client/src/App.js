@@ -31,6 +31,7 @@ import PunchcardImageUpload from './Components/PunchcardUpload';
 import RewardForm from './Components/RewardForm';
 import PunchCardEdit from './Components/PunchCardEdit';
 import PunchCardSettings from './pages/PunchCardSettings';
+import ManualPunchCard from './pages/ManualPunchCard';
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
                   <Route exact path='/pcimageupload' component={PunchcardImageUpload} />
 
                   <ProtectedRoute exact path='/rewardAdmin/:reward_id/:userpunchcard_id' component={RewardAdmin} />
+                  <ProtectedRoute exact path='/manual_punchcard' component={ManualPunchCard} />
                   <Route exact path='/profileupload/:user_id' component={ProfileUpload} />   
                   <Route exact path='/dashboard' component={Dashboard} />
                   <Route exact path='/employeeview/:punch_id' component={EmployeeView} />
