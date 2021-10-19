@@ -1,12 +1,14 @@
 import axios from "axios";
 import { AuthContext } from "../providers/AuthProvider";
 import React, { useContext, useEffect, useState } from 'react'
-import { Dropdown, Menu, Segment } from 'semantic-ui-react'
+import { Dropdown, Icon, Menu, Segment } from 'semantic-ui-react'
 import { Card, Button, Row, Col } from 'react-bootstrap'
 import styled from "styled-components";
 import PunchcardImageUpload from "../Components/PunchcardUpload";
 import PunchCardEdit from "../Components/PunchCardEdit";
 import RewardForm from "../Components/RewardForm";
+import RestaurantEdit from "../Components/RestaurantEdit";
+import Avatar from "react-avatar";
 
 const PunchCardSettings = () => {
 
@@ -16,6 +18,8 @@ const [punchcard, setPunchcard ] = useState([])
 const [rewards, setRewards] = useState([])
 const [showEdit, setShowEdit] = useState(false)
 const [page, setPage] = useState(null)
+const [showRewardForm, setShowRewardForm] = useState(false)
+const [showRestEdit, setShowRestEdit] = useState(false)
 
 useEffect(() => {
   getRestaurant()
@@ -66,7 +70,7 @@ const renderRewards = () => {
         <h3>{r.name}</h3>
         <p>Cost: {r.cost}</p>
         <h3>{r.description}</h3>
-        <Button onClick={()=>deleteReward(r.id)}>Delete</Button>
+        <Button onClick={()=>deleteReward(r.id)}><Icon name='trash'/></Button>
       </Segment>
     </div>
     )
@@ -86,7 +90,7 @@ if(page === 'punchcard'){
   </Dropdown>
 </Row>
 <Row style={{alignItems:'center'}}>
-      <Col><Card.Img className='cardImg' src={punchcard.logo}/></Col>
+      <Col style={{ alignItems: 'center', padding: '20px' }}><Avatar size="100" round src={restaurant.image}/> </Col>
 <Col className='nameCol'>
   <Row>
       <Card.Title>
@@ -119,9 +123,9 @@ if(page === 'punchcard'){
           <Col className='nameCol1'>
             <Row>
             <Card.Title>
-            <h1>{restaurant.name}</h1>
+            <h1 style={{color:"white"}}>{restaurant.name}</h1>
             </Card.Title>
-            <p>0 points</p>
+            <p style={{color:"white"}}>0 points</p>
             </Row>
           </Col>
         </Row>
@@ -143,29 +147,47 @@ if(page === 'punchcard'){
   )}else if(page === 'rewards'){
     return(
       <div>
-        <RewardForm id={punchcard.id}/>
         {renderRewards()}
+        <div style={{textAlign:'center'}}>
+          {showRewardForm && <RewardForm getRewards={getRewards} id={punchcard.id}/>}
+              <button
+                onClick={()=>setShowRewardForm(!showRewardForm)}
+                className="loginbutton" >
+                {showRewardForm ? 'Close' : 'Add Reward'}
+              </button>
+        </div>
       </div>
     ) 
   }else if(page === 'restaurant'){
     return(
-      <div>
+      <>
+      <Segment style={{textAlign:'center'}}>
+      <Avatar size="300" round src={restaurant.image}/> 
         <h1>{restaurant.name}</h1>
         <p>City: {restaurant.city}</p>
         <p>ZIP: {restaurant.zip}</p>
         <p>#: {restaurant.phone_number}</p>
+      </Segment>
+      <div style={{textAlign:'center'}}>
+      <button 
+        onClick={()=>setShowRestEdit(!showRestEdit)}
+        className='loginbutton'>{showRestEdit ? 'Close' : 'Edit'}</button>
+      {showRestEdit && <RestaurantEdit getRestaurant={getRestaurant} restaurant={restaurant} />}
       </div>
+      </>
     )
   }
 }
 
   return(
     <>
-      <Menu>
+      <div style={{paddingTop:'25px'}}>
+      <Menu secondary fixed style={{justifyContent:'space-evenly'}}>
         <Menu.Item onClick={()=>setPage('punchcard')}>PunchCard</Menu.Item>
         <Menu.Item onClick={()=>setPage('rewards')}>Rewards</Menu.Item>
         <Menu.Item onClick={()=>setPage('restaurant')}>Restuarant</Menu.Item>
       </Menu>
+      </div>
       {renderPage()}
     </>
   )

@@ -56,7 +56,7 @@ const Dashboard = () => {
 
   return (
     <div className="wallet-page">
-      <div className="wallet-header">
+      <div className="search-header">
         <h1>LOYAL REWARDS</h1>
         <SearchBar
           input={input}

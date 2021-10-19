@@ -4,6 +4,23 @@
   margin: 0em;
 }
 
+.nav-items {
+    display:flex;
+    font-size: smaller;
+    margin-left: 8px;
+    padding-bottom: 8px;
+}
+
+.nav-hr {
+    color: #D7272F;
+    border-top: 2px solid;
+    border-radius: 5px;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 8px;
+}
+
+
 .row.GridRow {
   padding: 0px;
   border: 0px;
