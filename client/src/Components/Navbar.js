@@ -75,6 +75,12 @@ const NavBar = () => {
           </Menu.Item>
           <Menu.Item 
             as='a' 
+            onClick={(e) => handleClick(e, '/settings')}
+            style={{textDecoration: "underline #D7272F", color:"white"}}>
+            Settings
+          </Menu.Item>
+          <Menu.Item 
+            as='a' 
             onClick={(e) => handleClick(e, '/charting')}
             style={{textDecoration: "underline #D7272F", color:"white"}}>
             Charts
