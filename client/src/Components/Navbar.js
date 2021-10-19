@@ -21,7 +21,8 @@ const NavBar = () => {
         <div >
           <Dropdown style={{ color: "white" }} item text={user.name}>
             <Dropdown.Menu>
-              <Menu.Item>
+
+              <Menu.Item onClick={() => location.pathname === '/profile'} >
                 <Link style={{ textDecoration: "none", color: "black" }} to='/profile'>
                   <Icon name='user' />Profile
                 </Link>
@@ -72,6 +73,11 @@ const NavBar = () => {
             style={{ textDecoration: "underline #D7272F", color: "white" }}>
             Admin
           </Menu.Item>
+
+          <Menu.Item as='a' onClick={(e) => handleClick(e, '/employeeview')}>
+            Employee View
+          </Menu.Item>
+
           <Menu.Item
             as='a'
             onClick={(e) => handleClick(e, '/settings')}
@@ -82,6 +88,7 @@ const NavBar = () => {
             as='a'
             onClick={(e) => handleClick(e, '/charting')}
             style={{ textDecoration: "underline #D7272F", color: "white" }}>
+
             Charts
           </Menu.Item>
         </div>
@@ -100,6 +107,7 @@ const NavBar = () => {
             Dashboard
             {/* </div> */}
           </Menu.Item>
+
           <Menu.Item
             as='a'
             onClick={(e) => handleClick(e, '/search')}

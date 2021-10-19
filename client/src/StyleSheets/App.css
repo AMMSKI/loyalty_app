@@ -56,7 +56,10 @@
   min-height: 62vh;
   margin: 0px 25px 0 25px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> f98f8c8de4b2f0f0de84aff522cf5c26c8049965
 .default-page {
   min-height: 82vh;
   margin: 16px 24px 0 24px;
@@ -208,6 +211,16 @@ hr.rounded {
     transform: rotate(360deg);
   }
 }
+
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+  
+  /* background-color: black; */
+}
+
 
 .App {
   text-align: center;
