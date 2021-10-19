@@ -1,3 +1,38 @@
+/* PROFILE UPLOAD */
+.upload-page {  
+  padding:32px; 
+  min-height: 80vh;
+}
+
+.uploader {
+  padding-bottom: 32px;
+  text-align: center;
+}
+
+/* PROFILE */
+
+.profile-page {
+  margin-top:24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 70vh;
+}
+
+
+/* CHARTING */
+
+
+/* ADMIN */
+.admin-page {
+  margin-top:16px;
+}
+
+.p-admin {
+  color: "#328FD4";
+  font-weight: "bold";
+}
+
 /* DASHBOARD */
 
 .wallet-page {
@@ -11,8 +46,8 @@
   min-height: 80vh;
 }
 
-.wallet-header {
-  padding: 0 16px 8px 8px;
+.search-header {
+  padding: 8px 16px 8px 8px;
 }
 
 /* LOGIN PAGE*/
@@ -20,6 +55,10 @@
 .login-page {
   min-height: 62vh;
   margin: 0px 25px 0 25px;
+}
+.default-page {
+  min-height: 82vh;
+  margin: 16px 24px 0 24px;
 }
 
 .login-header {
@@ -169,6 +208,16 @@ hr.rounded {
   }
 }
 
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+  
+  /* background-color: black; */
+}
+
+
 .App {
   text-align: center;
 }
@@ -304,7 +353,8 @@ hr.rounded {
   /* height: 40px; */ 
 }
 .nameCol1{
-  text-align: center; 
+  text-align: center;
+   
   /* padding-top: 20px;  */
 }
 

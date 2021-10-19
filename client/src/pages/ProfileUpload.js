@@ -40,11 +40,17 @@ export default function ProfileUpload(props) {
   }
 
   return (
-    <div>
-      <div style={{padding:"8px", display:"block", marginLeft:"auto", marginRight:"auto", width:"50%", textAlign:"center"}}>
-         {user && <Avatar size="100"  style={{border:"solid 1px lightgray"}} round src={user.image}/> 
+    <div className="upload-page">
+      <div className="uploader">
+         {user && 
+         <Avatar 
+          size="100"  
+          style={{border:"solid 1px lightgray"}} 
+          round
+          color="#700000" 
+          src={user.image}/> 
         }
-      </div>
+        </div>
       <Form onSubmit={handleSubmit}>
       <FilePond
         name='file'
@@ -54,8 +60,10 @@ export default function ProfileUpload(props) {
         onupdatefiles={fileChanged}
         labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
         />
-        <Button primary type="submit"> Add </Button>
-
+        <Button 
+          type="submit"
+          color="red"
+          > Add </Button>
       </Form>
     </div>
     )

@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
+import { Card } from "react-bootstrap";
 
-const RewardForm = ({id}) => {
+const RewardForm = ({id, getRewards}) => {
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -16,6 +17,7 @@ const RewardForm = ({id}) => {
       setName('');
       setDescription('');
       setCost('');
+      getRewards(id)
     } catch (error) {
       console.log('failed',error)
     }
@@ -23,26 +25,17 @@ const RewardForm = ({id}) => {
 
   return (
     <div>
-      <h1>Reward Form</h1>
-
+      <Card style={{textAlign:'center'}}>
       <form onSubmit={submitHandler}>
-        <p>
-          <div>Name:</div>
+          <h2>Name:</h2>
           <input value={name} onChange={e => setName(e.target.value)} />
-        </p>
-
-        <p>
-          <div>Description:</div>
-          <input value={description} onChange={e => setDescription(e.target.value)} />
-        </p>
-
-        <p>
-          <div>Cost:</div>
-          <input value={cost} onChange={e => setCost(e.target.value)} />
-        </p>
-
-        <button>Submit!</button>
+          <h2>Description:</h2>
+          <textarea value={description} onChange={e => setDescription(e.target.value)} />
+          <h2>Cost:</h2>
+          <input value={cost} onChange={e => setCost(e.target.value)} /><br/>
+          <button type='submit'>Add!</button>
       </form>
+      </Card>
     </div>
   );
 };

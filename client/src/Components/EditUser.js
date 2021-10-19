@@ -23,12 +23,12 @@ export default function EditUser() {
   }
 
   return (
-    <div>
+    <div className="default-page">
       {error && <ErrorMessage header="Could not Update" error={error} />}
       <Grid textAlign='center' style={{ height: '54vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as='h2' mini color='blue' textAlign='center'>
-            <Image src='/logo512.png' /> Update profile
+          <Header as='h2' mini textAlign='center' style={{color:"#D7272F"}}>
+            Update profile
           </Header>
           <Form size='large' onSubmit={handleSubmit}>
             <Segment stacked>
@@ -69,10 +69,12 @@ export default function EditUser() {
                 onChange={(e) => setPasswordConfirmation(e.target.value)}
               />
               <Button
-                color='blue'
+                style={{backgroundColor:'#D7272F', color:"white"}}
                 // loading={loading}
                 // disabled={loading}
-                fluid size='large'>
+                fluid size='large'
+                
+                >
                 Update
               </Button>
             </Segment>

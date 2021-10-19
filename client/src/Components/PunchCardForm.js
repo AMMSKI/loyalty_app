@@ -29,7 +29,7 @@ const PunchCardForm = () => {
   };
 
   return (
-    <div>
+    <div className="default-page">
       <h2>Punch Card</h2>
 
       <form onSubmit={handleSubmit}>
