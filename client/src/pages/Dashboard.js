@@ -1,14 +1,12 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
-// import { Card } from 'semantic-ui-react';
 import { AuthContext } from '../providers/AuthProvider';
-import { Card, Col, Dropdown, Row } from 'react-bootstrap'
+import { Card, Dropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
-import { Icon, Segment } from 'semantic-ui-react';
 import SearchBar from '../Components/SearchBar';
 import WalletCard from '../Components/WalletCard';
-import '../StyleSheets/App.css'
+import '../StyleSheets/Dashboard.css'
 
 
 const Dashboard = () => {
@@ -62,27 +60,11 @@ const Dashboard = () => {
           input={input}
           onChange={updateInput}
         />
+        <br />
+        {punchcards && renderPunchcards()}
       </div>
-      {punchcards && renderPunchcards()}
     </div>
   )
 }
-
-const MyLink = styled(Link)`
-  text-decoration: none;
-  color: black;
-`
-
-const MyCard = styled(Card)`
-  width: 80vw;
-  height: 20vh;
-  background-image: url(${props => props.url});
-  background-position: center;
-  background-size: cover;
-`
-
-const MyDropdown = styled(Dropdown)`
-  color: white;
-`
 
 export default Dashboard

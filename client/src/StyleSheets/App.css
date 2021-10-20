@@ -1,244 +1,6 @@
-/* PROFILE UPLOAD */
-.upload-page {  
-  padding:32px; 
-  min-height: 80vh;
-}
+/* LAYOUT */
 
-.uploader {
-  padding-bottom: 32px;
-  text-align: center;
-}
-
-/* PROFILE */
-
-.profile-page {
-  margin-top:24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 70vh;
-}
-
-
-/* CHARTING */
-
-
-/* ADMIN */
-.admin-page {
-  margin-top:16px;
-}
-
-.p-admin {
-  color: "#328FD4";
-  font-weight: "bold";
-}
-
-/* DASHBOARD */
-
-.wallet-page {
-  
-  padding: 30px 25px 0 25px;
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
-  background-color: #700000;
-  color: white;
-  min-height: 80vh;
-}
-
-.search-header {
-  padding: 8px 16px 8px 8px;
-}
-
-/* LOGIN PAGE*/
-
-.login-page {
-  min-height: 62vh;
-  margin: 0px 25px 0 25px;
-}
-<<<<<<< HEAD
-
-=======
->>>>>>> f98f8c8de4b2f0f0de84aff522cf5c26c8049965
-.default-page {
-  min-height: 82vh;
-  margin: 16px 24px 0 24px;
-}
-
-.login-header {
-  font-size: large;
-  margin: 30px 0 40px 0;
-  font-weight: bolder;
-}
-
-.loyal-burger-header {
-  font-size: xx-large;
-  color: #D7272F; 
-}
-
-.button-group {
-  margin: 30px 0 35px 0;
-}
-
-.yellow-button {
-  background-color:#F3CA03;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  width: 50%;
-  height: 30px;
-}
-
-.white-button {
-  background-color:white;
-  border: solid 1px lightgrey;
-  border-radius: 3px;
-  width: 50%;
-  height: 30px;
-}
-
-.remember-forget {
-  appearance: none;
-  display: flex;
-  justify-content: space-between;
-  font-size: small;
-  color: gray;
-  padding:8px;
-  margin-bottom:40px
-}
-
-.buttoncontainer {
-  height: 25px;
-}
-
-/* LANDING PAGE */
-.landing {
-  display: flex;
-  flex-direction: column;
-  background-color: black;
-  color: white;
-  min-height: 84vh;
-  width: 100%;
-
-}
-
-hr.rounded {
-  background-color: white;
-  border-top: 4px solid;
-  border-radius: 5px;
-  width: 95%;
-  margin: auto;
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 370px;
-  
-}
-
-
-.tagline {
-  font-weight: 900;
-  text-align: center;
-  font-size: smaller;
-  margin-bottom: 25px;
-  
-}
-
-.buttoncontainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 80px;
-}
-
-.loginbutton {
-  background-color: #D7272F;
-  color: white;
-  padding: 0;
-  border: none;
-  border-radius: 8px;
-  width: 80%;
-  height: 40px;
-  font-weight: 900;
-  font-size: large;
-  margin-top: 25px;
-}
-
-
-
-.App {
-  text-align: center;
-  /* background-color: black; */
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-.page-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 90vh;
-  
-  /* background-color: black; */
-}
-
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-/* CONTAINER MAIN */
-.container-page {
+#container-page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -247,47 +9,35 @@ hr.rounded {
   padding-left: 0px;
 }
 
-.content-navbar { 
-  flex: 1;
-  height: 84px;
-  color: white;
-}
-
-.content-main {
-  flex: 10;
+#navbar { 
+  min-height: 100px;
   width: 100%;
+  box-shadow:0px 6px 3px rgba(0,0,0,.5);
+  border: 2px solid red;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#content-main {
+  border: 2px solid blue;
+  /* flex: 90; */
+  width: 100%;
+  /* padding-top: 70px; */
+  padding-bottom: 75px;
 }
 
-.App-link {
-  color: #61dafb;
+#footer {
+  border: 2px solid yellow;
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  clear: both;
+  width: 100%;
+  height: 70px;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} 
 
-.LinkNavbar {
-  text-decoration: none;
-  padding: 16px;
-}
 
-.circle {
+/* .circle {
   position: relative;
   display: block;
   margin: 2em 0;
@@ -327,25 +77,12 @@ hr.rounded {
   vertical-align: middle;
 }
 
-@media (min-width: 480px) {
-  .circle__content {
-    font-size: 2em;
-  }
-}
-
-@media (min-width: 768px) {
-  .circle__content {
-    font-size: 4em;
-  }
-}
-
 .content {
   margin: 20px;
 
 }
 
 .searchCard{
-  /* text-align: center; */
   display: flex;
   padding: 8px;
   margin-top: 8px;
@@ -354,16 +91,7 @@ hr.rounded {
 .nameCol{
   align-items: center;
   padding: 5%;  
-  /* height: 40px; */ 
 }
 .nameCol1{
   text-align: center;
-   
-  /* padding-top: 20px;  */
-}
-
-@media (min-width: 1200px) {
-  .container{
-      max-width: 970px;
-  }
-}
+} */

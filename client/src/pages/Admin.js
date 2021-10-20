@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Grid, GridColumn, GridRow } from 'semantic-ui-react';
 import Avatar from 'react-avatar';
 import { AuthContext } from '../providers/AuthProvider';
-import '../StyleSheets/App.css'
+import '../StyleSheets/Admin.css'
 
 function Admin(props) {
   const { user } = useContext(AuthContext)
@@ -23,16 +23,16 @@ function Admin(props) {
         <GridRow>
           <Grid.Column>
             <p className="p-admin">12</p>
-              Cards
-            </Grid.Column>
+            Cards
+          </Grid.Column>
           <Grid.Column>
             <p className="p-admin">230</p>
-              Data
-            </Grid.Column>
+            Data
+          </Grid.Column>
           <Grid.Column>
             <p className="p-admin">169</p>
-              Data
-            </Grid.Column>
+            Data
+          </Grid.Column>
         </GridRow>
         <GridRow style={{
           height: "300px",

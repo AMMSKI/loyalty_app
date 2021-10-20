@@ -1,9 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router';
-import '../StyleSheets/Landing.css';
 import { Image } from 'semantic-ui-react';
-import '../StyleSheets/App.css';
 import logo from "../burgerlogo.png";
+import '../StyleSheets/LandingHome.css';
 
 
 const Landing = () => {
