@@ -1,4 +1,3 @@
-import './StyleSheets/App.css'
 import NavBar from './Components/Navbar';
 import { Route, Switch } from 'react-router';
 import Home from './pages/Home';
@@ -14,7 +13,6 @@ import ScanResult from './pages/ScanResult'
 import Dashboard from './pages/Dashboard'
 import ProtectedRoute from './Components/ProtectedRoute';
 import About from './pages/About';
-import PunchCardForm from './Components/PunchCardForm';
 import EmployeeView from './Components/EmployeeView';
 import PunchCardAdmin from './pages/PunchCardAdmin';
 import AddQR from './pages/AddQR';
@@ -28,23 +26,24 @@ import Charting from './pages/Charting';
 import Admin from './pages/Admin';
 import PunchcardImageUpload from './Components/PunchcardUpload';
 import RewardForm from './Components/RewardForm';
-import PunchCardEdit from './Components/PunchCardEdit';
 import PunchCardSettings from './pages/PunchCardSettings';
 import ManualPunchCard from './pages/ManualPunchCard';
 import FinishSignUp from './pages/FinishSignUp';
+import './StyleSheets/App.css'
 
 function App() {
   return (
     <div id="container-page">
-      <div className="content-navbar">
+      <div id="navbar">
         <NavBar />
       </div>
-      <div className="content-main">
+      <div id="content-main">
         <FetchUser>
           <Switch>
             <Route exact path='/' component={Landing} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/register' component={Register} />
+            <Route exact path='/about' component={About} />
             <ProtectedRoute exact path='/home' component={Home} />
             <ProtectedRoute exact path='/search' component={Search} />
             <ProtectedRoute exact path='/dashboard' component={Dashboard} />

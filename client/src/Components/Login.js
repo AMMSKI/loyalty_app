@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { useHistory } from 'react-router'
 import { Form, Grid } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
+import '../StyleSheets/Login.css'
 
 const Login = () => {
   const { handleLogin } = useContext(AuthContext)

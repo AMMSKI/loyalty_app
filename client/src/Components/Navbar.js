@@ -18,39 +18,35 @@ const NavBar = () => {
   const rightNavItems = () => {
     if (user) {
       return (
-        <div >
-          <Dropdown style={{color:"white"}} item text={user.name}>
-            <Dropdown.Menu>
+        <Dropdown style={{ color: "white" }} item text={user.name}>
+          <Dropdown.Menu>
 
-              <Menu.Item onClick={() => location.pathname === '/profile'} >
-                <Link style={{ textDecoration: "none", color: "black" }} to='/profile'>
-                  <Icon name='user' />
-                  Profile
-                </Link>
-              </Menu.Item>
-
-              <Menu.Item onClick={() => location.pathname === '/edit_user'} >
-                <Link style={{ textDecoration: "none", color:"black" }} to='/edit_user'>
-                  <Icon name='edit' />
-                  Edit Profile
-                </Link>
-              </Menu.Item>
-              <Menu.Item onClick={() => handleDelete(history)}> 
-                <Icon name='trash' />
-                Delete Profile
-                </Menu.Item>
-              <Dropdown.Divider />
-              <Menu.Item onClick={() => handleLogout(history)}> 
-                <Icon name='log out' />
-                Logout
-                </Menu.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </div>
+            <Menu.Item onClick={() => location.pathname === '/profile'} >
+              <Link style={{ textDecoration: "none", color: "black" }} to='/profile'>
+                <Icon name='user' />Profile
+              </Link>
+            </Menu.Item>
+            <Menu.Item onClick={() => location.pathname === '/edit_user'} >
+              <Link style={{ textDecoration: "none", color: "black" }} to='/edit_user'>
+                <Icon name='edit' />
+                Edit Profile
+              </Link>
+            </Menu.Item>
+            <Menu.Item onClick={() => handleDelete(history)}>
+              <Icon name='trash' />
+              Delete Profile
+            </Menu.Item>
+            <Dropdown.Divider />
+            <Menu.Item onClick={() => handleLogout(history)}>
+              <Icon name='log out' />
+              Logout
+            </Menu.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       );
     }
     return (
-      <div style={{color:"white"}}>
+      <div style={{ color: "white" }}>
         <Menu.Item>
           <Button
             basic
@@ -69,27 +65,30 @@ const NavBar = () => {
     if (user && user.account_type === 'business' && authenticated) {
       return (
         <div className="nav-items">
-          <Menu.Item 
-           as='a' 
-           onClick={(e) => handleClick(e, '/admin')}
-           style={{textDecoration: "underline #D7272F", color:"white"}}>
+          <Menu.Item
+            as='a'
+            onClick={(e) => handleClick(e, '/admin')}
+            style={{ textDecoration: "underline #D7272F", color: "white" }}>
             Admin
           </Menu.Item>
 
-          <Menu.Item as='a' onClick={(e) => handleClick(e, '/employeeview')}>
+          <Menu.Item
+            as='a'
+            onClick={(e) => handleClick(e, '/employeeview')}
+            style={{ textDecoration: "underline #D7272F", color: "white" }}>
             Employee View
           </Menu.Item>
 
-          <Menu.Item 
-            as='a' 
+          <Menu.Item
+            as='a'
             onClick={(e) => handleClick(e, '/settings')}
-            style={{textDecoration: "underline #D7272F", color:"white"}}>
+            style={{ textDecoration: "underline #D7272F", color: "white" }}>
             Settings
           </Menu.Item>
-          <Menu.Item 
-            as='a' 
+          <Menu.Item
+            as='a'
             onClick={(e) => handleClick(e, '/charting')}
-            style={{textDecoration: "underline #D7272F", color:"white"}}>
+            style={{ textDecoration: "underline #D7272F", color: "white" }}>
 
             Charts
           </Menu.Item>
@@ -98,24 +97,27 @@ const NavBar = () => {
     } else if (user && user.account_type === 'customer' && authenticated) {
       return (
         <div className="nav-items">
-          <Menu.Item 
-            as='a' 
+          <Menu.Item
+            as='a'
             onClick={(e) => handleClick(e, '/dashboard')}
-            // inverted
-            color="white"
-            style={{textDecoration: "underline #D7272F", color:"white"}}
-            >
-            {/* <div color="white"> */}
-              Dashboard 
-            {/* </div> */}
+            style={{ textDecoration: "underline #D7272F", color: "white" }}
+          >
+            Dashboard
           </Menu.Item>
 
-          <Menu.Item 
-            as='a' 
+          <Menu.Item
+            as='a'
             onClick={(e) => handleClick(e, '/search')}
-            style={{textDecoration: "underline #D7272F", color:"white"}}
-            >
+            style={{ textDecoration: "underline #D7272F", color: "white" }}
+          >
             Search
+          </Menu.Item>
+          <Menu.Item
+            as='a'
+            onClick={(e) => handleClick(e, '/rewards')}
+            style={{ textDecoration: "underline #D7272F", color: "white" }}
+          >
+            Rewards
           </Menu.Item>
         </div>
       );
@@ -124,27 +126,25 @@ const NavBar = () => {
 
   return (
 
-    <Sticky>
-      <div>
-      <Grid class="row no-gutter">
-        <Grid.Row className='GridRow'>
-          <Menu fluid size='small' inverted tabular style={{ backgroundColor: "black" }}>
-            <Menu.Item as='a' header onClick={(e) => handleClick(e, '/')}>
-              <Image avatar src={logo} style={{ marginRight: '0.8em' }} />
+    <div>
+      <Sticky>
+        <div>
+          <Menu fluid size='small' inverted tabular style={{ backgroundColor: "black", height: "50px" }}>
+            <Menu.Item id="icon-margin" as='a' fitted='horizontally' header onClick={(e) => handleClick(e, '/')}>
+              <Image avatar src={logo} />
             </Menu.Item>
             <Menu.Menu position="right">
               {rightNavItems()}
             </Menu.Menu>
           </Menu>
-        </Grid.Row>
-        <Grid.Row className='GridRow'>
-          <Menu size='small' inverted tabular style={{ backgroundColor: "black" }}>
+        </div>
+        <div>
+          <Menu fluid size='small' inverted tabular style={{ backgroundColor: "black", height: "50px" }}>
             {customNavItems()}
           </Menu>
-        </Grid.Row>
-      </Grid>
+        </div>
+      </Sticky>
     </div>
-    </Sticky>
 
   )
 }

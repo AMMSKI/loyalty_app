@@ -1,12 +1,11 @@
 
-import React, { useContext, useEffect } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardContent, Grid, Icon, Image, Menu, Segment, Table } from 'semantic-ui-react';
+import { Card, CardContent, Grid, Icon, Segment } from 'semantic-ui-react';
 import styled from 'styled-components';
 import { AuthContext } from '../providers/AuthProvider';
 import Avatar from 'react-avatar';
-import axios from 'axios';
+import '../StyleSheets/Profile.css'
 
 const Profile = () => {
   const { user } = useContext(AuthContext)
@@ -14,27 +13,27 @@ const Profile = () => {
 
   return (
     <div className="profile-page">
-      <BorderlessCard centered>        
+      <BorderlessCard centered>
         <CardContent textAlign="center">
           <Link to={`/profileupload/${user.id}`}>
-          {user.image ? 
-          <div>
-            <Icon.Group size="huge">
-              <div style={{padding:"8px"}}>
-              <Avatar size="100" round src={user.image}/> 
-              </div>
-              <Icon link corner name="edit outline"color="black"/>
-            </Icon.Group>
-          </div> :
-          <Icon.Group size="huge">
-            <Icon name="user" color="black"/>
-           <Icon link corner name="edit outline"color="black"/>
-          </Icon.Group>
-          }
+            {user.image ?
+              <div>
+                <Icon.Group size="huge">
+                  <div style={{ padding: "8px" }}>
+                    <Avatar size="100" round src={user.image} />
+                  </div>
+                  <Icon link corner name="edit outline" color="black" />
+                </Icon.Group>
+              </div> :
+              <Icon.Group size="huge">
+                <Icon name="user" color="black" />
+                <Icon link corner name="edit outline" color="black" />
+              </Icon.Group>
+            }
           </Link>
           {user ?
             <div>
-              <h2 style={{color:"#D7272F", fontWeight:"bold"}}>{user.name}</h2>
+              <h2 style={{ color: "#D7272F", fontWeight: "bold" }}>{user.name}</h2>
               <h6>{user.account_type}</h6>
             </div> :
             <div>
@@ -61,7 +60,7 @@ const Profile = () => {
               <Grid.Column width={13}>
                 <Icon color="red" name="edit" />
                 Edit Bio
-                </Grid.Column>
+              </Grid.Column>
               <Grid.Column >
                 <Icon color="red" name="angle right" />
               </Grid.Column>
@@ -73,7 +72,7 @@ const Profile = () => {
               <Grid.Column width={13}>
                 <Icon color="red" name="chart bar" />
                 My Points
-                </Grid.Column>
+              </Grid.Column>
               <Grid.Column >
                 <Icon color="red" name="angle right" />
               </Grid.Column>
@@ -85,7 +84,7 @@ const Profile = () => {
               <Grid.Column width={13}>
                 <Icon color="red" name="map marker alternate" />
                 My Location
-                </Grid.Column>
+              </Grid.Column>
               <Grid.Column >
                 <Icon color="red" name="angle right" />
               </Grid.Column>
@@ -105,10 +104,10 @@ const Profile = () => {
           </div>
         </Segment>
       </BorderlessCard>
-      </div>
-      )
+    </div>
+  )
 
-    
+
 }
 
 export default Profile
