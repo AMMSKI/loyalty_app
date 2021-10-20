@@ -1,0 +1,22 @@
+/* FOOTER */
+
+.FooterContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  width: 100%;
+  height: 70px;
+}
+
+
+.FooterSegment {
+  line-height: 200px;
+  color: white;
+  vertical-align: middle;
+  
+}
+
+#Link-a{
+  color: red;
+}
