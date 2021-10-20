@@ -1,0 +1,9 @@
+/* PROFILE */
+
+.profile-page {
+  margin-top:24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 70vh;
+}
