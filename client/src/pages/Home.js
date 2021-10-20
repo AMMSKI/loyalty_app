@@ -1,5 +1,5 @@
 import { AuthContext } from '../providers/AuthProvider'
-import { useContext }, React from 'react'
+import { useContext } from 'react'
 import { Image } from 'semantic-ui-react'
 import logo from "../burgerlogo.png"
 
@@ -7,6 +7,7 @@ const Home = () => {
   const { user } = useContext(AuthContext)
 
   return (
+    <>
     <div>
       <h1>Welcome {user.name}</h1>
     </div>
@@ -21,6 +22,7 @@ const Home = () => {
         </div>
       </div>
       </div>
+    </>
   )
 }
 
