@@ -83,6 +83,8 @@
 }
 
 .searchCard{
+  text-align: center;
+  width: 90%;
   display: flex;
   padding: 8px;
   margin-top: 8px;

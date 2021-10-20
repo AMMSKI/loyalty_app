@@ -27,6 +27,7 @@ import Admin from './pages/Admin';
 import PunchcardImageUpload from './Components/PunchcardUpload';
 import RewardForm from './Components/RewardForm';
 import PunchCardSettings from './pages/PunchCardSettings';
+import ManualPunchCard from './pages/ManualPunchCard';
 import './StyleSheets/App.css'
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
             <ProtectedRoute exact path='/punchcardAdmin/:user_id/:userpunchcard_id' component={PunchCardAdmin} />
             <ProtectedRoute exact path='/rewardQR/:reward_id/:userpunchcard_id' component={RewardQR} />
             <ProtectedRoute exact path='/rewardAdmin/:reward_id/:userpunchcard_id' component={RewardAdmin} />
+            <ProtectedRoute exact path='/manual_punchcard' component={ManualPunchCard} />
             <ProtectedRoute exact path='/scan_result' component={ScanResult} />
             <ProtectedRoute exact path='/charting' component={Charting} />
             <ProtectedRoute exact path='/admin' component={Admin} />
