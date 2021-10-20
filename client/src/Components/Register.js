@@ -56,6 +56,7 @@ const Register = () => {
                 onChange={(e) => setName(e.target.value)}
               />
               <Form.Dropdown
+                required
                 search selection options={dropOptions} //objects
                 placeholder='Account Type'
                 // value={account_type}
@@ -63,6 +64,7 @@ const Register = () => {
               />
               <Form.Input
                 // label="Email"
+                required
                 fluid icon='mail'
                 iconPosition='left'
                 placeholder='E-mail address'
@@ -71,6 +73,7 @@ const Register = () => {
               />
               <Form.Input
                 // label="Password"
+                required
                 fluid
                 icon='lock'
                 iconPosition='left'
@@ -81,6 +84,7 @@ const Register = () => {
               />
               <Form.Input
                 // label={"Confirm Password"}
+                required
                 fluid
                 icon='lock'
                 iconPosition='left'
