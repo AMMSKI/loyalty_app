@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { VictoryBar, VictoryChart, VictoryLabel, VictoryAxis } from 'victory'
 import { AuthContext } from "../providers/AuthProvider";
+import '../StyleSheets/Charting.css'
 
 function Charting(props) {
   const {user} = useContext(AuthContext)
@@ -32,14 +33,9 @@ function Charting(props) {
     return cardArray.map((i)=> Number(i))
   }
 
-  console.log(cards)
+  console.log(cards.length)
 
-  // const toIntegers = () => {
-    
-  //   setCards(newArr)
-  // }
-
-  const array = [2,3,4,4,6,7,7,8,8,8,9,9,9,9,10,10,10,11,11,11,11,11,12,12]
+  // const array = [2,3,4,4,6,7,7,8,8,8,9,9,9,9,10,10,10,11,11,11,11,11,12,12]
 
   const chartData = (arr) => {
     const data = [
@@ -64,33 +60,32 @@ function Charting(props) {
       return data
     }
     
-    // console.log("newArray:", cards)
-
   return (
-    <div className="default-page">
+    <div id="page">
       <h1>Charts</h1>
-      <VictoryChart
-        domainPadding={20}
-        >      
-        <VictoryLabel
-        x={225}
-        y={25}
-        textAnchor="middle"
-        text="Cards Created Each Month"
-        />
-        <VictoryAxis 
-        tickValues={["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"]}
-        />
-        <VictoryAxis 
-        dependentAxis
-        />
-        <VictoryBar
-        data={chartData(cards)}
-        x="month"
-        y="cards"
-        />
-      </VictoryChart>
-
+      <div id="chart">
+        <VictoryChart
+          domainPadding={20}
+          >      
+          <VictoryLabel
+          x={225}
+          y={25}
+          textAnchor="middle"
+          text="Cards Opened Each Month"
+          />
+          <VictoryAxis 
+          tickValues={["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"]}
+          />
+          <VictoryAxis 
+          dependentAxis
+          />
+          <VictoryBar
+          data={chartData(cards)}
+          x="month"
+          y="cards"
+          />
+        </VictoryChart>
+      </div>
     </div>
   );
 }

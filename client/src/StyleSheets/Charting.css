@@ -1,0 +1,16 @@
+#page {
+  padding: 24px 25px 0 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #700000;
+  color: white;
+  min-height: 80vh;
+}
+
+#chart {
+  background-color: white;
+  margin: 24px;
+  border: solid 1px #F3CA03;
+  border-radius: 5px;
+}
