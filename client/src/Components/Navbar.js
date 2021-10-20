@@ -66,7 +66,7 @@ const NavBar = () => {
   };
 
   const customNavItems = () => {
-    if (user && user.account_type === 'Business' && authenticated) {
+    if (user && user.account_type === 'business' && authenticated) {
       return (
         <div className="nav-items">
           <Menu.Item 
@@ -95,7 +95,7 @@ const NavBar = () => {
           </Menu.Item>
         </div>
       );
-    } else if (user && user.account_type === 'Customer' && authenticated) {
+    } else if (user && user.account_type === 'customer' && authenticated) {
       return (
         <div className="nav-items">
           <Menu.Item 
