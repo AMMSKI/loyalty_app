@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { Dropdown, Button, Icon, Image, Menu, Sticky, Grid } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import { useHistory, useLocation } from 'react-router'
-import '../StyleSheets/App.css'
 import '../StyleSheets/Navbar.css'
+import logo from "../burgerlogo.png"
 
 const NavBar = () => {
   const history = useHistory()
@@ -18,93 +18,136 @@ const NavBar = () => {
   const rightNavItems = () => {
     if (user) {
       return (
-        <>
-          <Dropdown item simple text={user.name}>
-            <Dropdown.Menu>
-            <Menu.Item>
+        <Dropdown style={{ color: "white" }} item text={user.name}>
+          <Dropdown.Menu>
+
+            <Menu.Item onClick={() => location.pathname === '/profile'} >
               <Link style={{ textDecoration: "none", color: "black" }} to='/profile'>
-                <Icon name='user'/>Profile
+                <Icon name='user' />Profile
               </Link>
             </Menu.Item>
-              <Menu.Item onClick={() => location.pathname === '/edit_user'} >
-                <Link style={{ textDecoration: "none", color: "black" }} to='/edit_user'>
-                  <Icon name='edit' />
-                  Edit Profile
-                </Link>
-              </Menu.Item>
-              <Menu.Item onClick={() => handleDelete(history)}> <Icon name='trash' />Delete Profile</Menu.Item>
-              <Dropdown.Divider />
-              <Menu.Item onClick={() => handleLogout(history)}> <Icon name='log out' />Logout</Menu.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </>
+            <Menu.Item onClick={() => location.pathname === '/edit_user'} >
+              <Link style={{ textDecoration: "none", color: "black" }} to='/edit_user'>
+                <Icon name='edit' />
+                Edit Profile
+              </Link>
+            </Menu.Item>
+            <Menu.Item onClick={() => handleDelete(history)}>
+              <Icon name='trash' />
+              Delete Profile
+            </Menu.Item>
+            <Dropdown.Divider />
+            <Menu.Item onClick={() => handleLogout(history)}>
+              <Icon name='log out' />
+              Logout
+            </Menu.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       );
     }
     return (
-      <>
+      <div style={{ color: "white" }}>
         <Menu.Item>
           <Button
-            inverted
             basic
             onClick={(e) => history.push('/login')}
+            inverted
           >
-            GET STARTED
+            LOGIN
           </Button>
         </Menu.Item>
 
-      </>
+      </div>
     );
   };
 
   const customNavItems = () => {
     if (user && user.account_type === 'business' && authenticated) {
       return (
-        <>
-          <Menu.Item as='a' onClick={(e) => handleClick(e, '/admin')}>
+        <div className="nav-items">
+          <Menu.Item
+            as='a'
+            onClick={(e) => handleClick(e, '/admin')}
+            style={{ textDecoration: "underline #D7272F", color: "white" }}>
             Admin
           </Menu.Item>
-          <Menu.Item as='a' onClick={(e) => handleClick(e, '/charting')}>
+
+          <Menu.Item
+            as='a'
+            onClick={(e) => handleClick(e, '/employeeview')}
+            style={{ textDecoration: "underline #D7272F", color: "white" }}>
+            Employee View
+          </Menu.Item>
+
+          <Menu.Item
+            as='a'
+            onClick={(e) => handleClick(e, '/settings')}
+            style={{ textDecoration: "underline #D7272F", color: "white" }}>
+            Settings
+          </Menu.Item>
+          <Menu.Item
+            as='a'
+            onClick={(e) => handleClick(e, '/charting')}
+            style={{ textDecoration: "underline #D7272F", color: "white" }}>
+
             Charts
           </Menu.Item>
-        </>
+        </div>
       );
     } else if (user && user.account_type === 'customer' && authenticated) {
       return (
-        <>
-          <Menu.Item as='a' onClick={(e) => handleClick(e, '/dashboard')}>
+        <div className="nav-items">
+          <Menu.Item
+            as='a'
+            onClick={(e) => handleClick(e, '/dashboard')}
+            style={{ textDecoration: "underline #D7272F", color: "white" }}
+          >
             Dashboard
           </Menu.Item>
-          <Menu.Item as='a' onClick={(e) => handleClick(e, '/search')}>
+
+          <Menu.Item
+            as='a'
+            onClick={(e) => handleClick(e, '/search')}
+            style={{ textDecoration: "underline #D7272F", color: "white" }}
+          >
             Search
           </Menu.Item>
-        </>
+          <Menu.Item
+            as='a'
+            onClick={(e) => handleClick(e, '/rewards')}
+            style={{ textDecoration: "underline #D7272F", color: "white" }}
+          >
+            Rewards
+          </Menu.Item>
+        </div>
       );
     }
   }
 
   return (
-    <Sticky>
 
-      <Grid class="row no-gutter">
-        <Grid.Row className='GridRow'>
-          <Menu size='small' tabular inverted color='blue'>
-            <Menu.Item as='a' header>
-              <Image avatar src='/logo192.png' style={{ marginRight: '0.8em' }} />
-              LoyaltyApp
+    <div>
+      <Sticky>
+        <div>
+          <Menu fluid size='small' inverted tabular style={{ backgroundColor: "black", height: "50px" }}>
+            <Menu.Item id="icon-margin" as='a' fitted='horizontally' header onClick={(e) => handleClick(e, '/')}>
+              <Image avatar src={logo} />
             </Menu.Item>
             <Menu.Menu position="right">
               {rightNavItems()}
             </Menu.Menu>
           </Menu>
-        </Grid.Row>
-        <Grid.Row className='GridRow'>
-          <Menu size='small' tabular inverted color='blue'>
+        </div>
+        <div>
+          <Menu fluid size='small' inverted tabular style={{ backgroundColor: "black", height: "50px" }}>
             {customNavItems()}
           </Menu>
-        </Grid.Row>
-      </Grid>
-    </Sticky>
+        </div>
+      </Sticky>
+    </div>
+
   )
 }
 
 export default NavBar
+

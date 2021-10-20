@@ -28,21 +28,21 @@ user6 = User.create( name:'customer3', email:'customer3@email.com', password:'12
 bizusers = [user,user2,user5, user7]
 custusers = [user3,user4, user6]
 
- rest = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:bizusers[0].id)
- rest2 = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:bizusers[1].id)
- rest3 = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:bizusers[2].id)
- rest4 = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:bizusers[3].id)
+ rest = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:bizusers[0].id, image:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SHhtuIyVI39uCzddyZFEigHaHa%26pid%3DApi&f=1')
+ rest2 = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:bizusers[1].id, image:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SHhtuIyVI39uCzddyZFEigHaHa%26pid%3DApi&f=1')
+ rest3 = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:bizusers[2].id, image:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SHhtuIyVI39uCzddyZFEigHaHa%26pid%3DApi&f=1')
+ rest4 = Restaurant.create(city:Faker::Address.city, name:Faker::Restaurant.name, zip:Faker::Address.zip, phone_number:Faker::PhoneNumber.cell_phone, user_id:bizusers[3].id, image:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SHhtuIyVI39uCzddyZFEigHaHa%26pid%3DApi&f=1')
       
  rests = [rest, rest2, rest3, rest4]
 
 
-      punch = Punchcard.create(total_points:rand(10), logo:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SHhtuIyVI39uCzddyZFEigHaHa%26pid%3DApi&f=1', restaurant_id:rests[0].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+      punch = Punchcard.create(total_points:rand(10), logo:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.rJ8RdzT3GcoESzEs9HMhmAHaEK%26pid%3DApi&f=1', restaurant_id:rests[0].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
       erat a ante.' )
-      punch2 = Punchcard.create(total_points:rand(10), logo:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SHhtuIyVI39uCzddyZFEigHaHa%26pid%3DApi&f=1', restaurant_id:rests[1].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+      punch2 = Punchcard.create(total_points:rand(10), logo:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.R_596Yojo_1gADHcwcuugAHaE7%26pid%3DApi&f=1', restaurant_id:rests[1].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
       erat a ante.' )
-      punch3 = Punchcard.create(total_points:rand(10), logo:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SHhtuIyVI39uCzddyZFEigHaHa%26pid%3DApi&f=1', restaurant_id:rests[2].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+      punch3 = Punchcard.create(total_points:rand(10), logo:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.GNDrmtZt7ZHSIS-xH59olwHaEo%26pid%3DApi&f=1', restaurant_id:rests[2].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
       erat a ante.' )
-      punch4 = Punchcard.create(total_points:rand(10), logo:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SHhtuIyVI39uCzddyZFEigHaHa%26pid%3DApi&f=1', restaurant_id:rests[3].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+      punch4 = Punchcard.create(total_points:rand(10), logo:'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.o6NKSLyqr4kwrRw8UM0rSAHaED%26pid%3DApi&f=1', restaurant_id:rests[3].id, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
       erat a ante.' )
 
 punches = [punch, punch2, punch3, punch4]

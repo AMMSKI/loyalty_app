@@ -20,6 +20,7 @@ const AddQR = (props) => {
       <div>
         <p>Or go to {url}</p>
         <button onClick={()=>copy(url)} disabled={!url}>Copy To Clipboard</button>
+        <p>QR Manual Code U: {user_id}, P: {punchcard_id}</p>
       </div>
     </Container>
   )
