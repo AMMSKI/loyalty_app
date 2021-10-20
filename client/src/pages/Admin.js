@@ -10,13 +10,19 @@ function Admin(props) {
   return (
     <div className="admin-page">
       <div className="jumbotron text-center">
-        <div style={{ padding: "8px" }}>
-          <Avatar size="100" style={{ border: "solid 1px lightgray" }} round src={user.image} />
+        <div className="avatar-container">
+          <Avatar 
+            style={{border:"solid 2px black"}}
+            size="100" 
+            round 
+            src={user.image} 
+            />
         </div>
-        <h2 style={{ color: "#328FD4", fontWeight: "bold" }}>{user.name}</h2>
-        <h6>{user.account_type}</h6>
+        <h2>{user.name}</h2>
+        <h6 style={{color: "#F3CA03"}}>{user.account_type}</h6>
       </div>
       <Grid
+        color={"white"}
         textAlign='center'
         celled columns='equal'
         style={{ marginTop: "40px" }}>

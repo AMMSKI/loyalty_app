@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { useHistory } from 'react-router'
-import { Form, Grid } from 'semantic-ui-react'
+import { Form, Grid, Message } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import '../StyleSheets/Login.css'
 
 const Login = () => {
-  const { handleLogin } = useContext(AuthContext)
+  const { handleLogin, error, setError, setLoading } = useContext(AuthContext)
   const [email, setEmail] = useState('rafabriones88@outlook.com')
   const [password, setPassword] = useState('123456')
   const history = useHistory()
@@ -17,6 +17,8 @@ const Login = () => {
 
   const handleClick = (e, target) => {
     history.push(`${target}`)
+    setError(false)
+    setLoading(false)
   }
 
   return (
@@ -33,8 +35,10 @@ const Login = () => {
             <button className="yellow-button">Login</button>
             <button className="white-button" onClick={(e) => handleClick(e, '/register')}>Sign Up</button>
           </div>
-          <Form onSubmit={handleSubmit}>
+          <Form warning onSubmit={handleSubmit}>
             <Form.Input
+              required
+              type="email"
               label="Email"
               icon='red mail'
               iconPosition='left'
@@ -43,6 +47,7 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
             <Form.Input
+              required
               label="Password"
               icon='red lock'
               iconPosition='left'
@@ -67,6 +72,12 @@ const Login = () => {
                 LOGIN
               </button>
             </div>
+            {error && <Message
+              warning
+              header='That email is not in our system. Please Sign Up'
+
+              />
+            }
           </Form>
         </Grid.Column>
       </Grid>

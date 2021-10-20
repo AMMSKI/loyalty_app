@@ -1,9 +1,24 @@
 /* ADMIN */
 .admin-page {
-  margin-top:16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #700000;
+  color: white;
+  min-height: 80vh;
+  font-weight: bold;
 }
 
 .p-admin {
   color: "#328FD4";
-  font-weight: "bold";
+  font-weight: "bolder";
+}
+
+.avatar-container {
+  margin: 16px;
+}
+
+#user-name {
+  color: "#F3CA03";
 }
