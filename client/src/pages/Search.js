@@ -5,6 +5,7 @@ import { AuthContext } from '../providers/AuthProvider';
 import MyCard from '../Components/MyCard';
 import SearchBar from '../Components/SearchBar';
 import SearchCard from '../Components/MyCard';
+import '../StyleSheets/Search.css'
 
 
 const Search = () => {
@@ -39,14 +40,18 @@ const Search = () => {
   }
   
   return (
-    <div className="default-page">
-      <div className="search-header">
-        <SearchBar
-          input={input} 
-          onChange={updateInput}
-          />
+    <div className='search-page'>
+      <div className="search-container">
+          <h1>LOYAL SEARCH</h1>
+          <SearchBar
+            input={input} 
+            onChange={updateInput}
+            />
+            <br/>
+        <div className="card-container">
+        {renderCards()}
+        </div>
       </div>
-      {renderCards()}
     </div>
   )
 }

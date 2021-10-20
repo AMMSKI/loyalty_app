@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 // import { Card } from 'semantic-ui-react';
-import { AuthContext } from '../providers/AuthProvider';
+import { AuthContext } from '../providers/AuthProvider'; 
 import { Card, Col, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'

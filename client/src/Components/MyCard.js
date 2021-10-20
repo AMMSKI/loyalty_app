@@ -10,7 +10,7 @@ import Avatar from 'react-avatar'
 const SearchCard = (props) => {
   const { user } = useContext(AuthContext)
   const [ownedId, setOwnedIds] = useState([])
-  const history = useHistory()
+  const history = useHistory() 
 
   useEffect(() => {
     getOwnedcards()
@@ -39,7 +39,7 @@ const SearchCard = (props) => {
   return (
     <div className="searchCard">
       <MyCard>
-        <Row style={{ paddingLeft: '95%', paddingTop: '5px' }}>
+        <Row>
           <Dropdown pointing='top right' multiple icon='ellipsis vertical'>
             <Dropdown.Menu>
               {ownedId.includes(props.punch_id) ?
@@ -48,12 +48,12 @@ const SearchCard = (props) => {
             </Dropdown.Menu>
           </Dropdown>
         </Row>
-        <Row style={{ alignItems: 'center' }}>
-          <Col style={{ alignItems: 'center', padding: '20px' }}><Avatar size="100" round src={props.restaurant_image}/> </Col>
+        <Row>
+          <Col><Avatar size="100" round src={props.restaurant_image}/> </Col>
           <Col className='nameCol'>
             <Row>
               <Card.Title>
-                <h1 style={{color:"#700000"}}>{props.restaurant_name}</h1>
+                <h1>{props.restaurant_name}</h1>
               </Card.Title>
             </Row>
             <Row>
