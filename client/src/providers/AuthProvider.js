@@ -14,7 +14,11 @@ const AuthProvider = (props) => {
       setLoading(true)
       let res = await axios.post('/api/auth', user)
       setUser(res.data.data)
-      history.push('/home')
+      if(res.data.data.account_type === 'business'){
+        history.push('/finish_signup')
+      }else{
+        history.push('/home')
+      }
       console.log("User registered successfully")
     } catch (err) {
       setError(err.response.data.errors ? err.response.data.errors : err.response.data)
