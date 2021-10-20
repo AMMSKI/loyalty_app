@@ -4,10 +4,6 @@
   min-height: 62vh;
   margin: 0px 25px 0 25px;
 }
-.default-page {
-  min-height: 82vh;
-  margin: 16px 24px 0 24px;
-}
 
 .login-header {
   font-size: large;
