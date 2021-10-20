@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { useHistory } from 'react-router'
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Form, Grid } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
+import '../StyleSheets/Login.css'
 
 const Login = () => {
   const { handleLogin } = useContext(AuthContext)
@@ -13,43 +14,66 @@ const Login = () => {
     e.preventDefault();
     handleLogin({ email, password }, history)
   }
+
+  const handleClick = (e, target) => {
+    history.push(`${target}`)
+  }
+
   return (
-    <Grid style={{ height: '54vh' }} centered verticalAlign='middle'>
-      <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as='h2' color='blue' textAlign='left'>
-          Welcome
-          <br />to Loyalty App
-        </Header>
-        <Form onSubmit={handleSubmit} size='large'>
-          <Segment stacked>
-            <Form.Input
-              label="Email"
-              fluid icon='user'
-              iconPosition='left'
-              placeholder='E-mail address'
-              // value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <Form.Input
-              label="Password"
-              fluid
-              icon='lock'
-              iconPosition='left'
-              placeholder='Password'
-              type='password'
-              // value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <Button color='blue' fluid size='large'>
-              Login
-            </Button>
-          </Segment>
-        </Form>
-        <Message>
-          New to us? <a href='/register'>Sign Up</a>
-        </Message>
-      </Grid.Column>
-    </Grid>
+    <div className="login-page">
+      <div className="default-page">
+        <Grid style={{ height: '54vh' }} centered verticalAlign='middle'>
+          <Grid.Column style={{ maxWidth: 450 }}>
+            <div className="login-header">
+              Welcome to
+              <div className="loyal-burger-header">
+                LOYAL BURGER
+              </div>
+            </div>
+            <div className="button-group">
+              <button className="yellow-button">Login</button>
+              <button className="white-button" onClick={(e) => handleClick(e, '/register')}>Sign Up</button>
+            </div>
+            <Form onSubmit={handleSubmit}>
+              <Form.Input
+                label="Email"
+                icon='red mail'
+                iconPosition='left'
+                placeholder='E-mail address'
+                // value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <Form.Input
+                label="Password"
+                icon='red lock'
+                iconPosition='left'
+                placeholder='Password'
+                type='password'
+                // value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <div className="remember-forget">
+                <label for="remember">
+                  <input
+                    type="checkbox"
+                    id="styled-checkbox"
+                    name='remember' />
+                  Remember me?
+                </label>
+                Forgot password
+              </div>
+              <div className="buttoncontainer">
+                <button
+                  className="loginbutton" >
+                  LOGIN
+                </button>
+              </div>
+            </Form>
+          </Grid.Column>
+        </Grid>
+      </div>
+
+    </div>
   );
 }
 

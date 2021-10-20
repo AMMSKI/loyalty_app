@@ -1,28 +1,18 @@
-.row.GridRow {
-  padding: 0px;
-  border: 0px;
-  margin: 0px;
-  height: 50px;
+.nav-items {
+  display:flex;
+  font-size: smaller;
+  margin-left: 4px;
 }
 
-@media (min-width: 1200px) 
-    {   
-        .nogutter .span3
-        {
-            margin-left: 0px; width:300px;
-        }   
-    }
-    @media (min-width: 980px) and (max-width: 1199px) 
-    { 
-        .nogutter .span3
-        {
-            margin-left: 0px; width:240px;
-        }   
-    }
-    @media (min-width: 768px) and (max-width: 979px) 
-    { 
-        .nogutter .span3
-        {   
-            margin-left: 0px; width:186px;
-        }   
-    }
+.nav-hr {
+  color: #D7272F;
+  border-top: 2px solid;
+  border-radius: 5px;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 8px;
+}
+
+#icon-margin{
+  margin-left: 1.5em;
+}
