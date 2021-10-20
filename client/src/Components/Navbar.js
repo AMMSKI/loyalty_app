@@ -123,7 +123,7 @@ const NavBar = () => {
       <Sticky>
         <div>
           <Menu fluid size='small' inverted tabular style={{ backgroundColor: "black", height: "50px" }}>
-            <Menu.Item id="icon-margin" as='a' fitted='horizontally' header onClick={(e) => handleClick(e, '/')}>
+            <Menu.Item id="icon-margin" as='a' fitted='horizontally' header onClick={(e) => handleClick(e, '/home')}>
               <Image avatar src={logo} />
             </Menu.Item>
             <Menu.Menu position="right">
