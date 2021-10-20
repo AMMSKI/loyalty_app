@@ -15,7 +15,7 @@ const WalletCard = (props) => {
   return (
     <div className='searchCard'>
       <MyCard url={p.logo} >
-        <Row style={{ paddingLeft: '95%', paddingTop: '5px' }}>
+        <Row className='dropdownRow'>
           <Dropdown pointing='top right' multiple icon='ellipsis vertical'>
             <Dropdown.Menu>
               <Dropdown.Item onClick={() => props.deletePunchcard(p.up_id)}>Remove</Dropdown.Item>
@@ -28,11 +28,11 @@ const WalletCard = (props) => {
               <Col className='nameCol1'>
                 <Row>
                   <Card.Title>
-                    <h1 style={{color:"white"}}>
+                    <h1 className='name'>
                       {p.restaurant_name}
                     </h1>
                   </Card.Title>
-                  <p style={{color:"white"}}>
+                  <p className='points'>
                     {p.current_points ? p.current_points : '0'} points
                   </p>
                 </Row>
@@ -56,9 +56,9 @@ const MyLink = styled(Link)`
 `
 
 const MyCard = styled(Card)`
+background-image: url(${props => props.url});
   width: 80vw;
-  height: 20vh;
-  background-image: url(${props => props.url});
+  // height: 20vh;
   background-position: center;
   background-size: cover;
   border: 1px solid white;
