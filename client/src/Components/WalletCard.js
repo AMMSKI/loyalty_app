@@ -15,7 +15,7 @@ const WalletCard = (props) => {
   return (
     <div className='searchCard'>
       <MyCard url={p.logo} >
-        <Row style={{ paddingLeft: '95%', paddingTop: '5px' }}>
+        <Row className='dropdownRow'>
           <Dropdown pointing='top right' multiple icon='ellipsis vertical'>
             <Dropdown.Menu>
               <Dropdown.Item onClick={() => props.deletePunchcard(p.up_id)}>Remove</Dropdown.Item>
@@ -28,11 +28,11 @@ const WalletCard = (props) => {
               <Col className='nameCol1'>
                 <Row>
                   <Card.Title>
-                    <h1 style={{color:"white"}}>
+                    <h1 className='name'>
                       {p.restaurant_name}
                     </h1>
                   </Card.Title>
-                  <p style={{color:"white"}}>
+                  <p className='points'>
                     {p.current_points ? p.current_points : '0'} points
                   </p>
                 </Row>
@@ -47,22 +47,19 @@ const WalletCard = (props) => {
 
 export default WalletCard
 
-
-
-
 const MyLink = styled(Link)`
   text-decoration: none;
   color: black;
 `
 
 const MyCard = styled(Card)`
+  background-image: radial-gradient(circle, rgba(59,54,56,0.4822303921568627) 100%, rgba(60,62,64,0) 100%), url(${props => props.url});
   width: 80vw;
-  height: 20vh;
-  background-image: url(${props => props.url});
   background-position: center;
   background-size: cover;
-  border: 1px solid white;
+  border: 2px solid white;
   font-weight: bolder;
+  border-radius: 8px;
 `
 
 const MyDropdown = styled(Dropdown)`

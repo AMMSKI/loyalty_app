@@ -55,13 +55,15 @@ const Dashboard = () => {
   return (
     <div className="wallet-page">
       <div className="search-header">
-        <h1>LOYAL REWARDS</h1>
+        <h1>LOYAL WALLET</h1>
         <SearchBar
           input={input}
           onChange={updateInput}
         />
         <br />
+        <div className='punchContainer'>
         {punchcards && renderPunchcards()}
+        </div>
       </div>
     </div>
   )
