@@ -1,0 +1,10 @@
+/* PROFILE UPLOAD */
+.upload-page {  
+  padding:32px; 
+  min-height: 80vh;
+}
+
+.uploader {
+  padding-bottom: 32px;
+  text-align: center;
+}

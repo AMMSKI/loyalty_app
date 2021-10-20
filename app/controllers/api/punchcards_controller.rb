@@ -28,7 +28,7 @@ class Api::PunchcardsController < ApplicationController
     if @punchcard.save
       render json: @punchcard
     else
-      render json: {error: @punch.errors}, status: 422
+      render json: {error: @punchcard.errors}, status: 422
     end
   end
 
