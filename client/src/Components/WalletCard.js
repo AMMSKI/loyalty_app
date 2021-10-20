@@ -47,22 +47,19 @@ const WalletCard = (props) => {
 
 export default WalletCard
 
-
-
-
 const MyLink = styled(Link)`
   text-decoration: none;
   color: black;
 `
 
 const MyCard = styled(Card)`
-background-image: url(${props => props.url});
+  background-image: radial-gradient(circle, rgba(59,54,56,0.4822303921568627) 100%, rgba(60,62,64,0) 100%), url(${props => props.url});
   width: 80vw;
-  // height: 20vh;
   background-position: center;
   background-size: cover;
-  border: 1px solid white;
+  border: 2px solid white;
   font-weight: bolder;
+  border-radius: 8px;
 `
 
 const MyDropdown = styled(Dropdown)`
