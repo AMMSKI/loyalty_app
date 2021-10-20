@@ -28,6 +28,7 @@ import PunchcardImageUpload from './Components/PunchcardUpload';
 import RewardForm from './Components/RewardForm';
 import PunchCardSettings from './pages/PunchCardSettings';
 import ManualPunchCard from './pages/ManualPunchCard';
+import FinishSignUp from './pages/FinishSignUp';
 import './StyleSheets/App.css'
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
             <ProtectedRoute exact path='/rewardform' component={RewardForm} />
             <ProtectedRoute exact path='/profile' component={Profile} />
             <ProtectedRoute exact path='/edit_user' component={EditUser} />
+            <ProtectedRoute exact path='/finish_signup' component={FinishSignUp} />
             <ProtectedRoute exact path='/employeeview' component={EmployeeView} />
             <ProtectedRoute exact path='/earn/:userpunchcard_id' component={Earn} />
             <ProtectedRoute exact path='/addQR/:user_id/:punchcard_id' component={AddQR} />

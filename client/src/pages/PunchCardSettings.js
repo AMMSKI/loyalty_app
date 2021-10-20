@@ -45,7 +45,6 @@ const getPunchcard = async(restId) => {
 const getRewards = async (id) => {
   try {
     let res = await axios.get(`/api/punchcards/${id}/rewards`)
-    console.log(res.data)
     setRewards(res.data)
   }catch(err){
     console.log(err)
@@ -55,7 +54,6 @@ const getRewards = async (id) => {
 const deleteReward = async (id) => {
   try{
     let res = await axios.delete(`/api/punchcards/null/rewards/${id}`)
-    console.log('delete', res)
     getRestaurant()
   }catch(err){
     console.log(err)
