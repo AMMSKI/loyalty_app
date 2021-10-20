@@ -32,6 +32,7 @@ Rails.application.routes.draw do
     get 'users/:id/employeeview/:punch_id', to: 'user_punchcard#view_punchcard_customers'
     patch 'users/:id/editimage', to: 'users#update_image'
     patch 'users/:user_id/punchcards/:id', to: 'punchcards#update_image'
+    patch 'users/:user_id/restaurants/:id/update_image', to: 'restaurants#update_image'
     get 'users/:user_id/restaurants/:id', to: 'restaurant#show'
     get 'users/:user_id/carddata', to: 'punchcards#rests_punchcards'
   end
