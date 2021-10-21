@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import QRCode from "react-qr-code"
+import '../StyleSheets/AddQR.css'
 
 
 
@@ -15,14 +16,19 @@ const AddQR = (props) => {
   }
 
   return (
-    <Container style={{padding:'30px'}}>
-      <QRCode value={url} />
-      <div>
-        <p>Or go to {url}</p>
-        <button onClick={()=>copy(url)} disabled={!url}>Copy To Clipboard</button>
-        <p>QR Manual Code U: {user_id}, P: {punchcard_id}</p>
+    <div className='QR-container'>
+      <div className='QR-code'>
+        <QRCode value={url} />
       </div>
-    </Container>
+      <div className='QR-body'>
+        <br/>
+        <p>Or go to {url}</p> {/* remove in production */}
+        <br/>
+        <h1>Code:</h1>
+        <h1>{user_id}{punchcard_id}</h1>
+        <button className='QR-button' onClick={()=>copy(`${user_id}${punchcard_id}`)} disabled={!url}>Copy To Code Clipboard</button> {/* remove in production */}
+      </div>
+    </div>
   )
 
 }
