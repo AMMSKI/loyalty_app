@@ -50,10 +50,10 @@ const NavBar = () => {
         <Menu.Item>
           <Button
             basic
-            onClick={(e) => history.push('/login')}
+            onClick={(e) => history.push('/register')}
             inverted
           >
-            LOGIN
+              REGISTER
           </Button>
         </Menu.Item>
 

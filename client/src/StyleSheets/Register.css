@@ -1,11 +1,12 @@
 .page {
   min-height: 62vh;
-  margin: 24px;
+  padding: 32px;
+  padding-bottom: 100%;
   
 }
 
 #register-header {
-  margin-bottom: 24px;
+  padding-bottom: 24px;
   text-align: left;
   font-size: xx-large;
   color: #D7272F; 
@@ -14,11 +15,12 @@
 
 #yellow-contact-button {
   margin-top: 16px;
+  
   background-color:#F3CA03;
   color: white;
   border: none;
   border-radius: 3px;
-  width: 25%;
+  width: 40%;
   height: 30px;
   font-weight: 600;
 }

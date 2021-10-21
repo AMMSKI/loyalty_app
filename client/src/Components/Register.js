@@ -37,7 +37,7 @@ const Register = () => {
   }
 
   return (
-    <div className="page">
+    <div className="page WhiteBackG">
       {error && <ErrorMessage header="Could not Register" error={error} />}
       <Grid textAlign='center' style={{ height: '54vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
