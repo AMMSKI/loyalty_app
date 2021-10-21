@@ -1,0 +1,37 @@
+/* ADD QR  */
+
+
+.QR-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.QR-code{
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+.QR-code svg{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.QR-body{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+}
+
+.QR-button {
+  background-color: #D7272F;
+  color: white;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  width: 80%;
+  height: 40px;
+  font-weight: 900;
+  font-size: large;
+  box-shadow: rgba(139, 129, 175, 0.3) 0px 4px 6px -.5px, rgba(6, 241, 45, 0.3) 0px 2px 4px -1px;
+  margin-bottom: 32px;
+}

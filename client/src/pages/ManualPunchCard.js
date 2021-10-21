@@ -23,7 +23,7 @@ const ManualPunchCard = (props) => {
       <input value={uCode} onChange={handleUChange} />
       <p>P</p>
       <input value={pCode} onChange={handlePChange} />
-      <button type='submit'>Enter</button>
+      <button type='submit'>PunchCard</button>
     </Form>
   )
 }
