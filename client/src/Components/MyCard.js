@@ -10,8 +10,8 @@ import Avatar from 'react-avatar'
 const SearchCard = (props) => {
   const { user } = useContext(AuthContext)
   const [ownedId, setOwnedIds] = useState([])
-  const history = useHistory()
-
+  const history = useHistory() 
+console.log(props)
   useEffect(() => {
     getOwnedcards()
   }, [])
@@ -38,32 +38,36 @@ const SearchCard = (props) => {
 
   return (
     <div className="searchCard">
-      <MyCard>
-        <Row style={{ paddingLeft: '95%', paddingTop: '5px' }}>
-          <Dropdown pointing='top right' multiple icon='ellipsis vertical'>
+      <MyCard url={props.logo}>
+        <div >
+          <div className='dropdown_container'>
+          <Dropdown className='dropdown' pointing='top right' multiple icon='ellipsis vertical'>
             <Dropdown.Menu>
               {ownedId.includes(props.punch_id) ?
                 <Dropdown.Item onClick={() => history.push('/dashboard')}>View in Wallet</Dropdown.Item> :
                 <Dropdown.Item onClick={() => addToWallet(props.punch_id)}>Add To Wallet</Dropdown.Item>}
             </Dropdown.Menu>
           </Dropdown>
-        </Row>
-        <Row style={{ alignItems: 'center' }}>
-          <Col style={{ alignItems: 'center', padding: '20px' }}><Avatar size="100" round src={props.restaurant_image}/> </Col>
+          </div>
+        <div className='card_body'>
+          <div className='avatardiv'>
+          <Col><Avatar size="100" round src={props.restaurant_image}/> </Col>
+          </div>
           <Col className='nameCol'>
             <Row>
               <Card.Title>
-                <h1 style={{color:"#700000"}}>{props.restaurant_name}</h1>
+                <h1 className='restname'>{props.restaurant_name}</h1>
               </Card.Title>
             </Row>
             <Row>
-              <span>{props.city}</span>
+              <span className='restname'>{props.city}</span>
             </Row>
             <Row>
-              {ownedId.includes(props.punch_id) ? <span style={{ color: "#D7272F" }}>You own this card</span> : <p></p>}
+              {ownedId.includes(props.punch_id) ? <span style={{ color: "#FFD700" }}>You own this card</span> : <p></p>}
             </Row>
           </Col>
-        </Row>
+        </div>
+        </div>
       </MyCard>
     </div>
   )
@@ -76,7 +80,12 @@ const MyLink = styled(Link)`
 `
 
 const MyCard = styled(Card)`
+  background-image: radial-gradient(circle, rgba(59,54,56,0.4822303921568627) 100%, rgba(60,62,64,0) 100%), url(${props => props.url});
   width: 80vw;
-  // height: 200px;
+  background-position: center;
+  background-size: cover;
+  border: 2px solid white;
+  font-weight: bolder;
+  border-radius: 8px;
 `
 export default SearchCard

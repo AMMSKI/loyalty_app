@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { Dropdown, Button, Icon, Image, Menu, Sticky, Grid } from 'semantic-ui-react'
+import { Dropdown, Button, Icon, Image, Menu, Sticky } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import { useHistory, useLocation } from 'react-router'
 import '../StyleSheets/Navbar.css'
@@ -107,13 +107,6 @@ const NavBar = () => {
             style={{ textDecoration: "underline #D7272F", color: "white" }}
           >
             Search
-          </Menu.Item>
-          <Menu.Item
-            as='a'
-            onClick={(e) => handleClick(e, '/rewards')}
-            style={{ textDecoration: "underline #D7272F", color: "white" }}
-          >
-            Rewards
           </Menu.Item>
         </div>
       );
