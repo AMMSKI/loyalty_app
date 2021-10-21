@@ -42,7 +42,7 @@ const Profile = () => {
             </div>
           }
         </CardContent>
-        <Segment basic padded>
+        <Segment basic padded style={{backgroundColor:"white"}}>
           <div>
             <Grid>
               <Grid.Column width={13}>

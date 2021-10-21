@@ -6,7 +6,6 @@ import '../StyleSheets/Earn.css'
 import CustomerRewards from './CustomerRewards';
 import topBun from "../7.png";
 import bottomBun from "../8.png";
-import { Image } from 'semantic-ui-react';
 
 const Earn = (props) => {
   const { user } = useContext(AuthContext)
