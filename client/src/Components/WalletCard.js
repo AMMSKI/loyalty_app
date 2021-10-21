@@ -28,7 +28,7 @@ const WalletCard = (props) => {
               <Col className='nameCol1'>
                 <Row>
                   <Card.Title>
-                    <h1 className='name'>
+                    <h1 className='wallet-restaurant-name'>
                       {p.restaurant_name}
                     </h1>
                   </Card.Title>
