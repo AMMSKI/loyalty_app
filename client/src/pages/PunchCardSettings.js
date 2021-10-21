@@ -9,7 +9,7 @@ import PunchCardEdit from "../Components/PunchCardEdit";
 import RewardForm from "../Components/RewardForm";
 import RestaurantEdit from "../Components/RestaurantEdit";
 import Avatar from "react-avatar";
-import juicyburger from "../juicyburger.png";
+import juicyburger from "../images/juicyburger.png";
 
 const PunchCardSettings = () => {
 

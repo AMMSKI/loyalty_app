@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router';
 import { Image } from 'semantic-ui-react';
-import logo from "../burgerlogo.png";
+import logo from "../images/burgerlogo.png";
 import '../StyleSheets/LandingHome.css';
 
 

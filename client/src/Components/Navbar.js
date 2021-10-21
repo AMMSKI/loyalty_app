@@ -4,7 +4,7 @@ import { Dropdown, Button, Icon, Image, Menu, Sticky } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import { useHistory, useLocation } from 'react-router'
 import '../StyleSheets/Navbar.css'
-import logo from "../burgerlogo.png"
+import logo from "../images/burgerlogo.png";
 
 const NavBar = () => {
   const history = useHistory()
