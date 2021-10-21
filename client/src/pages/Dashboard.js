@@ -48,7 +48,10 @@ const Dashboard = () => {
 
 
   const renderPunchcards = () => {
-    return searchPunchcards.map((p) => <WalletCard p={p} deletePunchcard={deletePunchcard} />)
+    return searchPunchcards.map((p) => 
+      <WalletCard 
+        p={p} 
+        deletePunchcard={deletePunchcard} />)
   }
 
 

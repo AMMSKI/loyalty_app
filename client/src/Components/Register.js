@@ -37,19 +37,19 @@ const Register = () => {
   }
 
   return (
-    <div className="page">
+    <div className="page WhiteBackG">
       {error && <ErrorMessage header="Could not Register" error={error} />}
       <Grid textAlign='center' style={{ height: '54vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
           <h1 id="register-header">
-            Register new profile
+            Register New Profile
           </h1>
           <Form size='large' onSubmit={handleSubmit}>
             <Segment stacked>
               <Form.Input
                 // label="Name"
                 required
-                fluid icon='user'
+                fluid icon='red user'
                 iconPosition='left'
                 placeholder='Name'
                 // value={name}
@@ -65,7 +65,7 @@ const Register = () => {
               <Form.Input
                 // label="Email"
                 required
-                fluid icon='mail'
+                fluid icon='red mail'
                 iconPosition='left'
                 placeholder='E-mail address'
                 // value={email}
@@ -75,7 +75,7 @@ const Register = () => {
                 // label="Password"
                 required
                 fluid
-                icon='lock'
+                icon='red lock'
                 iconPosition='left'
                 placeholder='Password'
                 type='password'
@@ -86,7 +86,7 @@ const Register = () => {
                 // label={"Confirm Password"}
                 required
                 fluid
-                icon='lock'
+                icon='red lock'
                 iconPosition='left'
                 placeholder='Password Confirmation'
                 type='password'
@@ -94,13 +94,9 @@ const Register = () => {
                 onChange={(e) => setPasswordConfirmation(e.target.value)}
               />
 
-              <Button
-                color='red'
-                loading={loading}
-                disabled={loading}
-                fluid size='large'>
-                Register
-              </Button>
+              <button className="register-button">
+                  REGISTER
+              </button>
             </Segment>
           </Form>
             <button 

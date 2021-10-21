@@ -48,13 +48,23 @@ const NavBar = () => {
     return (
       <div style={{ color: "white" }}>
         <Menu.Item>
+          {location.pathname === '/register' ? 
           <Button
             basic
             onClick={(e) => history.push('/login')}
             inverted
           >
-            LOGIN
+              LOGIN
+          </Button> :
+          <Button
+            basic
+            onClick={(e) => history.push('/register')}
+            inverted
+          >
+              REGISTER
           </Button>
+
+  }
         </Menu.Item>
 
       </div>
