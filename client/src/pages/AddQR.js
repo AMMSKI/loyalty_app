@@ -25,8 +25,8 @@ const AddQR = (props) => {
         <p>Or go to {url}</p> {/* remove in production */}
         <br/>
         <h1>Code:</h1>
-        <h1>{user_id}{punchcard_id}</h1>
-        <button className='QR-button' onClick={()=>copy(`${user_id}${punchcard_id}`)} disabled={!url}>Copy To Code Clipboard</button> {/* remove in production */}
+        <h1>{user_id}-{punchcard_id}</h1>
+        <button className='QR-button' onClick={()=>copy(`${user_id}-${punchcard_id}`)} disabled={!url}>Copy To Code Clipboard</button> {/* remove in production */}
       </div>
     </div>
   )

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
+import '../StyleSheets/QR.css'
 
 const ManualPunchCard = (props) => {
   const [pCode, setPCode] = useState('')
@@ -19,10 +20,13 @@ const ManualPunchCard = (props) => {
 
   return(
     <Form onSubmit={handleSubmit}>
-      <p>U</p>
-      <input value={uCode} onChange={handleUChange} />
-      <p>P</p>
-      <input value={pCode} onChange={handlePChange} />
+      <div className='manual_enter'>
+        <input className='manual_input' value={uCode} onChange={handleUChange} />
+        <div>
+        <h1 className='dash'>-</h1>
+        </div>
+        <input className='manual_input' value={pCode} onChange={handlePChange} />
+      </div>
       <button type='submit'>PunchCard</button>
     </Form>
   )
