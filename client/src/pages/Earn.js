@@ -65,8 +65,10 @@ const Earn = (props) => {
             src={burgpoints} 
             size="small" 
             verticalAlign="middle" />
-          <h1 className="points BlackFontC">
-            {punchcardData.current_points} Points
+          <h1 className="earn-points BlackFontC">
+            {punchcardData.current_points ? 
+            `${punchcardData.current_points} Points` : "No Points"
+            }
           </h1>
         </div>
         <div className="link-button">
