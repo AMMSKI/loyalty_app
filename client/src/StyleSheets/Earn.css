@@ -1,0 +1,52 @@
+.earn-page {
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
+}
+
+.earn-h1 {
+  font-weight: 900;
+  
+}
+
+.points-img-container {
+  margin: 32px 0 72px 0;
+  position: relative;
+  text-align: center;
+
+}
+
+.points {
+  position: absolute;
+  top: 58%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+}
+
+.link-button {
+  margin-bottom: 64px;
+}
+
+.earn-button {
+  background-color: #D7272F;
+  color: white;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  width: 80%;
+  height: 40px;
+  font-weight: 900;
+  font-size: large;
+  box-shadow: rgba(139, 129, 175, 0.3) 0px 4px 6px -.5px, rgba(6, 241, 45, 0.3) 0px 2px 4px -1px;
+}
+
+
+hr.rounded {
+  border-top: 8px solid;
+  border-radius: 5px;
+  width: 95%;
+  margin-bottom: 32px;
+}
