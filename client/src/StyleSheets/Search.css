@@ -28,4 +28,40 @@
   display: flex;
   justify-content: space-evenly;
   padding: 8px 0;
+  color: black;
+}
+
+.nameCol{
+  align-items: center;
+  /* padding: 5%;   */
+}
+
+.dropdown_row{
+  display: flex;
+}
+
+.dropdown{
+  display: flex;
+  justify-content: flex-end;
+  margin: 0!;
+}
+
+.dropdown_container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.restname{
+  color: black;
+  font-weight: 1000;
+}
+
+.avatardiv{
+  display: flex;
+}
+
+.card_body{
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
 }
