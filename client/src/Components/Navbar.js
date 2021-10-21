@@ -23,22 +23,22 @@ const NavBar = () => {
 
             <Menu.Item onClick={() => location.pathname === '/profile'} >
               <Link style={{ textDecoration: "none", color: "black" }} to='/profile'>
-                <Icon name='user' />Profile
+                <Icon name='red user' />Profile
               </Link>
             </Menu.Item>
             <Menu.Item onClick={() => location.pathname === '/edit_user'} >
               <Link style={{ textDecoration: "none", color: "black" }} to='/edit_user'>
-                <Icon name='edit' />
+                <Icon name='red edit' />
                 Edit Profile
               </Link>
             </Menu.Item>
             <Menu.Item onClick={() => handleDelete(history)}>
-              <Icon name='trash' />
+              <Icon name='red trash' />
               Delete Profile
             </Menu.Item>
             <Dropdown.Divider />
             <Menu.Item onClick={() => handleLogout(history)}>
-              <Icon name='log out' />
+              <Icon name='red log out' />
               Logout
             </Menu.Item>
           </Dropdown.Menu>
