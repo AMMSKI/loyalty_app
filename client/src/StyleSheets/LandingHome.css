@@ -46,8 +46,8 @@ hr.rounded {
 }
 
 .loginbutton {
-  background-color: #D7272F;
-  color: white;
+  /* background-color: #D7272F; */
+  /* color: white; */
   padding: 0;
   border: none;
   border-radius: 8px;

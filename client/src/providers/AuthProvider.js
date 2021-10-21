@@ -21,7 +21,7 @@ const AuthProvider = (props) => {
       }
       console.log("User registered successfully")
     } catch (err) {
-      setError(err.response.data.errors ? err.response.data.errors : err.response.data)
+      setError(err.response.data.errors ? err.response.data.errors : err.response.data.error)
       console.log(err)
     } finally {
       setLoading(false)
@@ -39,7 +39,6 @@ const AuthProvider = (props) => {
     } catch (err) {
       setError(err)
       console.log(err)
-      alert("Please, sign up")
     }
   };
 
@@ -89,6 +88,7 @@ const AuthProvider = (props) => {
       handleUserUpdate,
       handleDelete,
       loading,
+      setLoading,
       authenticated: user ? true : false
     }}>
       {props.children}

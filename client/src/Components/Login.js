@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { useHistory } from 'react-router'
-import { Form, Grid } from 'semantic-ui-react'
+import { Form, Grid, Message } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import '../StyleSheets/Login.css'
 
 const Login = () => {
-  const { handleLogin } = useContext(AuthContext)
+  const { handleLogin, error, setError, setLoading } = useContext(AuthContext)
   const [email, setEmail] = useState('rafabriones88@outlook.com')
   const [password, setPassword] = useState('123456')
   const history = useHistory()
@@ -17,6 +17,8 @@ const Login = () => {
 
   const handleClick = (e, target) => {
     history.push(`${target}`)
+    setError(false)
+    setLoading(false)
   }
 
   return (
@@ -31,7 +33,7 @@ const Login = () => {
               </div>
             </div>
             <div className="button-group">
-              <button className="yellow-button">Login</button>
+              <button className="yellow-button GoldWebGoldenBackG WhiteFontC">Login</button>
               <button className="white-button" onClick={(e) => handleClick(e, '/register')}>Sign Up</button>
             </div>
             <Form onSubmit={handleSubmit}>
@@ -64,7 +66,7 @@ const Login = () => {
               </div>
               <div className="buttoncontainer">
                 <button
-                  className="loginbutton" >
+                  className="loginbutton AmaranthRedBackG WhiteFontC" >
                   LOGIN
                 </button>
               </div>
