@@ -10,40 +10,41 @@ import { Image } from 'semantic-ui-react';
 const Earn = (props) => {
   const { user } = useContext(AuthContext)
   const [punchcardData, setPunchcardData] = useState([])
-  // const [ownedCards, setOwnedCards] = useState([])
+  const [ownedCards, setOwnedCards] = useState([])
   const userpunchcard_id = props.match.params.userpunchcard_id
 
   useEffect(() => {
     getData()
-    // getOwnedCards()
+    getOwnedCards()
   }, [])
 
   const getData = async () => {
     try {
       let res = await axios.get(`/api/users/${user.id}/user_punchcard/${userpunchcard_id}`)
+      console.log(res.data)
       setPunchcardData(res.data)
     } catch (error) {
     }
   }
 
-  // const getOwnedCards = async () => {
-  //   try {
-  //     let res = await axios.get(`/api/user/${user.id}/punchcard_by_user`)
-  //     let ownedIds = res.data.map(c => c.punchcard_id)
-  //     setOwnedCards(ownedIds)
-  //   } catch (error) {
+  const getOwnedCards = async () => {
+    try {
+      let res = await axios.get(`/api/user/${user.id}/punchcard_by_user`)
+      let ownedIds = res.data.map(c => c.punchcard_id)
+      setOwnedCards(ownedIds)
+    } catch (error) {
 
-  //   }
-  // }
+    }
+  }
 
-  // const addToWallet = async (punchcard_id) => {
-  //   let user_id = user.id
-  //   try {
-  //     await axios.post(`/api/users/${user.id}/user_punchcard`, { punchcard_id, user_id })
-  //   } catch (err) {
+  const addToWallet = async (punchcard_id) => {
+    let user_id = user.id
+    try {
+      await axios.post(`/api/users/${user.id}/user_punchcard`, { punchcard_id, user_id })
+    } catch (err) {
 
-  //   }
-  // }
+    }
+  }
 
 
   return (
@@ -81,7 +82,7 @@ const Earn = (props) => {
             </button>
           </Link>
         </div>
-        <hr className="rounded GoldWebGoldenFontC"/>
+        <hr className="rounded"/>
         <CustomerRewards
           punchcardData={punchcardData}
           userpunchcard_id={userpunchcard_id} />
