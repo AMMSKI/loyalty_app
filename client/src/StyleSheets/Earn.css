@@ -14,17 +14,29 @@
 }
 
 .points-img-container {
-  margin: 32px 0 72px 0;
+  margin-top: 32px;
   position: relative;
   text-align: center;
+}
 
+.topbun {
+  position: absolute;
+  width: 75%;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .earn-points {
   position: absolute;
-  top: 58%;
-  left: 52%;
+  top: 35%;
+  left: 50%;
   transform: translate(-50%, -50%);
+  font-size:32px;
+}
+
+.bottombun {
+  width: 77%;
 }
 
 .link-button {
