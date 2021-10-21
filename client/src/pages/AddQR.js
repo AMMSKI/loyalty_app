@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import QRCode from "react-qr-code"
-import '../StyleSheets/AddQR.css'
+import '../StyleSheets/QR.css'
 
 
 
