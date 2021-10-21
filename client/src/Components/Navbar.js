@@ -74,23 +74,9 @@ const NavBar = () => {
 
           <Menu.Item
             as='a'
-            onClick={(e) => handleClick(e, '/employeeview')}
-            style={{ textDecoration: "underline #D7272F", color: "white" }}>
-            Employee View
-          </Menu.Item>
-
-          <Menu.Item
-            as='a'
             onClick={(e) => handleClick(e, '/settings')}
             style={{ textDecoration: "underline #D7272F", color: "white" }}>
             Settings
-          </Menu.Item>
-          <Menu.Item
-            as='a'
-            onClick={(e) => handleClick(e, '/charting')}
-            style={{ textDecoration: "underline #D7272F", color: "white" }}>
-
-            Charts
           </Menu.Item>
         </div>
       );

@@ -61,12 +61,10 @@ function Charting(props) {
     }
     
   return (
-    <div id="page">
-      <h1>Charts</h1>
+    <div>
+    {/* //   <h1>Charts</h1> */}
       <div id="chart">
-        <VictoryChart
-          domainPadding={20}
-          >      
+        <VictoryChart>      
           <VictoryLabel
           x={225}
           y={25}
