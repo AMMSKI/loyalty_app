@@ -31,7 +31,7 @@ const Login = () => {
               </div>
             </div>
             <div className="button-group">
-              <button className="yellow-button">Login</button>
+              <button className="yellow-button GoldWebGoldenBackG WhiteFontC">Login</button>
               <button className="white-button" onClick={(e) => handleClick(e, '/register')}>Sign Up</button>
             </div>
             <Form onSubmit={handleSubmit}>
@@ -64,7 +64,7 @@ const Login = () => {
               </div>
               <div className="buttoncontainer">
                 <button
-                  className="loginbutton" >
+                  className="loginbutton AmaranthRedBackG WhiteFontC" >
                   LOGIN
                 </button>
               </div>
