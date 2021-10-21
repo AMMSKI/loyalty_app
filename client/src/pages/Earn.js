@@ -4,7 +4,8 @@ import { AuthContext } from '../providers/AuthProvider'
 import { Link } from 'react-router-dom'
 import '../StyleSheets/Earn.css'
 import CustomerRewards from './CustomerRewards';
-import burgpoints from "../BurgerPoints.png";
+import topBun from "../7.png";
+import bottomBun from "../8.png";
 import { Image } from 'semantic-ui-react';
 
 const Earn = (props) => {
@@ -37,40 +38,26 @@ const Earn = (props) => {
     }
   }
 
-  const addToWallet = async (punchcard_id) => {
-    let user_id = user.id
-    try {
-      await axios.post(`/api/users/${user.id}/user_punchcard`, { punchcard_id, user_id })
-    } catch (err) {
-
-    }
-  }
-
-
   return (
     <div className="earn-page WhiteBackG">
       <div>
         <h1 className="earn-h1">{punchcardData.restaurant_name}</h1>
         <h5>{punchcardData.description}</h5>
         <br />
-        {/* <div>
-        {ownedCards.includes(punchcardData.punchcard_id) ?
-          <strong>Already in wallet</strong>
-          :
-          <button onClick={()=> addToWallet(punchcardData.punchcard_id)}> Add Card </button>
-        }
-          <br />
-        </div> */}
         <div className="points-img-container">
-          <Image 
-            src={burgpoints} 
-            size="small" 
-            verticalAlign="middle" />
+          <img 
+            className="topbun"
+            src={topBun} 
+           />
           <h1 className="earn-points BlackFontC">
             {punchcardData.current_points ? 
             `${punchcardData.current_points} Points` : "No Points"
             }
           </h1>
+          <img 
+            className="bottombun"
+            src={bottomBun} 
+           />
         </div>
         <div className="link-button">
           <Link
