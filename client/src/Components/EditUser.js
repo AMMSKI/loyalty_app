@@ -33,6 +33,7 @@ export default function EditUser() {
           <Form size='large' onSubmit={handleSubmit}>
             <Segment stacked>
               <Form.Input
+                required
                 // label="Name"
                 fluid icon='user'
                 iconPosition='left'
@@ -50,6 +51,7 @@ export default function EditUser() {
               /> */}
               <Form.Input
                 // label="Password"
+                required
                 fluid
                 icon='lock'
                 iconPosition='left'
@@ -60,6 +62,7 @@ export default function EditUser() {
               />
               <Form.Input
                 // label={"Confirm Password"}
+                required
                 fluid
                 icon='lock'
                 iconPosition='left'

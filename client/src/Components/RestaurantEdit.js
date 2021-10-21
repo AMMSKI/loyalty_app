@@ -56,13 +56,33 @@ const RestaurantEdit = ({restaurant, getRestaurant}) => {
         labelIdle='Browse'
         />
         <p>Name</p>
-        <Input value={name} onChange={handleNameChange}/><br/>
+        <Input 
+          required
+          value={name} 
+          onChange={handleNameChange}
+          /><br/>
         <p>City</p>
-        <Input value={city} onChange={handleCityChange}/><br/>
+        <Input 
+          required
+          value={city} 
+          onChange={handleCityChange}
+          /><br/>
         <p>Zip</p>
-        <Input value={zip} onChange={handleZipChange}/><br/>
-        <p>Phone#</p>
-        <Input value={phone} onChange={handlePhoneChange}/><br/>
+        <Input 
+          required
+          pattern="^[0-9]{5}(?:-[0-9]{4})?$" 
+          title="99999-9999"
+          value={zip} 
+          onChange={handleZipChange}
+          /><br/>
+        <p>Phone Number</p>
+        <Input 
+          required
+          type="tel"
+          pattern="^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$" 
+          title="(999)-999-9999"
+          value={phone} 
+          onChange={handlePhoneChange}/><br/>
         <Button type='submit'>Update</Button>
         </Form>
     </Card>

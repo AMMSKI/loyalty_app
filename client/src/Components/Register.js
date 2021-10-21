@@ -3,9 +3,10 @@ import { useHistory } from 'react-router'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import ErrorMessage from './ErrorMessage';
+import '../StyleSheets/Register.css'
 
 const Register = () => {
-  const { handleRegister, error, loading } = useContext(AuthContext)
+  const { handleRegister, error, loading, setLoading } = useContext(AuthContext)
   const [name, setName] = useState('Business')
   const [account_type, setAccount_Type] = useState('Business')
   const [email, setEmail] = useState('business@test.com')
@@ -31,14 +32,18 @@ const Register = () => {
     }
   }
 
+  const handleClick = (e, target) => {
+    history.push(`${target}`)
+  }
+
   return (
-    <div>
+    <div className="page">
       {error && <ErrorMessage header="Could not Register" error={error} />}
       <Grid textAlign='center' style={{ height: '54vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as='h2' mini color='blue' textAlign='center'>
-            <Image src='/logo512.png' /> Register new profile
-          </Header>
+          <h1 id="register-header">
+            Register new profile
+          </h1>
           <Form size='large' onSubmit={handleSubmit}>
             <Segment stacked>
               <Form.Input
@@ -51,6 +56,7 @@ const Register = () => {
                 onChange={(e) => setName(e.target.value)}
               />
               <Form.Dropdown
+                required
                 search selection options={dropOptions} //objects
                 placeholder='Account Type'
                 // value={account_type}
@@ -58,6 +64,7 @@ const Register = () => {
               />
               <Form.Input
                 // label="Email"
+                required
                 fluid icon='mail'
                 iconPosition='left'
                 placeholder='E-mail address'
@@ -66,6 +73,7 @@ const Register = () => {
               />
               <Form.Input
                 // label="Password"
+                required
                 fluid
                 icon='lock'
                 iconPosition='left'
@@ -76,6 +84,7 @@ const Register = () => {
               />
               <Form.Input
                 // label={"Confirm Password"}
+                required
                 fluid
                 icon='lock'
                 iconPosition='left'
@@ -86,7 +95,7 @@ const Register = () => {
               />
 
               <Button
-                color='blue'
+                color='red'
                 loading={loading}
                 disabled={loading}
                 fluid size='large'>
@@ -94,9 +103,12 @@ const Register = () => {
               </Button>
             </Segment>
           </Form>
-          <Message>
-            <a href='/'>Contact Us</a>
-          </Message>
+            <button 
+              id="yellow-contact-button"
+              onClick={(e) => handleClick(e, '/about')}
+              >
+              Contact Us
+            </button>
         </Grid.Column>
       </Grid>
     </div>
