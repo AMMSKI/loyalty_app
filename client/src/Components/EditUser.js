@@ -28,11 +28,11 @@ export default function EditUser() {
       {error && <ErrorMessage header="Could not Update" error={error} />}
       <Grid textAlign='center' style={{ height: '54vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as='h2' mini textAlign='center' style={{color:"#D7272F"}}>
+          <Header as="h1" mini textAlign='center' style={{color:"#D7272F"}}>
             Update profile
           </Header>
           <Form size='large' onSubmit={handleSubmit}>
-            <Segment stacked>
+            <Segment padded>
               <Form.Input
                 required
                 // label="Name"
@@ -72,15 +72,11 @@ export default function EditUser() {
                 // value={passwordConfirmation}
                 onChange={(e) => setPasswordConfirmation(e.target.value)}
               />
-              <Button
-                style={{backgroundColor:'#D7272F', color:"white"}}
-                // loading={loading}
-                // disabled={loading}
-                fluid size='large'
-                
+              <button
+                className="update-profile-button"
                 >
-                Update
-              </Button>
+                UPDATE
+              </button>
             </Segment>
           </Form>
         </Grid.Column>
