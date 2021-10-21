@@ -10,7 +10,7 @@
   min-height: 80vh;
 }
 
-.search-header {
+.wallet-container {
   padding: 8px 16px 8px 8px;
   display: flex;
   flex-direction: column;
@@ -38,7 +38,7 @@
   text-align: center;
 } 
 
-.name{
+.wallet-restaurant-name {
   color: white;
   font-weight: 1000;
 }

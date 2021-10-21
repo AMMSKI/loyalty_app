@@ -48,13 +48,16 @@ const Dashboard = () => {
 
 
   const renderPunchcards = () => {
-    return searchPunchcards.map((p) => <WalletCard p={p} deletePunchcard={deletePunchcard} />)
+    return searchPunchcards.map((p) => 
+      <WalletCard 
+        p={p} 
+        deletePunchcard={deletePunchcard} />)
   }
 
 
   return (
     <div className="wallet-page">
-      <div className="search-header">
+      <div className="wallet-container">
         <h1>LOYAL WALLET</h1>
         <SearchBar
           input={input}

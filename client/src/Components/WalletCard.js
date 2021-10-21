@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 // import { Card } from 'semantic-ui-react';
-import { AuthContext } from '../providers/AuthProvider';
+import { AuthContext } from '../providers/AuthProvider'; 
 import { Card, Col, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
@@ -28,7 +28,7 @@ const WalletCard = (props) => {
               <Col className='nameCol1'>
                 <Row>
                   <Card.Title>
-                    <h1 className='name'>
+                    <h1 className='wallet-restaurant-name'>
                       {p.restaurant_name}
                     </h1>
                   </Card.Title>

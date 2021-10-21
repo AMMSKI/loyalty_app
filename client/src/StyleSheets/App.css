@@ -1,3 +1,6 @@
+/* FONTS */
+
+
 /* LAYOUT */
 
 #container-page {
@@ -46,59 +49,36 @@
   text-align: center;
 }
 
+/* CONSTANTS */
 
-
-/* .circle {
-  position: relative;
-  display: block;
-  margin: 2em 0;
-  background-color: transparent;
-  color: #222;
-  text-align: center;
+.AmaranthRedBackG {
+  background-color: #D7272F;
 }
 
-.circle:after {
-  display: block;
-  padding-bottom: 100%;
-  width: 100%;
-  height: 0;
-  border-radius: 50%;
-  background-color: #ddd;
-  content: "";
+.GoldWebGoldenBackG {
+  background-color: #FFD700;
 }
 
-.circle__inner {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.WhiteBackG {
+  background-color: #FFFFFF;
 }
 
-.circle__wrapper {
-  display: table;
-  width: 100%;
-  height: 100%;
+.BlackBackG {
+  background-color: #000000;
 }
 
-.circle__content {
-  display: table-cell;
-  padding: 1em;
-  vertical-align: middle;
+.AmaranthRedFontC {
+  color: #D7272F;
 }
 
-.content {
-  margin: 20px;
-
+.GoldWebGoldenFontC {
+  color: #FFD700;
 }
 
-
-
-.nameCol{
-  align-items: center;
-  padding: 5%;  
+.WhiteFontC{
+  color: #FFFFFF;
 }
-.nameCol1{
-  text-align: center;
-} */
+
+.BlackFontC {
+  color: #000000;
+}

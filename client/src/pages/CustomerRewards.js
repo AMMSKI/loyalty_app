@@ -1,56 +1,67 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { Icon } from 'semantic-ui-react'
+import '../StyleSheets/CustomerRewards.css'
 
 
-const CustomerRewards = (props) => {
+const CustomerRewards = ({ punchcardData, userpunchcard_id }) => {
   const [rewards, setRewards] = useState([])
-  
+  const [showRewards, setShowRewards] = useState(false)
+
   const getRewards = async () => {
-    try{
-      let res = await axios.get(`/api/punchcards/${props.punchcardData.punchcard_id}/rewards`)
+    try {
+      let res = await axios.get(`/api/punchcards/${punchcardData.punchcard_id}/rewards`)
       setRewards(res.data)
-    }catch(err){
+      setShowRewards(!showRewards)
+    } catch (err) {
       console.log(err)
     }
   }
 
-  
+
   const renderRewards = () => {
-    return rewards.map((r)=>{
+    console.log(rewards)
+    return rewards.map((r) => {
       return (
         <div>
-          <Card>
-            <Card.Body>
-              <h1>{r.name}</h1>
-              <Card.Text>
-                <p>{r.description}</p>
-              </Card.Text>
-            </Card.Body>
+          <div className="cust-rewards-cards">
+            <div>
+              <h1 className="rewards-title">{r.name}</h1>
+              <p>{r.description}</p>
+            </div>
 
-            {r.cost < props.punchcardData.current_points ?
-              <Link to={`/rewardQR/${r.id}/${props.userpunchcard_id}`} reward_id={r.id} userpunchcard_id={props.userpunchcard_id} > 
+            {r.cost < punchcardData.current_points ?
+              <Link
+                to={`/rewardQR/${r.id}/${userpunchcard_id}`}
+                reward_id={r.id}
+                userpunchcard_id={userpunchcard_id} >
 
-                <Card.Footer>
+                <div className="cash-or-cost">
                   Cash In Reward
-                </Card.Footer> 
-              </Link>:
-              <Card.Footer>
-                Cost {r.cost} points
-              </Card.Footer> 
+                </div>
+              </Link> :
+              <div className="cash-or-cost">
+                Cost: {r.cost} points
+              </div>
             }
-          
-          </Card>
+
+          </div>
         </div>
       )
     })
   }
 
   return (
-    <div>
-      <h2 onClick={()=> getRewards()}>Rewards lol</h2>
-      {rewards && renderRewards()}
+    <div className="customer-rewards-page">
+      <h2
+        className="rewards-header"
+        onClick={() => getRewards()}>
+        <Icon name="arrow alternate circle down" color="yellow" />
+          Rewards
+        <Icon name="arrow alternate circle down" color="yellow" />
+      </h2>
+      {showRewards && renderRewards()}
     </div>
   )
 }

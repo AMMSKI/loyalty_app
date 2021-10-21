@@ -23,7 +23,7 @@ const Landing = () => {
           </div>
         </div>
         <div className="buttoncontainer">
-          <button className="loginbutton" onClick={(e) => history.push('/login')}>LOGIN</button>
+          <button className="loginbutton AmaranthRedBackG WhiteFontC" onClick={(e) => history.push('/login')}>LOGIN</button>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { Dropdown, Button, Icon, Image, Menu, Sticky, Grid } from 'semantic-ui-react'
+import { Dropdown, Button, Icon, Image, Menu, Sticky } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import { useHistory, useLocation } from 'react-router'
 import '../StyleSheets/Navbar.css'
@@ -48,13 +48,23 @@ const NavBar = () => {
     return (
       <div style={{ color: "white" }}>
         <Menu.Item>
+          {location.pathname === '/register' ? 
           <Button
             basic
             onClick={(e) => history.push('/login')}
             inverted
           >
-            LOGIN
+              LOGIN
+          </Button> :
+          <Button
+            basic
+            onClick={(e) => history.push('/register')}
+            inverted
+          >
+              REGISTER
           </Button>
+
+  }
         </Menu.Item>
 
       </div>
@@ -74,23 +84,9 @@ const NavBar = () => {
 
           <Menu.Item
             as='a'
-            onClick={(e) => handleClick(e, '/employeeview')}
-            style={{ textDecoration: "underline #D7272F", color: "white" }}>
-            Employee View
-          </Menu.Item>
-
-          <Menu.Item
-            as='a'
             onClick={(e) => handleClick(e, '/settings')}
             style={{ textDecoration: "underline #D7272F", color: "white" }}>
             Settings
-          </Menu.Item>
-          <Menu.Item
-            as='a'
-            onClick={(e) => handleClick(e, '/charting')}
-            style={{ textDecoration: "underline #D7272F", color: "white" }}>
-
-            Charts
           </Menu.Item>
         </div>
       );
@@ -111,13 +107,6 @@ const NavBar = () => {
             style={{ textDecoration: "underline #D7272F", color: "white" }}
           >
             Search
-          </Menu.Item>
-          <Menu.Item
-            as='a'
-            onClick={(e) => handleClick(e, '/rewards')}
-            style={{ textDecoration: "underline #D7272F", color: "white" }}
-          >
-            Rewards
           </Menu.Item>
         </div>
       );

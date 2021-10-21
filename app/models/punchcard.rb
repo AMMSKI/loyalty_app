@@ -21,7 +21,7 @@ class Punchcard < ApplicationRecord
   # WHERE p.restaurant_id = 
 
   def self.rests_punchcards(id)
-    select('p.id, r.user_id AS owner_id, p.restaurant_id as rest_id, up.created_at AS created_at, up.user_id as customer_id')
+    select('p.id, r.user_id AS owner_id, p.restaurant_id as rest_id, up.current_points AS current_points, up.created_at AS created_at, up.user_id as customer_id')
     .from('punchcards AS p')
     .joins('INNER JOIN user_punchcards as up ON p.id = up.punchcard_id 
             INNER JOIN restaurants AS r ON p.restaurant_id = r.id')
