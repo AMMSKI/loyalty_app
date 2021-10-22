@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
-import { Card, Button, Row, Col } from 'react-bootstrap'
 import { AuthContext } from '../providers/AuthProvider'
+import '../StyleSheets/Punchreward.css'
 
 const PunchCardAdmin = (props) => {
   const { user } = useContext(AuthContext)
@@ -24,6 +24,7 @@ const PunchCardAdmin = (props) => {
       console.log(err)
     }
   }
+
   const getRestUserId = async (restId) => {
     try{
       let res = await axios.get(`/api/users/null/user_punchcard/null/restaurants/${restId}`)
@@ -44,7 +45,6 @@ const PunchCardAdmin = (props) => {
     }
   }
 
-
       if(user.account_type === 'customer'){
         return (
           <div>
@@ -55,23 +55,23 @@ const PunchCardAdmin = (props) => {
     
       if(user.id === restUserId){
       return (
-        <div className="jumbotron text-center">
-          <Card>
-          <Card.Body>
-            <Row>
-              <Col>
-                <Button onClick={()=>updatePoints(5)}>Add 5 points</Button>
-              </Col>
-              <Col>
-                <Button onClick={()=>updatePoints(10)}>Add 10 points</Button>
-              </Col>
-              <Col>
-                <Button onClick={()=>updatePoints(15)}>Add 15 points</Button>
-              </Col>
-            </Row>
-          </Card.Body>
-          </Card>
+        <>
+        <div className='admin_header'>
+          <h1>Add Points to Customers Card</h1>
         </div>
+
+        <div className='admin_container'>
+          <div className='admin_button_container'>
+            <button className='admin_button' onClick={()=>updatePoints(5)}>Add 5 points</button>
+          </div>
+          <div className='admin_button_container'>
+            <button className='admin_button' onClick={()=>updatePoints(10)}>Add 10 points</button>
+          </div>
+          <div className='admin_button_container'>
+            <button  className='admin_button' onClick={()=>updatePoints(15)}>Add 15 points</button>
+          </div>
+        </div>
+        </>
       )
       }else{
         return(
