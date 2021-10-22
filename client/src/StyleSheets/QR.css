@@ -18,7 +18,7 @@
 .QR-body{
   display: flex;
   flex-direction: column;
-  color: white;
+  color: black;
   align-items: center;
 }
 
@@ -42,7 +42,7 @@
   justify-content: center;
   align-items: center;
   margin: 30px;
-  color: white;
+  color: black;
   border: 10px black;
 }
 

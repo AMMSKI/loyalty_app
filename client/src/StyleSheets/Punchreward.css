@@ -36,7 +36,7 @@
   justify-content: center;
   text-align: center;
   padding: 20px;
-  color: white;
+  color: black;
 }
 
 .reward_admin{
@@ -49,11 +49,11 @@
 }
 
 .admin_description{
-  color: white;
+  color: black;
 }
 
 .admin_reward_header{
-  color: white;
+  color: black;
   display: flex;
   flex-direction: column;
 }

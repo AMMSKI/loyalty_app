@@ -8,7 +8,7 @@ import '../StyleSheets/QR.css'
 const AddQR = (props) => {
   const user_id = props.match.params.user_id
   const punchcard_id = props.match.params.punchcard_id
-  const url = `localhost:3000/punchcardAdmin/${user_id}/${punchcard_id}`
+  const url = `https://loyalburger.herokuapp.com/punchcardAdmin/${user_id}/${punchcard_id}`
 
   const copy = async (url) => {
     await navigator.clipboard.writeText(url)
