@@ -3,6 +3,7 @@ import React, {  useEffect, useState } from 'react'
 import {  Icon, Segment } from 'semantic-ui-react'
 import { Button } from 'react-bootstrap'
 import RewardForm from "../Components/RewardForm";
+import '../StyleSheets/CustomerRewards.css'
 
 
 const SettingReward = ({punchcard_id}) => {
@@ -36,12 +37,14 @@ const SettingReward = ({punchcard_id}) => {
     return rewards.map((r) => {
       return (
         <div key={r.id}>
-          <Segment>
-            <h3>{r.name}</h3>
+          <div className="cust-rewards-cards">
+            <h1 className="rewards-title">{r.name}</h1>
             <p>Cost: {r.cost}</p>
-            <h3>{r.description}</h3>
-            <Button onClick={() => deleteReward(r.id)}><Icon name='trash' /></Button>
-          </Segment>
+            <p>{r.description}</p>
+            <Button onClick={() => deleteReward(r.id)} style={{backgroundColor:"#D7272F", border:"solid 1px black"}}>
+              <Icon name='trash' />
+            </Button>
+          </div>
         </div>
       )
     })
@@ -50,11 +53,11 @@ const SettingReward = ({punchcard_id}) => {
   return(
     <div>
       {renderRewards()}
-      <div style={{ textAlign: 'center' }}>
+      <div style={{ textAlign: 'center', padding:"24px" }}>
         {showRewardForm && <RewardForm getRewards={getRewards} id={punchcard_id} />}
         <button
           onClick={() => setShowRewardForm(!showRewardForm)}
-          className="loginbutton" >
+          className="loginbutton AmaranthRedBackG WhiteFontC" >
           {showRewardForm ? 'Close' : 'Add Reward'}
         </button>
       </div>

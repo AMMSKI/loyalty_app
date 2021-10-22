@@ -53,8 +53,11 @@ const Rewards = (props) => {
       <button onClick={handleShowForm}>
         {showForm ? 'Hide Form' : 'Show Form'}
       </button>
-      {showForm && <RewardForm punchcardId={punchcardId}/>}
-
+      {showForm && 
+        <RewardForm 
+          punchcardId={punchcardId}
+        />
+      }
       <h2>Rewards</h2>
       {renderRewards()}
     </div>
