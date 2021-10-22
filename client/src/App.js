@@ -26,10 +26,10 @@ import Charting from './pages/Charting';
 import Admin from './pages/Admin';
 import PunchcardImageUpload from './Components/PunchcardUpload';
 import RewardForm from './Components/RewardForm';
-import PunchCardSettings from './pages/PunchCardSettings';
 import ManualPunchCard from './pages/ManualPunchCard';
 import FinishSignUp from './pages/FinishSignUp';
 import './StyleSheets/App.css'
+import Settings from './pages/Settings';
 
 function App() {
   return (
@@ -37,8 +37,8 @@ function App() {
       <div id="navbar">
         <NavBar />
       </div>
-      <div id="content-wrap">
-        <div id="content-main">
+      <div id="content-wrap AmaranthRedBackG">
+        <div id="content-main AmaranthRedBackG">
           <FetchUser>
             <Switch>
               <Route exact path='/' component={Landing} />
@@ -65,7 +65,7 @@ function App() {
               <ProtectedRoute exact path='/admin' component={Admin} />
               <ProtectedRoute exact path='/profileupload/:user_id' component={ProfileUpload} />
               <ProtectedRoute exact path='/pcimageupload' component={PunchcardImageUpload} />
-              <ProtectedRoute exact path='/settings' component={PunchCardSettings} />
+              <ProtectedRoute exact path='/settings' component={Settings} />
               <Route component={NoMatch} />
             </Switch>
           </FetchUser>

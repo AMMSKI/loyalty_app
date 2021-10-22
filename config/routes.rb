@@ -36,6 +36,6 @@ Rails.application.routes.draw do
     get 'users/:user_id/restaurants/:id', to: 'restaurant#show'
     get 'users/:user_id/carddata', to: 'punchcards#rests_punchcards'
   end
-  
+  get '*other', to: 'static#index'
 end
          
