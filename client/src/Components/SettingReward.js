@@ -1,15 +1,8 @@
 import axios from "axios";
-import { AuthContext } from "../providers/AuthProvider";
-import React, { useContext, useEffect, useState } from 'react'
-import { Dropdown, Icon, Menu, Segment } from 'semantic-ui-react'
-import { Card, Button, Row, Col } from 'react-bootstrap'
-import styled from "styled-components";
-import PunchcardImageUpload from "../Components/PunchcardUpload";
-import PunchCardEdit from "../Components/PunchCardEdit";
+import React, {  useEffect, useState } from 'react'
+import {  Icon, Segment } from 'semantic-ui-react'
+import { Button } from 'react-bootstrap'
 import RewardForm from "../Components/RewardForm";
-import RestaurantEdit from "../Components/RestaurantEdit";
-import Avatar from "react-avatar";
-import juicyburger from "../juicyburger.png";
 
 
 const SettingReward = ({punchcard_id}) => {

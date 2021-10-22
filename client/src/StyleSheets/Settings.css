@@ -1,16 +1,15 @@
 .juicy-burger {
   max-width: 100%;
+  border: solid 4px black;  
 }
 
-
-/* 
-
-.settings-page {
-  justify-content: 'space-evenly';
-  margin-top: "24px";
-  border-bottom: "solid 3px white"
+.burger-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/*
   .settings-tabs {
     overflow: hidden;
     border: 1px solid #ccc;

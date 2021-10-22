@@ -4,10 +4,11 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Dropdown, Menu } from 'semantic-ui-react'
 import { Card } from 'react-bootstrap'
 import styled from "styled-components";
-import juicyburger from "../juicyburger.png";
+import juicyburger from "../images/juicyburger.png";
 import SettingsPunchcard from "../Components/SettingsPunchcard";
 import SettingReward from "../Components/SettingReward";
 import SettingsRestaurant from "../Components/SettingsRestaurant";
+import '../StyleSheets/Settings.css'
 
 const Settings = () => {
 
@@ -59,7 +60,7 @@ const Settings = () => {
 
   return (
     <>
-      <div>
+      <div className="settings-page">
       <Menu 
         secondary 
         fixed 
@@ -86,12 +87,14 @@ const Settings = () => {
         </Menu.Item>
       </Menu>
       </div>
+      <div  className="burger-holder">
       { showImage &&
       <img 
         className="juicy-burger"
         src={juicyburger} 
       />
       }
+      </div>
       {renderPage()}
     </>
   )
