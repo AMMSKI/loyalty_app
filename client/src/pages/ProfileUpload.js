@@ -63,7 +63,7 @@ export default function ProfileUpload(props) {
         />
         <Button
           type="submit"
-          color="red"
+          color="black"
         > Add </Button>
       </Form>
     </div>

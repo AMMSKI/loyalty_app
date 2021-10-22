@@ -1,52 +1,40 @@
 .juicy-burger {
   max-width: 100%;
+  border: solid 4px black;  
 }
 
-
-/* 
+.burger-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
 
 .settings-page {
-  justify-content: 'space-evenly';
-  margin-top: "24px";
-  border-bottom: "solid 3px white"
+  background-color: #D7272F;
 }
 
-  .settings-tabs {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: blue;
-  }
+.sp-h2 {
+  color: white;
+  padding-top:16px;
+  font-weight: 600;
+}
 
-  .settings-tabs button{
-    background-color: inherit;
-    float: center;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-  }
+.sp-page {
+  text-align: center;
+}
 
-  .tab button:hover {
-    background-color: #ddd;
-  }
+.edit-description {
+  text-align:center;
+  padding: 0 24px 24px 24px;
 
-  .tab button.active {
-    background-color: #ccc;
-  }
+}
 
-  .tabs {
-    margin: 30px 0 35px 0;
-  }
-
-button.tablinks {
-  border: none;
-  border-radius: 3px;
-  width: 50%;
-  height: 30px;
-
-} */
-
+.rewards-edit-form {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
 
 /* 
 .white-button {

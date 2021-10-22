@@ -1,9 +1,29 @@
 /* PROFILE */
 
 .profile-page {
-  margin-top:24px;
+  padding-top:24px;
+  padding-bottom: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 70vh;
+  background-color: #D7272F;
+}
+
+.avatar-and-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #D7272F;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.profile-name {
+  color: white !important; 
+  font-weight: bolder ;
+  padding: 16px 0 2px 0 ;
+}
+
+.profile-account-type {
+  color: white;
 }

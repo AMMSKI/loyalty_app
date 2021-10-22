@@ -1,7 +1,7 @@
 
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardContent, Grid, Icon, Segment } from 'semantic-ui-react';
+import { Card, Grid, Icon, Segment } from 'semantic-ui-react';
 import styled from 'styled-components';
 import { AuthContext } from '../providers/AuthProvider';
 import Avatar from 'react-avatar';
@@ -13,8 +13,7 @@ const Profile = () => {
 
   return (
     <div className="profile-page">
-      <BorderlessCard centered>
-        <CardContent textAlign="center">
+        <div className="avatar-and-name">
           <Link to={`/profileupload/${user.id}`}>
             {user.image ?
               <div>
@@ -22,7 +21,7 @@ const Profile = () => {
                   <div style={{ padding: "8px" }}>
                     <Avatar size="100" round src={user.image} />
                   </div>
-                  <Icon link corner name="edit outline" color="black" />
+                  <Icon link corner name="edit outline" inverted />
                 </Icon.Group>
               </div> :
               <Icon.Group size="huge">
@@ -33,24 +32,24 @@ const Profile = () => {
           </Link>
           {user ?
             <div>
-              <h2 style={{ color: "#D7272F", fontWeight: "bold" }}>{user.name}</h2>
-              <h6>{user.account_type}</h6>
+              <h1 className="profile-name">{user.name}</h1>
+              <p className="profile-account-type">{user.account_type}</p>
             </div> :
             <div>
               <p>User Name</p>
               <p>User Account Type</p>
             </div>
           }
-        </CardContent>
-        <Segment basic padded style={{backgroundColor:"white"}}>
+        </div>
+        <Segment basic style={{backgroundColor:"#D7272F", color:"white", fontWeight:"bolder"}}>
           <div>
             <Grid>
               <Grid.Column width={13}>
-                <Icon color="red" name="user" />
+                <Icon inverted name="user" />
                 Name
               </Grid.Column>
               <Grid.Column>
-                <Icon color="red" name="angle right" />
+                <Icon inverted name="angle right" />
               </Grid.Column>
             </Grid>
           </div>
@@ -58,11 +57,11 @@ const Profile = () => {
           <div>
             <Grid>
               <Grid.Column width={13}>
-                <Icon color="red" name="edit" />
+                <Icon inverted name="edit" />
                 Edit Bio
               </Grid.Column>
               <Grid.Column >
-                <Icon color="red" name="angle right" />
+                <Icon inverted name="angle right" />
               </Grid.Column>
             </Grid>
           </div>
@@ -70,11 +69,11 @@ const Profile = () => {
           <div>
             <Grid>
               <Grid.Column width={13}>
-                <Icon color="red" name="chart bar" />
+                <Icon inverted name="chart bar" />
                 My Points
               </Grid.Column>
               <Grid.Column >
-                <Icon color="red" name="angle right" />
+                <Icon inverted name="angle right" />
               </Grid.Column>
             </Grid>
           </div>
@@ -82,11 +81,11 @@ const Profile = () => {
           <div>
             <Grid>
               <Grid.Column width={13}>
-                <Icon color="red" name="map marker alternate" />
+                <Icon inverted name="map marker alternate" />
                 My Location
               </Grid.Column>
               <Grid.Column >
-                <Icon color="red" name="angle right" />
+                <Icon inverted name="angle right" />
               </Grid.Column>
             </Grid>
           </div>
@@ -94,16 +93,15 @@ const Profile = () => {
           <div>
             <Grid>
               <Grid.Column width={13}>
-                <Icon color="red" name="mail" />
+                <Icon inverted name="mail" />
                 {user ? <>{user.email}</> : "User Email"}
               </Grid.Column>
               <Grid.Column >
-                <Icon color="red" name="angle right" />
+                <Icon inverted name="angle right" />
               </Grid.Column>
             </Grid>
           </div>
         </Segment>
-      </BorderlessCard>
     </div>
   )
 

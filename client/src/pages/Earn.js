@@ -4,8 +4,8 @@ import { AuthContext } from '../providers/AuthProvider'
 import { Link } from 'react-router-dom'
 import '../StyleSheets/Earn.css'
 import CustomerRewards from './CustomerRewards';
-import topBun from "../7.png";
-import bottomBun from "../8.png";
+import topBun from "../images/7.png";
+import bottomBun from "../images/8.png";
 
 const Earn = (props) => {
   const { user } = useContext(AuthContext)
