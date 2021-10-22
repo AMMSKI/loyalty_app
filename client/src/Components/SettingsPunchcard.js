@@ -5,13 +5,13 @@ import styled from "styled-components";
 import PunchcardImageUpload from "../Components/PunchcardUpload";
 import PunchCardEdit from "../Components/PunchCardEdit";
 import Avatar from "react-avatar";
+import "../StyleSheets/Settings.css"
 
 const SettingsPunchcard = ({restaurant, punchcard, getRestaurant }) => {
   const [showEdit, setShowEdit] = useState(false)
   return (
-    <>
-          <Segment>
-            <h1>Card preview in customer search page</h1>
+    <div className="sp-page">
+            <h2 className="sp-h2">Loyalty Card</h2>
             <div className="searchCard">
               <MyCard1>
                 <Row style={{ paddingLeft: '95%', paddingTop: '5px' }}>
@@ -33,9 +33,7 @@ const SettingsPunchcard = ({restaurant, punchcard, getRestaurant }) => {
                 </Row>
               </MyCard1>
             </div>
-          </Segment>
-          <Segment>
-            <h1>Card preview in customer wallet</h1>
+            <h2>Wallet Card</h2>
             <div className='searchCard'>
               <MyCard url={punchcard.logo}>
                 <Row style={{ paddingLeft: '95%', paddingTop: '5px' }}>
@@ -61,18 +59,15 @@ const SettingsPunchcard = ({restaurant, punchcard, getRestaurant }) => {
                 </Card.Body>
               </MyCard>
             </div>
-          </Segment>
           <div>
-            <Segment>
-              <h1>Card Description in Customer Earn Page:</h1>
+              <h1>Card Description</h1>
               <p>{punchcard.description}</p>
               {!showEdit ?
                 <Button onClick={() => setShowEdit(!showEdit)}>Edit Description</Button> :
                 <PunchCardEdit showEdit={showEdit} getRestaurant={getRestaurant} setShowEdit={setShowEdit} id={punchcard.id}
                 />}
-            </Segment>
           </div>
-        </>
+        </div>
   )
 }
 

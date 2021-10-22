@@ -66,23 +66,33 @@ const Settings = () => {
         fixed 
         style={{
           justifyContent:'space-evenly', 
-          backgroundColor:"#FFF", 
+          backgroundColor:"#FFD700", 
           paddingTop:"24px", 
           borderBottom:"solid 2px lightgray"}}>
         <Menu.Item 
           onClick={()=>{setPage('punchcard'); setShowImage(false)}}
           style={{
-          boxShadow: "rgba(0, 0, 0, 0.1) 0px -2px 1px 2px"}}>
+          boxShadow: "rgba(0, 0, 0, 0.1) 0px -2px 1px 2px",
+          backgroundColor:"white",
+          fontWeight:"bolder"
+          }}>
           PunchCard
         </Menu.Item>
         <Menu.Item 
           onClick={()=>{setPage('rewards'); setShowImage(false)}}
-          style={{boxShadow: "rgba(0, 0, 0, 0.1) 0px -2px 1px 2px"}}>
+          style={{
+            boxShadow: "rgba(0, 0, 0, 0.1) 0px -2px 1px 2px",
+            backgroundColor:"white",
+            fontWeight:"bolder"
+            }}>
           Rewards
         </Menu.Item>
         <Menu.Item 
           onClick={()=> {setPage('restaurant'); setShowImage(false)}}
-          style={{boxShadow: "rgba(0, 0, 0, 0.1) 0px -2px 1px 2px"}}>
+          style={{
+            boxShadow: "rgba(0, 0, 0, 0.1) 0px -2px 1px 2px",
+            backgroundColor:"white",
+            fontWeight:"bolder"}}>
           Restaurant
         </Menu.Item>
       </Menu>

@@ -9,43 +9,13 @@
   justify-content: center;
 }
 
-/*
-  .settings-tabs {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: blue;
-  }
+.settings-page {
+  background-color: #D7272F;
+}
 
-  .settings-tabs button{
-    background-color: inherit;
-    float: center;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-  }
-
-  .tab button:hover {
-    background-color: #ddd;
-  }
-
-  .tab button.active {
-    background-color: #ccc;
-  }
-
-  .tabs {
-    margin: 30px 0 35px 0;
-  }
-
-button.tablinks {
-  border: none;
-  border-radius: 3px;
-  width: 50%;
-  height: 30px;
-
-} */
-
+.sp-h2 {
+  
+}
 
 /* 
 .white-button {
