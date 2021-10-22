@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 import { FilePond } from "react-filepond";
-import { Form, Input, Button } from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
 
 const RestaurantEdit = ({restaurant, getRestaurant}) => {
   const [name, setName] = useState(restaurant.name)
@@ -44,9 +44,13 @@ const RestaurantEdit = ({restaurant, getRestaurant}) => {
   }
 
   return (
-    <Card style={{textAlign:'center'}}>
+    <Card style={{
+      textAlign:"left",
+      marginTop:"24px", 
+      padding:"24px", 
+      fontWeight:"bold"}}>
       <Form onSubmit={handleSubmit}>
-        <p>Upload New Logo</p>
+        <p style={{textAlign:"center"}}>Upload New Logo</p>
       <FilePond
         name='file'
         files={files}
@@ -54,36 +58,44 @@ const RestaurantEdit = ({restaurant, getRestaurant}) => {
         allowMultiple={false}
         onupdatefiles={fileChanged}
         labelIdle='Browse'
+        style={{paddingBottom:"24px"}}
         />
-        <p>Name</p>
-        <Input 
+        <Form.Input 
           required
+          label="Name"
           value={name} 
           onChange={handleNameChange}
-          /><br/>
-        <p>City</p>
-        <Input 
+          />
+        <Form.Input 
           required
+          label="City"
           value={city} 
           onChange={handleCityChange}
-          /><br/>
-        <p>Zip</p>
-        <Input 
+          />
+        <Form.Input 
           required
+          label="Zip"
           pattern="^[0-9]{5}(?:-[0-9]{4})?$" 
           title="99999-9999"
           value={zip} 
           onChange={handleZipChange}
-          /><br/>
-        <p>Phone Number</p>
-        <Input 
+          />
+        <Form.Input 
           required
-          type="tel"
-          pattern="^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$" 
-          title="(999)-999-9999"
+          label="Phone Number (999)-999-999"
+          // type="tel"
+          // pattern="^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$" 
+          title="999-999-9999"
           value={phone} 
-          onChange={handlePhoneChange}/><br/>
-        <Button type='submit'>Update</Button>
+          onChange={handlePhoneChange}
+          style={{paddingBottom:"24px"}}
+          />
+          <br />
+        <button 
+          className="yellow-button GoldWebGoldenBackG WhiteFontC" 
+          type='submit'>
+            Update
+        </button>
         </Form>
     </Card>
   )
