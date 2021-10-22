@@ -4,6 +4,7 @@ import { Button, Form, Grid, Header, Image, Segment } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider';
 import ErrorMessage from './ErrorMessage';
 import PunchcardImageUpload from './PunchcardUpload';
+import '../StyleSheets/EditUser.css'
 
 export default function EditUser() {
   const { handleUserUpdate, error, loading, user } = useContext(AuthContext);
@@ -23,7 +24,7 @@ export default function EditUser() {
   }
 
   return (
-    <div className="default-page">
+    <div className="edit-user-page">
       {error && <ErrorMessage header="Could not Update" error={error} />}
       <Grid textAlign='center' style={{ height: '54vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
