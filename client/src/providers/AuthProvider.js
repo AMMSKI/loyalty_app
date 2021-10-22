@@ -62,8 +62,8 @@ const AuthProvider = (props) => {
     try {
       setUser(null)
       localStorage.removeItem('access-token')
-      history.push('/')
       await axios.delete(`/api/users/${user.id}`)
+      history.push('/')
     } catch (err) {
       console.log(err)
     }
