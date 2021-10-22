@@ -5,5 +5,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 70vh;
+}
+
+.avatar-and-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #D7272F;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.profile-name {
+  color: white !important; 
+  font-weight: "bold" 
+}
+
+.profile-account-type {
+  color: white;
 }
