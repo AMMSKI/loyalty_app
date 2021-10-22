@@ -1,27 +1,20 @@
 import axios from "axios";
 import { AuthContext } from "../providers/AuthProvider";
 import React, { useContext, useEffect, useState } from 'react'
-import { Dropdown, Icon, Menu, Segment } from 'semantic-ui-react'
-import { Card, Button, Row, Col } from 'react-bootstrap'
+import { Dropdown, Menu } from 'semantic-ui-react'
+import { Card } from 'react-bootstrap'
 import styled from "styled-components";
-import PunchcardImageUpload from "../Components/PunchcardUpload";
-import PunchCardEdit from "../Components/PunchCardEdit";
-import RewardForm from "../Components/RewardForm";
-import RestaurantEdit from "../Components/RestaurantEdit";
-import Avatar from "react-avatar";
 import juicyburger from "../juicyburger.png";
 import SettingsPunchcard from "../Components/SettingsPunchcard";
 import SettingReward from "../Components/SettingReward";
+import SettingsRestaurant from "../Components/SettingsRestaurant";
 
 const Settings = () => {
 
   const { user } = useContext(AuthContext)
   const [restaurant, setRestaurant] = useState([])
   const [punchcard, setPunchcard] = useState([])
-  const [rewards, setRewards] = useState([])
   const [page, setPage] = useState(null)
-  const [showRewardForm, setShowRewardForm] = useState(false)
-  const [showRestEdit, setShowRestEdit] = useState(false)
   const [showImage, setShowImage] = useState(true)
 
   useEffect(() => {
@@ -59,21 +52,7 @@ const Settings = () => {
       )
     } else if (page === 'restaurant') {
       return (
-        <>
-          <Segment style={{ textAlign: 'center' }}>
-            <Avatar size="300" round src={restaurant.image} />
-            <h1>{restaurant.name}</h1>
-            <p>City: {restaurant.city}</p>
-            <p>ZIP: {restaurant.zip}</p>
-            <p>#: {restaurant.phone_number}</p>
-          </Segment>
-          <div style={{ textAlign: 'center' }}>
-            <button
-              onClick={() => setShowRestEdit(!showRestEdit)}
-              className='loginbutton'>{showRestEdit ? 'Close' : 'Edit'}</button>
-            {showRestEdit && <RestaurantEdit getRestaurant={getRestaurant} restaurant={restaurant} />}
-          </div>
-        </>
+        <SettingsRestaurant restaurant={restaurant} getRestaurant={getRestaurant}/>
       )
     }
   }
@@ -90,21 +69,21 @@ const Settings = () => {
           paddingTop:"24px", 
           borderBottom:"solid 2px lightgray"}}>
         <Menu.Item 
-        onClick={()=>{setPage('punchcard'); setShowImage(false)}}
-        style={{
+          onClick={()=>{setPage('punchcard'); setShowImage(false)}}
+          style={{
           boxShadow: "rgba(0, 0, 0, 0.1) 0px -2px 1px 2px"}}>
           PunchCard
         </Menu.Item>
         <Menu.Item 
           onClick={()=>{setPage('rewards'); setShowImage(false)}}
           style={{boxShadow: "rgba(0, 0, 0, 0.1) 0px -2px 1px 2px"}}>
-            Rewards
+          Rewards
         </Menu.Item>
         <Menu.Item 
           onClick={()=> {setPage('restaurant'); setShowImage(false)}}
           style={{boxShadow: "rgba(0, 0, 0, 0.1) 0px -2px 1px 2px"}}>
-            Restaurant
-          </Menu.Item>
+          Restaurant
+        </Menu.Item>
       </Menu>
       </div>
       { showImage &&
