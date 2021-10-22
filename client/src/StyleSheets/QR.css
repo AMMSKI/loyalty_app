@@ -35,3 +35,64 @@
   box-shadow: rgba(139, 129, 175, 0.3) 0px 4px 6px -.5px, rgba(6, 241, 45, 0.3) 0px 2px 4px -1px;
   margin-bottom: 32px;
 }
+
+.manual_enter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  color: white;
+  border: 10px black;
+}
+
+.manual_body {
+  display: flex;
+  justify-content: space-around;
+}
+
+.manual_input{
+  text-align: center;
+  font-size: 24px;
+  max-width: 100px;
+}
+
+.dash{
+  padding: 20px;
+}
+
+.manual_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  background-color: #D7272F;
+  color: white;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  width: 80%;
+  height: 40px;
+  font-weight: 900;
+  font-size: large;
+  box-shadow: rgba(139, 129, 175, 0.3) 0px 4px 6px -.5px, rgba(6, 241, 45, 0.3) 0px 2px 4px -1px;
+}
+
+.manual-radio{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.radio_button{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  margin-bottom: 10px;
+  font-size: 24px;
+}

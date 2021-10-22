@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-import { Card, Button } from "react-bootstrap";
 import { AuthContext } from "../providers/AuthProvider";
+import '../StyleSheets/Punchreward.css'
 
 
 const RewardAdmin = (props) => {
@@ -56,22 +56,24 @@ const RewardAdmin = (props) => {
 
   if(user.id === restUserId){
     return (
-      <div className="jumbotron text-center">
-        <Card>
-              <Card.Body>
-                <h1>{reward.name}</h1>
-                <h3>cost: {reward.cost}</h3>
-                <Card.Text>
-                  <p>{reward.description}</p>
-                </Card.Text>
-                <Button onClick={()=>chargeReward(reward.cost)}>Charge Reward</Button>
-              </Card.Body>
-        </Card>
+      <div className='admin_container'>
+            <div className='admin_reward_header'>
+              <h1>{reward.name}</h1>
+              <h3>cost: {reward.cost}</h3>
+            </div>
+        <div className='reward_admin'>
+            <div className='admin_description'>
+                <p>{reward.description}</p>
+            </div>
+            <div className='admin_button_container'>
+              <button className='admin_button' onClick={()=>chargeReward(reward.cost)}>Charge Reward</button>
+            </div>
+        </div>
       </div>
     )
   }else{
     return(
-      <div>Invalid QR</div>
+      <div className='admin_reward_header'>Invalid QR</div>
     )
   }
 

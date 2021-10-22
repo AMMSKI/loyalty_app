@@ -1,0 +1,59 @@
+
+
+.admin_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.admin_button_container{
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+}
+
+.admin_button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D7272F;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  width: 80%;
+  height: 50px;
+  font-weight: 900;
+  font-size: large;
+  box-shadow: rgba(139, 129, 175, 0.3) 0px 4px 6px -.5px, rgba(6, 241, 45, 0.3) 0px 2px 4px -1px;
+}
+
+.admin_header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+.reward_admin{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+}
+
+.admin_description{
+  color: white;
+}
+
+.admin_reward_header{
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
