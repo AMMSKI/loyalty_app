@@ -22,11 +22,9 @@ const RewardQR = (props) => {
       <QRCode value={url} />
       </div>
       <div className='QR-body'>
-        <p>Or go to {url}</p>
         <br/>
         <h1>Code:</h1>
         <h1>{reward_id}-{userpunchcard_id}</h1>
-        <button className='QR-button' onClick={()=>copy(`${reward_id}-${userpunchcard_id}`)} disabled={!url}>Copy To Clipboard</button>
       </div>
     </div>
   )
