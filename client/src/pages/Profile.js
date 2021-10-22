@@ -1,7 +1,7 @@
 
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardContent, Grid, Icon, Segment } from 'semantic-ui-react';
+import { Card, Grid, Icon, Segment } from 'semantic-ui-react';
 import styled from 'styled-components';
 import { AuthContext } from '../providers/AuthProvider';
 import Avatar from 'react-avatar';
