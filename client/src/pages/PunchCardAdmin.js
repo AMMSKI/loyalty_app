@@ -47,7 +47,7 @@ const PunchCardAdmin = (props) => {
 
       if(user.account_type === 'customer'){
         return (
-          <div>
+          <div className='admin_header'>
             nice try buddy......
           </div>
         )
@@ -75,7 +75,7 @@ const PunchCardAdmin = (props) => {
       )
       }else{
         return(
-          <div>Invalid QR</div>
+          <div className='admin_header'>Invalid QR</div>
         )
       }
 }

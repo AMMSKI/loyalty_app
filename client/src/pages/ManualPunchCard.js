@@ -1,4 +1,3 @@
-import Button from "@restart/ui/esm/Button";
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import '../StyleSheets/QR.css'
@@ -24,8 +23,10 @@ const ManualPunchCard = (props) => {
   const handleSubmit = () => {
     if(type === 'punchcard'){
     props.history.push(`/punchcardAdmin/${uCode}/${pCode}`)
-    }else{
+    }else if(type === 'reward'){
     props.history.push(`/rewardAdmin/${uCode}/${pCode}`)
+    }else{
+      alert('Must Select Add Points or Cash Reward')
     }
   }
  

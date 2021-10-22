@@ -73,7 +73,7 @@ const RewardAdmin = (props) => {
     )
   }else{
     return(
-      <div>Invalid QR</div>
+      <div className='admin_reward_header'>Invalid QR</div>
     )
   }
 

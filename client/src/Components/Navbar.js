@@ -88,6 +88,14 @@ const NavBar = () => {
             style={{ textDecoration: "underline #D7272F", color: "white" }}>
             Settings
           </Menu.Item>
+
+          <Menu.Item
+            as='a'
+            onClick={(e) => handleClick(e, '/manual_punchcard')}
+            style={{ textDecoration: "underline #D7272F", color: "white" }}>
+            Scan
+          </Menu.Item>
+          
         </div>
       );
     } else if (user && user.account_type === 'customer' && authenticated) {
