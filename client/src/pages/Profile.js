@@ -32,7 +32,7 @@ const Profile = () => {
           </Link>
           {user ?
             <div>
-              <h2 className="profile-name">{user.name}</h2>
+              <h1 className="profile-name">{user.name}</h1>
               <p className="profile-account-type">{user.account_type}</p>
             </div> :
             <div>
@@ -41,7 +41,7 @@ const Profile = () => {
             </div>
           }
         </div>
-        <Segment basic style={{backgroundColor:"#D7272F", color:"white"}}>
+        <Segment basic style={{backgroundColor:"#D7272F", color:"white", fontWeight:"bolder"}}>
           <div>
             <Grid>
               <Grid.Column width={13}>

@@ -18,7 +18,8 @@
 
 .profile-name {
   color: white !important; 
-  font-weight: "bold" 
+  font-weight: bolder ;
+  padding: 16px 0 2px 0 ;
 }
 
 .profile-account-type {
