@@ -21,17 +21,16 @@ const NavBar = () => {
         <Dropdown style={{ color: "white" }} item text={user.name}>
           <Dropdown.Menu>
 
-            <Menu.Item onClick={() => location.pathname === '/profile'} >
-              <Link style={{ textDecoration: "none", color: "black" }} to='/profile'>
-                <Icon name='red user' />Profile
-              </Link>
-            </Menu.Item>
-            <Menu.Item onClick={() => location.pathname === '/edit_user'} >
-              <Link style={{ textDecoration: "none", color: "black" }} to='/edit_user'>
-                <Icon name='red edit' />
-                Edit Profile
-              </Link>
-            </Menu.Item>
+            <Link style={{ textDecoration: "none", color: "black" }} to='/profile'>
+              <Menu.Item onClick={() => location.pathname === '/profile'} >
+                  <p style={{color:'black'}}><Icon name='red user' />Profile</p>
+              </Menu.Item>
+            </Link>
+            <Link style={{ textDecoration: "none", color: "black" }} to='/edit_user'>
+              <Menu.Item onClick={() => location.pathname === '/edit_user'} >
+                  <p style={{color:'black'}}><Icon name='red edit' /> Edit Profile</p>
+              </Menu.Item>
+            </Link>
             <Menu.Item onClick={() => handleDelete(history)}>
               <Icon name='red trash' />
               Delete Profile
