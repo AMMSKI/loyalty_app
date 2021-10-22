@@ -13,6 +13,7 @@ const Profile = () => {
 
   return (
     <div className="profile-page">
+      <div className="default-profpage">
         <div className="avatar-and-name">
           <Link to={`/profileupload/${user.id}`}>
             {user.image ?
@@ -41,7 +42,7 @@ const Profile = () => {
             </div>
           }
         </div>
-        <Segment basic style={{backgroundColor:"#D7272F", color:"white", fontWeight:"bolder"}}>
+        <Segment basic style={{ backgroundColor: "#D7272F", color: "white", fontWeight: "bolder" }}>
           <div>
             <Grid>
               <Grid.Column width={13}>
@@ -102,6 +103,7 @@ const Profile = () => {
             </Grid>
           </div>
         </Segment>
+      </div>
     </div>
   )
 

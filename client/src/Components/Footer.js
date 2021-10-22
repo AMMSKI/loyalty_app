@@ -8,7 +8,7 @@ const Footer = () => {
         <p>
           &copy; Copyright 2021, Loyal Burger Corp.
           |&nbsp;
-          <a className="AmaranthRedFontC" href='mailto:rbrionesdev@outlook.com'>
+          <a className="AmaranthRedFontC" href='/about'>
             Contact Us
           </a>
         </p>

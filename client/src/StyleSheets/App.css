@@ -17,6 +17,8 @@
   min-height: 100px;
   width: 100%;
   border:0px;
+  /* position: sticky;
+  top: 0; */
 }
 
 #content-wrap {

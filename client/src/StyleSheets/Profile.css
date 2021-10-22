@@ -1,13 +1,20 @@
 /* PROFILE */
 
 .profile-page {
+  margin: 0;
   padding-top:24px;
-  padding-bottom: 100%;
+  min-height: 774px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #D7272F;
 }
+
+/* .default-profpage {
+  Background-color: white;
+  min-height: 82vh;
+  margin: 16px 24px 0 24px;
+} */
 
 .avatar-and-name {
   display: flex;
