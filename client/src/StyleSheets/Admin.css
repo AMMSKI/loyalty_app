@@ -1,12 +1,12 @@
 /* ADMIN */
 .admin-page {
-  padding-top: 24px;
+  /* padding-top: 24px; */
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #D7272F;
   color: white;
-  min-height: 80vh;
+  height: 774px;
   font-weight: bold;
 }
 

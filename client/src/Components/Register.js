@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { useHistory } from 'react-router'
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Form, Grid, Dropdown, Segment } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import ErrorMessage from './ErrorMessage';
 import '../StyleSheets/Register.css'
@@ -37,76 +37,71 @@ const Register = () => {
   }
 
   return (
-    <div className="page WhiteBackG">
-      {error && <ErrorMessage header="Could not Register" error={error} />}
-      <Grid textAlign='center' style={{ height: '54vh' }} verticalAlign='middle'>
-        <Grid.Column style={{ maxWidth: 450 }}>
-          <h1 id="register-header">
-            Register New Profile
-          </h1>
-          <Form size='large' onSubmit={handleSubmit}>
-            <Segment stacked>
-              <Form.Input
-                // label="Name"
-                required
-                fluid icon='red user'
-                iconPosition='left'
-                placeholder='Name'
-                // value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-              <Form.Dropdown
-                required
-                search selection options={dropOptions} //objects
-                placeholder='Account Type'
-                // value={account_type}
-                onChange={handleChange}
-              />
-              <Form.Input
-                // label="Email"
-                required
-                fluid icon='red mail'
-                iconPosition='left'
-                placeholder='E-mail address'
-                // value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <Form.Input
-                // label="Password"
-                required
-                fluid
-                icon='red lock'
-                iconPosition='left'
-                placeholder='Password'
-                type='password'
-                // value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <Form.Input
-                // label={"Confirm Password"}
-                required
-                fluid
-                icon='red lock'
-                iconPosition='left'
-                placeholder='Password Confirmation'
-                type='password'
-                // value={passwordConfirmation}
-                onChange={(e) => setPasswordConfirmation(e.target.value)}
-              />
+    <div className="register-page WhiteBackG">
+      <div className="default-regpage">
+        {error && <ErrorMessage header="Could not Register" error={error} />}
+        <Grid textAlign='center' verticalAlign='middle'>
+          <Grid.Column style={{ maxWidth: 430 }}>
+            <h1 id="register-header">
+              Register New Profile
+            </h1>
+            <Form size='large' onSubmit={handleSubmit}>
+              <Segment stacked>
+                <Form.Input
+                  required
+                  fluid icon='red user'
+                  iconPosition='left'
+                  placeholder='Name'
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <Form.Dropdown
+                  required
+                  fluid
+                  selection
+                  search options={dropOptions} //objects
+                  placeholder='Account Type'
+                  onChange={handleChange}
+                />
+                <Form.Input
+                  required
+                  fluid icon='red mail'
+                  iconPosition='left'
+                  placeholder='E-mail address'
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <Form.Input
+                  required
+                  fluid
+                  icon='red lock'
+                  iconPosition='left'
+                  placeholder='Password'
+                  type='password'
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <Form.Input
+                  required
+                  fluid
+                  icon='red lock'
+                  iconPosition='left'
+                  placeholder='Password Confirmation'
+                  type='password'
+                  onChange={(e) => setPasswordConfirmation(e.target.value)}
+                />
 
-              <button className="register-button">
+                <button className="register-button">
                   REGISTER
-              </button>
-            </Segment>
-          </Form>
-            <button 
+                </button>
+              </Segment>
+            </Form>
+            <button
               id="yellow-contact-button"
               onClick={(e) => handleClick(e, '/about')}
-              >
+            >
               Contact Us
             </button>
-        </Grid.Column>
-      </Grid>
+          </Grid.Column>
+        </Grid>
+      </div>
     </div>
   )
 }

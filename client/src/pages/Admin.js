@@ -1,20 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Grid, GridColumn, GridRow } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import Avatar from 'react-avatar';
 import { AuthContext } from '../providers/AuthProvider';
-import '../StyleSheets/Admin.css'
 import axios from 'axios';
-import EmployeeView from '../Components/EmployeeView';
 import Charting from './Charting';
+import '../StyleSheets/Admin.css'
 
 function Admin(props) {
   const { user } = useContext(AuthContext)
-  const [cards, setCards ] = useState([])
-  
-  useEffect(()=>{
+  const [cards, setCards] = useState([])
+
+  useEffect(() => {
     getCards()
-  },[])
-  
+  }, [])
+
   const getCards = async () => {
     try {
       let res = await axios.get(`/api/users/${user.id}/carddata`)
@@ -27,19 +26,19 @@ function Admin(props) {
   const sumPoints = () => {
     return cards.reduce((sum, current) => {
       return sum + current.current_points
-    }, 0 )
+    }, 0)
   }
 
   return (
     <div className="admin-page">
       <div className="jumbotron text-center">
         <div className="avatar-container">
-          <Avatar 
-            style={{border:"solid 1px gray"}}
-            size="100" 
-            round 
-            src={user.image} 
-            />
+          <Avatar
+            style={{ border: "solid 1px gray" }}
+            size="100"
+            round
+            src={user.image}
+          />
         </div>
         <h2>{user.name}</h2>
         <h6>{user.account_type}</h6>
@@ -49,7 +48,7 @@ function Admin(props) {
         textAlign='center'
         celled columns='equal'
         style={{ marginTop: "40px" }}>
-        <GridRow>
+        <Grid.Row>
           <Grid.Column>
             <p className="p-admin">
               {cards.length}
@@ -63,16 +62,14 @@ function Admin(props) {
           </Grid.Column>
           <Grid.Column>
             <p className="p-admin">
-              {Math.floor(sumPoints()/cards.length)}
-              </p>
+              {Math.floor(sumPoints() / cards.length)}
+            </p>
             Average/Card
           </Grid.Column>
-        </GridRow>
-        <GridRow style={{
-          height: "350px",
-        }}>
+        </Grid.Row>
+        <Grid.Row verticalAlign='middle' centered>
           <Charting />
-        </GridRow>
+        </Grid.Row>
       </Grid>
     </div>
   );

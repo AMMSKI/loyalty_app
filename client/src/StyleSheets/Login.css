@@ -1,9 +1,8 @@
 /* LOGIN PAGE*/
 
 .login-page {
-  background-color: white;
   margin: 0;
-  height: 772px;
+  min-height: 772px;
 }
 .default-page {
   Background-color: white;

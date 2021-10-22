@@ -5,9 +5,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: maroon;
   color: white;
-  min-height: 80vh;
+  min-height: 774px;
 }
 
 .search-container {

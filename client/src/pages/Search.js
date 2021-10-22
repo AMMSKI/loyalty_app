@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
-import {Card, Icon} from 'semantic-ui-react'
+import { Card, Icon } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider';
 import MyCard from '../Components/MyCard';
 import SearchBar from '../Components/SearchBar';
@@ -13,43 +13,43 @@ const Search = () => {
   const [cards, setCards] = useState([])
   const [searchCards, setSearchCards] = useState([])
 
-  useEffect(()=>{
+  useEffect(() => {
     getCards()
-  },[])
-  
-  const getCards = async()=>{
-    try{
+  }, [])
+
+  const getCards = async () => {
+    try {
       let res = await axios.get('/api/punchcards/all')
       setCards(res.data)
       setSearchCards(res.data)
-    }catch(err){
+    } catch (err) {
       console.log(err)
     }
   }
 
   const updateInput = async (input) => {
     const filtered = cards.filter(c => {
-     return c.restaurant_name.toLowerCase().includes(input.toLowerCase())
+      return c.restaurant_name.toLowerCase().includes(input.toLowerCase())
     })
     setInput(input);
     setSearchCards(filtered);
- }
-  
-  const renderCards = () => {
-    return searchCards.map((c) => <SearchCard {...c}/>)
   }
-  
+
+  const renderCards = () => {
+    return searchCards.map((c) => <SearchCard {...c} />)
+  }
+
   return (
-    <div className='search-page'>
+    <div className='search-page AmaranthRedBackG'>
       <div className="search-container">
-          <h1>LOYAL SEARCH</h1>
-          <SearchBar
-            input={input} 
-            onChange={updateInput}
-            />
-            <br/>
+        <h1>LOYAL SEARCH</h1>
+        <SearchBar
+          input={input}
+          onChange={updateInput}
+        />
+        <br />
         <div className="card-container">
-        {renderCards()}
+          {renderCards()}
         </div>
       </div>
     </div>

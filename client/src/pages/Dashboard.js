@@ -48,15 +48,15 @@ const Dashboard = () => {
 
 
   const renderPunchcards = () => {
-    return searchPunchcards.map((p) => 
-      <WalletCard 
-        p={p} 
+    return searchPunchcards.map((p) =>
+      <WalletCard
+        p={p}
         deletePunchcard={deletePunchcard} />)
   }
 
 
   return (
-    <div className="wallet-page">
+    <div className="wallet-page AmaranthRedBackG">
       <div className="wallet-container">
         <h1>LOYAL WALLET</h1>
         <SearchBar
@@ -65,7 +65,7 @@ const Dashboard = () => {
         />
         <br />
         <div className='punchContainer'>
-        {punchcards && renderPunchcards()}
+          {punchcards && renderPunchcards()}
         </div>
       </div>
     </div>
