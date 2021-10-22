@@ -10,6 +10,7 @@ import SettingReward from "../Components/SettingReward";
 import SettingsRestaurant from "../Components/SettingsRestaurant";
 import '../StyleSheets/Settings.css'
 import { Redirect } from "react-router";
+import FinishSignUp from "./FinishSignUp";
 
 const Settings = () => {
 
@@ -61,7 +62,7 @@ const Settings = () => {
 
   if(!restaurant || !punchcard ){
     return(
-      <Redirect to={'/finish_signup'}/>
+      <FinishSignUp />
     )
     }else{
       return (

@@ -50,11 +50,16 @@ const FinishSignUp = (props) => {
     try{  
       let res = await axios.post(`/api/users/${user.id}/restaurants/${restaurant.id}/punchcards`, {description, user_id:user.id, restaurant_id:restaurant.id})
       setPunchCard(res.data)
-      props.history.push('/home')
+      if(props.location){
+        props.history.push('/home')
+      }else{
+        window.location.reload()
+      }
     }catch(err){
       console.log(err)
     }
   }
+  
 
   return (
     <div className='createRestPunch'>
