@@ -38,6 +38,8 @@ const Login = () => {
             </div>
             <Form onSubmit={handleSubmit}>
               <Form.Input
+                required
+                type="email"
                 label="Email"
                 icon='red mail'
                 iconPosition='left'
@@ -46,6 +48,7 @@ const Login = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <Form.Input
+                required
                 label="Password"
                 icon='red lock'
                 iconPosition='left'
