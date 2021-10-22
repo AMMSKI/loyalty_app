@@ -17,6 +17,10 @@ const RewardQR = (props) => {
   }
 
   return (
+    <>
+    <div className='QR-header'>
+      <h1>Charge Reward</h1>
+    </div>
     <div className='QR-container'>
       <div className='QR-code'>
       <QRCode value={url} />
@@ -27,6 +31,7 @@ const RewardQR = (props) => {
         <h1>{reward_id}-{userpunchcard_id}</h1>
       </div>
     </div>
+    </>
   )
 }
 

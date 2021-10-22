@@ -97,3 +97,12 @@
   margin-bottom: 10px;
   font-size: 24px;
 }
+
+.QR-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  color: black;
+}
