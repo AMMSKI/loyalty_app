@@ -9,7 +9,7 @@ import '../StyleSheets/QR.css'
 const RewardQR = (props) => {
   const reward_id = props.match.params.reward_id
   const userpunchcard_id = props.match.params.userpunchcard_id
-  const url = `localhost:3000/rewardAdmin/${reward_id}/${userpunchcard_id}`
+  const url = `https://loyalburger.herokuapp.com/rewardAdmin/${reward_id}/${userpunchcard_id}`
 
   const copy = async (url) => {
     await navigator.clipboard.writeText(url)
