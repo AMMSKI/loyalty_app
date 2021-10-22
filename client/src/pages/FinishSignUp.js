@@ -1,8 +1,6 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
 import { Card } from "react-bootstrap";
-import { propTypes } from "react-bootstrap/esm/Image";
-import { FilePond } from "react-filepond";
 import { Form, Input, Button } from "semantic-ui-react";
 import { AuthContext } from "../providers/AuthProvider";
 
