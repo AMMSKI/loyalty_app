@@ -37,8 +37,8 @@ function App() {
       <div id="navbar">
         <NavBar />
       </div>
-      <div id="content-wrap">
-        <div id="content-main">
+      <div id="content-wrap AmaranthRedBackG">
+        <div id="content-main AmaranthRedBackG">
           <FetchUser>
             <Switch>
               <Route exact path='/' component={Landing} />

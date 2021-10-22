@@ -22,7 +22,7 @@ const Login = () => {
   }
 
   return (
-    <div className="login-page">
+    <div className="login-page WhiteBackG">
       <div className="default-page">
         <Grid style={{ height: '54vh' }} centered verticalAlign='middle'>
           <Grid.Column style={{ maxWidth: 450 }}>
