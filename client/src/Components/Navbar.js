@@ -93,7 +93,7 @@ const NavBar = () => {
             style={{ textDecoration: "underline #D7272F", color: "white" }}>
             Scan
           </Menu.Item>
-          
+
         </div>
       );
     } else if (user && user.account_type === 'customer' && authenticated) {
