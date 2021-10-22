@@ -10,64 +10,68 @@ import "../StyleSheets/Settings.css"
 const SettingsPunchcard = ({restaurant, punchcard, getRestaurant }) => {
   const [showEdit, setShowEdit] = useState(false)
   return (
-    <div className="sp-page">
-            <h2 className="sp-h2">Loyalty Card</h2>
-            <div className="searchCard">
-              <MyCard1>
-                <Row style={{ paddingLeft: '95%', paddingTop: '5px' }}>
-                  <Dropdown pointing='top right' multiple icon='ellipsis vertical'>
-                  </Dropdown>
-                </Row>
-                <Row style={{ alignItems: 'center' }}>
-                  <Col style={{ alignItems: 'center', padding: '20px' }}><Avatar size="100" round src={restaurant.image} /> </Col>
-                  <Col className='nameCol'>
-                    <Row>
-                      <Card.Title>
-                        <h1>{restaurant.name} </h1>
-                      </Card.Title>
-                    </Row>
-                    <Row>
-                      <span>{restaurant.city}</span>
-                    </Row>
-                  </Col>
-                </Row>
-              </MyCard1>
-            </div>
-            <h2>Wallet Card</h2>
-            <div className='searchCard'>
-              <MyCard url={punchcard.logo}>
-                <Row style={{ paddingLeft: '95%', paddingTop: '5px' }}>
+    <div className="sp-page BlackBackG">
+      <h2 className="sp-h2">Loyalty Card</h2>
+      <div className="searchCard">
+        <MyCard1>
+          <Row style={{ paddingLeft: '95%', paddingTop: '5px' }}>
+            <Dropdown pointing='top right' multiple icon='ellipsis vertical'>
+            </Dropdown>
+          </Row>
+          <Row style={{ alignItems: 'center' }}>
+            <Col style={{ alignItems: 'center', padding: '20px' }}><Avatar size="100" round src={restaurant.image} /> </Col>
+            <Col className='nameCol'>
+              <Row>
+                <Card.Title>
+                  <h1>{restaurant.name} </h1>
+                </Card.Title>
+              </Row>
+              <Row>
+                <span>{restaurant.city}</span>
+              </Row>
+            </Col>
+          </Row>
+        </MyCard1>
+      </div>
+      <h2 className="sp-h2">Wallet Card</h2>
+      <div className='searchCard'>
+        <MyCard url={punchcard.logo}>
+          <Row style={{ paddingLeft: '95%', paddingTop: '5px' }}>
 
-                  <Dropdown pointing='top right' multiple icon='ellipsis vertical'>
-                    <Dropdown.Menu >
-                      <Dropdown.Item>Upload picture<PunchcardImageUpload /></Dropdown.Item>
+            <Dropdown pointing='top right' multiple icon='ellipsis vertical'>
+              <Dropdown.Menu >
+                <Dropdown.Item>Upload picture<PunchcardImageUpload /></Dropdown.Item>
 
-                    </Dropdown.Menu>
-                  </Dropdown>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Row>
+          <Card.Body>
+            <Row>
+              <Col className='nameCol1'>
+                <Row>
+                  <Card.Title>
+                    <h1 style={{ color: "white" , fontWeight:"1000"}}>{restaurant.name}</h1>
+                  </Card.Title>
+                  <p style={{ color: "white", fontWeight:"1000" }}>0 points</p>
                 </Row>
-                <Card.Body>
-                  <Row>
-                    <Col className='nameCol1'>
-                      <Row>
-                        <Card.Title>
-                          <h1 style={{ color: "white" }}>{restaurant.name}</h1>
-                        </Card.Title>
-                        <p style={{ color: "white" }}>0 points</p>
-                      </Row>
-                    </Col>
-                  </Row>
-                </Card.Body>
-              </MyCard>
-            </div>
-          <div>
-              <h1>Card Description</h1>
-              <p>{punchcard.description}</p>
-              {!showEdit ?
-                <Button onClick={() => setShowEdit(!showEdit)}>Edit Description</Button> :
-                <PunchCardEdit showEdit={showEdit} getRestaurant={getRestaurant} setShowEdit={setShowEdit} id={punchcard.id}
-                />}
-          </div>
-        </div>
+              </Col>
+            </Row>
+          </Card.Body>
+        </MyCard>
+      </div>
+      <div className="edit-description WhiteFontC">
+        <h2 className="sp-h2">Description</h2>
+        <p>{punchcard.description}</p>
+        {!showEdit ?
+          <button 
+            className="loginbutton AmaranthRedBackG WhiteFontC"
+            onClick={() => setShowEdit(!showEdit)}
+            >Edit Description
+            </button> :
+          <PunchCardEdit showEdit={showEdit} getRestaurant={getRestaurant} setShowEdit={setShowEdit} id={punchcard.id}
+          />}
+      </div>
+    </div>
   )
 }
 

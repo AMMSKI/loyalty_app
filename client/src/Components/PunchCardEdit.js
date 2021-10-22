@@ -39,8 +39,17 @@ const PunchCardEdit = ({id, setShowEdit, showEdit, getRestaurant}) => {
     <div>
     <Segment>
       <Form onSubmit={handleSubmit}>
-        <Input value={description} onChange={handleChange}/>
-        <Button type='submit' > Edit</Button>
+        <Input 
+          placeholder="Briefly describe your restaurant"
+          icon="red edit"
+          iconPosition="left"
+          value={description} 
+          onChange={handleChange}/>
+        <button 
+          className="loginbutton AmaranthRedBackG WhiteFontC"  
+          type='submit' > 
+          Edit
+          </button>
       </Form>
     </Segment>
     </div>
