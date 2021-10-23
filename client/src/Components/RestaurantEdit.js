@@ -32,7 +32,7 @@ const RestaurantEdit = ({restaurant, getRestaurant}) => {
 
   const handleSubmit = async (e)=>{
     try{  
-      let res = await axios.patch(`/api/users/null/restaurants/${restaurant.id}`, {name, city, zip, phone})
+      let res = await axios.patch(`/api/users/null/restaurants/${restaurant.id}`, {name, city, zip, phone_number: phone})
       let image = new FormData()
       image.append('file', files[0].file)
       let res1 = await axios.patch(`/api/users/null/restaurants/${restaurant.id}/update_image`, image)
@@ -83,8 +83,8 @@ const RestaurantEdit = ({restaurant, getRestaurant}) => {
         <Form.Input 
           required
           label="Phone Number (999)-999-999"
-          // type="tel"
-          // pattern="^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$" 
+          type="tel"
+          pattern="^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$" 
           title="999-999-9999"
           value={phone} 
           onChange={handlePhoneChange}
