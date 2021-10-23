@@ -9,6 +9,8 @@ import SettingsPunchcard from "../Components/SettingsPunchcard";
 import SettingReward from "../Components/SettingReward";
 import SettingsRestaurant from "../Components/SettingsRestaurant";
 import '../StyleSheets/Settings.css'
+import { Redirect } from "react-router";
+import FinishSignUp from "./FinishSignUp";
 
 const Settings = () => {
 
@@ -65,56 +67,63 @@ const Settings = () => {
     }
   }
 
-  return (
-    <>
-      <div className="settings-page">
-      <Menu 
-        secondary 
-        fixed 
-        style={{
-          justifyContent:'space-evenly', 
-          backgroundColor:"#FFD700", 
-          paddingTop:"24px", 
-          borderBottom:"solid 2px lightgray"}}>
-        <Menu.Item 
-          onClick={()=>{setPage('punchcard'); setShowImage(false)}}
-          style={{
-          boxShadow: "rgba(0, 0, 0, 0.1) 0px -2px 1px 2px",
-          backgroundColor:"white",
-          fontWeight:"bolder"
-          }}>
-          PunchCard
-        </Menu.Item>
-        <Menu.Item 
-          onClick={()=>{setPage('rewards'); setShowImage(false)}}
-          style={{
-            boxShadow: "rgba(0, 0, 0, 0.1) 0px -2px 1px 2px",
-            backgroundColor:"white",
-            fontWeight:"bolder"
-            }}>
-          Rewards
-        </Menu.Item>
-        <Menu.Item 
-          onClick={()=> {setPage('restaurant'); setShowImage(false)}}
-          style={{
-            boxShadow: "rgba(0, 0, 0, 0.1) 0px -2px 1px 2px",
-            backgroundColor:"white",
-            fontWeight:"bolder"}}>
-          Restaurant
-        </Menu.Item>
-      </Menu>
-      </div>
-      <div  className="burger-holder">
-      { showImage &&
-      <img 
-        className="juicy-burger"
-        src={juicyburger} 
-      />
-      }
-      </div>
-      {renderPage()}
-    </>
-  )
+  if(!restaurant || !punchcard ){
+    return(
+      <FinishSignUp />
+    )
+    }else{
+      return (
+        <>
+          <div className="settings-page">
+          <Menu 
+            secondary 
+            fixed 
+            style={{
+              justifyContent:'space-evenly', 
+              backgroundColor:"#FFD700", 
+              paddingTop:"24px", 
+              borderBottom:"solid 2px lightgray"}}>
+            <Menu.Item 
+              onClick={()=>{setPage('punchcard'); setShowImage(false)}}
+              style={{
+              boxShadow: "rgba(0, 0, 0, 0.1) 0px -2px 1px 2px",
+              backgroundColor:"white",
+              fontWeight:"bolder"
+              }}>
+              PunchCard
+            </Menu.Item>
+            <Menu.Item 
+              onClick={()=>{setPage('rewards'); setShowImage(false)}}
+              style={{
+                boxShadow: "rgba(0, 0, 0, 0.1) 0px -2px 1px 2px",
+                backgroundColor:"white",
+                fontWeight:"bolder"
+                }}>
+              Rewards
+            </Menu.Item>
+            <Menu.Item 
+              onClick={()=> {setPage('restaurant'); setShowImage(false)}}
+              style={{
+                boxShadow: "rgba(0, 0, 0, 0.1) 0px -2px 1px 2px",
+                backgroundColor:"white",
+                fontWeight:"bolder"}}>
+              Restaurant
+            </Menu.Item>
+          </Menu>
+          </div>
+          <div  className="burger-holder">
+          { showImage &&
+          <img 
+            className="juicy-burger"
+            src={juicyburger} 
+          />
+          }
+          </div>
+          {renderPage()}
+        </>
+      )
+    }
+
 }
 
 
