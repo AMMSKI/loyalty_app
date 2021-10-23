@@ -97,7 +97,7 @@ const Register = () => {
               id="yellow-contact-button"
               onClick={(e) => handleClick(e, '/about')}
             >
-              Contact Us
+              About Us
             </button>
           </Grid.Column>
         </Grid>

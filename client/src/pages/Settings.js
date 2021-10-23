@@ -29,6 +29,7 @@ const Settings = () => {
       let res = await axios.get(`/api/users/${user.id}/restaurants`)
       setRestaurant(res.data[0])
       getPunchcard(res.data[0].id)
+      console.log(res.data[0])
     } catch (error) {
     }
   }
@@ -44,18 +45,24 @@ const Settings = () => {
     if (page === 'punchcard') {
       return (
         <>
-        <SettingsPunchcard restaurant={restaurant} punchcard={punchcard} getRestaurant={getRestaurant}/>
+        <SettingsPunchcard 
+          restaurant={restaurant} 
+          punchcard={punchcard} 
+          getRestaurant={getRestaurant}/>
         </>
       )
     } else if (page === 'rewards') {
       return (
         <>
-        <SettingReward punchcard_id={punchcard.id}/>
+        <SettingReward 
+          punchcard_id={punchcard.id}/>
         </>
       )
     } else if (page === 'restaurant') {
       return (
-        <SettingsRestaurant restaurant={restaurant} getRestaurant={getRestaurant}/>
+        <SettingsRestaurant 
+          restaurant={restaurant} 
+          getRestaurant={getRestaurant}/>
       )
     }
   }
