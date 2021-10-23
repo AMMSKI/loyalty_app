@@ -20,7 +20,7 @@ const NavBar = () => {
       return (
         <Dropdown style={{ color: "white" }} item text={user.name}>
           <Dropdown.Menu>
-
+        
             <Menu.Item onClick={(e) => handleClick(e, '/profile')}>
               <Icon name='red user' />Profile
             </Menu.Item>
@@ -28,6 +28,7 @@ const NavBar = () => {
               <Icon name='red edit' />
               Edit Profile
             </Menu.Item>
+
             <Menu.Item onClick={() => handleDelete(history)}>
               <Icon name='red trash' />
               Delete Profile

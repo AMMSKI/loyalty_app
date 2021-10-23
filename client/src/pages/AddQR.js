@@ -16,19 +16,22 @@ const AddQR = (props) => {
   }
 
   return (
+    <>
+    <div className='QR-header'>
+      <h1 >Earn Points</h1>
+    </div>
     <div className='QR-container'>
       <div className='QR-code'>
         <QRCode value={url} />
       </div>
       <div className='QR-body'>
         <br/>
-        <p>Or go to {url}</p> {/* remove in production */}
         <br/>
         <h1>Code:</h1>
         <h1>{user_id}-{punchcard_id}</h1>
-        <button className='QR-button' onClick={()=>copy(`${user_id}-${punchcard_id}`)} disabled={!url}>Copy To Code Clipboard</button> {/* remove in production */}
       </div>
     </div>
+    </>
   )
 
 }
