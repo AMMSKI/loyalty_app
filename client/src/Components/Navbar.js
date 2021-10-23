@@ -20,17 +20,15 @@ const NavBar = () => {
       return (
         <Dropdown style={{ color: "white" }} item text={user.name}>
           <Dropdown.Menu>
+        
+            <Menu.Item onClick={(e) => handleClick(e, '/profile')}>
+              <Icon name='red user' />Profile
+            </Menu.Item>
+            <Menu.Item onClick={(e) => handleClick(e, '/edit_user')}>
+              <Icon name='red edit' />
+              Edit Profile
+            </Menu.Item>
 
-            <Link style={{ textDecoration: "none", color: "black" }} to='/profile'>
-              <Menu.Item onClick={() => location.pathname === '/profile'} >
-                  <p style={{color:'black'}}><Icon name='red user' />Profile</p>
-              </Menu.Item>
-            </Link>
-            <Link style={{ textDecoration: "none", color: "black" }} to='/edit_user'>
-              <Menu.Item onClick={() => location.pathname === '/edit_user'} >
-                  <p style={{color:'black'}}><Icon name='red edit' /> Edit Profile</p>
-              </Menu.Item>
-            </Link>
             <Menu.Item onClick={() => handleDelete(history)}>
               <Icon name='red trash' />
               Delete Profile

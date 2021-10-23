@@ -1,8 +1,13 @@
 .edit-user-page {
-  background-color: white;
+  margin: 0;
+  padding-top:24px;
+  min-height: 766px;
+}
+
+.default-editpage{
+  Background-color: white;
   min-height: 82vh;
-  margin: 16px 16px 0 16px;
-  padding: 0 24px 100% 24px;
+  margin: 16px 24px 0 24px;
 }
 
 .update-profile-button {
