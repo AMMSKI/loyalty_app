@@ -24,15 +24,15 @@ const NavBar = () => {
             <Menu.Item onClick={(e) => handleClick(e, '/profile')}>
               <Icon name='red user' />Profile
             </Menu.Item>
-            <Menu.Item onClick={(e) => handleClick(e, '/edit_user')}>
+            {/* <Menu.Item onClick={(e) => handleClick(e, '/edit_user')}>
               <Icon name='red edit' />
               Edit Profile
-            </Menu.Item>
+            </Menu.Item> */}
 
-            <Menu.Item onClick={() => handleDelete(history)}>
+            {/* <Menu.Item onClick={() => handleDelete(history)}>
               <Icon name='red trash' />
               Delete Profile
-            </Menu.Item>
+            </Menu.Item> */}
             <Dropdown.Divider />
             <Menu.Item onClick={() => handleLogout(history)}>
               <Icon name='red log out' />

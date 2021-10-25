@@ -1,7 +1,8 @@
 class Punchcard < ApplicationRecord
   belongs_to :restaurant
   has_many :users, through: :user_punchcards
-  has_many :rewards
+  has_many :rewards, dependent: :destroy
+  has_many :user_punchcards, dependent: :destroy
 
   def self.punchcard_rest
 

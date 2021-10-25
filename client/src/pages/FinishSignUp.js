@@ -1,9 +1,6 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
-import { Card } from "react-bootstrap";
-import { propTypes } from "react-bootstrap/esm/Image";
-import { FilePond } from "react-filepond";
-import { Form, Input, Button, Grid, GridColumn } from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
 
 import { AuthContext } from "../providers/AuthProvider";
 import "../StyleSheets/FinishSignup.css"
@@ -41,7 +38,8 @@ const FinishSignUp = (props) => {
 
   const handleSubmit = async (e) => {
     try {
-      let res = await axios.post(`/api/users/${user.id}/restaurants`, { name, city, zip, phone_number: phone, user_id: user.id })
+      let res = await axios.post(`/api/users/${user.id}/restaurants`, 
+      { name, city, zip, phone_number: phone, user_id: user.id})
       setRestaurant(res.data)
       setName('')
       setCity('')
@@ -74,7 +72,7 @@ const FinishSignUp = (props) => {
         <Form onSubmit={handleSubmit}>
           <Form.Input
             required
-            label="Name"
+            label="Restaurant Name"
             placeholder="Name"
             value={name}
             onChange={handleNameChange} />
@@ -130,6 +128,7 @@ const FinishSignUp = (props) => {
           </Form>
         </div>
       }
+      
     </div>
   )
 }

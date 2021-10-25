@@ -62,7 +62,7 @@ function Admin(props) {
           </Grid.Column>
           <Grid.Column>
             <p className="p-admin">
-              {Math.floor(sumPoints() / cards.length)}
+              { cards.length && Math.floor(sumPoints() / cards.length)}
             </p>
             Average/Card
           </Grid.Column>

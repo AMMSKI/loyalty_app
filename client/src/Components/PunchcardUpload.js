@@ -10,6 +10,7 @@ import "filepond/dist/filepond.min.css"
 import axios from 'axios';
 import Avatar from 'react-avatar';
 import { useHistory } from 'react-router';
+import '../StyleSheets/Profile.css'
 
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
 
@@ -97,7 +98,13 @@ export default function PunchcardImageUpload(props) {
         onupdatefiles={fileChanged}
         labelIdle='Browse'
         />
-        <Button primary type="submit" style={{backgroundColor:"#D7272F", fontWeight:"bold"}}>ADD</Button>
+        <button 
+          primary 
+          type="submit" 
+          className="GoldWebGoldenBackG add-punchcard-button AmaranthRedFontC"
+          >
+            ADD
+        </button>
       </Form>
     </div>
     )
