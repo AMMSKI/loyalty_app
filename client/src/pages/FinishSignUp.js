@@ -65,7 +65,6 @@ const FinishSignUp = (props) => {
 
   return (
     <div className='finish-signup'>
-      <img id="image" className="hidden" />
       <h2 className="finish-header">Add Restaurant Information</h2>
       <div className="finish-form">
         <Form onSubmit={handleSubmit}>
