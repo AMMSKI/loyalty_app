@@ -13,7 +13,7 @@ const SettingsPunchcard = ({restaurant, punchcard, getRestaurant }) => {
     <div className="sp-page BlackBackG">
       <h2 className="sp-h2">Loyalty Card</h2>
       <div className="searchCard">
-        <MyCard1>
+        <MyCard1 url={punchcard.logo}>
           <Row style={{ paddingLeft: '95%', paddingTop: '5px' }}>
             <Dropdown pointing='top right' multiple icon='ellipsis vertical'>
             </Dropdown>
@@ -78,12 +78,17 @@ const SettingsPunchcard = ({restaurant, punchcard, getRestaurant }) => {
 const MyCard = styled(Card)`
   width: 80vw;
   height: 20vh;
+  background-color: grey;
   background-image: url(${props => props.url});
   background-position: center;
   background-size: cover;
 `
 const MyCard1 = styled(Card)`
   width: 80vw;
+  background-color: grey;
+  background-image: url(${props => props.url});
+  background-position: center;
+  background-size: cover;
   // height: 200px;
 `
 
@@ -92,3 +97,4 @@ const MyDropdown = styled(Dropdown)`
 `
 
 export default SettingsPunchcard
+
