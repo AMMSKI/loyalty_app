@@ -33,10 +33,13 @@ const Login = () => {
               </div>
             </div>
             <div className="button-group">
-              <button className="yellow-button GoldWebGoldenBackG WhiteFontC">Login</button>
+              <button className="yellow-button GoldWebGoldenBackG AmaranthRedFontC">Login</button>
               <button className="white-button" onClick={(e) => handleClick(e, '/register')}>Sign Up</button>
             </div>
-            <Form onSubmit={handleSubmit}>
+            
+            <Form 
+              onSubmit={handleSubmit}
+              >
               <Form.Input
                 required
                 type="email"
@@ -57,7 +60,7 @@ const Login = () => {
                 // value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <div className="remember-forget">
+              {/* <div className="remember-forget">
                 <label for="remember">
                   <input
                     type="checkbox"
@@ -66,7 +69,12 @@ const Login = () => {
                   Remember me?
                 </label>
                 Forgot password
-              </div>
+              </div> */}
+              {error && 
+              <div style={{textAlign:"center"}}>
+                Email address not found. Please sign up.
+              </div>}
+              <br />
               <div className="buttoncontainer">
                 <button
                   className="loginbutton AmaranthRedBackG WhiteFontC" >

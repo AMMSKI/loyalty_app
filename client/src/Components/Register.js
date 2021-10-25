@@ -6,12 +6,13 @@ import ErrorMessage from './ErrorMessage';
 import '../StyleSheets/Register.css'
 
 const Register = () => {
-  const { handleRegister, error, loading, setLoading } = useContext(AuthContext)
+  const { handleRegister, error, loading, setLoading, setError } = useContext(AuthContext)
   const [name, setName] = useState('Business')
   const [account_type, setAccount_Type] = useState('Business')
   const [email, setEmail] = useState('business@test.com')
   const [password, setPassword] = useState('123456')
   const [passwordConfirmation, setPasswordConfirmation] = useState('123456')
+  const [noMatch, setNoMatch] = useState(false)
   const history = useHistory()
 
   const dropOptions = [
@@ -28,7 +29,7 @@ const Register = () => {
       e.preventDefault();
       handleRegister({ name, account_type, email, password }, history)
     } else {
-      alert('Password does not match')
+      setError(true)
     }
   }
 
@@ -64,6 +65,7 @@ const Register = () => {
                 />
                 <Form.Input
                   required
+                  type='email'
                   fluid icon='red mail'
                   iconPosition='left'
                   placeholder='E-mail address'
@@ -87,7 +89,6 @@ const Register = () => {
                   type='password'
                   onChange={(e) => setPasswordConfirmation(e.target.value)}
                 />
-
                 <button className="register-button">
                   REGISTER
                 </button>

@@ -22,7 +22,7 @@
   align-items: center;
   background-color: #D7272F;
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .profile-name {
@@ -33,4 +33,39 @@
 
 .profile-account-type {
   color: white;
+}
+
+.update-user-form {
+  width: 300px;
+
+}
+
+.up-button-container {
+  text-align:center;
+}
+
+.update-profile-button {
+  /* background-color: #D7272F;
+  color: white; */
+  text-align:center;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  width: 90%;
+  height: 40px;
+  font-weight: 900;
+  font-size: large;
+  margin-top: 25px;
+  box-shadow: rgba(139, 129, 175, 0.3) 0px 4px 6px -.5px, rgba(6, 241, 45, 0.3) 0px 2px 4px -1px;
+}
+
+.add-punchcard-button {
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  width: 20%;
+  height: 30px;
+  font-weight: 900;
+  font-size: medium;
+  box-shadow: rgba(139, 129, 175, 0.3) 0px 4px 6px -.5px, rgba(6, 241, 45, 0.3) 0px 2px 4px -1px;
 }
