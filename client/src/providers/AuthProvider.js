@@ -5,7 +5,7 @@ export const AuthContext = React.createContext()
 
 const AuthProvider = (props) => {
   const [user, setUser] = useState(null)
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false)
 
   const handleRegister = async (user, history) => {

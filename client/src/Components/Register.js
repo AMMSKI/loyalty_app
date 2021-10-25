@@ -6,14 +6,13 @@ import ErrorMessage from './ErrorMessage';
 import '../StyleSheets/Register.css'
 
 const Register = () => {
-  const { handleRegister, error, loading, setLoading, setError } = useContext(AuthContext)
+  const { handleRegister, error, setError  } = useContext(AuthContext)
   
   const [name, setName] = useState('customer')
   const [account_type, setAccount_Type] = useState('customer')
   const [email, setEmail] = useState('business@test.com')
   const [password, setPassword] = useState('123456')
   const [passwordConfirmation, setPasswordConfirmation] = useState('123456')
-  const [noMatch, setNoMatch] = useState(false)
   const history = useHistory()
 
   const dropOptions = [
@@ -30,6 +29,7 @@ const Register = () => {
       e.preventDefault();
       handleRegister({ name, account_type, email, password }, history)
     } else {
+      console.log(error)
       setError(true)
     }
   }
@@ -41,7 +41,6 @@ const Register = () => {
   return (
     <div className="register-page WhiteBackG">
       <div className="default-regpage">
-        {error && <ErrorMessage header="Could not Register" error={error} />}
         <Grid textAlign='center' verticalAlign='middle'>
           <Grid.Column style={{ maxWidth: 430 }}>
             <h1 id="register-header">
@@ -55,7 +54,7 @@ const Register = () => {
                   iconPosition='left'
                   placeholder='Name'
                   onChange={(e) => setName(e.target.value)}
-                />
+                  />
                 <Form.Dropdown
                   required
                   fluid
@@ -63,7 +62,7 @@ const Register = () => {
                   search options={dropOptions} //objects
                   placeholder='Account Type'
                   onChange={handleChange}
-                />
+                  />
                 <Form.Input
                   required
                   type='email'
@@ -71,7 +70,7 @@ const Register = () => {
                   iconPosition='left'
                   placeholder='E-mail address'
                   onChange={(e) => setEmail(e.target.value)}
-                />
+                  />
                 <Form.Input
                   required
                   fluid
@@ -80,7 +79,7 @@ const Register = () => {
                   placeholder='Password'
                   type='password'
                   onChange={(e) => setPassword(e.target.value)}
-                />
+                  />
                 <Form.Input
                   required
                   fluid
@@ -89,7 +88,9 @@ const Register = () => {
                   placeholder='Password Confirmation'
                   type='password'
                   onChange={(e) => setPasswordConfirmation(e.target.value)}
-                />
+                  />
+                  {error && 
+                    "Check to make sure email is good and that passwords match and are at least 6 characters long."}
                 <button className="register-button">
                   REGISTER
                 </button>
