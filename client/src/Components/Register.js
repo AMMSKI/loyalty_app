@@ -7,8 +7,9 @@ import '../StyleSheets/Register.css'
 
 const Register = () => {
   const { handleRegister, error, loading, setLoading, setError } = useContext(AuthContext)
-  const [name, setName] = useState('Business')
-  const [account_type, setAccount_Type] = useState('Business')
+  
+  const [name, setName] = useState('customer')
+  const [account_type, setAccount_Type] = useState('customer')
   const [email, setEmail] = useState('business@test.com')
   const [password, setPassword] = useState('123456')
   const [passwordConfirmation, setPasswordConfirmation] = useState('123456')

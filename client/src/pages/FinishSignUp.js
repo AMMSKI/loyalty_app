@@ -14,6 +14,7 @@ const FinishSignUp = (props) => {
   const [restaurant, setRestaurant] = useState(null)
   const [punchCard, setPunchCard] = useState(null)
   const [description, setDescription] = useState(null)
+  const [showForm, setShowForm] = useState(true)
 
   const handleCityChange = (e) => {
     setCity(e.target.value)
@@ -44,6 +45,7 @@ const FinishSignUp = (props) => {
       setCity('')
       setZip('')
       setPhone('')
+      setShowForm(false)
     } catch (err) {
       console.log(err)
     }
@@ -66,7 +68,7 @@ const FinishSignUp = (props) => {
   return (
     <div className='finish-signup'>
       <h2 className="finish-header">Add Restaurant Information</h2>
-      <div className="finish-form">
+      {showForm && <div className="finish-form">
         <Form onSubmit={handleSubmit}>
           <Form.Input
             required
@@ -103,7 +105,7 @@ const FinishSignUp = (props) => {
               Add
           </button>
         </Form>
-      </div>
+      </div>}
       {restaurant &&
         <div>
           <h2 className="finish-header">Add Description</h2>

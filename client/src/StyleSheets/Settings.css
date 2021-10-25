@@ -11,6 +11,8 @@
 }
 
 .settings-page {
+  display: flex;
+  justify-content: space-around;
   background-color: #D7272F;
 }
 
