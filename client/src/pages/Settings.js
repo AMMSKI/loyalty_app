@@ -17,7 +17,7 @@ const Settings = () => {
   const { user } = useContext(AuthContext)
   const [restaurant, setRestaurant] = useState([])
   const [punchcard, setPunchcard] = useState([])
-  const [page, setPage] = useState(null)
+  const [page, setPage] = useState('punchcard')
   const [showImage, setShowImage] = useState(true)
 
   useEffect(() => {
@@ -79,10 +79,10 @@ const Settings = () => {
             secondary 
             fixed 
             style={{
-              justifyContent:'space-evenly', 
-              backgroundColor:"#FFD700", 
+              justifyContent:'space-around', 
               paddingTop:"24px", 
-              borderBottom:"solid 2px lightgray"}}>
+              paddingBottom:'24px',
+              }}>
             <Menu.Item 
               onClick={()=>{setPage('punchcard'); setShowImage(false)}}
               style={{
@@ -111,14 +111,14 @@ const Settings = () => {
             </Menu.Item>
           </Menu>
           </div>
-          <div  className="burger-holder">
-          { showImage &&
+          {/* <div  className="burger-holder">
+          {/* { showImage &&
           <img 
             className="juicy-burger"
             src={juicyburger} 
-          />
-          }
-          </div>
+          /> */}
+          {/* } */}
+          {/* </div> */}
           {renderPage()}
         </>
       )
@@ -130,17 +130,7 @@ const Settings = () => {
 
 
 
-const MyCard = styled(Card)`
-  width: 80vw;
-  height: 20vh;
-  background-image: url(${props => props.url});
-  background-position: center;
-  background-size: cover;
-`
-const MyCard1 = styled(Card)`
-  width: 80vw;
-  // height: 200px;
-`
+
 
 const MyDropdown = styled(Dropdown)`
   color: white;

@@ -32,8 +32,8 @@ import './StyleSheets/App.css'
 import Settings from './pages/Settings';
 
 function App() {
-  localStorage.clear();
-  sessionStorage.clear();
+  // localStorage.clear();
+  // sessionStorage.clear();
   return (
     <div id="container-page">
       <div id="navbar">
