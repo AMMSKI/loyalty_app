@@ -6,9 +6,7 @@ import '../StyleSheets/Charting.css'
 
 function Charting(props) {
   const {user} = useContext(AuthContext)
-  const [restaurant, setRestaurant ] = useState([])
   const [cards, setCards ] = useState([])
-  const [customers, setCustomers ] = useState([])
 
 
   useEffect(()=>{
@@ -35,8 +33,6 @@ function Charting(props) {
 
   console.log(cards.length)
 
-  // const array = [2,3,4,4,6,7,7,8,8,8,9,9,9,9,10,10,10,11,11,11,11,11,12,12]
-
   const chartData = (arr) => {
     const data = [
       {month: 1, cards: 0},
@@ -62,7 +58,6 @@ function Charting(props) {
     
   return (
     <div>
-    {/* //   <h1>Charts</h1> */}
       <div id="chart">
         <VictoryChart>      
           <VictoryLabel
@@ -78,7 +73,7 @@ function Charting(props) {
           dependentAxis
           />
           <VictoryBar
-          data={chartData(cards)}
+          data={cards.length === 0 ? 0 : chartData(cards)}
           x="month"
           y="cards"
           />
