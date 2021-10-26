@@ -39,34 +39,32 @@ console.log(props)
   return (
     <div className="searchCard">
       <MyCard url={props.logo}>
-        <div >
-          <div className='dropdown_container'>
-          <Dropdown className='dropdown' pointing='top right' multiple icon='ellipsis vertical'>
-            <Dropdown.Menu>
+        <div onClick={
+          ownedId.includes(props.punch_id) ? 
+          null : 
+          () => addToWallet(props.punch_id)}
+          className='container_card_div'
+        >
+          <div className='card_body' >
+            <div className='nameCol'>
+              <Row>
+                <Card.Title>
+                  <h1 className='restname'>{props.restaurant_name}</h1>
+                </Card.Title>
+              </Row>
+              <Row>
+                <span className='restname'>{props.city}</span>
+              </Row>
+            </div>
+          </div>
+            <div className='blahblah1'>
               {ownedId.includes(props.punch_id) ?
-                <Dropdown.Item onClick={() => history.push('/dashboard')}>View in Wallet</Dropdown.Item> :
-                <Dropdown.Item onClick={() => addToWallet(props.punch_id)}>Add To Wallet</Dropdown.Item>}
-            </Dropdown.Menu>
-          </Dropdown>
+              <div className='dropdownRow1 GoldWebGoldenBackG'>
+                  <Dropdown.Menu>
+                      <Dropdown.Item onClick={() => history.push('/dashboard')}>Owned</Dropdown.Item> 
+                  </Dropdown.Menu>
+              </div> : <div ></div>}
           </div>
-        <div className='card_body'>
-          <div className='avatardiv'>
-          <Col><Avatar size="100" round src={props.restaurant_image}/> </Col>
-          </div>
-          <Col className='nameCol'>
-            <Row>
-              <Card.Title>
-                <h1 className='restname'>{props.restaurant_name}</h1>
-              </Card.Title>
-            </Row>
-            <Row>
-              <span className='restname'>{props.city}</span>
-            </Row>
-            <Row>
-              {ownedId.includes(props.punch_id) ? <span style={{ color: "#FFD700" }}>You own this card</span> : <p></p>}
-            </Row>
-          </Col>
-        </div>
         </div>
       </MyCard>
     </div>
@@ -84,7 +82,6 @@ const MyCard = styled(Card)`
   width: 80vw;
   background-position: center;
   background-size: cover;
-  border: 2px solid white;
   font-weight: bolder;
   border-radius: 8px;
 `
