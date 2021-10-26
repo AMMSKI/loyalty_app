@@ -1,5 +1,9 @@
 /* FONTS */
+@import url('http://fonts.cdnfonts.com/css/sf-compact-display');
 
+body {
+  font-family: 'SF Compact Display', sans-serif !important;
+}
 
 /* LAYOUT */
 
@@ -80,3 +84,4 @@
 .BlackFontC {
   color: #000000;
 }
+

@@ -46,3 +46,10 @@
   width: 50%;
   height: 30px;
 } */
+
+.header_setting_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
