@@ -1,5 +1,7 @@
 /* FONTS */
-*{
+@import url('http://fonts.cdnfonts.com/css/sf-compact-display');
+
+body {
   font-family: 'SF Compact Display', sans-serif !important;
 }
 
@@ -83,6 +85,3 @@
   color: #000000;
 }
 
-*{
-  font-family: 'SF Compact Display', sans-serif !important;
-}
