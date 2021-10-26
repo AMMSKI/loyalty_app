@@ -16,11 +16,11 @@ const WalletCard = (props) => {
     <div className='searchCard'>
       <MyCard url={p.logo} >
         <Row className='dropdownRow'>
-          <Dropdown pointing='top right' multiple icon='ellipsis vertical'>
+          <MyDropdown pointing='top right' multiple icon='ellipsis vertical'>
             <Dropdown.Menu>
               <Dropdown.Item onClick={() => props.deletePunchcard(p.up_id)}>Remove</Dropdown.Item>
             </Dropdown.Menu>
-          </Dropdown>
+          </MyDropdown>
         </Row>
         <MyLink to={`/earn/${p.up_id}`} userpunchcard_id={p.up_id}>
           <Card.Body>
