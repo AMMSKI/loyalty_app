@@ -51,10 +51,16 @@ const SettingReward = ({punchcard_id}) => {
   }
 
   return(
-    <div>
+    <div className="settings-rewards-page">
       {renderRewards()}
       <div style={{ textAlign: 'center', padding:"24px" }}>
-        {showRewardForm && <RewardForm getRewards={getRewards} id={punchcard_id} />}
+        {showRewardForm && 
+          <RewardForm   
+            getRewards={getRewards} 
+            id={punchcard_id} 
+            showRewardForm={showRewardForm}
+            setShowRewardForm={setShowRewardForm} />
+        }
         <button
           onClick={() => setShowRewardForm(!showRewardForm)}
           className="loginbutton AmaranthRedBackG WhiteFontC" >
