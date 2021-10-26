@@ -32,6 +32,10 @@
 
 }
 
+.settings-rewards-page {
+  min-height: 70vh;
+}
+
 .rewards-edit-form {
   display: flex;
   flex-direction:column;

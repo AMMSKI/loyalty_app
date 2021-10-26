@@ -30,7 +30,7 @@ const ManualPunchCard = (props) => {
  
   
   return(
-    <>
+    <div style={{minHeight:"75vh"}}>
     <Form onSubmit={handleSubmit}>
       <div className='manual_enter'>
         <div className='manual-radio'>
@@ -53,7 +53,7 @@ const ManualPunchCard = (props) => {
       <button className='manual_button' type='submit'>Submit</button>
       </div>
     </Form>
-    </>
+    </div>
   )
 }
 

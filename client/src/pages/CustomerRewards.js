@@ -33,6 +33,7 @@ const CustomerRewards = ({ punchcardData, userpunchcard_id }) => {
 
             {r.cost < punchcardData.current_points ?
               <Link
+                style={{textDecoration:"none", color:"black"}}
                 to={`/rewardQR/${r.id}/${userpunchcard_id}`}
                 reward_id={r.id}
                 userpunchcard_id={userpunchcard_id} >
