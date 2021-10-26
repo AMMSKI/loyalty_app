@@ -5,7 +5,7 @@ export const AuthContext = React.createContext()
 
 const AuthProvider = (props) => {
   const [user, setUser] = useState(null)
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false)
 
   const handleRegister = async (user, history) => {
@@ -48,7 +48,7 @@ const AuthProvider = (props) => {
       setLoading(true)
       let res = await axios.put('/api/auth', user)
       setUser(res.data.data)
-      history.push('/home')
+      // history.push('/home')
       console.log("User updated successfully")
     } catch (err) {
       setError(err.response.data.errors ? err.response.data.errors : err.response.data)

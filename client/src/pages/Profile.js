@@ -1,31 +1,38 @@
 
 import React, { useContext, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { Card, Form, Grid, Header, Icon, Segment } from 'semantic-ui-react';
-import styled from 'styled-components';
+import { Form, Grid, Icon, Segment } from 'semantic-ui-react';
 import { AuthContext } from '../providers/AuthProvider';
 import Avatar from 'react-avatar';
 import '../StyleSheets/Profile.css'
-import ErrorMessage from '../Components/ErrorMessage';
 import PunchcardImageUpload from '../Components/PunchcardUpload';
 
 const Profile = () => {
-  const { handleUserUpdate, error, loading, user, handleDelete } = useContext(AuthContext)
+  const { handleUserUpdate, setError, error, user, handleDelete } = useContext(AuthContext)
   const [name, setName] = useState(user.name)
-  // const [account_type, setAccount_Type] = useState(user.account_type)
   const [password, setPassword] = useState('')
   const [passwordConfirmation, setPasswordConfirmation] = useState('')
-  const [deleteMessage, setDeleteMessage] = useState(false)
+  const [nameForm, setNameForm] = useState(false)
+  const [passwordForm, setPasswordForm] = useState(false)
+  const [uploadForm, setUploadForm] = useState(false)
+  const [deleteForm, setDeleteForm] = useState(false)
   const history = useHistory();
 
-  const handleSubmit = (e) => {
-    if (password === passwordConfirmation) {
-      e.preventDefault();
-      handleUserUpdate({ name, password }, history)
-    } else {
-      alert('Password does not match')
+  const handleNameSubmit = (e) => {
+      handleUserUpdate({ name }, history)
+      setNameForm(!nameForm)
     }
+    
+    const handlePasswordSubmit = (e) => {
+      console.log('its submitting')
+      if (password === passwordConfirmation) {
+        handleUserUpdate({ password }, history)
+        setPasswordForm(!passwordForm)
+      } else {
+        setError(true)
+      }
   }
+
 
   return (
     <div className="profile-page">
@@ -58,66 +65,110 @@ const Profile = () => {
           }
         </div>
 
-        <div className="update-user-form">
-          {error && 
-          <ErrorMessage header="Could not Update" error={error} />}
-          <div>
-              <Form onSubmit={handleSubmit}>
-                <Segment padded>
+          <Segment 
+            basic 
+            style={{ 
+              backgroundColor: "#D7272F", 
+              color: "white", 
+              fontWeight: "bolder", 
+              width:"65%" }}>
+              <Grid onClick={()=> {setNameForm(!nameForm)}}>
+                <Grid.Column width={13}>
+                  <Icon inverted name="user" />
+                  Name
+                </Grid.Column>
+                <Grid.Column>
+                  <Icon inverted name="angle right"/>
+                </Grid.Column>
+              </Grid>
+              {nameForm && 
+                <Form onSubmit={handleNameSubmit}>
                   <Form.Input
                     required
-                    label="Name"
                     fluid icon='user'
                     iconPosition='left'
                     placeholder='Name'
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
+                </Form>
+                }
+
+                <Grid onClick={()=> {setPasswordForm(!passwordForm)}}>
+                  <Grid.Column width={13}>
+                    <Icon inverted name="edit" />
+                    Password
+                  </Grid.Column>
+                  <Grid.Column >
+                    <Icon inverted name="angle right" />
+                  </Grid.Column>
+                </Grid>
+              {passwordForm && 
+                <Form onSubmit={handlePasswordSubmit}>
                   <Form.Input
-                    label="Password"
-                    required
-                    fluid
-                    icon='lock'
-                    iconPosition='left'
-                    placeholder='Password'
-                    type='password'
-                    // value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                  required
+                  fluid
+                  icon='lock'
+                  iconPosition='left'
+                  placeholder='Password'
+                  type='password'
+                  onChange={(e) => setPassword(e.target.value)}
                   />
                   <Form.Input
-                    label={"Confirm Password"}
                     required
                     fluid
                     icon='lock'
                     iconPosition='left'
                     placeholder='Password Confirmation'
                     type='password'
-                    // value={passwordConfirmation}
                     onChange={(e) => setPasswordConfirmation(e.target.value)}
                   />
-                  <div className="up-button-container">
-                    <button
-                      className="update-profile-button AmaranthRedBackG WhiteFontC"
-                    >
-                      UPDATE
-                    </button>
-                  </div>
+                  <button className="WhiteBackG password-update AmaranthRedFontC">Change</button>
+                </Form>
+              }
+              {error && 
+                <div style={{color:"black"}}>
+                Passwords must be at least 6 characters long and match
+                </div>
+                }
+
+
+            {user.account_type === "business" && 
+            <Grid onClick={()=> {setUploadForm(!uploadForm)}}>
+                <Grid.Column width={13}>
+                  <Icon inverted name="upload" />
+                  Card Image
+                </Grid.Column>
+                <Grid.Column>
+                  <Icon inverted name="angle right"/>
+                </Grid.Column>
+              </Grid>
+              }
+              {uploadForm && <PunchcardImageUpload setUploadForm={setUploadForm} uploadForm={uploadForm}/>}
+            <br />
+
+            <Grid onClick={()=> {setDeleteForm(!deleteForm)}}>
+                <Grid.Column width={13}>
+                  <Icon inverted name="delete" />
+                  Delete
+                </Grid.Column>
+                <Grid.Column>
+                  <Icon inverted name="angle right"/>
+                </Grid.Column>
+              </Grid>
+
+              {deleteForm && 
+                <div style={{textAlign:"center", marginTop:"8px"}}>
+                   <p>Are you sure you want to delete your account?</p>
+                  <button 
+                    onClick={() => handleDelete(history)}
+                    className="BlackBackG WhiteFontC">
+                    Delete
+                  </button>
+                </div> 
+                 
+              }
                 </Segment>
-              </Form>
-          </div>
-          <br />
-          <br />
-          {user.account_type === "business" && <PunchcardImageUpload />}
-        </div>
-        <button onClick={() => {setDeleteMessage(true)}}>Delete Profile</button>
-        {deleteMessage && 
-        <div>
-          <p>Are you sure you want to delete your account?</p>
-          <button onClick={() => handleDelete(history)}>
-            Yes
-          </button>
-        </div>
-        }
       </div>
   )
 
@@ -125,71 +176,3 @@ const Profile = () => {
 }
 
 export default Profile
-
-const BorderlessCard = styled(Card)`
-  height: 300px;
-  box-shadow: none !important
-`
-        {/* <Segment basic style={{ backgroundColor: "#D7272F", color: "white", fontWeight: "bolder" }}>
-          <div>
-            <Grid>
-              <Grid.Column width={13}>
-                <Icon inverted name="user" />
-                Name
-              </Grid.Column>
-              <Grid.Column>
-                <Icon inverted name="angle right" />
-              </Grid.Column>
-            </Grid>
-          </div>
-          <hr />
-          <div>
-            <Grid>
-              <Grid.Column width={13}>
-                <Icon inverted name="edit" />
-                Edit Bio
-              </Grid.Column>
-              <Grid.Column >
-                <Icon inverted name="angle right" />
-              </Grid.Column>
-            </Grid>
-          </div>
-          <hr />
-          <div>
-            <Grid>
-              <Grid.Column width={13}>
-                <Icon inverted name="chart bar" />
-                My Points
-              </Grid.Column>
-              <Grid.Column >
-                <Icon inverted name="angle right" />
-              </Grid.Column>
-            </Grid>
-          </div>
-          <hr />
-          <div>
-            <Grid>
-              <Grid.Column width={13}>
-                <Icon inverted name="map marker alternate" />
-                My Location
-              </Grid.Column>
-              <Grid.Column >
-                <Icon inverted name="angle right" />
-              </Grid.Column>
-            </Grid>
-          </div>
-          <hr />
-          <div>
-            <Grid>
-              <Grid.Column width={13}>
-                <Icon inverted name="mail" />
-                {user ? <>{user.email}</> : "User Email"}
-              </Grid.Column>
-              <Grid.Column >
-                <Icon inverted name="angle right" />
-              </Grid.Column>
-            </Grid>
-          </div>
-        </Segment>
-      </div>
-    </div> */}
