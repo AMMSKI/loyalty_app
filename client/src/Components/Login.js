@@ -72,7 +72,7 @@ const Login = () => {
               </div> */}
               {error && 
               <div style={{textAlign:"center"}}>
-                Email address not found. Please sign up.
+                Incorrect email or password.
               </div>}
               <br />
               <div className="buttoncontainer">

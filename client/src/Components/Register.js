@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { useHistory } from 'react-router'
-import { Form, Grid, Dropdown, Segment } from 'semantic-ui-react'
+import { Form, Grid, Segment } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
-import ErrorMessage from './ErrorMessage';
 import '../StyleSheets/Register.css'
 
 const Register = () => {

@@ -36,7 +36,7 @@
 }
 
 .update-user-form {
-  width: 300px;
+  width: 500px;
 
 }
 
@@ -68,4 +68,18 @@
   font-weight: 900;
   font-size: medium;
   box-shadow: rgba(139, 129, 175, 0.3) 0px 4px 6px -.5px, rgba(6, 241, 45, 0.3) 0px 2px 4px -1px;
+  margin-bottom: 8px;
+}
+
+.password-update {
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  width: 35%;
+  height: 30px;
+  font-weight: 900;
+  font-size: medium;
+  box-shadow: rgba(139, 129, 175, 0.3) 0px 4px 6px -.5px, rgba(6, 241, 45, 0.3) 0px 2px 4px -1px;
+  margin-bottom: 8px;
+  
 }
