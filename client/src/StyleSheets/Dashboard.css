@@ -65,3 +65,7 @@
   width: 100%;
   justify-content: flex-end;
 }
+
+*{
+  font-family: 'SF Compact Display', sans-serif !important;
+}

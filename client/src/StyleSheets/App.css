@@ -1,5 +1,7 @@
 /* FONTS */
-
+*{
+  font-family: 'SF Compact Display', sans-serif !important;
+}
 
 /* LAYOUT */
 
@@ -79,4 +81,8 @@
 
 .BlackFontC {
   color: #000000;
+}
+
+*{
+  font-family: 'SF Compact Display', sans-serif !important;
 }
