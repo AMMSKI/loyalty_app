@@ -15,13 +15,14 @@ const WalletCard = (props) => {
   return (
     <div className='searchCard'>
       <MyCard url={p.logo} >
-        <Row className='dropdownRow'>
-          <Dropdown pointing='top right' multiple icon='ellipsis vertical'>
+        <div className='blahblah'>
+        <div className='dropdownRow GoldWebGoldenBackG'>
             <Dropdown.Menu>
               <Dropdown.Item onClick={() => props.deletePunchcard(p.up_id)}>Remove</Dropdown.Item>
             </Dropdown.Menu>
-          </Dropdown>
-        </Row>
+          {/* <p style={{color:'black'}}>Owned</p> */}
+        </div>
+        </div>
         <MyLink to={`/earn/${p.up_id}`} userpunchcard_id={p.up_id}>
           <Card.Body>
             <Row>
@@ -52,12 +53,11 @@ const MyLink = styled(Link)`
   color: black;
 `
 
-const MyCard = styled(Card)`
+const MyCard = styled.div`
   background-image: radial-gradient(circle, rgba(59,54,56,0.4822303921568627) 100%, rgba(60,62,64,0) 100%), url(${props => props.url});
   width: 80vw;
   background-position: center;
   background-size: cover;
-  border: 2px solid white;
   font-weight: bolder;
   border-radius: 8px;
 `

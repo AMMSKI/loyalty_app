@@ -30,6 +30,7 @@
   justify-content: space-evenly;
   padding: 8px 0;
   color: white;
+  height: 150px;
   /* border-radius: 8px; */
 }
 
@@ -69,5 +70,40 @@
 .card_body{
   display: flex;
   align-items: center;
-  padding-bottom: 10px;
+  text-align: center;
+  width: 150%;
+  height: 100%;
+  overflow: hidden;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  justify-content: space-around;
+  /* padding: 10px; */
+  background-color: black;
+}
+
+.container_card_div{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  text-align: center;
+}
+
+.dropdownRow1{
+  display: flex;
+  /* border-radius: 10px; */
+  overflow: hidden;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  width: 50%;
+  height: 30px;
+  justify-content: space-around;
+  align-items: center;
+  color: #D7272F;
+}
+
+.blahblah1 {
+  display: flex;
+  padding-top: 5px;
+  width: 100%;
+  justify-content: flex-end;
 }
