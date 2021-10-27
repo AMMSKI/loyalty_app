@@ -12,7 +12,6 @@ const Style = styled.div`
   background-color: #D7272F;
   color: white;
   width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,7 +35,14 @@ const Style = styled.div`
     font-weight: 600;
   }
 
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .pics {
+    height: 325px;
+    object-fit: cover;
     border-radius: 8px;
     box-shadow: rgba(50, 50, 93, .7) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;  }
 
@@ -70,6 +76,7 @@ const About = () => {
   return (
     <Style>
       <h1 className="coder-header">Our Team</h1>
+      <div className="cards">
       <div className="profile">
         <Image className="pics" width="300" src={elise} alt="Elise Brown"/>
         <h2 className="first-name">Elise Brown</h2>
@@ -114,10 +121,12 @@ const About = () => {
         <img width="100px" src={linkedin} />
         </a>
       </div>
+      </div>
 
       <a href="mailto:loyalburger2021@gmail.com">
       <h2>Contact Us</h2>
       </a>
+
     </Style>
   )
 

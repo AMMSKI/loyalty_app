@@ -1,4 +1,8 @@
 /* PROFILE */
+.icon {
+  color: white;
+}
+
 
 .profile-page {
   margin: 0;
@@ -10,11 +14,29 @@
   background-color: #D7272F;
 }
 
-/* .default-profpage {
-  Background-color: white;
-  min-height: 82vh;
-  margin: 16px 24px 0 24px;
-} */
+.profile-media-query {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  width: 50%;
+  height: 500px;
+  background-color: #D7272F;
+  color: white;
+  overflow-y: scroll;
+}
+
+.inner-profile {
+  width:100%;
+  height:75%;
+}
+
+.profile-div {
+  background-color: #D7272F; 
+  color: white; 
+  font-weight: bolder;
+  width: 100%;
+}
 
 .avatar-and-name {
   display: flex;
@@ -22,22 +44,19 @@
   align-items: center;
   background-color: #D7272F;
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
 .profile-name {
-  color: white !important; 
+  color: white;
   font-weight: bolder ;
   padding: 16px 0 2px 0 ;
 }
 
-.profile-account-type {
-  color: white;
-}
 
 .update-user-form {
   width: 500px;
-
+  
 }
 
 .up-button-container {
@@ -72,6 +91,8 @@
 }
 
 .password-update {
+  background-color: white;
+  color: #D7272F;
   padding: 0;
   border: none;
   border-radius: 8px;
@@ -82,4 +103,38 @@
   box-shadow: rgba(139, 129, 175, 0.3) 0px 4px 6px -.5px, rgba(6, 241, 45, 0.3) 0px 2px 4px -1px;
   margin-bottom: 8px;
   
+}
+
+@media screen and (min-width: 600px){
+  .profile-media-query {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    /* border: 3px solid blue; */
+    width: 50%;
+    height: 700px;
+    background-color: white;
+    color: black;
+  }
+  .profile-div {
+    background-color: white;
+    color: black; 
+    font-weight: bolder;
+    width: 75%;
+    padding-left: 25%;
+  }
+  .avatar-and-name {
+    background-color: white;
+  }
+  .profile-name {
+    color: #D7272F
+  }
+  .icon {
+    color: black
+  }
+  .password-update {
+    background-color: #D7272F;
+    color: white;
+  }
 }
