@@ -1,12 +1,31 @@
 /* LOGIN PAGE*/
 
 .login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 3px solid purple; */
+  background-color: #d7272f;
   margin: 0;
   min-height: 772px;
 }
+
+.container-media-query {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  /* border: 3px solid blue; */
+  width: 50%;
+  height: 700px;
+  background-color: white;
+}
+
 .default-page {
-  Background-color: white;
-  min-height: 82vh;
+  /* border: 3px solid pink; */
+  background-color: white;
+  width: 70%;
+  height: 600px;
   margin: 16px 24px 0 24px;
 }
 
@@ -18,7 +37,7 @@
 
 .loyal-burger-header {
   font-size: xx-large;
-  color: #D7272F; 
+  color: #d7272f;
 }
 
 .button-group {
@@ -34,7 +53,7 @@
 }
 
 .white-button {
-  background-color:white;
+  background-color: white;
   border: solid 1px lightgrey;
   border-radius: 3px;
   width: 50%;
@@ -47,8 +66,8 @@
   justify-content: space-between;
   font-size: small;
   color: gray;
-  padding:8px;
-  margin-bottom:40px
+  padding: 8px;
+  margin-bottom: 40px;
 }
 
 .buttoncontainer {
