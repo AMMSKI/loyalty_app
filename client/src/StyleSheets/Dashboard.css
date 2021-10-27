@@ -28,27 +28,7 @@
   justify-content: space-evenly;
   padding: 8px 0;
 }
-@media screen and (min-width: 600px) {
-  .searchCard{
 
-    width: 80%;
-    height: 200px;
-  }
-}
-@media screen and (min-width: 800px) {
-  .searchCard{
-
-    width: 60%;
-    height: 200px;
-  }
-}
-@media screen and (min-width: 1000px) {
-  .searchCard{
-
-    width: 50%;
-    height: 200px;
-  }
-}
 
 .nameCol{
   align-items: center;

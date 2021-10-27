@@ -58,14 +58,35 @@
   text-align: center;
 }
 
-.settings-container-media-query{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  /* border: 3px solid blue; */
-  width: 70%;
-  height: 120%;
-  background-color: white;
+@media screen and (min-width: 600px){
+  .settings-container-media-query{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    /* border: 3px solid blue; */
+    width: 70%;
+    height: 120%;
+    background-color: white;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .settings_searchCard{
+    width: 80%;
+    height: 200px;
+  }
+}
+@media screen and (min-width: 800px) {
+  .settings_searchCard{
+    width: 60%;
+    height: 200px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .settings_searchCard{
+    width: 50%;
+    height: 200px;
+  }
 }
