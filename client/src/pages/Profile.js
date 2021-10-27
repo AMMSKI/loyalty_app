@@ -68,26 +68,22 @@ const Profile = () => {
           }
         </div>
 
-          <Segment 
-            basic 
-            style={{ 
-              backgroundColor: "white", 
-              color: "black", 
-              fontWeight: "bolder", 
-              width:"100%" }}
+          <div 
+            className="profile-div" 
               >
               <Grid onClick={()=> {setNameForm(!nameForm)}}>
                 <Grid.Column width={13}>
-                  <Icon name=" red user" />
+                  <Icon className="profile-icon" name="user" />
                   Name
                 </Grid.Column>
                 <Grid.Column>
-                  <Icon name="red angle right"/>
+                  <Icon className="profile-icon" name="angle right"/>
                 </Grid.Column>
               </Grid>
               {nameForm && 
                 <Form onSubmit={handleNameSubmit}>
                   <Form.Input
+                    // className="profile-icon"
                     required
                     fluid 
                     icon='red user'
@@ -101,11 +97,11 @@ const Profile = () => {
 
                 <Grid onClick={()=> {setPasswordForm(!passwordForm)}}>
                   <Grid.Column width={13}>
-                    <Icon name="red edit" />
+                    <Icon className="profile-icon" name="edit" />
                     Password
                   </Grid.Column>
                   <Grid.Column >
-                    <Icon name="red angle right" />
+                    <Icon className="profile-icon" name="angle right" />
                   </Grid.Column>
                 </Grid>
               {passwordForm && 
@@ -128,7 +124,7 @@ const Profile = () => {
                     type='password'
                     onChange={(e) => setPasswordConfirmation(e.target.value)}
                   />
-                  <button className="WhiteFontC password-update AmaranthRedBackG">Change</button>
+                  <button className="password-update">Change</button>
                 </Form>
               }
               {error && 
@@ -141,11 +137,11 @@ const Profile = () => {
             {user.account_type === "business" && 
             <Grid onClick={()=> {setUploadForm(!uploadForm)}}>
                 <Grid.Column width={13}>
-                  <Icon name="red upload" />
+                  <Icon className="profile-icon" name="upload" />
                   Card Image
                 </Grid.Column>
                 <Grid.Column>
-                  <Icon name="red angle right"/>
+                  <Icon className="profile-icon" name="angle right"/>
                 </Grid.Column>
               </Grid>
               }
@@ -154,11 +150,11 @@ const Profile = () => {
 
             <Grid onClick={()=> {setDeleteForm(!deleteForm)}}>
                 <Grid.Column width={13}>
-                  <Icon name="red delete" />
+                  <Icon className="profile-icon" name="delete" />
                   Delete
                 </Grid.Column>
                 <Grid.Column>
-                  <Icon name="red angle right"/>
+                  <Icon className="profile-icon" name="angle right"/>
                 </Grid.Column>
               </Grid>
 
@@ -173,7 +169,7 @@ const Profile = () => {
                 </div> 
                  
               }
-              </Segment>
+              </div>
           </div>
       </div>
   </div>
