@@ -3,7 +3,6 @@
   color: white;
 }
 
-
 .profile-page {
   margin: 0;
   padding-top:24px;
@@ -23,7 +22,6 @@
   height: 500px;
   background-color: #D7272F;
   color: white;
-  overflow-y: scroll;
 }
 
 .inner-profile {
@@ -116,6 +114,7 @@
     height: 700px;
     background-color: white;
     color: black;
+    overflow-y: scroll;
   }
   .profile-div {
     background-color: white;
@@ -136,5 +135,8 @@
   .password-update {
     background-color: #D7272F;
     color: white;
+  }
+  .inner-profile {
+    height: 80%
   }
 }
