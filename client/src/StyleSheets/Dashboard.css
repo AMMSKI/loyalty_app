@@ -1,12 +1,26 @@
 /* DASHBOARD */
 
 .wallet-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 3px solid purple; */
+  margin: 0;
+  min-height: 800px;
+}
+
+.container-md-query-dash {
   padding: 10px 25px 0 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
-  min-height: 774px;
+  color: black;
+  border-radius: 10px;
+  height: 700px;
+  width: 90%;
+  overflow-x: hidden;
+  /* padding: 0;
+  margin: 0; */
 }
 
 .wallet-container {
@@ -16,40 +30,42 @@
   justify-content: space-evenly;
   width: 100%;
 }
+
 .punchContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 500px;
 }
 
-.searchCard{
+.searchCard {
+  width: 400px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   padding: 8px 0;
 }
 
 
-.nameCol{
+.nameCol {
   align-items: center;
-  padding: 5%;  
+  padding: 5%;
 }
 
-.nameCol1{
+.nameCol1 {
   text-align: center;
-} 
+}
 
 .wallet-restaurant-name {
   color: white;
   font-weight: 1000;
 }
 
-.points{
+.points {
   color: white;
   font-weight: 800;
 }
 
-.dropdownRow{
+.dropdownRow {
   display: flex;
   overflow: hidden;
   border-top-left-radius: 50px;
@@ -58,7 +74,7 @@
   height: 30px;
   justify-content: space-around;
   align-items: center;
-  color: #D7272F;
+  color: #d7272f;
 }
 
 .blahblah {
@@ -67,4 +83,3 @@
   width: 100%;
   justify-content: flex-end;
 }
-

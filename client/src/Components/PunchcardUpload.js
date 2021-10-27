@@ -82,7 +82,7 @@ export default function PunchcardImageUpload({uploadForm, setUploadForm}) {
         <button 
           primary 
           type="submit" 
-          className="WhiteBackG add-punchcard-button AmaranthRedFontC"
+          className="WhiteFontC add-punchcard-button AmaranthRedBackG"
           >
             Add
         </button>
