@@ -85,3 +85,13 @@ body {
   color: #000000;
 }
 
+/* .webview-white-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  background-color: red;
+  color: black;
+  border: solid gray 1px;
+  border-radius: 5px;
+} */

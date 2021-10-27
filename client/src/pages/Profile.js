@@ -5,6 +5,7 @@ import { Form, Grid, Icon, Segment } from 'semantic-ui-react';
 import { AuthContext } from '../providers/AuthProvider';
 import Avatar from 'react-avatar';
 import '../StyleSheets/Profile.css'
+import '../StyleSheets/App.css'
 import PunchcardImageUpload from '../Components/PunchcardUpload';
 
 const Profile = () => {
@@ -35,7 +36,8 @@ const Profile = () => {
 
 
   return (
-    <div className="profile-page">
+    <div className="webview-white-container">
+      <div className="profile-page">
         <div className="avatar-and-name">
           <Link to={`/profileupload/${user.id}`}>
             {user.image ?
@@ -170,6 +172,7 @@ const Profile = () => {
               }
                 </Segment>
       </div>
+    </div>
   )
 
 
