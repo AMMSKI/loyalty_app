@@ -38,6 +38,7 @@ const Style = styled.div`
   .cards {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .pics {
@@ -48,7 +49,7 @@ const Style = styled.div`
 
   .profile {
     width: 300px;
-    margin-bottom: 50px;
+    margin: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,8 +70,7 @@ const About = () => {
     "Love to code, play golf and hang out with my family.",
     "Fall 2021 Graduate. Ecuadorian living in Utah, love technology.",
     "Excited to keep learning and growing web development and plans to be a front end developer. Dev Point Labs Fall 2021 graduate.",
-    "Description",
-    "Fall 2021 Graduate. I look forward to being a web developer by day, game designer by night."
+    "Fall 2021 Graduate. I look forward to being a web developer by day, game designer by night.",
   ];
 
   return (
