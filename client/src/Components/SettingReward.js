@@ -37,7 +37,7 @@ const SettingReward = ({punchcard_id}) => {
     return rewards.map((r) => {
       return (
         <div key={r.id}>
-          <div className="cust-rewards-cards">
+          <div className=" cust-rewards-cards setting-reward-card">
             <h1 className="rewards-title">{r.name}</h1>
             <p>Cost: {r.cost}</p>
             <p>{r.description}</p>
@@ -53,21 +53,19 @@ const SettingReward = ({punchcard_id}) => {
   return(
     <div className="settings-rewards-page">
       {renderRewards()}
-      <div style={{ textAlign: 'center', padding:"24px" }}>
         {showRewardForm && 
           <RewardForm   
-            getRewards={getRewards} 
-            id={punchcard_id} 
-            showRewardForm={showRewardForm}
-            setShowRewardForm={setShowRewardForm} />
+          getRewards={getRewards} 
+          id={punchcard_id} 
+          showRewardForm={showRewardForm}
+          setShowRewardForm={setShowRewardForm} />
         }
         <button
           onClick={() => setShowRewardForm(!showRewardForm)}
-          className="loginbutton AmaranthRedBackG WhiteFontC" >
+          className="reward_button loginbutton AmaranthRedBackG WhiteFontC" >
           {showRewardForm ? 'Close' : 'Add Reward'}
         </button>
       </div>
-    </div>
   )
 }
 

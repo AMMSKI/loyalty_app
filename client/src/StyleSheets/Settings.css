@@ -35,6 +35,53 @@
 .settings-rewards-page {
   min-height: 70vh;
 }
+ @media screen and (min-width: 600px) {
+   .settings-rewards-page{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+   }
+ }
+
+ @media screen and (min-width: 600px){
+  .setting-reward-card{
+    margin: 16px 8px 16px 8px;
+    padding: 14px;
+    width: 250px;
+    height: 150px;
+    overflow: scroll;
+    color: white;
+    background-color: black;
+    border: solid 3px #FFD700;
+    border-radius: 5px;
+    box-shadow: rgba(43, 5, 5, 0.5) 0px 3px 8px;
+  }
+}
+
+.reward_button{
+  text-align: center;
+}
+
+
+@media screen and (min-width: 600px){
+  .reward_button {
+    display: flex;
+    margin: 20px;
+    width: 30%;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 760px){
+  .reward_button {
+    display: flex;
+    margin: 20px;
+    width: 50%;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
 
 .rewards-edit-form {
   display: flex;
