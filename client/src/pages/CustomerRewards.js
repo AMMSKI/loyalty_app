@@ -9,20 +9,27 @@ const CustomerRewards = ({ punchcardData, userpunchcard_id }) => {
   const [rewards, setRewards] = useState([])
   const [showRewards, setShowRewards] = useState(false)
 
-  const getRewards = async () => {
-    try {
-      let res = await axios.get(`/api/punchcards/${punchcardData.punchcard_id}/rewards`)
-      setRewards(res.data)
-      setShowRewards(!showRewards)
-    } catch (err) {
-      console.log(err)
-    }
+  const punchcardId = punchcardData.punchcard_id; 
+
+  useEffect(() => {
+    if(!punchcardId)
+      return;
+
+    axios.get(`/api/punchcards/${punchcardId}/rewards`)
+      .then(res => {
+        setRewards(res.data);
+      });
+  }, [punchcardId]);
+
+  const toggleRewards = async () => {
+    setShowRewards(!showRewards)
   }
 
 
   const renderRewards = () => {
-    console.log(rewards)
     return rewards.map((r) => {
+      const canAfford = r.cost < punchcardData.current_points;
+
       return (
         <div>
           <div className="cust-rewards-cards">
@@ -31,20 +38,18 @@ const CustomerRewards = ({ punchcardData, userpunchcard_id }) => {
               <p>{r.description}</p>
             </div>
 
-            {r.cost < punchcardData.current_points ?
-              <Link
-                to={`/rewardQR/${r.id}/${userpunchcard_id}`}
-                reward_id={r.id}
-                userpunchcard_id={userpunchcard_id} >
-
-                <div className="cash-or-cost">
-                  Cash In Reward
-                </div>
-              </Link> :
-              <div className="cash-or-cost">
-                Cost: {r.cost} points
-              </div>
-            }
+            <div className={`cash-or-cost ${canAfford ? 'can-afford' : 'cant-afford'}`}>
+              {canAfford ?
+                <Link
+                  to={`/rewardQR/${r.id}/${userpunchcard_id}`}
+                  reward_id={r.id}
+                  userpunchcard_id={userpunchcard_id} >
+                    Cash In Reward
+                </Link> 
+                :
+                `Cost: ${r.cost} points`
+              }
+            </div>
 
           </div>
         </div>
@@ -52,15 +57,19 @@ const CustomerRewards = ({ punchcardData, userpunchcard_id }) => {
     })
   }
 
+  const Arrows = () => (
+    showRewards ? <Icon name="angle double up" /> : <Icon name="angle double down" />
+  );
+
   return (
     <div className="customer-rewards-page">
-      <h2
-        className="rewards-header"
-        onClick={() => getRewards()}>
-        <Icon name="arrow alternate circle down" color="yellow" />
-          Rewards
-        <Icon name="arrow alternate circle down" color="yellow" />
-      </h2>
+      <div className="link-button" onClick={() => toggleRewards()}>
+        <button className="red-button">
+          <Arrows/>
+            {showRewards ? 'HIDE' : 'SHOW'} REWARDS
+          <Arrows/>
+        </button>
+      </div>
       {showRewards && renderRewards()}
     </div>
   )
