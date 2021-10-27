@@ -9,6 +9,7 @@ import "../StyleSheets/Settings.css"
 
 const SettingsPunchcard = ({restaurant, punchcard, getRestaurant }) => {
   const [showEdit, setShowEdit] = useState(false)
+  const [uploadForm, setUploadForm] = useState(false)
   
   return (
     <>
@@ -76,12 +77,22 @@ const SettingsPunchcard = ({restaurant, punchcard, getRestaurant }) => {
         <p>{punchcard.description}</p>
         {!showEdit ?
           <button 
-            className="loginbutton GoldWebGoldenBackG BlackFontC"
-            onClick={() => setShowEdit(!showEdit)}
-            >Edit Description
+          className="loginbutton GoldWebGoldenBackG BlackFontC"
+          onClick={() => setShowEdit(!showEdit)}
+          >Edit Description
             </button> :
           <PunchCardEdit showEdit={showEdit} getRestaurant={getRestaurant} setShowEdit={setShowEdit} id={punchcard.id}
           />}
+          {!uploadForm ?
+          <button 
+          className="loginbutton GoldWebGoldenBackG BlackFontC"
+          onClick={() => setUploadForm(!uploadForm)}
+          >Upload Photo
+          </button> :
+          <div style={{marginTop:'20px', backgroundColor:'white', borderRadius:'5px'}}>
+          <PunchcardImageUpload setUploadForm={setUploadForm} uploadForm={uploadForm}/>
+          </div>
+          }
       </div>
 </>
   )
