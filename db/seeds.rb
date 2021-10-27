@@ -48,7 +48,7 @@ custusers = [user3,user4, user6]
 punches = [punch, punch2, punch3, punch4]
 
     15.times do
-      reward = Reward.create(name:'reward', description:Faker::Restaurant.description, punchcard_id:punches[rand(3)].id, cost:rand(100))
+      reward = Reward.create(name:'reward', description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi enim nunc faucibus a pellentesque.', punchcard_id:punches[rand(3)].id, cost:rand(100))
       end
   
   # 15.times do
