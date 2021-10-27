@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
-import { CardContent, Card, Form, Grid } from "semantic-ui-react";
+import { Form, Grid } from "semantic-ui-react";
 
-const RewardForm = ({ id, getRewards }) => {
+const RewardForm = ({ id, getRewards, setShowRewardForm, showRewardForm }) => {
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -12,12 +12,9 @@ const RewardForm = ({ id, getRewards }) => {
     e.preventDefault();
     
     try {
-      let res = await axios.post(`/api/punchcards/${id}/rewards`, { name, description, cost, punchcard_id: id })
-      console.log(res)
-      setName('');
-      setDescription('');
-      setCost('');
+      await axios.post(`/api/punchcards/${id}/rewards`, { name, description, cost, punchcard_id: id })
       getRewards(id)
+      setShowRewardForm(!showRewardForm)
     } catch (error) {
       console.log('failed', error)
     }
@@ -30,14 +27,15 @@ const RewardForm = ({ id, getRewards }) => {
           <Form onSubmit={submitHandler} style={{textAlign:"left"}}>
             <Form.Input 
               required
-              label="Name" 
-              placeholder="Name"
+              label="Reward" 
+              placeholder="Reward"
               onChange={e => setName(e.target.value)}
               />
             <Form.Input 
               required
-              label="Cost"
-              placeholder="Cost"
+              type="number"
+              label="Points"
+              placeholder="Points"
               onChange={e => setCost(e.target.value)} />
             <Form.TextArea 
               required

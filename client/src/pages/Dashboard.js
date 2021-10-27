@@ -57,15 +57,17 @@ const Dashboard = () => {
 
   return (
     <div className="wallet-page AmaranthRedBackG">
-      <div className="wallet-container">
-        <h1>LOYAL WALLET</h1>
-        <SearchBar
-          input={input}
-          onChange={updateInput}
-        />
-        <br />
-        <div className='punchContainer'>
-          {punchcards && renderPunchcards()}
+      <div className="container-md-query-dash WhiteBackG">
+        <div className="wallet-container">
+          <h1>LOYAL WALLET</h1>
+          <SearchBar
+            input={input}
+            onChange={updateInput}
+          />
+          <br />
+          <div className='punchContainer'>
+            {punchcards && renderPunchcards()}
+          </div>
         </div>
       </div>
     </div>

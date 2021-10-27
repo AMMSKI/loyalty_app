@@ -2,7 +2,8 @@
 
 class User < ActiveRecord::Base
   has_many :punchcards, through: :user_punchcards
-  has_many :restaurants
+  has_many :user_punchcards, dependent: :destroy
+  has_many :restaurants, dependent: :destroy
   
 
   def self.punchcards_byuser(id)

@@ -1,19 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Button, Form, Image } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 import { FilePond, registerPlugin} from "react-filepond"
 import "filepond/dist/filepond.min.css"
 import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orientation";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
-import AuthProvider, { AuthContext } from '../providers/AuthProvider';
+import { AuthContext } from '../providers/AuthProvider';
 import "filepond/dist/filepond.min.css"
 import axios from 'axios';
-import Avatar from 'react-avatar';
 import { useHistory } from 'react-router';
+import '../StyleSheets/Profile.css'
 
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
 
-export default function PunchcardImageUpload(props) {
+export default function PunchcardImageUpload({uploadForm, setUploadForm}) {
   const [files, setFiles]= useState([])
   const [punchcardId, setPunchcardId]= useState([])
   const [punchcard, setPunchcard]= useState([])
@@ -34,16 +34,6 @@ export default function PunchcardImageUpload(props) {
   
     }
   }
-
-  // const getPunchcardId = async(restId) => {
-  //   try {
-  //   let res = await axios.get(`/api/users/${user.id}/restaurants/${restId}/punchcards`)
-  //   setPunchcardId(res.data[0].id)
-  //   console.log("punchcard info:", res.data)
-  //   } catch (error) {
-  
-  //   }
-  // }
 
   const getPunchcard = async(restId) => {
     try {
@@ -67,6 +57,7 @@ export default function PunchcardImageUpload(props) {
       let res = await axios.patch(`/api/users/${user.id}/punchcards/${punchcardId}`, logo)
       setPunchcard({...punchcard, logo: res.data.logo})
       setLogo(res.data.logo)
+      setUploadForm(!uploadForm)
     } catch (error) {
       console.log(error)
     }
@@ -74,20 +65,11 @@ export default function PunchcardImageUpload(props) {
 
   const fileChanged = (fileItems) => {
     setFiles(fileItems)
-    // setUser(user=> ({...user, image: fileItems[0].file}))
 
   }
 
   return (
     <div>
-      {/* <div style={styles.imageContainer}>
-         {logo && 
-         <Image style={{
-            border:"solid 1px lightgray", 
-            borderRadius:"15px"}} 
-            src={logo}/> 
-        }
-      </div> */}
       <Form onSubmit={handleSubmit}>
       <FilePond
         name='file'
@@ -97,19 +79,14 @@ export default function PunchcardImageUpload(props) {
         onupdatefiles={fileChanged}
         labelIdle='Browse'
         />
-        <Button primary type="submit" style={{backgroundColor:"#D7272F", fontWeight:"bold"}}>ADD</Button>
+        <button 
+          primary 
+          type="submit" 
+          className="WhiteFontC add-punchcard-button AmaranthRedBackG"
+          >
+            Add
+        </button>
       </Form>
     </div>
     )
-  }
-
-  const styles = {
-    imageContainer: {
-      padding:"20px 0 25px 0", 
-      display:"block", 
-      marginLeft:"auto", 
-      marginRight:"auto", 
-      width:"80%", 
-      textAlign:"center"
-    }
   }

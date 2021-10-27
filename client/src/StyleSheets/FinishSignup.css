@@ -1,0 +1,28 @@
+.finish-signup {
+  min-height: 82vh;
+  margin: 32px;
+}
+
+.finish-header {
+  font-size: large;
+  margin: 56px 0 32px 0;
+  font-weight: bolder;
+}
+
+.finish-form {
+
+}
+
+.finish-button {
+  text-align: center;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  width: 60%;
+  height: 40px;
+  font-weight: 900;
+  font-size: large;
+  margin: 24px 0 32px 0;
+  box-shadow: rgba(139, 129, 175, 0.3) 0px 4px 6px -.5px, rgba(6, 241, 45, 0.3) 0px 2px 4px -1px;
+
+}

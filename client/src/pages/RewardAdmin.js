@@ -11,6 +11,7 @@ const RewardAdmin = (props) => {
   const [restUserId, setRestUserId] = useState(null)
   const reward_id = props.match.params.reward_id
   const userpunchcard_id = props.match.params.userpunchcard_id
+  const [valid, setValid] = useState(false)
 
   useEffect(()=>{
     getReward()
@@ -21,8 +22,10 @@ const RewardAdmin = (props) => {
     try{
       let res = await axios.get(`/api/punchcards/null/rewards/${reward_id}`)
       setReward(res.data)
+      setValid(true)
     }catch(err){
       console.log(err)
+      setValid(false)
     }
   }
   const getUserPunchCard = async () => {
@@ -54,7 +57,7 @@ const RewardAdmin = (props) => {
     }
   }
 
-  if(user.id === restUserId){
+  if(user.id === restUserId && valid === true && currentPoints > reward.cost){
     return (
       <div className='admin_container'>
             <div className='admin_reward_header'>
@@ -73,7 +76,7 @@ const RewardAdmin = (props) => {
     )
   }else{
     return(
-      <div className='admin_reward_header'>Invalid QR</div>
+      <div className='admin_header'>Invalid QR</div>
     )
   }
 

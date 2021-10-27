@@ -1,10 +1,9 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
-import { Card } from "react-bootstrap";
-import { propTypes } from "react-bootstrap/esm/Image";
-import { FilePond } from "react-filepond";
-import { Form, Input, Button } from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
+
 import { AuthContext } from "../providers/AuthProvider";
+import "../StyleSheets/FinishSignup.css"
 
 const FinishSignUp = (props) => {
   const { user } = useContext(AuthContext)
@@ -15,77 +14,124 @@ const FinishSignUp = (props) => {
   const [restaurant, setRestaurant] = useState(null)
   const [punchCard, setPunchCard] = useState(null)
   const [description, setDescription] = useState(null)
+  const [showForm, setShowForm] = useState(true)
 
-  const handleCityChange =(e)=>{
+  const handleCityChange = (e) => {
     setCity(e.target.value)
   }
 
-  const handleZipChange =(e)=>{
+  const handleZipChange = (e) => {
     setZip(e.target.value)
   }
 
-  const handlePhoneChange =(e)=>{
+  const handlePhoneChange = (e) => {
     setPhone(e.target.value)
   }
 
-  const handleNameChange =(e)=>{
+  const handleNameChange = (e) => {
     setName(e.target.value)
   }
 
-  const handlePunchChange = (e)=> {
+  const handlePunchChange = (e) => {
     setDescription(e.target.value)
   }
 
-  const handleSubmit = async (e)=>{
-    try{  
-      let res = await axios.post(`/api/users/${user.id}/restaurants`, {name, city, zip, phone, user_id:user.id})
+  const handleSubmit = async (e) => {
+    try {
+      let res = await axios.post(`/api/users/${user.id}/restaurants`, 
+      { name, city, zip, phone_number: phone, user_id: user.id})
       setRestaurant(res.data)
       setName('')
       setCity('')
       setZip('')
       setPhone('')
-    }catch(err){
+      setShowForm(false)
+    } catch (err) {
       console.log(err)
     }
   }
-  const handlePunchSubmit = async (e)=>{
-    try{  
-      let res = await axios.post(`/api/users/${user.id}/restaurants/${restaurant.id}/punchcards`, {description, user_id:user.id, restaurant_id:restaurant.id})
+  const handlePunchSubmit = async (e) => {
+    try {
+      let res = await axios.post(`/api/users/${user.id}/restaurants/${restaurant.id}/punchcards`, { description, user_id: user.id, restaurant_id: restaurant.id })
       setPunchCard(res.data)
-      props.history.push('/home')
+      if(props.location){
+        props.history.push('/home')
+      }else{
+        window.location.reload()
+      }
     }catch(err){
       console.log(err)
     }
   }
+  
 
   return (
-    <div className='createRestPunch'>
-      <Card>
-        <h3>Add Restaurant Information</h3>
+    <div className='finish-signup'>
+      <h2 className="finish-header">Add Restaurant Information</h2>
+      {showForm && <div className="finish-form">
         <Form onSubmit={handleSubmit}>
-          <p>Name</p>
-          <Input value={name} onChange={handleNameChange}/><br/>
-          <p>City</p>
-          <Input value={city} onChange={handleCityChange}/><br/>
-          <p>Zip</p>
-          <Input value={zip} onChange={handleZipChange}/><br/>
-          <p>Phone#</p>
-          <Input value={phone} onChange={handlePhoneChange}/><br/>
-          <Button type='submit'>Add</Button>
-          </Form>
-      </Card>
-      {restaurant && 
-      <Card>
-        <h3>Add a reward card</h3>
-        <Form onSubmit={handlePunchSubmit}>
-          <p>Punch Card Description</p>
-          <Input value={description} onChange={handlePunchChange} />
-          <Button type='submit'>Add</Button>
+          <Form.Input
+            required
+            label="Restaurant Name"
+            placeholder="Name"
+            value={name}
+            onChange={handleNameChange} />
+          <Form.Input
+            required
+            label="City"
+            placeholder="City"
+            value={city}
+            onChange={handleCityChange} />
+          <Form.Input
+            required
+            label="Zip Code"
+            placeholder="Zip Code"
+            pattern="^[0-9]{5}(?:-[0-9]{4})?$" 
+            title="99999"
+            value={zip}
+            onChange={handleZipChange} />
+          <Form.Input
+            required
+            label="Phone Number"
+            placeholder="Phone Number"
+            type="tel"
+            pattern="^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$" 
+            title="999-999-9999"
+            value={phone}
+            onChange={handlePhoneChange} />
+          <button 
+            type='submit'
+            className="finish-button AmaranthRedBackG WhiteFontC" >
+              Add
+          </button>
         </Form>
-      </Card>
+      </div>}
+      {restaurant &&
+        <div>
+          <h2 className="finish-header">Add Description</h2>
+          <Form onSubmit={handlePunchSubmit}>
+            <p>A short description that gives customers
+              a little information about your restaurant / 
+              reward card.
+            </p>
+            <Form.Input
+              required
+              label="About"
+              placeholder="About"
+              value={description}
+              onChange={handlePunchChange} />
+            <button 
+              className="finish-button AmaranthRedBackG WhiteFontC" 
+              type='submit'>
+                Add
+            </button>
+          </Form>
+        </div>
       }
+      
     </div>
   )
 }
+
 
 export default FinishSignUp

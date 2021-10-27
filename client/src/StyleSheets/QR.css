@@ -20,6 +20,7 @@
   flex-direction: column;
   color: black;
   align-items: center;
+  padding-bottom: 200px;
 }
 
 .QR-button {
@@ -95,4 +96,13 @@
   font-weight: 900;
   margin-bottom: 10px;
   font-size: 24px;
+}
+
+.QR-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  color: black;
 }

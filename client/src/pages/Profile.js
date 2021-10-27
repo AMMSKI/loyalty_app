@@ -1,19 +1,44 @@
 
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { Card, Grid, Icon, Segment } from 'semantic-ui-react';
-import styled from 'styled-components';
+import React, { useContext, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { Form, Grid, Icon, Segment } from 'semantic-ui-react';
 import { AuthContext } from '../providers/AuthProvider';
 import Avatar from 'react-avatar';
 import '../StyleSheets/Profile.css'
+import '../StyleSheets/App.css'
+import PunchcardImageUpload from '../Components/PunchcardUpload';
 
 const Profile = () => {
-  const { user } = useContext(AuthContext)
+  const { handleUserUpdate, setError, error, user, handleDelete } = useContext(AuthContext)
+  const [name, setName] = useState(user.name)
+  const [password, setPassword] = useState('')
+  const [passwordConfirmation, setPasswordConfirmation] = useState('')
+  const [nameForm, setNameForm] = useState(false)
+  const [passwordForm, setPasswordForm] = useState(false)
+  const [uploadForm, setUploadForm] = useState(false)
+  const [deleteForm, setDeleteForm] = useState(false)
+  const history = useHistory();
+
+  const handleNameSubmit = (e) => {
+      handleUserUpdate({ name }, history)
+      setNameForm(!nameForm)
+    }
+    
+    const handlePasswordSubmit = (e) => {
+      console.log('its submitting')
+      if (password === passwordConfirmation) {
+        handleUserUpdate({ password }, history)
+        setPasswordForm(!passwordForm)
+      } else {
+        setError(true)
+      }
+  }
 
 
   return (
     <div className="profile-page">
-      <div className="default-profpage">
+      <div className="profile-media-query">
+        <div className="inner-profile">
         <div className="avatar-and-name">
           <Link to={`/profileupload/${user.id}`}>
             {user.image ?
@@ -42,77 +67,115 @@ const Profile = () => {
             </div>
           }
         </div>
-        <Segment basic style={{ backgroundColor: "#D7272F", color: "white", fontWeight: "bolder" }}>
-          <div>
-            <Grid>
-              <Grid.Column width={13}>
-                <Icon inverted name="user" />
-                Name
-              </Grid.Column>
-              <Grid.Column>
-                <Icon inverted name="angle right" />
-              </Grid.Column>
-            </Grid>
+
+          <div 
+            className="profile-div" 
+              >
+              <Grid onClick={()=> {setNameForm(!nameForm)}}>
+                <Grid.Column width={13}>
+                  <Icon className="profile-icon" name="user" />
+                  Name
+                </Grid.Column>
+                <Grid.Column>
+                  <Icon className="profile-icon" name="angle right"/>
+                </Grid.Column>
+              </Grid>
+              {nameForm && 
+                <Form onSubmit={handleNameSubmit}>
+                  <Form.Input
+                    // className="profile-icon"
+                    required
+                    fluid 
+                    icon='red user'
+                    iconPosition='left'
+                    placeholder='Name'
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </Form>
+                }
+
+                <Grid onClick={()=> {setPasswordForm(!passwordForm)}}>
+                  <Grid.Column width={13}>
+                    <Icon className="profile-icon" name="edit" />
+                    Password
+                  </Grid.Column>
+                  <Grid.Column >
+                    <Icon className="profile-icon" name="angle right" />
+                  </Grid.Column>
+                </Grid>
+              {passwordForm && 
+                <Form onSubmit={handlePasswordSubmit}>
+                  <Form.Input
+                  required
+                  fluid
+                  icon='red lock'
+                  iconPosition='left'
+                  placeholder='Password'
+                  type='password'
+                  onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <Form.Input
+                    required
+                    fluid
+                    icon='red lock'
+                    iconPosition='left'
+                    placeholder='Password Confirmation'
+                    type='password'
+                    onChange={(e) => setPasswordConfirmation(e.target.value)}
+                  />
+                  <button className="password-update">Change</button>
+                </Form>
+              }
+              {error && 
+                <div style={{color:"black"}}>
+                Passwords must be at least 6 characters long and match
+                </div>
+                }
+
+
+            {user.account_type === "business" && 
+            <Grid onClick={()=> {setUploadForm(!uploadForm)}}>
+                <Grid.Column width={13}>
+                  <Icon className="profile-icon" name="upload" />
+                  Card Image
+                </Grid.Column>
+                <Grid.Column>
+                  <Icon className="profile-icon" name="angle right"/>
+                </Grid.Column>
+              </Grid>
+              }
+              {uploadForm && <PunchcardImageUpload setUploadForm={setUploadForm} uploadForm={uploadForm}/>}
+            <br />
+
+            <Grid onClick={()=> {setDeleteForm(!deleteForm)}}>
+                <Grid.Column width={13}>
+                  <Icon className="profile-icon" name="delete" />
+                  Delete
+                </Grid.Column>
+                <Grid.Column>
+                  <Icon className="profile-icon" name="angle right"/>
+                </Grid.Column>
+              </Grid>
+
+              {deleteForm && 
+                <div style={{textAlign:"center", marginTop:"8px"}}>
+                   <p>Are you sure you want to delete your account?</p>
+                  <button 
+                    onClick={() => handleDelete(history)}
+                    className="BlackBackG WhiteFontC">
+                    Delete
+                  </button>
+                </div> 
+                 
+              }
+              </div>
           </div>
-          <hr />
-          <div>
-            <Grid>
-              <Grid.Column width={13}>
-                <Icon inverted name="edit" />
-                Edit Bio
-              </Grid.Column>
-              <Grid.Column >
-                <Icon inverted name="angle right" />
-              </Grid.Column>
-            </Grid>
-          </div>
-          <hr />
-          <div>
-            <Grid>
-              <Grid.Column width={13}>
-                <Icon inverted name="chart bar" />
-                My Points
-              </Grid.Column>
-              <Grid.Column >
-                <Icon inverted name="angle right" />
-              </Grid.Column>
-            </Grid>
-          </div>
-          <hr />
-          <div>
-            <Grid>
-              <Grid.Column width={13}>
-                <Icon inverted name="map marker alternate" />
-                My Location
-              </Grid.Column>
-              <Grid.Column >
-                <Icon inverted name="angle right" />
-              </Grid.Column>
-            </Grid>
-          </div>
-          <hr />
-          <div>
-            <Grid>
-              <Grid.Column width={13}>
-                <Icon inverted name="mail" />
-                {user ? <>{user.email}</> : "User Email"}
-              </Grid.Column>
-              <Grid.Column >
-                <Icon inverted name="angle right" />
-              </Grid.Column>
-            </Grid>
-          </div>
-        </Segment>
       </div>
-    </div>
+  </div>
   )
 
 
 }
 
 export default Profile
-
-const BorderlessCard = styled(Card)`
-  height: 300px;
-  box-shadow: none !important
-`

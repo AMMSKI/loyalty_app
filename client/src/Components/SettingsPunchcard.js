@@ -9,82 +9,99 @@ import "../StyleSheets/Settings.css"
 
 const SettingsPunchcard = ({restaurant, punchcard, getRestaurant }) => {
   const [showEdit, setShowEdit] = useState(false)
+  
   return (
-    <div className="sp-page BlackBackG">
-      <h2 className="sp-h2">Loyalty Card</h2>
-      <div className="searchCard">
-        <MyCard1>
-          <Row style={{ paddingLeft: '95%', paddingTop: '5px' }}>
-            <Dropdown pointing='top right' multiple icon='ellipsis vertical'>
-            </Dropdown>
-          </Row>
-          <Row style={{ alignItems: 'center' }}>
-            <Col style={{ alignItems: 'center', padding: '20px' }}><Avatar size="100" round src={restaurant.image} /> </Col>
-            <Col className='nameCol'>
+    <>
+    <div className='header_setting_container'>
+      <h1>Search Preview:</h1>
+    </div>
+    <div className="searchCard settings_searchCard">
+      <MyCard url={punchcard.logo}>
+        <div className='container_card_div'>
+          <div className='card_body' >
+            <div className='nameCol'>
               <Row>
                 <Card.Title>
-                  <h1>{restaurant.name} </h1>
+                  <h1 className='restname'>{restaurant.name}</h1>
                 </Card.Title>
               </Row>
               <Row>
-                <span>{restaurant.city}</span>
+                <span className='restname'>{restaurant.city}</span>
               </Row>
-            </Col>
-          </Row>
-        </MyCard1>
-      </div>
-      <h2 className="sp-h2">Wallet Card</h2>
-      <div className='searchCard'>
-        <MyCard url={punchcard.logo}>
-          <Row style={{ paddingLeft: '95%', paddingTop: '5px' }}>
+            </div>
+          </div>
+            <div className='blahblah1'>
+              <div className='dropdownRow1 GoldWebGoldenBackG'>
+                  <Dropdown.Menu>
+                      <Dropdown.Item>Owned</Dropdown.Item> 
+                  </Dropdown.Menu>
+              </div>
+            </div>
+            </div>
+      </MyCard>
+    </div>
 
-            <Dropdown pointing='top right' multiple icon='ellipsis vertical'>
-              <Dropdown.Menu >
-                <Dropdown.Item>Upload picture<PunchcardImageUpload /></Dropdown.Item>
-
-              </Dropdown.Menu>
-            </Dropdown>
-          </Row>
+    <div className='header_setting_container'>
+      <h1>Wallet Preview:</h1>
+    </div>
+    <div className='searchCard settings_searchCard'>
+      <MyCard1 url={punchcard.logo} >
+        <div className='blahblah'>
+        <div className='dropdownRow GoldWebGoldenBackG'>
+            <Dropdown.Menu>
+              <Dropdown.Item>Remove</Dropdown.Item>
+            </Dropdown.Menu>
+        </div>
+        </div>
           <Card.Body>
             <Row>
               <Col className='nameCol1'>
                 <Row>
                   <Card.Title>
-                    <h1 style={{ color: "white" , fontWeight:"1000"}}>{restaurant.name}</h1>
+                    <h1 className='wallet-restaurant-name'>
+                      {restaurant.name}
+                    </h1>
                   </Card.Title>
-                  <p style={{ color: "white", fontWeight:"1000" }}>0 points</p>
+                  <p className='points'>
+                    10 points
+                  </p>
                 </Row>
               </Col>
             </Row>
           </Card.Body>
-        </MyCard>
-      </div>
-      <div className="edit-description WhiteFontC">
+      </MyCard1>
+    </div>
+    <div className="edit-description WhiteFontC">
         <h2 className="sp-h2">Description</h2>
         <p>{punchcard.description}</p>
         {!showEdit ?
           <button 
-            className="loginbutton AmaranthRedBackG WhiteFontC"
+            className="loginbutton GoldWebGoldenBackG BlackFontC"
             onClick={() => setShowEdit(!showEdit)}
             >Edit Description
             </button> :
           <PunchCardEdit showEdit={showEdit} getRestaurant={getRestaurant} setShowEdit={setShowEdit} id={punchcard.id}
           />}
       </div>
-    </div>
+</>
   )
 }
 
 const MyCard = styled(Card)`
+  background-image: radial-gradient(circle, rgba(59,54,56,0.4822303921568627) 100%, rgba(60,62,64,0) 100%), url(${props => props.url});
   width: 80vw;
-  height: 20vh;
-  background-image: url(${props => props.url});
   background-position: center;
   background-size: cover;
+  font-weight: bolder;
+  border-radius: 8px;
 `
 const MyCard1 = styled(Card)`
+  background-image: radial-gradient(circle, rgba(59,54,56,0.4822303921568627) 100%, rgba(60,62,64,0) 100%), url(${props => props.url});
   width: 80vw;
-  // height: 200px;
+  background-position: center;
+  background-size: cover;
+  font-weight: bolder;
+  border-radius: 8px;
 `
 
 const MyDropdown = styled(Dropdown)`
@@ -92,3 +109,4 @@ const MyDropdown = styled(Dropdown)`
 `
 
 export default SettingsPunchcard
+

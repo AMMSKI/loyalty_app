@@ -18,8 +18,6 @@ const ManualPunchCard = (props) => {
     setType(e.target.value)
   }
 
-  //`localhost:3000/punchcardAdmin/${user_id}/${punchcard_id}`
-
   const handleSubmit = () => {
     if(type === 'punchcard'){
     props.history.push(`/punchcardAdmin/${uCode}/${pCode}`)
@@ -32,7 +30,7 @@ const ManualPunchCard = (props) => {
  
   
   return(
-    <>
+    <div style={{minHeight:"75vh"}}>
     <Form onSubmit={handleSubmit}>
       <div className='manual_enter'>
         <div className='manual-radio'>
@@ -55,7 +53,7 @@ const ManualPunchCard = (props) => {
       <button className='manual_button' type='submit'>Submit</button>
       </div>
     </Form>
-    </>
+    </div>
   )
 }
 
