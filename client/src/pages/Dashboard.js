@@ -57,7 +57,7 @@ const Dashboard = () => {
 
   return (
     <div className="wallet-page AmaranthRedBackG">
-      <div className="container-md-query-dash WhiteBackG">
+      <div className="container-md-query-dash">
         <div className="wallet-container">
           <h1>LOYAL WALLET</h1>
           <SearchBar
