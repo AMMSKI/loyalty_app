@@ -61,6 +61,7 @@ const About = () => {
   const description = [
     "Fall 2021 Graduate. Looking forward to the new adventure of being a web developer!",
     "Love to code, play golf and hang out with my family.",
+    "Fall 2021 Graduate. Ecuadorian living in Utah, love technology.",
     "Excited to keep learning and growing web development and plans to be a front end developer. Dev Point Labs Fall 2021 graduate.",
     "Description",
     "Fall 2021 Graduate. I look forward to being a web developer by day, game designer by night."
@@ -90,7 +91,7 @@ const About = () => {
       <div className="profile">
         <Image className="pics" width="300" src={rafael} alt="Raphael Briones"/>
         <h2 className="first-name">Rafael Briones</h2>
-        <p>{description[3]}</p>
+        <p>{description[2]}</p>
         <a href="https://www.linkedin.com/in/rafael-briones-dev/">
           <img width="100px" src={linkedin} />          
         </a>

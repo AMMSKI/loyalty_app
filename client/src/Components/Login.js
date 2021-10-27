@@ -22,70 +22,72 @@ const Login = () => {
   }
 
   return (
-    <div className="login-page WhiteBackG">
-      <div className="default-page">
-        <Grid centered verticalAlign='middle'>
-          <Grid.Column style={{ maxWidth: 450 }}>
-            <div className="login-header">
-              Welcome to
-              <div className="loyal-burger-header">
-                LOYAL BURGER
+    <div className="login-page">
+      <div className="container-media-query">
+        <div className="default-page">
+          <Grid centered verticalAlign='middle'>
+            <Grid.Column style={{ maxWidth: 450 }}>
+              <div className="login-header">
+                Welcome to
+                <div className="loyal-burger-header">
+                  LOYAL BURGER
+                </div>
               </div>
-            </div>
-            <div className="button-group">
-              <button className="yellow-button GoldWebGoldenBackG AmaranthRedFontC">Login</button>
-              <button className="white-button" onClick={(e) => handleClick(e, '/register')}>Sign Up</button>
-            </div>
-            
-            <Form 
-              onSubmit={handleSubmit}
-              >
-              <Form.Input
-                required
-                type="email"
-                label="Email"
-                icon='red mail'
-                iconPosition='left'
-                placeholder='E-mail address'
-                // value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <Form.Input
-                required
-                label="Password"
-                icon='red lock'
-                iconPosition='left'
-                placeholder='Password'
-                type='password'
-                // value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              {/* <div className="remember-forget">
-                <label for="remember">
-                  <input
-                    type="checkbox"
-                    id="styled-checkbox"
-                    name='remember' />
-                  Remember me?
-                </label>
-                Forgot password
-              </div> */}
-              {error && 
-              <div style={{textAlign:"center"}}>
-                Incorrect email or password.
-              </div>}
-              <br />
-              <div className="buttoncontainer">
-                <button
-                  className="loginbutton AmaranthRedBackG WhiteFontC" >
-                  LOGIN
-                </button>
+              <div className="button-group">
+                <button className="yellow-button GoldWebGoldenBackG AmaranthRedFontC">Login</button>
+                <button className="white-button" onClick={(e) => handleClick(e, '/register')}>Sign Up</button>
               </div>
-            </Form>
-          </Grid.Column>
-        </Grid>
-      </div>
+              
+              <Form 
+                onSubmit={handleSubmit}
+                >
+                <Form.Input
+                  required
+                  type="email"
+                  label="Email"
+                  icon='red mail'
+                  iconPosition='left'
+                  placeholder='E-mail address'
+                  // value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <Form.Input
+                  required
+                  label="Password"
+                  icon='red lock'
+                  iconPosition='left'
+                  placeholder='Password'
+                  type='password'
+                  // value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                {/* <div className="remember-forget">
+                  <label for="remember">
+                    <input
+                      type="checkbox"
+                      id="styled-checkbox"
+                      name='remember' />
+                    Remember me?
+                  </label>
+                  Forgot password
+                </div> */}
+                {error && 
+                <div style={{textAlign:"center"}}>
+                  Incorrect email or password.
+                </div>}
+                <br />
+                <div className="buttoncontainer">
+                  <button
+                    className="loginbutton AmaranthRedBackG WhiteFontC" >
+                    LOGIN
+                  </button>
+                </div>
+              </Form>
+            </Grid.Column>
+          </Grid>
+        </div>
 
+      </div>
     </div>
   );
 }
