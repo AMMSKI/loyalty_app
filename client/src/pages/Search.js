@@ -40,16 +40,18 @@ const Search = () => {
   }
 
   return (
-    <div className='search-page AmaranthRedBackG'>
-      <div className="search-container">
-        <h1>LOYAL SEARCH</h1>
-        <SearchBar
-          input={input}
-          onChange={updateInput}
-        />
-        <br />
-        <div className="card-container">
-          {renderCards()}
+    <div className="search-page AmaranthRedBackG">
+      <div className="container-md-query-search WhiteBackG">
+        <div className="search-container">
+          <h1>LOYAL SEARCH</h1>
+          <SearchBar
+            input={input}
+            onChange={updateInput}
+          />
+          <br />
+          <div className="card-container">
+            {renderCards()}
+          </div>
         </div>
       </div>
     </div>
