@@ -10,29 +10,32 @@
   background-color: #D7272F;
 }
 
-/* .default-profpage {
-  Background-color: white;
-  min-height: 82vh;
-  margin: 16px 24px 0 24px;
-} */
+.inner-profile {
+  width:60%;
+  height:75%;
+  /* display: flex;
+  flex-direction: column;
+  align-items: flex-start; */
+}
 
 .avatar-and-name {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #D7272F;
+  /* background-color: #D7272F; */
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
 .profile-name {
-  color: white !important; 
+  /* color: white !important;  */
+  color: #D7272F;
   font-weight: bolder ;
   padding: 16px 0 2px 0 ;
 }
 
 .profile-account-type {
-  color: white;
+  /* color: white; */
 }
 
 .update-user-form {

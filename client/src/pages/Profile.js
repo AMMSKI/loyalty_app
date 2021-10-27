@@ -36,8 +36,9 @@ const Profile = () => {
 
 
   return (
-    <div className="webview-white-container">
-      <div className="profile-page">
+    <div className="profile-page">
+      <div className="container-media-query">
+        <div className="inner-profile">
         <div className="avatar-and-name">
           <Link to={`/profileupload/${user.id}`}>
             {user.image ?
@@ -70,24 +71,26 @@ const Profile = () => {
           <Segment 
             basic 
             style={{ 
-              backgroundColor: "#D7272F", 
-              color: "white", 
+              backgroundColor: "white", 
+              color: "black", 
               fontWeight: "bolder", 
-              width:"65%" }}>
+              width:"100%" }}
+              >
               <Grid onClick={()=> {setNameForm(!nameForm)}}>
                 <Grid.Column width={13}>
-                  <Icon inverted name="user" />
+                  <Icon name=" red user" />
                   Name
                 </Grid.Column>
                 <Grid.Column>
-                  <Icon inverted name="angle right"/>
+                  <Icon name="red angle right"/>
                 </Grid.Column>
               </Grid>
               {nameForm && 
                 <Form onSubmit={handleNameSubmit}>
                   <Form.Input
                     required
-                    fluid icon='user'
+                    fluid 
+                    icon='red user'
                     iconPosition='left'
                     placeholder='Name'
                     value={name}
@@ -98,11 +101,11 @@ const Profile = () => {
 
                 <Grid onClick={()=> {setPasswordForm(!passwordForm)}}>
                   <Grid.Column width={13}>
-                    <Icon inverted name="edit" />
+                    <Icon name="red edit" />
                     Password
                   </Grid.Column>
                   <Grid.Column >
-                    <Icon inverted name="angle right" />
+                    <Icon name="red angle right" />
                   </Grid.Column>
                 </Grid>
               {passwordForm && 
@@ -110,7 +113,7 @@ const Profile = () => {
                   <Form.Input
                   required
                   fluid
-                  icon='lock'
+                  icon='red lock'
                   iconPosition='left'
                   placeholder='Password'
                   type='password'
@@ -119,13 +122,13 @@ const Profile = () => {
                   <Form.Input
                     required
                     fluid
-                    icon='lock'
+                    icon='red lock'
                     iconPosition='left'
                     placeholder='Password Confirmation'
                     type='password'
                     onChange={(e) => setPasswordConfirmation(e.target.value)}
                   />
-                  <button className="WhiteBackG password-update AmaranthRedFontC">Change</button>
+                  <button className="WhiteFontC password-update AmaranthRedBackG">Change</button>
                 </Form>
               }
               {error && 
@@ -138,11 +141,11 @@ const Profile = () => {
             {user.account_type === "business" && 
             <Grid onClick={()=> {setUploadForm(!uploadForm)}}>
                 <Grid.Column width={13}>
-                  <Icon inverted name="upload" />
+                  <Icon name="red upload" />
                   Card Image
                 </Grid.Column>
                 <Grid.Column>
-                  <Icon inverted name="angle right"/>
+                  <Icon name="red angle right"/>
                 </Grid.Column>
               </Grid>
               }
@@ -151,11 +154,11 @@ const Profile = () => {
 
             <Grid onClick={()=> {setDeleteForm(!deleteForm)}}>
                 <Grid.Column width={13}>
-                  <Icon inverted name="delete" />
+                  <Icon name="red delete" />
                   Delete
                 </Grid.Column>
                 <Grid.Column>
-                  <Icon inverted name="angle right"/>
+                  <Icon name="red angle right"/>
                 </Grid.Column>
               </Grid>
 
@@ -170,9 +173,10 @@ const Profile = () => {
                 </div> 
                  
               }
-                </Segment>
+              </Segment>
+          </div>
       </div>
-    </div>
+  </div>
   )
 
 
