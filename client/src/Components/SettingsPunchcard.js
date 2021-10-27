@@ -76,7 +76,7 @@ const SettingsPunchcard = ({restaurant, punchcard, getRestaurant }) => {
         <p>{punchcard.description}</p>
         {!showEdit ?
           <button 
-            className="loginbutton AmaranthRedBackG WhiteFontC"
+            className="loginbutton GoldWebGoldenBackG BlackFontC"
             onClick={() => setShowEdit(!showEdit)}
             >Edit Description
             </button> :

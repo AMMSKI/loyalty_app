@@ -62,7 +62,7 @@ const SettingReward = ({punchcard_id}) => {
         }
         <button
           onClick={() => setShowRewardForm(!showRewardForm)}
-          className="reward_button loginbutton AmaranthRedBackG WhiteFontC" >
+          className="reward_button loginbutton GoldWebGoldenBackG BlackFontC" >
           {showRewardForm ? 'Close' : 'Add Reward'}
         </button>
       </div>
