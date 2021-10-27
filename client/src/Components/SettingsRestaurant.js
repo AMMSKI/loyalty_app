@@ -9,18 +9,18 @@ const SettingsRestaurant = ({restaurant, getRestaurant}) => {
   const [showRestEdit, setShowRestEdit] = useState(false)
 
   return (
-    <div style={{backgroundColor:"black", paddingTop:"24px"}}>
-          <Segment style={{ textAlign: 'center'}}>
+    <div style={{ paddingTop:"24px"}}>
+          <div style={{ textAlign: 'center'}}>
             <Avatar size="300" round src={restaurant.image} />
-            <h1>{restaurant.name}</h1>
+            <h1 style={{paddingTop:'10px'}}>{restaurant.name}</h1>
             <p>City: {restaurant.city}</p>
             <p>ZIP: {restaurant.zip}</p>
             <p>PHONE #: {restaurant.phone_number}</p>
-          </Segment>
-          <div style={{ textAlign: 'center', paddingBottom:'40px', backgroundColor:"black" }}>
+          </div>
+          <div style={{ textAlign: 'center', paddingBottom:'40px'}}>
             <button
               onClick={() => setShowRestEdit(!showRestEdit)}
-              className='loginbutton AmaranthRedBackG WhiteFontC'>
+              className='loginbutton GoldWebGoldenBackG BlackFontC'>
                 {showRestEdit ? 'Close' : 'Edit'}</button>
             {showRestEdit && 
             <RestaurantEdit 

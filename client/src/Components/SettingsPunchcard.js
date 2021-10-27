@@ -15,7 +15,7 @@ const SettingsPunchcard = ({restaurant, punchcard, getRestaurant }) => {
     <div className='header_setting_container'>
       <h1>Search Preview:</h1>
     </div>
-    <div className="searchCard">
+    <div className="searchCard settings_searchCard">
       <MyCard url={punchcard.logo}>
         <div className='container_card_div'>
           <div className='card_body' >
@@ -44,7 +44,7 @@ const SettingsPunchcard = ({restaurant, punchcard, getRestaurant }) => {
     <div className='header_setting_container'>
       <h1>Wallet Preview:</h1>
     </div>
-    <div className='searchCard'>
+    <div className='searchCard settings_searchCard'>
       <MyCard1 url={punchcard.logo} >
         <div className='blahblah'>
         <div className='dropdownRow GoldWebGoldenBackG'>
@@ -76,7 +76,7 @@ const SettingsPunchcard = ({restaurant, punchcard, getRestaurant }) => {
         <p>{punchcard.description}</p>
         {!showEdit ?
           <button 
-            className="loginbutton AmaranthRedBackG WhiteFontC"
+            className="loginbutton GoldWebGoldenBackG BlackFontC"
             onClick={() => setShowEdit(!showEdit)}
             >Edit Description
             </button> :

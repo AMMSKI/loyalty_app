@@ -111,15 +111,11 @@ const Settings = () => {
             </Menu.Item>
           </Menu>
           </div>
-          {/* <div  className="burger-holder">
-          {/* { showImage &&
-          <img 
-            className="juicy-burger"
-            src={juicyburger} 
-          /> */}
-          {/* } */}
-          {/* </div> */}
-          {renderPage()}
+          <div className='settings-page'>
+            <div className='settings-container-media-query'>
+            {renderPage()}
+            </div>
+          </div>
         </>
       )
     }
