@@ -37,7 +37,7 @@ const Profile = () => {
 
   return (
     <div className="profile-page">
-      <div className="container-media-query">
+      <div className="profile-media-query">
         <div className="inner-profile">
         <div className="avatar-and-name">
           <Link to={`/profileupload/${user.id}`}>
