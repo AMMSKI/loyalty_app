@@ -29,12 +29,18 @@ hr.rounded {
   
 }
 
+.burger-image {
+  width: 100%;
+}
+.home-burger {
+  width: 300px;
+  margin-bottom: 5%;
+}
 
 .tagline {
   font-weight: 900;
   text-align: center;
   font-size: medium;
-  margin-bottom: 25px;
   
 }
 
@@ -51,11 +57,26 @@ hr.rounded {
   padding: 0;
   border: none;
   border-radius: 8px;
-  width: 90%;
+  width: 300px;
   height: 40px;
   font-weight: 900;
   font-size: large;
-  margin-top: 25px;
+  margin-top: 15%;
   box-shadow: rgba(139, 129, 175, 0.3) 0px 4px 6px -.5px, rgba(6, 241, 45, 0.3) 0px 2px 4px -1px;
 
+}
+
+@media screen and (min-width: 600px) {
+  .burger-image {
+    width: 650px;
+  }
+  .home-burger {
+    width: 550px;
+  }
+  .tagline {
+    font-size:x-large;
+  }
+  .loginbutton {
+    margin-top: 200px
+  }
 }
