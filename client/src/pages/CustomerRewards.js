@@ -22,13 +22,18 @@ const CustomerRewards = ({ punchcardData, userpunchcard_id }) => {
   }, [punchcardId]);
 
   const toggleRewards = async () => {
-    if(!showRewards){
-      window.scrollTo(0, 1000)
-    }else{
-      window.scrollTo(0,0)
-    }
     setShowRewards(!showRewards)
+  }
 
+  const toggle = ()=> {
+    toggleRewards().then(()=>{
+      const height = window.innerHeight
+      if(!showRewards){
+        window.scrollTo(0, height * .60)
+      }else{
+        window.scrollTo(0,0)
+      }
+    })
   }
 
 
@@ -70,7 +75,7 @@ const CustomerRewards = ({ punchcardData, userpunchcard_id }) => {
 
   return (
     <div className="customer-rewards-page">
-      <div className="link-button" onClick={() => toggleRewards()}>
+      <div className="link-button" onClick={() => toggle()}>
         <button className="red-button">
           <Arrows/>
             {showRewards ? 'HIDE' : 'SHOW'} REWARDS

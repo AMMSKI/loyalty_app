@@ -4,7 +4,7 @@ import { Navbar } from 'react-bootstrap'
 
 const Footer = () => {
   return (
-    <Navbar bg="black" fixed="bottom" style={{ padding: '15px', display: "flex", justifyContent: "center", height: "70px"}} className="FooterContent">
+    <Navbar bg="black" style={{ padding: '15px', display: "flex", justifyContent: "center", height: "70px"}} className="FooterContent">
       <div className="FooterSegment WhiteFontC">
         <p>
           &copy; Copyright 2021, Loyal Burger Corp.
