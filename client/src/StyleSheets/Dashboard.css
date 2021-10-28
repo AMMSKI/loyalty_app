@@ -15,12 +15,15 @@
   flex-direction: column;
   align-items: center;
   color: black;
+  background-color: #ffffff;
   border-radius: 10px;
   height: 700px;
   width: 90%;
-  overflow-x: hidden;
-  /* padding: 0;
-  margin: 0; */
+  overflow-y: scroll;
+}
+
+.container-md-query-dash::-webkit-scrollbar {
+  display: none;
 }
 
 .wallet-container {
@@ -44,7 +47,6 @@
   justify-content: space-around;
   padding: 8px 0;
 }
-
 
 .nameCol {
   align-items: center;
@@ -82,4 +84,14 @@
   padding-top: 8px;
   width: 100%;
   justify-content: flex-end;
+}
+
+@media screen and (max-width: 800px) {
+  .container-md-query-dash {
+    color: #ffffff;
+    background-color: #d7272f;
+  }
+  .searchCard {
+    width: 366px;
+  }
 }
