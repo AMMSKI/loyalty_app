@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router';
 import { Image } from 'semantic-ui-react';
-import logo from "../images/1.png";
+import logotag from "../images/logowtagline.png";
 import { AuthContext } from '../providers/AuthProvider';
 import '../StyleSheets/LandingHome.css';
 import Home from './Home';
@@ -21,12 +21,9 @@ const Landing = () => {
       <div className="landing">
         <div className="content">
           <div className="logo">
-            <Image src={logo} size="medium" verticalAlign="middle" />
-          </div>
-          <div className="tagline">
-            EARN REWARDS, EAT BURGERS...
-            <br /><br />
-            OR SOMETHING ELSE
+            <img 
+              src={logotag}
+              className="burger-image"/>
           </div>
         </div>
         <div className="buttoncontainer">

@@ -1,31 +1,33 @@
 /* LOGIN PAGE*/
 
-.login-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* border: 3px solid purple; */
-  background-color: #d7272f;
-  margin: 0;
-  min-height: 772px;
+
+@media screen and (min-width:600px){
+  .login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d7272f;
+    margin: 0;
+    min-height: 772px;
+  }
 }
 
-.container-media-query {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  /* border: 3px solid blue; */
-  width: 50%;
-  height: 700px;
-  background-color: white;
+@media screen and (min-width:600px){
+  .container-media-query {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    /* border: 3px solid blue; */
+    width: 50%;
+    height: 700px;
+    background-color: white;
+  }
 }
 
 .default-page {
-  /* border: 3px solid pink; */
   background-color: white;
-  width: 70%;
-  height: 600px;
+  height: 700px;
   margin: 16px 24px 0 24px;
 }
 
@@ -36,8 +38,6 @@
 }
 
 .loyal-burger-header {
-  font-size: xx-large;
-  color: #d7272f;
 }
 
 .button-group {

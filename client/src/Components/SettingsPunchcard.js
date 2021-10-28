@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Dropdown, Segment } from 'semantic-ui-react'
 import { Card, Button, Row, Col } from 'react-bootstrap'
 import styled from "styled-components";
@@ -11,9 +11,13 @@ const SettingsPunchcard = ({restaurant, punchcard, getRestaurant }) => {
   const [showEdit, setShowEdit] = useState(false)
   const [uploadForm, setUploadForm] = useState(false)
   
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  },[])
+
   return (
     <>
-    <div className='header_setting_container'>
+    <div className='header_setting_container WhiteFontC'>
       <h1>Search Preview:</h1>
     </div>
     <div className="searchCard settings_searchCard">
@@ -42,7 +46,7 @@ const SettingsPunchcard = ({restaurant, punchcard, getRestaurant }) => {
       </MyCard>
     </div>
 
-    <div className='header_setting_container'>
+    <div className='header_setting_container WhiteFontC'>
       <h1>Wallet Preview:</h1>
     </div>
     <div className='searchCard settings_searchCard'>
@@ -77,7 +81,7 @@ const SettingsPunchcard = ({restaurant, punchcard, getRestaurant }) => {
         <p>{punchcard.description}</p>
         {!showEdit ?
           <button 
-          className="loginbutton GoldWebGoldenBackG BlackFontC"
+          className="loginbutton GoldWebGoldenBackG AmaranthRedFontC"
           onClick={() => setShowEdit(!showEdit)}
           >Edit Description
             </button> :
@@ -85,7 +89,7 @@ const SettingsPunchcard = ({restaurant, punchcard, getRestaurant }) => {
           />}
           {!uploadForm ?
           <button 
-          className="loginbutton GoldWebGoldenBackG BlackFontC"
+          className="loginbutton GoldWebGoldenBackG AmaranthRedFontC"
           onClick={() => setUploadForm(!uploadForm)}
           >Upload Photo
           </button> :

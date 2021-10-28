@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Segment } from 'semantic-ui-react'
 import RestaurantEdit from "../Components/RestaurantEdit";
 import Avatar from "react-avatar";
@@ -7,6 +7,10 @@ import Avatar from "react-avatar";
 
 const SettingsRestaurant = ({restaurant, getRestaurant}) => {
   const [showRestEdit, setShowRestEdit] = useState(false)
+
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  },[])
 
   return (
     <div style={{ paddingTop:"24px"}}>

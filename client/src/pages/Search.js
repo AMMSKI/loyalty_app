@@ -6,6 +6,8 @@ import MyCard from '../Components/MyCard';
 import SearchBar from '../Components/SearchBar';
 import SearchCard from '../Components/MyCard';
 import '../StyleSheets/Search.css'
+import pick from "../images/12.png"
+import blackpick from "../images/12black.png"
 
 
 const Search = () => {
@@ -15,6 +17,7 @@ const Search = () => {
 
   useEffect(() => {
     getCards()
+    window.scrollTo(0, 0)
   }, [])
 
   const getCards = async () => {
@@ -43,7 +46,8 @@ const Search = () => {
     <div className="search-page AmaranthRedBackG">
       <div className="container-md-query-search">
         <div className="search-container">
-          <h1>LOYAL SEARCH</h1>
+        <img className="search-header" src={pick} />
+        <img className="search-header2" src={blackpick} />
           <SearchBar
             input={input}
             onChange={updateInput}

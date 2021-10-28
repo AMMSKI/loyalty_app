@@ -2,14 +2,11 @@ import axios from "axios";
 import { AuthContext } from "../providers/AuthProvider";
 import React, { useContext, useEffect, useState } from 'react'
 import { Dropdown, Menu } from 'semantic-ui-react'
-import { Card } from 'react-bootstrap'
 import styled from "styled-components";
-import juicyburger from "../images/juicyburger.png";
 import SettingsPunchcard from "../Components/SettingsPunchcard";
 import SettingReward from "../Components/SettingReward";
 import SettingsRestaurant from "../Components/SettingsRestaurant";
 import '../StyleSheets/Settings.css'
-import { Redirect } from "react-router";
 import FinishSignUp from "./FinishSignUp";
 
 const Settings = () => {
@@ -22,6 +19,7 @@ const Settings = () => {
 
   useEffect(() => {
     getRestaurant()
+    window.scrollTo(0, 0)
   }, [])
 
   const getRestaurant = async () => {
@@ -85,28 +83,17 @@ const Settings = () => {
               }}>
             <Menu.Item 
               onClick={()=>{setPage('punchcard'); setShowImage(false)}}
-              style={{
-              boxShadow: "rgba(0, 0, 0, 0.1) 0px -2px 1px 2px",
-              backgroundColor:"white",
-              fontWeight:"bolder"
-              }}>
+              style={page === 'punchcard' ? styles.activeItem : styles.menuItem}>
               PunchCard
             </Menu.Item>
             <Menu.Item 
               onClick={()=>{setPage('rewards'); setShowImage(false)}}
-              style={{
-                boxShadow: "rgba(0, 0, 0, 0.1) 0px -2px 1px 2px",
-                backgroundColor:"white",
-                fontWeight:"bolder"
-                }}>
+              style={page === 'rewards' ? styles.activeItem : styles.menuItem}>
               Rewards
             </Menu.Item>
             <Menu.Item 
               onClick={()=> {setPage('restaurant'); setShowImage(false)}}
-              style={{
-                boxShadow: "rgba(0, 0, 0, 0.1) 0px -2px 1px 2px",
-                backgroundColor:"white",
-                fontWeight:"bolder"}}>
+              style={page === 'restaurant' ? styles.activeItem : styles.menuItem}>
               Restaurant
             </Menu.Item>
           </Menu>
@@ -123,14 +110,40 @@ const Settings = () => {
 }
 
 
+const styles = {
+  menuItem: {
+  margin: '16px 8px 16px 8px',
+  // padding: '24px',
+  color: 'white',
+  fontWeight: '1000',
+  width: '100px',
+  backgroundColor: 'black',
+  justifyContent: 'center',
+  border: 'solid 3px #FFD700',
+  borderRadius: '5px',
+  boxShadow: 'rgba(43, 5, 5, 0.5) 0px 3px 8px',
+  },
+  activeItem: {
+    margin: '16px 8px 16px 8px',
+    // padding: '24px',
+    color: '#D7272F',
+    width: '100px',
+    fontWeight: '1000',
+    backgroundColor: '#FFD700',
+    justifyContent: 'center',
+    border: 'solid 3px black',
+    borderRadius: '5px',
+    boxShadow: 'rgba(43, 5, 5, 0.5) 0px 3px 8px',
+    }
+
+}
 
 
 
 
 
-const MyDropdown = styled(Dropdown)`
-  color: white;
-`
+
+
 
 
 export default Settings

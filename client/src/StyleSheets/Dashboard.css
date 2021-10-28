@@ -2,9 +2,7 @@
 
 .wallet-page {
   display: flex;
-  align-items: center;
   justify-content: center;
-  /* border: 3px solid purple; */
   margin: 0;
   min-height: 800px;
 }
@@ -24,14 +22,6 @@
 
 .container-md-query-dash::-webkit-scrollbar {
   display: none;
-}
-
-.wallet-container {
-  padding: 8px 16px 8px 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  width: 100%;
 }
 
 .punchContainer {
@@ -86,6 +76,23 @@
   justify-content: flex-end;
 }
 
+.dash-header2 {
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 18px;
+  width: 400px;
+  border-radius: 5px;
+}
+
+.dash-header {
+  display: none;
+}
+
+.searchbar {
+  width:285px;
+}
+
+
 @media screen and (max-width: 800px) {
   .container-md-query-dash {
     color: #ffffff;
@@ -94,4 +101,15 @@
   .searchCard {
     width: 366px;
   }
+  .dash-header2 {
+    display: none;
+  }
+
+  .dash-header {
+    display: block;
+    padding-bottom: 18px;
+    width: 250px;
+    border-radius: 5px;
+  }
+
 }
