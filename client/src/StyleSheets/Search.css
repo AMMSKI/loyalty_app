@@ -16,9 +16,8 @@
   color: black;
   background-color: #ffffff;
   border-radius: 10px;
-  height: 700px;
+  height: fit-content;
   width: 90%;
-  overflow-y: scroll;
 }
 
 .container-md-query-search::-webkit-scrollbar {
@@ -30,15 +29,12 @@
   flex-direction: column;
   justify-content: space-evenly;
   width: 100%;
-  /* border-radius: 8px; */
 }
 
 .card-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  height: 500px;
-  /* border-radius: 8px; */
 }
 
 .searchCard {
