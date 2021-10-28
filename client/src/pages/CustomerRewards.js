@@ -47,6 +47,7 @@ const CustomerRewards = ({ punchcardData, userpunchcard_id }) => {
             <div className={`cash-or-cost ${canAfford ? 'can-afford' : 'cant-afford'}`}>
               {canAfford ?
                 <Link
+                  style={{textDecoration:'none', color:'#FFD700'}}
                   to={`/rewardQR/${r.id}/${userpunchcard_id}`}
                   reward_id={r.id}
                   userpunchcard_id={userpunchcard_id} >
