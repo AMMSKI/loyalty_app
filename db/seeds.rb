@@ -24,6 +24,7 @@ user7 = User.create( name:'business4', email:'business4@email.com', password:'12
 user3 = User.create( name:'customer1', email:'customer1@email.com', password:'123456', account_type:'customer')
 user4 = User.create( name:'customer2', email:'customer2@email.com', password:'123456', account_type:'customer')
 user6 = User.create( name:'customer3', email:'customer3@email.com', password:'123456', account_type:'customer')
+user6 = User.create( name:'customer3', email:'customer3@email.com', password:'123456', account_type:'customer')
 
 bizusers = [user,user2,user5, user7]
 custusers = [user3,user4, user6]

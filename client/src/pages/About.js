@@ -74,7 +74,7 @@ const About = () => {
     "Looking forward to the new adventure of being a web developer!",
     "Love to code, play golf and hang out with my family.",
     "Fall 2021 Graduate. Ecuadorian living in Utah, love technology.",
-    "Excited to keep learning and growing web development and plans to be a front end developer. Dev Point Labs Fall 2021 graduate.",
+    "Excited to continue learning web development and plans to be a front end developer. Dev Point Labs Fall 2021 graduate.",
     "Fall 2021 Graduate. I look forward to being a web developer by day, game designer by night.",
   ];
 
