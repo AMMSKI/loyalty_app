@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #D7272F;
+  background-color: #d7272f;
   color: white;
   height: 774px;
   font-weight: bold;
@@ -21,4 +21,10 @@
 
 #user-name {
   color: "#F3CA03";
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
