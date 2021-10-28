@@ -68,7 +68,11 @@ function Admin(props) {
           </Grid.Column>
         </Grid.Row>
         <Grid.Row verticalAlign='middle' centered>
-          <Charting />
+          <div className="chart-container">
+            <div className="chart-box">
+              <Charting />
+            </div>
+          </div>
         </Grid.Row>
       </Grid>
     </div>
