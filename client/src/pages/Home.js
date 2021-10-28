@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { AuthContext } from '../providers/AuthProvider'
-import { Image } from 'semantic-ui-react'
 import logo from "../images/1.png";
 import '../StyleSheets/LandingHome.css';
 
@@ -11,10 +10,13 @@ const Home = () => {
       <div className="landing">
         <div className="content">
           <div className="logo">
-            <Image src={logo} size="medium" verticalAlign="middle" />
+            <img 
+              className="home-burger" 
+              src={logo}  
+              />
           </div>
           <div className="tagline">
-            Welcome {user.name}!
+            Welcome {user.name}
           </div>
         </div>
       </div>
