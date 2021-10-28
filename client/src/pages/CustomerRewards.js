@@ -22,7 +22,13 @@ const CustomerRewards = ({ punchcardData, userpunchcard_id }) => {
   }, [punchcardId]);
 
   const toggleRewards = async () => {
+    if(!showRewards){
+      window.scrollTo(0, 1000)
+    }else{
+      window.scrollTo(0,0)
+    }
     setShowRewards(!showRewards)
+
   }
 
 

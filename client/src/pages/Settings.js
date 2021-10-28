@@ -19,6 +19,7 @@ const Settings = () => {
 
   useEffect(() => {
     getRestaurant()
+    window.scrollTo(0, 0)
   }, [])
 
   const getRestaurant = async () => {

@@ -17,6 +17,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     getPunchcards()
+    window.scrollTo(0, 0)
   }, [])
 
   const getPunchcards = async () => {

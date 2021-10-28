@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Dropdown, Segment } from 'semantic-ui-react'
 import { Card, Button, Row, Col } from 'react-bootstrap'
 import styled from "styled-components";
@@ -11,6 +11,10 @@ const SettingsPunchcard = ({restaurant, punchcard, getRestaurant }) => {
   const [showEdit, setShowEdit] = useState(false)
   const [uploadForm, setUploadForm] = useState(false)
   
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  },[])
+
   return (
     <>
     <div className='header_setting_container WhiteFontC'>

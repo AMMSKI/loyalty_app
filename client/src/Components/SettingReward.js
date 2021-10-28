@@ -13,6 +13,7 @@ const SettingReward = ({punchcard_id}) => {
 
   useEffect(()=>{
     getRewards()
+    window.scrollTo(0, 0)
   },[])
 
   const getRewards = async () => {
