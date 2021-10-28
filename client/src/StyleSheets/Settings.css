@@ -17,7 +17,6 @@
 }
 
 .sp-h2 {
-  color: white;
   padding-top:16px;
   font-weight: 600;
 }
@@ -29,7 +28,15 @@
 .edit-description {
   text-align:center;
   padding: 0 24px 24px 24px;
+}
 
+@media screen and (min-width: 600px){
+  .edit-description {
+    text-align:center;
+    padding: 0 24px 24px 24px;
+    color: black;
+  }
+  
 }
 
 .settings-rewards-page {
@@ -103,6 +110,16 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+@media screen and (min-width: 600px){
+  .header_setting_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+  }
 }
 
 @media screen and (min-width: 600px){
