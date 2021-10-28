@@ -97,6 +97,8 @@
   overflow: hidden;
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
   justify-content: space-around;
   background-color: black;
 }
