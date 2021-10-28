@@ -30,7 +30,9 @@ const Login = () => {
             <Grid.Column >
               <div className="login-header">
                 Welcome to
+                <div>
                 <img className="loyal-burger-header" src={redloyalb} />
+                </div>
               </div>
               <div className="button-group">
                 <button className="yellow-button GoldWebGoldenBackG AmaranthRedFontC">Login</button>
