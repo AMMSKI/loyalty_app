@@ -15,9 +15,8 @@
   color: black;
   background-color: #ffffff;
   border-radius: 10px;
-  height: 700px;
+  height: fit-content;
   width: 90%;
-  overflow-y: scroll;
 }
 
 .container-md-query-dash::-webkit-scrollbar {
@@ -28,7 +27,6 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  height: 500px;
 }
 
 .searchCard {
