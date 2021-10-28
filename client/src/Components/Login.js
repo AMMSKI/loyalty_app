@@ -26,7 +26,7 @@ const Login = () => {
       <div className="container-media-query">
         <div className="default-page">
           <Grid centered verticalAlign='middle'>
-            <Grid.Column style={{ maxWidth: 450 }}>
+            <Grid.Column >
               <div className="login-header">
                 Welcome to
                 <div className="loyal-burger-header">
