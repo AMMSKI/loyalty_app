@@ -17,6 +17,7 @@ const Search = () => {
 
   useEffect(() => {
     getCards()
+    window.scrollTo(0, 0)
   }, [])
 
   const getCards = async () => {
