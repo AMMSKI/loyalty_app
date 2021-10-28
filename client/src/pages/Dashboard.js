@@ -4,7 +4,7 @@ import { AuthContext } from '../providers/AuthProvider';
 import SearchBar from '../Components/SearchBar';
 import WalletCard from '../Components/WalletCard';
 import '../StyleSheets/Dashboard.css'
-import redloyal from "../images/11.png"
+import redrewards from "../images/11.png"
 
 
 const Dashboard = () => {
@@ -57,7 +57,7 @@ const Dashboard = () => {
     <div className="wallet-page AmaranthRedBackG">
       <div className="container-md-query-dash">
         <div className="search-container">
-          <img className="loyal-rewards-header" src={redloyal} />
+          <img className="dash-header" src={redrewards} />
           <SearchBar
             input={input}
             onChange={updateInput}

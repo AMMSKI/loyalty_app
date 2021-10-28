@@ -129,6 +129,13 @@
   justify-content: flex-end;
 }
 
+.search-header {
+  padding-bottom: 18px;
+  width: 300px;
+  background-color: #d7272f;
+  border-radius: 5px;
+}
+
 @media screen and (max-width: 800px) {
   .container-md-query-search {
     color: #ffffff;
@@ -136,5 +143,9 @@
   }
   .searchCard {
     width: 366px;
+  }
+  .search-header {
+    margin: 0;
+    width: 150px;
   }
 }

@@ -6,6 +6,7 @@ import MyCard from '../Components/MyCard';
 import SearchBar from '../Components/SearchBar';
 import SearchCard from '../Components/MyCard';
 import '../StyleSheets/Search.css'
+import pick from "../images/12.png"
 
 
 const Search = () => {
@@ -43,7 +44,7 @@ const Search = () => {
     <div className="search-page AmaranthRedBackG">
       <div className="container-md-query-search">
         <div className="search-container">
-          <h1>LOYAL SEARCH</h1>
+        <img className="search-header" src={pick} />
           <SearchBar
             input={input}
             onChange={updateInput}

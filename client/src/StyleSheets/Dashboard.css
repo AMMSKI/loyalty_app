@@ -86,7 +86,7 @@
   justify-content: flex-end;
 }
 
-.loyal-rewards-header {
+.dash-header {
   padding-bottom: 18px;
   width: 400px;
   background-color: #d7272f;
@@ -106,7 +106,7 @@
   .searchCard {
     width: 366px;
   }
-  .loyal-rewards-header {
+  .dash-header {
     margin: 0;
     width: 200px;
   }
