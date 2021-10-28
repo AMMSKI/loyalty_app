@@ -19,10 +19,9 @@
   justify-content: center;
   border-radius: 10px;
   width: 50%;
-  height: 700px;
+  height: 300px;
   background-color: #d7272f;
   color: white;
-  overflow-y: scroll;
 }
 
 .profile-media-query::-webkit-scrollbar {
@@ -47,7 +46,7 @@
   align-items: center;
   background-color: #d7272f;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .profile-name {
@@ -94,7 +93,7 @@
 }
 
 .password-update {
-  background-color: white;
+  background-color:#FFD700;
   color: #d7272f;
   padding: 0;
   border: none;
@@ -118,6 +117,7 @@
     height: 700px;
     background-color: white;
     color: black;
+    overflow-y: scroll;
   }
   .profile-div {
     background-color: white;
@@ -135,8 +135,7 @@
   .icon {
     color: black;
   }
-  .password-update {
-    background-color: #d7272f;
-    color: white;
+  .inner-profile {
+    height: 80%
   }
 }

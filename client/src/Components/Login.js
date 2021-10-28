@@ -3,6 +3,7 @@ import { useHistory } from 'react-router'
 import { Form, Grid, Message } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider'
 import '../StyleSheets/Login.css'
+import redloyalb from "../images/9.png"
 
 const Login = () => {
   const { handleLogin, error, setError, setLoading } = useContext(AuthContext)
@@ -29,9 +30,7 @@ const Login = () => {
             <Grid.Column >
               <div className="login-header">
                 Welcome to
-                <div className="loyal-burger-header">
-                  LOYAL BURGER
-                </div>
+                <img className="loyal-burger-header" src={redloyalb} />
               </div>
               <div className="button-group">
                 <button className="yellow-button GoldWebGoldenBackG AmaranthRedFontC">Login</button>

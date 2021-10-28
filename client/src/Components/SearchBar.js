@@ -5,6 +5,7 @@ const SearchBar = ({input:keyword, onChange:setKeyword}) => {
     
   return (
     <Input 
+     className="searchbar"
      key="random1"
      value={keyword}
      placeholder={"search by restaurant name"}
