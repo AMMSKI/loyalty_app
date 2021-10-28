@@ -93,7 +93,7 @@
 }
 
 .password-update {
-  background-color: white;
+  background-color:#FFD700;
   color: #d7272f;
   padding: 0;
   border: none;
@@ -134,10 +134,6 @@
   }
   .icon {
     color: black;
-  }
-  .password-update {
-    background-color: #d7272f;
-    color: white;
   }
   .inner-profile {
     height: 80%
