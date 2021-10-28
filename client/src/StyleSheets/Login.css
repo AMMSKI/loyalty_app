@@ -1,33 +1,28 @@
 /* LOGIN PAGE*/
 
-
-@media screen and (min-width:600px){
-  .login-page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #d7272f;
-    margin: 0;
-    min-height: 772px;
-  }
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d7272f;
+  margin: 0;
+  min-height: 774px;
 }
 
-@media screen and (min-width:600px){
-  .container-media-query {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    /* border: 3px solid blue; */
-    width: 50%;
-    height: 700px;
-    background-color: white;
-  }
+.container-media-query {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  /* border: 3px solid blue; */
+  width: 50%;
+  height: 700px;
+  background-color: white;
 }
 
 .default-page {
   background-color: white;
-  height: 700px;
+  height: 650px;
   margin: 16px 24px 0 24px;
 }
 
@@ -75,4 +70,14 @@
 .buttoncontainer {
   height: 24px;
   margin-bottom: 24px;
+}
+
+@media screen and (max-width: 700px) {
+  .login-page {
+    background-color: #ffffff;
+  }
+
+  .container-media-query {
+    background-color: white;
+  }
 }
