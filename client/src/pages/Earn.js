@@ -38,8 +38,9 @@ const Earn = (props) => {
   }
 
   return (
-    <div className="earn-page WhiteBackG">
-      <div>
+    <div className="earn-page">
+      <div className="container-media-query-earn">
+      <div className="default-page">
         <h1 className="earn-h1">{punchcardData.restaurant_name}</h1>
         <h5>{punchcardData.description}</h5>
         <br />
@@ -74,6 +75,7 @@ const Earn = (props) => {
           userpunchcard_id={userpunchcard_id} />
       </div>
     </div>
+  </div>
   )
 }
 
