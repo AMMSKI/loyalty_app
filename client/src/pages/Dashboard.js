@@ -1,12 +1,11 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../providers/AuthProvider';
-import { Card, Dropdown } from 'react-bootstrap'
-import { Link } from 'react-router-dom';
-import styled from 'styled-components'
 import SearchBar from '../Components/SearchBar';
 import WalletCard from '../Components/WalletCard';
 import '../StyleSheets/Dashboard.css'
+import redrewards from "../images/11.png"
+import blackrewards from "../images/11black.png"
 
 
 const Dashboard = () => {
@@ -58,17 +57,18 @@ const Dashboard = () => {
   return (
     <div className="wallet-page AmaranthRedBackG">
       <div className="container-md-query-dash">
-        <div className="wallet-container">
-          <h1>LOYAL WALLET</h1>
+        <div className="search-container">
+          <img className="dash-header" src={redrewards} />
+          <img className="dash-header2" src={blackrewards} />
           <SearchBar
             input={input}
             onChange={updateInput}
           />
+          </div>
           <br />
           <div className='punchContainer'>
             {punchcards && renderPunchcards()}
           </div>
-        </div>
       </div>
     </div>
   )

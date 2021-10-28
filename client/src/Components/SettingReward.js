@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, {  useEffect, useState } from 'react'
-import {  Icon, Segment } from 'semantic-ui-react'
+import {  Icon } from 'semantic-ui-react'
 import { Button } from 'react-bootstrap'
 import RewardForm from "../Components/RewardForm";
 import '../StyleSheets/CustomerRewards.css'
