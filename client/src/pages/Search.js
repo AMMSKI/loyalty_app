@@ -41,7 +41,7 @@ const Search = () => {
 
   return (
     <div className="search-page AmaranthRedBackG">
-      <div className="container-md-query-search WhiteBackG">
+      <div className="container-md-query-search">
         <div className="search-container">
           <h1>LOYAL SEARCH</h1>
           <SearchBar

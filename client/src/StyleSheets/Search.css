@@ -15,10 +15,15 @@
   flex-direction: column;
   align-items: center;
   color: black;
+  background-color: #ffffff;
   border-radius: 10px;
   height: 700px;
   width: 90%;
-  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.container-md-query-search::-webkit-scrollbar {
+  display: none;
 }
 
 .search-container {
@@ -92,8 +97,9 @@
   overflow: hidden;
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
   justify-content: space-around;
-  /* padding: 10px; */
   background-color: black;
 }
 
@@ -122,4 +128,14 @@
   padding-top: 5px;
   width: 100%;
   justify-content: flex-end;
+}
+
+@media screen and (max-width: 800px) {
+  .container-md-query-search {
+    color: #ffffff;
+    background-color: #d7272f;
+  }
+  .searchCard {
+    width: 366px;
+  }
 }
