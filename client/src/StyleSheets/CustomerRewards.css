@@ -25,15 +25,16 @@
    font-weight: 600;
    border-radius: 5px;
    cursor: pointer;
+  }
+  
+  .can-afford {
+    color: white;
+    text-decoration: none;
  }
 
- .cash-or-cost a {
-   color: white;
-   text-decoration: none;
- }
-
- .cash-or-cost.cant-afford {
+ .cant-afford {
   cursor: not-allowed;
+  text-decoration: none;
 }
 
 .red-button {
