@@ -5,6 +5,7 @@ import SearchBar from '../Components/SearchBar';
 import WalletCard from '../Components/WalletCard';
 import '../StyleSheets/Dashboard.css'
 import redrewards from "../images/11.png"
+import blackrewards from "../images/11black.png"
 
 
 const Dashboard = () => {
@@ -58,6 +59,7 @@ const Dashboard = () => {
       <div className="container-md-query-dash">
         <div className="search-container">
           <img className="dash-header" src={redrewards} />
+          <img className="dash-header2" src={blackrewards} />
           <SearchBar
             input={input}
             onChange={updateInput}

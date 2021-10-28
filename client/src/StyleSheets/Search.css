@@ -129,11 +129,15 @@
   justify-content: flex-end;
 }
 
-.search-header {
+.search-header2 {
+  display: block;
+  padding-top: 24px;
   padding-bottom: 18px;
-  width: 300px;
-  background-color: #d7272f;
+  width: 325px;
   border-radius: 5px;
+}
+.search-header {
+  display: none;
 }
 
 @media screen and (max-width: 800px) {
@@ -144,8 +148,13 @@
   .searchCard {
     width: 366px;
   }
+  .search-header2 {
+    display: none;
+  }
   .search-header {
-    margin: 0;
-    width: 150px;
+    display: block;
+    padding-bottom: 18px;
+    width: 190px;
+    border-radius: 5px;
   }
 }

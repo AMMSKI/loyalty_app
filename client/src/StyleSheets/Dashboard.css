@@ -78,11 +78,16 @@
   justify-content: flex-end;
 }
 
-.dash-header {
+.dash-header2 {
+  display: block;
+  padding-top: 24px;
   padding-bottom: 18px;
   width: 400px;
-  background-color: #d7272f;
   border-radius: 5px;
+}
+
+.dash-header {
+  display: none;
 }
 
 .searchbar {
@@ -98,9 +103,15 @@
   .searchCard {
     width: 366px;
   }
+  .dash-header2 {
+    display: none;
+  }
+
   .dash-header {
-    margin: 0;
-    width: 200px;
+    display: block;
+    padding-bottom: 18px;
+    width: 250px;
+    border-radius: 5px;
   }
 
 }
