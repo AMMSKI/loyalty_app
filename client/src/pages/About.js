@@ -7,7 +7,7 @@ import email from "../images/email.png";
 import elise from "../images/elise.jpeg";
 import alan from "../images/alan.jpeg";
 import rafael from "../images/rafael.jpeg";
-import kelsey from "../images/kelsey.gif";
+import kelsey from "../images/kelsey.jpg";
 import lee from "../images/lee.jpeg";
 
 const Style = styled.div`
