@@ -27,7 +27,6 @@
 }
 
 .search-container {
-  padding: 8px 16px 8px 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
