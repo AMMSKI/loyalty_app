@@ -32,6 +32,11 @@ For Business type
 3. Add Rewards for your customers to cash in
 4. Serve your fictional customers and scan or enter code to award points or cash reward
 
+# Mockups and DB design 
+
+https://www.figma.com/file/mw3ucCEqpIaGZA5wfqYQll/Loyalty-Burger?node-id=172%3A536
+
+https://lucid.app/lucidchart/77a9018c-fe19-415f-a0b1-5f014ba0bf7f/edit?viewport_loc=46%2C33%2C1720%2C822%2C0_0&invitationId=inv_fc252c9f-a285-44c6-ba0e-f892db8c228a
 
 # Clone
 
