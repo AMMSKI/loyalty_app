@@ -10,11 +10,11 @@ React single page application, Ruby on Rails back end, and PostgresQL database.
 
 # Customer type user experience 
 
-Customers can easily find and use their loyalty points but accessing the card in their wallet. A user can cash in points for rewards or earn points with purchases. 
+Customers can easily find and use their loyalty points by accessing the card in their wallet. A user can cash in points for rewards or earn points with purchases . 
 
 # Business type user experience 
 
-Business users can customize how thier loyalty card will look to customers. THey can scan QR codes to cash rewards or add points to a user. A business can also track how many users are using thier card and see data on average points per card. 
+Business users can customize how thier loyalty card will look to customers. They can scan QR codes to cash rewards or add points to a user. A business can also track how many users are using thier card and see data on average points per card. 
 
 # Get started 
 https://loyalburger.herokuapp.com/
