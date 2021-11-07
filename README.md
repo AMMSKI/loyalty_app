@@ -1,5 +1,39 @@
 # README
-# Getting Started
+
+# Why
+
+Having so many loyalty apps to keep track of can be a pain. With Loyal Burger all of your favorite restaurants loyalty points live in one place
+
+# Technology used:
+
+React single page application, Ruby on Rails back end, and PostgresQL database.
+
+# Customer type user experience 
+
+Customers can easily find and use their loyalty points but accessing the card in their wallet. A user can cash in points for rewards or earn points with purchases. 
+
+# Business type user experience 
+
+Business users can customize how thier loyalty card will look to customers. THey can scan QR codes to cash rewards or add points to a user. A business can also track how many users are using thier card and see data on average points per card. 
+
+# Get started 
+https://loyalburger.herokuapp.com/
+1. Register for a new account
+2. Choose Buinsess or Customer account type
+
+For Customer type
+1. See search page to find and add loyalty cards
+2. Shop at your favorite fictional restaurant 
+3. Click card in wallet to access QR code to earn points or cash rewards
+
+For Business type
+1. Add restaurant information
+2. Add pictures and descriptions on settings page
+3. Add Rewards for your customers to cash in
+4. Serve your fictional customers and scan or enter code to award points or cash reward
+
+
+# Clone
 
 TLDR: need to clone with a unique project name and rename database
 
