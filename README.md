@@ -14,12 +14,12 @@ Customers can easily find and use their loyalty points by accessing the card in 
 
 # Business type user experience 
 
-Business users can customize how thier loyalty card will look to customers. They can scan QR codes to cash rewards or add points to a user. A business can also track how many users are using thier card and see data on average points per card. 
+Business users can customize how their loyalty card will look to customers. They can scan QR codes to cash rewards or add points to a user. A business can also track how many users are using thier card and see data on average points per card. 
 
 # Get started 
 https://loyalburger.herokuapp.com/
 1. Register for a new account
-2. Choose Buinsess or Customer account type
+2. Choose Business or Customer account type
 
 For Customer type
 1. See search page to find and add loyalty cards
